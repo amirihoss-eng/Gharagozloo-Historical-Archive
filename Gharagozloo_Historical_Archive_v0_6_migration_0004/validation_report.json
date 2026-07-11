@@ -1,0 +1,16 @@
+{
+  "database": "archive.sqlite",
+  "database_version": "0.6",
+  "last_migration": "0004",
+  "integrity_check": "ok",
+  "foreign_key_violations": 0,
+  "mined_pages": "S0001 printed pages 141-145",
+  "added": {
+    "persons": 3,
+    "events": 5,
+    "claims": 13,
+    "citations": 6,
+    "person_title_links": 4
+  },
+  "generated_at": "2026-07-11T05:49:59.145248+00:00"
+}

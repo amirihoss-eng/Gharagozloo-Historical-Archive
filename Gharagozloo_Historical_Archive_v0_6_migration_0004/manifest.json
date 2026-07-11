@@ -1,8 +1,8 @@
 {
   "archive_name": "Gharagozloo Historical Archive",
   "database": "archive.sqlite",
-  "database_version": "0.5",
-  "last_migration": "0003",
+  "database_version": "0.6",
+  "last_migration": "0004",
   "canonical_source_of_truth": "archive.sqlite",
-  "generated_at": "2026-07-11T03:59:46.139916+00:00"
+  "generated_at": "2026-07-11T05:49:59.145248+00:00"
 }
