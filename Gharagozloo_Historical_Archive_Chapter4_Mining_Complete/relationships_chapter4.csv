@@ -1,0 +1,13 @@
+﻿stable_id,subject_id,relationship_type,object_id,evidence_status,book_pages
+R_CH4_001,P_CH4_001,child_of,P_CH4_002,stated,167
+R_CH4_002,P_CH4_002,child_of,P_CH4_003,stated,167
+R_CH4_003,P_CH4_001,grandchild_of,P_CH4_003,stated,167
+R_CH4_004,P_CH4_001,parent_of,P_CH4_004,stated,186
+R_CH4_005,P_CH4_001,parent_of,P_CH4_005,stated,186
+R_CH4_006,P_CH4_001,parent_of,P_CH4_006,stated,186
+R_CH4_007,P_CH4_007,father_in_law_of,P_CH4_001,stated in footnote,175
+R_CH4_008,P_CH4_010,relative_of,P_CH4_001,stated,170
+R_CH4_009,P_CH4_004,spouse_of,P_CH4_019,stated,186
+R_CH4_010,P_CH4_019,child_of,P_CH4_018,stated,186
+R_CH4_011,P_CH4_001,succeeded,P_CH4_003,title/governorship succession,169
+R_CH4_012,P_CH4_001,succeeded_as_regent,P_CH4_013,stated,182

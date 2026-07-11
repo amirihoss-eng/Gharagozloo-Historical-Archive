@@ -1,0 +1,20 @@
+﻿stable_id,claim_text,claim_type,confidence,book_pages
+C_CH4_001,Naser al-Molk was born in Tehran on 14 Dhu al-Qadah 1272 AH.,fact,high,167
+C_CH4_002,He studied political science at Oxford and learned English and French.,fact,high,167
+C_CH4_003,"He translated foreign newspapers, speeches, and royal remarks for Naser al-Din Shah.",fact,high,168
+C_CH4_004,"His known translations included a law booklet, Fraser's history of Nader Shah and Indian rulers, The Merchant of Venice, and Othello.",fact,medium-high,168
+C_CH4_005,He inherited the title Naser al-Molk and the Hamadan governorship from his grandfather.,fact,high,169
+C_CH4_006,He served as extraordinary ambassador to Ottoman and British courts after Mozaffar al-Din Shah's accession.,fact,high,170
+C_CH4_007,"His principal landed estates included Bahar, Salehabad, Lalejin, Mehraban, Mazdaqineh, Hajilu, and other areas around Hamadan, plus Gilan properties.",fact,high,175
+C_CH4_008,The author interprets his anti-constitutional position partly as defense of aristocratic and landed interests.,author_interpretation,medium,174-177
+C_CH4_009,Naser al-Molk argued that Iran lacked enough educated people to operate a representative system.,political_statement,high,172-177
+C_CH4_010,He became prime minister through Majles nomination rather than the shah's initiative.,fact,high,179
+C_CH4_011,His cabinet helped establish a parliamentary budget and reduce court expenditures.,fact,high,180
+C_CH4_012,British diplomatic intervention prevented Mohammad Ali Shah from killing him.,reported_event,medium-high,181
+C_CH4_013,"He held a British state decoration, transcribed in OCR as KEG.",fact_with_ocr_uncertainty,medium,181
+C_CH4_014,He was elected regent with 40 of 71 votes.,fact,high,182
+C_CH4_015,He ordered the closure of the Second Majles during the Russian ultimatum crisis.,fact,high,183
+C_CH4_016,He left Iran for an extended period while retaining regency income and estate revenues.,fact_and_author_critique,medium-high,184
+C_CH4_017,He enthroned Ahmad Shah on 27 Sha'ban 1332 AH / 1914 and ended his own regency.,fact,high,185
+C_CH4_018,The chapter states that he had two sons and one daughter.,fact,high,186
+C_CH4_019,"Later negative descriptions of his sons derive from memoirists and should be stored as attributed opinions, not neutral fact.",source_criticism,high,186
