@@ -1,0 +1,32 @@
+﻿person_title_id,person_id,title_id,date_text,notes
+1,P0003,T0001,,
+2,P0004,T0002,,
+3,P0004,T0003,,
+4,P0004,T0004,,
+5,P0005,T0005,,
+6,P0005,T0006,,
+7,P0006,T0003,,
+8,P0012,T0007,,Described as Amir Tuman in S0001.
+9,P0012,T0008,,Described as Ejlal al-Dowleh in S0001.
+10,P0012,T0002,,Received Sa'ed al-Saltaneh at his father's request.
+11,P0013,T0009,,Named as sartip in the Herat campaign account.
+12,P0015,T0010,before/during 1255 AH,Held rank of yavar while supporting Nabi Khan.
+13,P0015,T0011,1255 AH,Promoted to sarhang after being wounded at Herat.
+14,P0017,T0011,1255 AH,Described as a colonel of the Mokhberan regiment.
+15,P0003,T0012,1273 AH,Described as mirpanj during the Bandar Lengeh operations.
+16,P0019,T0013,,Known as Nosrat al-Molk.
+17,P0022,T0014,1287 AH,Granted for service in Kerman.
+18,P0024,T0015,,
+19,P0025,T0010,1313 AH,The book identifies Aqa Jan as holding the rank of yavar.
+20,P0014,T0011,1254 AH,Mohammad Shah appointed Mahmoud Khan colonel and placed his father’s forces under him.
+21,P0014,T0009,1255 AH,Promoted to sartip before military service in Khorasan.
+22,P0014,T0012,1272 AH,Promoted to mirpanj after returning from Russia.
+23,P0014,T0016,1275 AH,Mahmoud Khan received the title Naser al-Molk.
+24,P0028,T0017,,
+25,P0031,T0021,,
+26,P0032,T0020,,
+27,P0033,T0021,,
+28,P0023,T0022,,Also called Amir Afkham in the Constitutional-period narrative.
+29,P0024,T0023,,
+30,P0037,T0021,,
+31,P0040,T0016,1305 AH,Inherited the title Naser al-Molk after the death of Mahmoud Khan.

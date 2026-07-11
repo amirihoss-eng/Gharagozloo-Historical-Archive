@@ -1,0 +1,52 @@
+﻿event_id,person_id,role
+E0001,P0004,appointed governor; petitioner
+E0001,P0012,received Sa'ed al-Saltaneh
+E0001,P0005,received Ejlal al-Mamalek
+E0002,P0013,commander
+E0002,P0015,supporting officer
+E0002,P0016,soldier
+E0002,P0017,wounded officer
+E0004,P0003,commander at Bandar Lengeh
+E0004,P0018,brigadier with artillery
+E0004,P0019,officer and son of Rustam Khan
+E0005,P0020,commander of Dargazin regiment
+E0006,P0019,senior officer in Kerman
+E0006,P0021,commander of sixth Gharagozloo regiment
+E0006,P0022,garrison officer rewarded for service
+E0007,P0023,father and organizer
+E0007,P0024,groom
+E0008,P0023,detained khan
+E0009,P0023,governor
+E0010,P0025,officer transferred to Russian embassy
+E0010,P0026,servant involved in altercation
+E0010,P0027,deceased Russian coachman
+E0011,P0004,commander titled Saed al-Saltaneh
+E0012,P0014,appointed colonel and commander
+E0013,P0014,Iranian envoy to Russia
+E0014,P0014,industrial sponsor
+E0015,P0014,minister of commerce
+E0016,P0028,deceased khan
+E0016,P0020,deceased khan
+E0016,P0019,deceased khan
+E0016,P0031,deceased khan
+E0016,P0003,deceased khan
+E0016,P0014,deceased khan
+E0016,P0022,deceased khan
+E0017,P0004,governor titled Sardar Akram
+E0018,P0023,co-founder
+E0018,P0032,co-founder
+E0019,P0023,major landowning khan
+E0019,P0024,participant in resistance
+E0020,P0035,victim
+E0020,P0023,ordering authority identified by the book
+E0020,P0024,custodian before killing
+E0020,P0036,advocated clemency
+E0021,P0004,regimental commander
+E0021,P0006,regimental commander
+E0021,P0023,Qajar commander
+E0022,P0004,commander whose conduct was disputed
+E0022,P0023,later joined government forces
+E0023,P0040,regent ordering closure
+E0024,P0023,pro-Russian intermediary and governor
+E0025,P0004,arrested former war minister
+E0026,P0039,Hamadan representative

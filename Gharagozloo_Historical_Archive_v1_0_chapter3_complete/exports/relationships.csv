@@ -1,0 +1,27 @@
+﻿relationship_id,person1_id,relationship_type,person2_id,notes,verification_status
+R0001,P0001,parent_of,P0002,,confirmed
+R0002,P0002,parent_of,P0003,,confirmed
+R0003,P0003,parent_of,P0004,,confirmed
+R0004,P0004,parent_of,P0005,,confirmed
+R0005,P0004,parent_of,P0006,,confirmed
+R0006,P0005,parent_of,P0007,Based on user-verified tree; exact published diagram reading still requires image-level confirmation.,provisional
+R0007,P0005,parent_of,P0008,Based on user-verified tree; exact published diagram reading still requires image-level confirmation.,provisional
+R0008,P0007,sibling_of,P0008,,provisional
+R0009,P0008,parent_of,P0009,,confirmed
+R0010,P0009,parent_of,P0010,,confirmed
+R0011,P0011,parent_of,P0001,User-supplied ancestral chain; not yet confirmed from S0001.,unverified
+R0012,P0004,parent_of,P0012,S0001 explicitly identifies Hossein Qoli Khan as a son of Abdollah Khan.,confirmed
+R0013,P0011,parent_of,P0013,S0001 names Nabi Khan among Mohammad Hossein Khan’s five sons.,confirmed
+R0014,P0013,parent_of,P0014,S0001 identifies Mahmoud Khan as son of Nabi Khan.,confirmed
+R0015,P0018,parent_of,P0019,Printed page 135 identifies Ali Khan as Rustam Khan’s son.,confirmed
+R0016,P0019,parent_of,P0022,Printed page 137 identifies Mohammad Hossein Khan as Ali Khan’s son.,confirmed
+R0017,P0023,parent_of,P0024,Printed page 139 identifies Gholamreza Khan as Zeyn al-Abedin Khan’s son.,confirmed
+R0018,P0011,parent_of,P0028,Book identifies Abdollah Khan Sarem al-Saltaneh as a son of Mohammad Hossein Khan.,confirmed
+R0019,P0028,parent_of,P0029,Negar Khanom was his daughter.,confirmed
+R0020,P0014,parent_of,P0030,Ahmad Khan Sartip was a son of Mahmoud Khan Naser al-Molk.,confirmed
+R0021,P0030,spouse_of,P0029,Marriage produced Mehdi Khan and Abd al-Ali Khan.,confirmed
+R0022,P0013,parent_of,P0031,Amanollah Khan was a son of Nabi Khan.,confirmed
+R0023,P0031,parent_of,P0032,,confirmed
+R0024,P0031,parent_of,P0033,,confirmed
+R0025,P0031,parent_of,P0034,,confirmed
+R0026,P0024,spouse_of,P0036,Qamar al-Saltaneh was wife of Gholamreza Khan Ehtesham al-Dowleh.,confirmed
