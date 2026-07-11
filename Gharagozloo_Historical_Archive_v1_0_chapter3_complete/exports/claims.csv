@@ -102,3 +102,10 @@ C0100,person,P0059,held_office,Minister of War,confirmed,active,"Naser al-Molk c
 C0101,person,P0060,held_office,Minister of Education and Public Works,confirmed,active,"Naser al-Molk cabinet, printed page 179"
 C0102,person,P0061,held_office,Minister of Commerce,confirmed,active,"Naser al-Molk cabinet, printed page 179"
 C0103,person,P0040,held_office,Prime Minister and Minister of Finance,confirmed,active,"Naser al-Molk cabinet, printed page 179"
+C0104,source,S0001,author_concludes,The initial hypothesis limiting Gharagozloo presence in Iran to the Mongol period was rejected; the author places their arrival in the late fourth or early fifth AH century.,confirmed,active,"This records the author’s conclusion, not independent proof of the underlying chronology."
+C0105,source,S0001,author_concludes,"The Gharagozloos were Turkic-speaking and belonged under the Bigdili grouping, described as one of the twenty-four major Oghuz tribes.",confirmed,active,Authorial conclusion.
+C0106,source,S0001,author_concludes,"After the Mongol invasion, the Gharagozloos moved west toward Syria, joined other Turkic groups, and became associated with the Shamlu confederation.",confirmed,active,Authorial conclusion.
+C0107,source,S0001,author_concludes,Timur moved them eastward; they later settled again on the Iranian plateau and entered the Safavid Qizilbash confederation.,confirmed,active,Authorial conclusion.
+C0108,source,S0001,author_concludes,"Under Shah Abbas and in the late Safavid period, the Gharagozloos regained prominence and their presence around Hamadan became clear.",confirmed,active,Authorial conclusion.
+C0109,source,S0001,author_concludes,"Under the Qajars they gained exceptional trust, culminating in Naser al-Molk Gharagozloo’s selection as regent after the death of Azod al-Molk.",confirmed,active,Authorial conclusion.
+C0110,source,S0001,author_concludes,The tribe provided extensive military service across Iran but was later marginalized as the Qajar order declined.,confirmed,active,Authorial conclusion.

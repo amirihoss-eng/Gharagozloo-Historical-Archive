@@ -6,8 +6,12 @@ preferred_transliteration,Gharagozloo
 primary_source_id,S0001
 sync_model,append-only change log + stable IDs + re-runnable imports
 chapter3_status,complete
-database_version,1.1
+database_version,1.2
 chapter4_status,complete
 chapter4_pages,167-186
-last_migration,0006
-updated_at,2026-07-11T17:41:52.802197+00:00
+back_matter_status,complete
+back_matter_pages,187-213
+bibliography_catalog_count,129
+documentary_artifact_count,15
+last_migration,0007
+updated_at,2026-07-11T18:53:55.582031+00:00

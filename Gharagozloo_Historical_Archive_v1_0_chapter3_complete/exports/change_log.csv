@@ -20,3 +20,5 @@
 19,2026-07-11T06:03:06.747375+00:00,migration,0005,apply,Completed mining of Chapter 3 through printed page 166; Chapter 4 begins next.
 20,2026-07-11T17:02:02.094121+00:00,chapter,4,merge,Merged completed Chapter 4 mining package into chapter 3 master archive.
 21,2026-07-11T17:41:52.802197+00:00,migration,0006,apply,Applied 0006_complete_chapter4_pages_167_186.sql
+22,2026-07-11 18:53:55,migration,0007,apply,"Mine conclusion, bibliography, and documentary appendix pages 187-213."
+23,2026-07-11T18:53:55.582031+00:00,migration,0007,apply,Applied 0007_complete_back_matter_pages_187_213.sql
