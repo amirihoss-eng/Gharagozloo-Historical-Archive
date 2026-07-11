@@ -1,3 +1,4 @@
 ﻿migration_id,filename,sha256,applied_at,description
 0001,0001_chapter3_herat_bushehr.sql,3e1e66cde6fb878deb577af2c4a4116a9bc984c81d30565c081f1bf0b470da49,2026-07-11T01:52:40.066920+00:00,Chapter 3 Herat and Bushehr extraction
 0002,0002_reliable_migration_pipeline.sql,6eca3ee502353252c43870e160cd8350cf7d23d84ee626516ef99e5876a98606,2026-07-11T03:30:23.473286+00:00,Reliable migration pipeline infrastructure
+0003,0003_chapter3_pages_135_140.sql,be7206d315687b49887c64bd7eeae0a54458d866f58e3a9748aa58dddf841706,2026-07-11T03:59:46.139916+00:00,Chapter 3 printed pages 135-140

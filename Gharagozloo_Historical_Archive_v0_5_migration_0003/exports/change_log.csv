@@ -15,3 +15,4 @@
 14,2026-07-11T01:52:40.066920+00:00,citation,X0008-X0015,insert,"Added eight S0001 citations from printed pages 60, 119-121, and 128."
 15,2026-07-11T01:52:40.066920+00:00,database,archive,release,Prepared database v0.3 with Migration 0001.
 16,2026-07-11T03:30:23.473286+00:00,migration,0002,apply,"Added schema migration ledger, validation, backup, application, and CSV export pipeline."
+17,2026-07-11T03:59:46.139916+00:00,migration,0003,apply,"Mined Chapter 3 printed pages 135-140 and added southern campaigns, Laristan, Kerman, Kermanshah, and Hamadan records."
