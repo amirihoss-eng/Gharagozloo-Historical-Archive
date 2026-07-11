@@ -1,0 +1,6 @@
+﻿place_id,preferred_name_en,preferred_name_fa,place_type,parent_place_id,notes
+L0001,Hamadan,همدان,province/city,,
+L0002,Kabudarahang,کبودرآهنگ,county/town,L0001,Important property center of the Amir Nezam Letgahi family.
+L0003,Letgah,لتگاه,village,L0001,Primary center of the Amir Nezam Letgahi family; part of Lalejin district.
+L0004,Lalejin,لالجین,district/town,L0001,
+L0005,Khuzestan,خوزستان,province,,

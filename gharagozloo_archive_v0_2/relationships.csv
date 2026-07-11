@@ -1,0 +1,13 @@
+﻿relationship_id,person1_id,relationship_type,person2_id,notes,verification_status
+R0001,P0001,parent_of,P0002,,confirmed
+R0002,P0002,parent_of,P0003,,confirmed
+R0003,P0003,parent_of,P0004,,confirmed
+R0004,P0004,parent_of,P0005,,confirmed
+R0005,P0004,parent_of,P0006,,confirmed
+R0006,P0005,parent_of,P0007,Based on user-verified tree; exact published diagram reading still requires image-level confirmation.,provisional
+R0007,P0005,parent_of,P0008,Based on user-verified tree; exact published diagram reading still requires image-level confirmation.,provisional
+R0008,P0007,sibling_of,P0008,,provisional
+R0009,P0008,parent_of,P0009,,confirmed
+R0010,P0009,parent_of,P0010,,confirmed
+R0011,P0011,parent_of,P0001,User-supplied ancestral chain; not yet confirmed from S0001.,unverified
+R0012,P0004,parent_of,P0012,S0001 explicitly identifies Hossein Qoli Khan as a son of Abdollah Khan.,confirmed

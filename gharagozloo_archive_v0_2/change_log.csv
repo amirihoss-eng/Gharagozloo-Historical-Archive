@@ -1,0 +1,10 @@
+﻿change_id,changed_at,entity_type,entity_id,action,summary
+1,2026-07-10T21:43:36.161953+00:00,database,archive,create,Created archive schema version 1.
+2,2026-07-10T21:43:36.161953+00:00,source,S0001,insert,Registered the primary published source.
+3,2026-07-10T21:43:36.161953+00:00,person,P0001-P0011,seed,Inserted the first 11 core lineage people.
+4,2026-07-10T21:43:36.161953+00:00,claim,C0001-C0009,seed,Inserted first evidence-backed and user-verified claims.
+5,2026-07-10T23:42:26.268985+00:00,person,P0012,insert,Added Hossein Qoli Khan.
+6,2026-07-10T23:42:26.268985+00:00,relationship,R0012,insert,Added confirmed father-son link.
+7,2026-07-10T23:42:26.268985+00:00,event,E0001,insert,Added Khuzestan appointment and title grants.
+8,2026-07-10T23:42:26.268985+00:00,claim,C0010-C0015,insert,Added six S0001 claims.
+9,2026-07-10T23:42:26.268985+00:00,database,archive,release,Prepared v0.2.

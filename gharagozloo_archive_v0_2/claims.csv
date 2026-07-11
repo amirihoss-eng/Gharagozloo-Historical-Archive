@@ -1,0 +1,16 @@
+﻿claim_id,subject_type,subject_id,predicate,object_text,confidence,status,notes
+C0001,person,P0004,lineage,Son of Mostafa Qoli Khan E'temad al-Saltaneh; grandson of Mohammad Baqer Khan; great-grandson of Haji Mohammad Khan Jeyhunabadi.,confirmed,active,Published lineage statement.
+C0002,person,P0005,parentage,Mohtaj Ali Khan was a son of Abdollah Khan.,confirmed,active,
+C0003,person,P0006,parentage,Mansur Ali Khan was a son of Abdollah Khan.,confirmed,active,
+C0004,person,P0005,titles,Held the titles Ejlal al-Mamalek and Amir Arfa'.,confirmed,active,
+C0005,person,P0006,titles,Held the title Sardar Akram.,confirmed,active,
+C0006,place,L0003,family_center,Letgah was the principal center of the Amir Nezam Letgahi family.,confirmed,active,
+C0007,place,L0002,property_association,Kabudarahang was one of the family's important landed areas.,confirmed,active,
+C0008,person,P0008,parentage,Gholamhossein Khan descends from Mohtaj Ali Khan and is not a child of Gholam Ali.,confirmed,active,Confirmed by user correction.
+C0009,person,P0006,descendants,The book's figure shows no descendants for Mansur Ali Khan.,confirmed,active,Visual reading confirmed by user.
+C0010,person,P0012,parentage,Hossein Qoli Khan was a son of Abdollah Khan.,confirmed,active,
+C0011,person,P0012,titles,He was described as Ejlal al-Dowleh and Amir Tuman.,confirmed,active,
+C0012,person,P0012,title_grant,He received Sa'ed al-Saltaneh at his father's request.,confirmed,active,
+C0013,person,P0005,title_grant,Mohtaj Ali Khan received Ejlal al-Mamalek at his father's request.,confirmed,active,
+C0014,person,P0004,office,Abdollah Khan was appointed governor of Khuzestan and titled Sardar Akram.,confirmed,active,
+C0015,person,P0005,source_coverage,S0001 explicitly indexes Mohtaj Ali Khan on printed pages 61 and 152.,confirmed,active,Source-coverage finding only.

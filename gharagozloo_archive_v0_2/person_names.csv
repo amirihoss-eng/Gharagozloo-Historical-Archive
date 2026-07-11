@@ -1,0 +1,13 @@
+﻿person_name_id,person_id,name_text,language,name_type,is_preferred
+1,P0001,Haji Mohammad Khan Jeyhunabadi,en,preferred,1
+2,P0001,حاج محمدخان جیحون‌آبادی,fa,variant,0
+3,P0003,Mostafa Qoli Khan E'temad al-Saltaneh,en,title-form,0
+4,P0004,Abdollah Khan Sa'ed al-Saltaneh,en,title-form,0
+5,P0004,Haji Amir Nezam,en,title-form,0
+6,P0005,Mohtaj Ali Khan Ejlal al-Mamalek Amir Arfa',en,title-form,0
+7,P0006,Mansur Ali Khan Sardar Akram,en,title-form,0
+8,P0008,Gholam Hossein Khan Amiri Gharagozloo,en,variant,0
+9,P0009,Ali Reza Amiri Gharagozloo,en,variant,0
+10,P0012,Hossein Qoli Khan Amir Tuman,en,title-form,0
+11,P0012,Hossein Qoli Khan Ejlal al-Dowleh,en,title-form,0
+12,P0012,حسینقلی خان اجلال‌الدوله امیرتومان,fa,title-form,0
