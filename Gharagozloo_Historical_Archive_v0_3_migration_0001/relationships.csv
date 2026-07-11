@@ -11,3 +11,5 @@ R0009,P0008,parent_of,P0009,,confirmed
 R0010,P0009,parent_of,P0010,,confirmed
 R0011,P0011,parent_of,P0001,User-supplied ancestral chain; not yet confirmed from S0001.,unverified
 R0012,P0004,parent_of,P0012,S0001 explicitly identifies Hossein Qoli Khan as a son of Abdollah Khan.,confirmed
+R0013,P0011,parent_of,P0013,S0001 names Nabi Khan among Mohammad Hossein Khan’s five sons.,confirmed
+R0014,P0013,parent_of,P0014,S0001 identifies Mahmoud Khan as son of Nabi Khan.,confirmed

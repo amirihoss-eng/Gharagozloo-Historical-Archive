@@ -14,3 +14,16 @@ C0012,person,P0012,title_grant,He received Sa'ed al-Saltaneh at his father's req
 C0013,person,P0005,title_grant,Mohtaj Ali Khan received Ejlal al-Mamalek at his father's request.,confirmed,active,
 C0014,person,P0004,office,Abdollah Khan was appointed governor of Khuzestan and titled Sardar Akram.,confirmed,active,
 C0015,person,P0005,source_coverage,S0001 explicitly indexes Mohtaj Ali Khan on printed pages 61 and 152.,confirmed,active,Source-coverage finding only.
+C0016,person,P0013,parentage,Nabi Khan was a son of Mohammad Hossein Khan Gharagozloo.,confirmed,active,
+C0017,person,P0013,military_role,Nabi Khan commanded thousands of Gharagozloo troops in Mohammad Shah’s Herat campaign.,confirmed,active,
+C0018,person,P0015,military_role,"Abdollah Khan, holding the rank of yavar, supported Nabi Khan’s forces in the Herat campaign.",confirmed,active,Kept separate from P0004 pending identity resolution.
+C0019,person,P0015,promotion,"After being wounded at Herat, Abdollah Khan received the rank of sarhang.",confirmed,active,
+C0020,person,P0016,combat_action,Shir Ali Khan repeatedly climbed the fortress wall and attempted to plant the victory flag.,confirmed,active,
+C0021,person,P0016,reward,Shir Ali Khan received a robe of honor and decoration for bravery.,confirmed,active,
+C0022,person,P0017,wounding,"Rashid Khan, a colonel of the Mokhberan regiment, was wounded in the leg during the Herat fighting.",confirmed,active,
+C0023,person,P0013,death,Nabi Khan died shortly after being removed from the battlefield with severe wounds.,confirmed,active,
+C0024,person,P0013,burial,Nabi Khan was transferred with other Gharagozloo dead for burial in Mashhad by order of Mohammad Shah.,confirmed,active,
+C0025,person,P0014,parentage,Mahmoud Khan was the son of Nabi Khan and a descendant of Mohammad Hossein Khan Ashiqloo.,confirmed,active,
+C0026,event,E0003,force_strength,The Gharagozloo guard defending Bushehr numbered fifty soldiers.,confirmed,active,
+C0027,event,E0003,outcome,British forces dispersed the small Gharagozloo guard and occupied Bushehr to pressure Iran over Herat.,confirmed,active,
+C0028,event,E0002,unit_action,Gharagozloo troops helped assault the Herat fortifications and open the fortress gates.,confirmed,active,

@@ -1,0 +1,4 @@
+﻿event_id,event_type,title,date_text,place_id,description,verification_status
+E0001,appointment_and_title_grant,Abdollah Khan appointed governor of Khuzestan; titles granted to sons,before 1316 AH,L0005,The shah appointed Abdollah Khan governor of Khuzestan and titled him Sardar Akram. At his request Hossein Qoli Khan received Sa'ed al-Saltaneh and Mohtaj Ali Khan received Ejlal al-Mamalek.,confirmed
+E0002,military_campaign,Gharagozloo participation in Mohammad Shah’s Herat campaign,1255 AH,L0006,Thousands of Gharagozloo troops served under Nabi Khan. Abdollah Khan supported his force; Gharagozloo troops helped assault the fortifications. Nabi Khan was killed after severe wounds.,confirmed
+E0003,military_attack,British occupation of Bushehr and dispersal of the Gharagozloo guard,1255 AH,L0007,British forces attacked Bushehr to pressure Iran to withdraw from Herat. The fifty-man Gharagozloo guard was driven off because of its small size.,confirmed

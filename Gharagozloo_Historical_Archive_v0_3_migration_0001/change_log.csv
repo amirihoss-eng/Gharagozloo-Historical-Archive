@@ -8,3 +8,9 @@
 7,2026-07-10T23:42:26.268985+00:00,event,E0001,insert,Added Khuzestan appointment and title grants.
 8,2026-07-10T23:42:26.268985+00:00,claim,C0010-C0015,insert,Added six S0001 claims.
 9,2026-07-10T23:42:26.268985+00:00,database,archive,release,Prepared v0.2.
+10,2026-07-11T01:52:40.066920+00:00,migration,0001,apply,Chapter 3 Herat and Bushehr extraction applied to v0.2.
+11,2026-07-11T01:52:40.066920+00:00,person,P0013-P0017,insert,Added five Gharagozloo persons from the Herat campaign account.
+12,2026-07-11T01:52:40.066920+00:00,event,E0002-E0003,insert,Added Herat campaign and British occupation of Bushehr events.
+13,2026-07-11T01:52:40.066920+00:00,claim,C0016-C0028,insert,Added thirteen evidence-linked Chapter 3 claims.
+14,2026-07-11T01:52:40.066920+00:00,citation,X0008-X0015,insert,"Added eight S0001 citations from printed pages 60, 119-121, and 128."
+15,2026-07-11T01:52:40.066920+00:00,database,archive,release,Prepared database v0.3 with Migration 0001.
