@@ -16,3 +16,12 @@ R0014,P0013,parent_of,P0014,S0001 identifies Mahmoud Khan as son of Nabi Khan.,c
 R0015,P0018,parent_of,P0019,Printed page 135 identifies Ali Khan as Rustam Khan’s son.,confirmed
 R0016,P0019,parent_of,P0022,Printed page 137 identifies Mohammad Hossein Khan as Ali Khan’s son.,confirmed
 R0017,P0023,parent_of,P0024,Printed page 139 identifies Gholamreza Khan as Zeyn al-Abedin Khan’s son.,confirmed
+R0018,P0011,parent_of,P0028,Book identifies Abdollah Khan Sarem al-Saltaneh as a son of Mohammad Hossein Khan.,confirmed
+R0019,P0028,parent_of,P0029,Negar Khanom was his daughter.,confirmed
+R0020,P0014,parent_of,P0030,Ahmad Khan Sartip was a son of Mahmoud Khan Naser al-Molk.,confirmed
+R0021,P0030,spouse_of,P0029,Marriage produced Mehdi Khan and Abd al-Ali Khan.,confirmed
+R0022,P0013,parent_of,P0031,Amanollah Khan was a son of Nabi Khan.,confirmed
+R0023,P0031,parent_of,P0032,,confirmed
+R0024,P0031,parent_of,P0033,,confirmed
+R0025,P0031,parent_of,P0034,,confirmed
+R0026,P0024,spouse_of,P0036,Qamar al-Saltaneh was wife of Gholamreza Khan Ehtesham al-Dowleh.,confirmed

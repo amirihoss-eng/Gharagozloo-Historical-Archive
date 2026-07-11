@@ -17,3 +17,4 @@
 16,2026-07-11T03:30:23.473286+00:00,migration,0002,apply,"Added schema migration ledger, validation, backup, application, and CSV export pipeline."
 17,2026-07-11T03:59:46.139916+00:00,migration,0003,apply,"Mined Chapter 3 printed pages 135-140 and added southern campaigns, Laristan, Kerman, Kermanshah, and Hamadan records."
 18,2026-07-11T05:49:59.145248+00:00,migration,0004,apply,"Mined Chapter 3 printed pages 141-145: Hosam al-Molk, Aqa Jan case, Shiraz mission, and Mahmoud Khan administrative/diplomatic career."
+19,2026-07-11T06:03:06.747375+00:00,migration,0005,apply,Completed mining of Chapter 3 through printed page 166; Chapter 4 begins next.

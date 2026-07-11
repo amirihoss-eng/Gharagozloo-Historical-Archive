@@ -1,0 +1,30 @@
+{
+  "database": "archive.sqlite",
+  "database_version": "1.0",
+  "last_migration": "0005",
+  "chapter_3_status": "complete",
+  "chapter_3_end": "printed page 166",
+  "integrity_check": "ok",
+  "foreign_key_violations": 0,
+  "migration_0005_added": {
+    "persons": 13,
+    "titles": 8,
+    "places": 7,
+    "events": 13,
+    "relationships": 9,
+    "claims": 24,
+    "citations": 7,
+    "research_questions": 1
+  },
+  "archive_totals": {
+    "persons": 40,
+    "titles": 23,
+    "places": 21,
+    "events": 26,
+    "relationships": 26,
+    "claims": 77,
+    "citations": 34,
+    "research_questions": 7
+  },
+  "generated_at": "2026-07-11T06:03:06.747375+00:00"
+}
