@@ -5,7 +5,9 @@ created_at,2026-07-10T23:42:26.268985+00:00
 preferred_transliteration,Gharagozloo
 primary_source_id,S0001
 sync_model,append-only change log + stable IDs + re-runnable imports
-database_version,1.0
-last_migration,0005
 chapter3_status,complete
-updated_at,2026-07-11T06:03:06.747375+00:00
+database_version,1.1
+chapter4_status,complete
+chapter4_pages,167-186
+last_migration,0006
+updated_at,2026-07-11T17:41:52.802197+00:00

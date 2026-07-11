@@ -25,3 +25,39 @@ E0023,parliamentary_action,Naser al-Molk dissolves the Second Majles,1330 AH,,"A
 E0024,world_war,Russian occupation of Hamadan and appointment of Amir Afkham,1334 AH,L0001,"Russian forces occupied Hamadan with assistance from Amir Afkham, who was installed as governor.",confirmed
 E0025,coup_aftermath,Arrest and release of Amir Nezam after the 1921 coup,1299 SH,,"Amir Nezam was arrested by Seyyed Zia’s government and reportedly paid 25,000 tomans to secure release.",confirmed
 E0026,constitutional_assembly,Gharagozloo participation in the 1304 SH Constituent Assembly,1304 SH,,Zia al-Molk Farmand represented Hamadan in the assembly that confirmed Reza Shah.,confirmed
+E0027,chapter4_event,Birth of Naser al-Molk,1272-11-14 AH,L0022,Born to Ahmad Khan Sartip; grandson of Mirza Mahmud Khan,confirmed
+E0028,chapter4_event,Oxford education,1295 AH onward,L0023,Studied political science and mastered English and French,confirmed
+E0029,chapter4_event,First audience with Naser al-Din Shah,"14 Jumada I, year not explicit",L0022,Introduced through Amin al-Dowleh and grandfather,confirmed
+E0030,chapter4_event,Granted title Moshir-e Hozur,1302 AH,L0022,Granted at grandfather's request,confirmed
+E0031,chapter4_event,Appointed head of Khorasan forces,1303 AH,,Military-administrative appointment,confirmed
+E0032,chapter4_event,Appointed royal aide-de-camp,1304 AH,L0022,Aide-de-camp to Naser al-Din Shah,confirmed
+E0033,chapter4_event,Inherited Naser al-Molk title and Hamadan governorship,8 Rabi II 1305 AH,L0001,Succeeded grandfather; received royal decoration and portrait,confirmed
+E0034,chapter4_event,Third royal European journey,1306-1307 AH,L0024,Accompanied Naser al-Din Shah and translated foreign material,confirmed
+E0035,chapter4_event,Ottoman and Paris financial mission,1312 AH,L0025,Mission related to financial consequences of the Tobacco Concession,confirmed
+E0036,chapter4_event,Extraordinary embassy announcing Mozaffar al-Din Shah,Qajar succession,,Sultan Abdolhamid II gave ceremonial sword for the shah,confirmed
+E0037,chapter4_event,Appointed head of royal arsenal,1314 AH,L0022,Delegated daily management to Hossein-Qoli Khan Zia al-Molk,confirmed
+E0038,chapter4_event,Appointed Minister of Finance,1314 AH,L0022,Served in Amin al-Dowleh cabinet,confirmed
+E0039,chapter4_event,Removed after Amin al-Dowleh's fall,16 Safar 1316 AH,L0022,Lost finance portfolio,confirmed
+E0040,chapter4_event,Governor of Kurdistan,late Qajar period,L0016,Governorship enabled closer supervision of Hamadan estates,confirmed
+E0041,chapter4_event,Letter opposing immediate constitutionalism,pre-1906,L0027,Argued Iran lacked educated personnel for parliament and full equality,confirmed
+E0042,chapter4_event,Hamadan grain/bread crisis,1324 AH era,L0001,Large landlords accused of withholding grain; Naser al-Molk among named khans,confirmed
+E0043,chapter4_event,Nominated and appointed prime minister,1325 AH,L0022,Chosen by First Majles after fall of Mirza Ahmad Khan Moshir al-Saltaneh,confirmed
+E0044,chapter4_event,Presented 'family cabinet',1325 AH,L0022,Cabinet members had extensive kinship links,confirmed
+E0045,chapter4_event,Royal oath to Constitution,1325 AH,L0022,Naser al-Molk arranged attendance and oath of shah and princes,confirmed
+E0046,chapter4_event,First parliamentary national budget reforms,1325 AH,L0022,"Reduced royal, princely, and court budgets",confirmed
+E0047,chapter4_event,Resignation submitted during crisis,8 Dhu al-Qadah 1325 AH,L0022,Shah initially refused resignation,confirmed
+E0048,chapter4_event,Arrest and threatened execution,1325 AH,L0022,Mohammad Ali Shah ordered detention; British intervention saved him,confirmed
+E0049,chapter4_event,Departure to Europe,1325 AH,L0024,Exile/departure required by shah,confirmed
+E0050,chapter4_event,Refused later request to form cabinet,1327 AH,L0024,Mirza Javad Khan Sa'd al-Dowleh took charge instead,confirmed
+E0051,chapter4_event,Foreign minister in two Sepahdar cabinets,1327 AH,L0022,Served in first and second cabinets of Mohammad Vali Khan Sepahdar Tonekaboni,confirmed
+E0052,chapter4_event,Election as regent,18 Ramadan 1328 AH,L0022,Won 40 of 71 votes; rival was Mostowfi al-Mamalek,confirmed
+E0053,chapter4_event,Return to Tehran as regent,8 Safar 1329 AH,L0022,Returned via Russian territory,confirmed
+E0054,chapter4_event,Suppression of Mohammad Ali Shah restoration attempt,1329 AH period,L0027,"Regency faced rebellion of ex-shah, Salar al-Dowleh, and Shoa al-Saltaneh",confirmed
+E0055,chapter4_event,Russian ultimatum and Shuster crisis,7 Dhu al-Hijjah 1329 AH,L0027,Russia demanded Shuster's dismissal,confirmed
+E0056,chapter4_event,Closure of Second Majles,1329 AH,L0028,Yeprem Khan closed parliament on Naser al-Molk's order,confirmed
+E0057,chapter4_event,Acceptance of ultimatum and dismissal of Shuster,1329 AH,L0027,Followed closure of parliament,confirmed
+E0058,chapter4_event,Long stay abroad while regent,Rajab 1330 AH onward,L0029,Continued receiving regency salary and estate income,confirmed
+E0059,chapter4_event,Enthronement of Ahmad Shah,27 Sha'ban 1332 AH / 1914 CE,L0022,Used birth date recorded on Quran to end minority and regency,confirmed
+E0060,chapter4_event,Return after fall of Qajar dynasty,Pahlavi era,L0027,Returned to Iran after Qajar deposition,confirmed
+E0061,chapter4_event,Death of Naser al-Molk,1306 SH / 1927 CE,L0022,Died in Tehran,confirmed
+E0062,chapter4_event,Divorce of Hossein Ali and Iran Khanom,Pahlavi era,L0027,"Hossein Ali paid 10,000 tomans to divorce Teymurtash's daughter",confirmed

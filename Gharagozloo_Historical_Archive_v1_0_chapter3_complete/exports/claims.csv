@@ -76,3 +76,29 @@ C0074,person,P0004,war_ministry,Amir Nezam Gharagozloo served as minister of war
 C0075,person,P0004,release_payment,"After the 1921 coup, Amir Nezam reportedly paid 25,000 tomans to obtain release from detention.",confirmed,active,
 C0076,person,P0038,diplomatic_service,Mohammad Ebrahim Khan served as third secretary of the Iranian legation in London from 1299 to 1303 SH.,confirmed,active,
 C0077,person,P0039,assembly_service,Zia al-Molk Farmand represented Hamadan in the Constituent Assembly of 1304 SH.,confirmed,active,
+C0078,person,P0040,fact,Naser al-Molk was born in Tehran on 14 Dhu al-Qadah 1272 AH.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_001
+C0079,person,P0040,fact,He studied political science at Oxford and learned English and French.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_002
+C0080,person,P0040,fact,"He translated foreign newspapers, speeches, and royal remarks for Naser al-Din Shah.",confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_003
+C0081,person,P0040,fact,"His known translations included a law booklet, Fraser's history of Nader Shah and Indian rulers, The Merchant of Venice, and Othello.",probable,active,Imported from Chapter 4 mining package; original ID C_CH4_004
+C0082,person,P0040,fact,He inherited the title Naser al-Molk and the Hamadan governorship from his grandfather.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_005
+C0083,person,P0040,fact,He served as extraordinary ambassador to Ottoman and British courts after Mozaffar al-Din Shah's accession.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_006
+C0084,person,P0040,fact,"His principal landed estates included Bahar, Salehabad, Lalejin, Mehraban, Mazdaqineh, Hajilu, and other areas around Hamadan, plus Gilan properties.",confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_007
+C0085,person,P0040,author_interpretation,The author interprets his anti-constitutional position partly as defense of aristocratic and landed interests.,probable,active,Imported from Chapter 4 mining package; original ID C_CH4_008
+C0086,person,P0040,political_statement,Naser al-Molk argued that Iran lacked enough educated people to operate a representative system.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_009
+C0087,person,P0040,fact,He became prime minister through Majles nomination rather than the shah's initiative.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_010
+C0088,person,P0040,fact,His cabinet helped establish a parliamentary budget and reduce court expenditures.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_011
+C0089,person,P0040,reported_event,British diplomatic intervention prevented Mohammad Ali Shah from killing him.,probable,active,Imported from Chapter 4 mining package; original ID C_CH4_012
+C0090,person,P0040,fact_with_ocr_uncertainty,"He held a British state decoration, transcribed in OCR as KEG.",probable,active,Imported from Chapter 4 mining package; original ID C_CH4_013
+C0091,person,P0040,fact,He was elected regent with 40 of 71 votes.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_014
+C0092,person,P0040,fact,He ordered the closure of the Second Majles during the Russian ultimatum crisis.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_015
+C0093,person,P0040,fact_and_author_critique,He left Iran for an extended period while retaining regency income and estate revenues.,probable,active,Imported from Chapter 4 mining package; original ID C_CH4_016
+C0094,person,P0040,fact,He enthroned Ahmad Shah on 27 Sha'ban 1332 AH / 1914 and ended his own regency.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_017
+C0095,person,P0040,fact,The chapter states that he had two sons and one daughter.,confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_018
+C0096,person,P0040,source_criticism,"Later negative descriptions of his sons derive from memoirists and should be stored as attributed opinions, not neutral fact.",confirmed,active,Imported from Chapter 4 mining package; original ID C_CH4_019
+C0097,person,P0056,held_office,Minister of Justice,confirmed,active,"Naser al-Molk cabinet, printed page 179"
+C0098,person,P0057,held_office,Minister of Foreign Affairs,confirmed,active,"Naser al-Molk cabinet, printed page 179"
+C0099,person,P0058,held_office,Minister of Interior,confirmed,active,"Naser al-Molk cabinet, printed page 179"
+C0100,person,P0059,held_office,Minister of War,confirmed,active,"Naser al-Molk cabinet, printed page 179"
+C0101,person,P0060,held_office,Minister of Education and Public Works,confirmed,active,"Naser al-Molk cabinet, printed page 179"
+C0102,person,P0061,held_office,Minister of Commerce,confirmed,active,"Naser al-Molk cabinet, printed page 179"
+C0103,person,P0040,held_office,Prime Minister and Minister of Finance,confirmed,active,"Naser al-Molk cabinet, printed page 179"

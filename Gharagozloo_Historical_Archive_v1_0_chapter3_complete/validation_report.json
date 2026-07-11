@@ -1,30 +1,26 @@
 {
+  "validated_at": "2026-07-11T17:42:17.094790+00:00",
   "database": "archive.sqlite",
-  "database_version": "1.0",
-  "last_migration": "0005",
-  "chapter_3_status": "complete",
-  "chapter_3_end": "printed page 166",
-  "integrity_check": "ok",
-  "foreign_key_violations": 0,
-  "migration_0005_added": {
-    "persons": 13,
-    "titles": 8,
-    "places": 7,
-    "events": 13,
-    "relationships": 9,
-    "claims": 24,
-    "citations": 7,
-    "research_questions": 1
+  "integrity": "ok",
+  "errors": [],
+  "warnings": [],
+  "row_counts": {
+    "change_log": 21,
+    "citations": 54,
+    "claim_citations": 111,
+    "claims": 103,
+    "event_persons": 100,
+    "events": 62,
+    "metadata": 12,
+    "person_names": 81,
+    "person_titles": 32,
+    "persons": 61,
+    "places": 29,
+    "relationships": 38,
+    "research_questions": 7,
+    "schema_migrations": 6,
+    "sources": 2,
+    "titles": 24
   },
-  "archive_totals": {
-    "persons": 40,
-    "titles": 23,
-    "places": 21,
-    "events": 26,
-    "relationships": 26,
-    "claims": 77,
-    "citations": 34,
-    "research_questions": 7
-  },
-  "generated_at": "2026-07-11T06:03:06.747375+00:00"
+  "status": "PASS"
 }

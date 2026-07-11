@@ -25,3 +25,15 @@ R0023,P0031,parent_of,P0032,,confirmed
 R0024,P0031,parent_of,P0033,,confirmed
 R0025,P0031,parent_of,P0034,,confirmed
 R0026,P0024,spouse_of,P0036,Qamar al-Saltaneh was wife of Gholamreza Khan Ehtesham al-Dowleh.,confirmed
+R0027,P0030,parent_of,P0040,Chapter 4 pp. 167,confirmed
+R0028,P0014,parent_of,P0030,Chapter 4 pp. 167,confirmed
+R0029,P0040,grandchild_of,P0014,Chapter 4 pp. 167,confirmed
+R0030,P0040,parent_of,P0041,Chapter 4 pp. 186,confirmed
+R0031,P0040,parent_of,P0042,Chapter 4 pp. 186,confirmed
+R0032,P0040,parent_of,P0043,Chapter 4 pp. 186,confirmed
+R0033,P0044,father_in_law_of,P0040,Chapter 4 pp. 175,confirmed
+R0034,P0032,relative_of,P0040,Chapter 4 pp. 170,confirmed
+R0035,P0041,spouse_of,P0055,Chapter 4 pp. 186,confirmed
+R0036,P0054,parent_of,P0055,Chapter 4 pp. 186,confirmed
+R0037,P0040,succeeded,P0014,Chapter 4 pp. 169,confirmed
+R0038,P0040,succeeded_as_regent,P0049,Chapter 4 pp. 182,confirmed
