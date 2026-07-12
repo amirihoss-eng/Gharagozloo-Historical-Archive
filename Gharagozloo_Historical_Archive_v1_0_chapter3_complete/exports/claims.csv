@@ -138,3 +138,15 @@ C0136,person,P0040,canonical_lineage,Naser al-Molk was son of Ahmad Khan Sartip 
 C0137,person,P0040,career_summary,"Naser al-Molk studied at Oxford, served as court translator and diplomat, became finance minister and prime minister, and later served as regent.",confirmed,active,Chapter 4 synthesis.
 C0138,person,P0040,political_interpretation,The author interprets Naser al-Molk as a conservative landed aristocrat who considered constitutional change premature.,probable,active,"Authorial interpretation, not a neutral self-description."
 C0139,person,P0040,child_identity_conflict,"The Chapter 2 identification of Mehdi Khan as Naser al-Molk's son conflicts with Chapter 4's statement that his children were Hossein-Ali, Mohsen, and one daughter.",disputed,active,Preserved as an unresolved identity conflict.
+C0140,person,P0018,succession,Rostam Khan was the eldest son and contested successor of the early Mohammad-Hossein Khan.,confirmed,active,Text-derived.
+C0141,person,P0018,military_career,"Rostam Khan served in the Mahmudabad/Herat, Kerman, Bandar Abbas, and Anglo-Persian southern campaigns and commanded Mokhberan regiments.",confirmed,active,Archive synthesis from S0001 narrative.
+C0142,person,P0028,military_career,Abdollah Khan Sarem al-Saltaneh commanded Malayer and Tuyserkan regiments and participated in southern campaigns.,confirmed,active,Text-derived.
+C0143,person,P0013,dual_significance,Nabi Khan is both a senior Herat commander and the genealogical bridge to the Naser al-Molk house.,confirmed,active,Archive synthesis.
+C0144,person,P0062,limited_biography,"Fazlollah Khan is securely identified as a son of Mohammad-Hossein Khan and colonel of the Sixth Regiment, but S0001 gives little additional biography.",confirmed,active,Whole-book negative finding.
+C0145,person,P0020,military_rank,Ali-Naqi Khan held the rank of Sartip and is associated with Dargazin/Kerman-Laristan operations.,confirmed,active,Text-derived.
+C0146,person,P0019,royal_marriage_and_diplomacy,"Ali Khan Nosrat al-Molk married Zobeydeh Khanom, daughter of Fath-Ali Shah, and carried out the Gobineau escort mission.",confirmed,active,Text-derived.
+C0147,person,P0022,hereditary_command,Mohammad-Hossein Khan Hesam al-Molk transmitted the Shervin military-house succession from Ali Khan to Zeyn al-Abedin Khan.,confirmed,active,Family and regimental synthesis.
+C0148,person,P0023,life_dates,Zeyn al-Abedin Khan Amir Afkham was born in 1275 AH and died in 1346 AH.,confirmed,active,Chapter 2 family summary.
+C0149,person,P0023,political_and_estate_profile,"Amir Afkham was a major landowner, military patron, provincial governor, and royalist opponent of the Constitutional movement.",probable,active,Mix of narrative facts and author synthesis.
+C0150,person,P0024,title_variation,S0001 uses both Ehtesham al-Saltaneh and Ehtesham al-Dowleh for Gholamreza Khan.,confirmed,active,"Title variation preserved, not flattened."
+C0151,person,P0024,royal_marriage,"Gholamreza Khan married Qamar al-Saltaneh, daughter of Mozaffar al-Din Shah, in 1309 AH.",confirmed,active,Narrative and caption evidence.

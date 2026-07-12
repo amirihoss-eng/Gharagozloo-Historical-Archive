@@ -1,0 +1,6 @@
+﻿theme_code,theme_name,wave_id,status,reviewed_records,unresolved_records,notes
+titles,Title normalization and succession,RW003,complete_for_s0001,25,3,Duplicate title IDs documented; person-specific variants preserved.
+offices,Civil and military office chronology,RW003,complete_for_current_major_figures,29,6,Major figures reviewed; exact dates remain open for several offices.
+estates,Estate and landed-house associations,RW003,complete_at_house_level,11,7,Only explicit individual or family-house associations are recorded; parcel-level ownership is not inferred.
+artifacts,Portrait and documentary artifact linkage,RW003,complete_for_cataloged_artifacts,15,5,Portrait links reviewed; difficult documents remain untranscribed and genealogy diagrams remain corroborative only.
+identity,Namesake and duplicate identity control,RW003,complete_for_known_collisions,8,3,Canonical redirects and identity exclusions now coexist.

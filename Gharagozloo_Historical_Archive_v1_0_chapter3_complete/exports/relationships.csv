@@ -39,6 +39,9 @@ R0037,P0040,succeeded,P0014,Chapter 4 pp. 169,confirmed
 R0038,P0040,succeeded_as_regent,P0049,Chapter 4 pp. 182,confirmed
 R0039,P0040,father_of,P0064,"Chapter 2 calls a Mehdi Khan the son of Naser al-Molk in a regimental passage, but Chapter 4 separately states that Naser al-Molk had two sons, Hossein-Ali and Mohsen, and one daughter. Identity remains unresolved.",provisional
 R0040,P0064,father_of,P0065,Narrative text names Abdol-Ali Khan as Mehdi Khan's eldest son.,confirmed
-R0041,P0011,parent_of,P0074,Narrative text explicitly names Rostam Khan among Mohammad-Hossein Khan's five sons.,confirmed
+R0041,P0011,parent_of,P0074,Narrative text explicitly names Rostam Khan among Mohammad-Hossein Khan's five sons. Superseded by canonical relationship R0044.,superseded
 R0042,P0011,parent_of,P0062,Narrative text explicitly names Fazlollah Khan among Mohammad-Hossein Khan's five sons.,confirmed
-R0043,P0011,parent_of,P0075,Narrative text explicitly names Ali-Naqi Khan among Mohammad-Hossein Khan's five sons.,confirmed
+R0043,P0011,parent_of,P0075,Narrative text explicitly names Ali-Naqi Khan among Mohammad-Hossein Khan's five sons. Superseded by canonical relationship R0045.,superseded
+R0044,P0011,parent_of,P0018,Narrative text explicitly names Rostam Khan as the eldest son of the early Mohammad-Hossein Khan.,confirmed
+R0045,P0011,parent_of,P0020,Narrative text explicitly names Ali-Naqi Khan among the five sons of the early Mohammad-Hossein Khan.,confirmed
+R0046,P0022,parent_of,P0023,Chapter 2 family-line summary identifies Zeyn al-Abedin Khan as son and successor of Mohammad-Hossein Khan Hesam al-Molk.,confirmed

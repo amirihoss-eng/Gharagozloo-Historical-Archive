@@ -1,2 +1,4 @@
 ﻿wave_id,title,source_scope,status,completed_at,notes
 RW001,"Master Reconciliation Wave 1 — Founders, Amiri line, and Naser al-Molk",S0001 plus explicitly labeled family testimony,complete,2026-07-11T23:59:00Z,Seven central dossiers reconciled. Diagram-only genealogy remains supporting evidence only.
+RW002,Master Reconciliation Wave 2 — Ashiqloo first generation and Shervin line,S0001,complete,2026-07-12T06:30:00Z,Nine dossiers reconciled. Duplicate person records created in earlier migrations are retained but redirected to canonical IDs.
+RW003,"Thematic Reconciliation Wave 3 — titles, offices, estates, and artifacts",S0001,complete,2026-07-12T06:45:00Z,"Introduces title equivalence, title succession, thematic review status, and artifact/estate cautions."

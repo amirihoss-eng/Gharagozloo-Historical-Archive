@@ -1,0 +1,4 @@
+﻿conflict_id,entity_type,entity_id,conflict_topic,statement_a,statement_b,resolution_status,notes
+CF001,person,P0040,children,Chapter 2 regimental passage calls Mehdi Khan a son of Naser al-Molk.,Chapter 4 states that Naser al-Molk had sons Hossein-Ali and Mohsen and one daughter.,unresolved,Do not merge Mehdi Khan into the confirmed child list without further evidence.
+CF002,person,P0024,title form,Marriage-period narrative uses Ehtesham al-Saltaneh.,Later narrative and documentary caption use Ehtesham al-Dowleh.,partially_resolved,Both forms remain attached to P0024; chronology of formal title change remains open.
+CF003,artifact,A0003,portrait identity,"Caption identifies Hossein Khan Hesam al-Molk I, father of Amir Afkham.",Canonical narrative person is Mohammad-Hossein Khan Hesam al-Molk P0022.,unresolved,"Probable identity, but exact name form must be verified from a better scan or another source."

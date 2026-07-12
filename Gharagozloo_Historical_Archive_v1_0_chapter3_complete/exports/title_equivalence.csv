@@ -1,0 +1,4 @@
+﻿title_equivalence_id,title_id_a,title_id_b,equivalence_type,notes
+TE001,T0003,T0018,duplicate,Both records represent Sardar Akram / سردار اکرم.
+TE002,T0005,T0019,duplicate,Both records represent Ejlal al-Mamalek / اجلال‌الممالک.
+TE003,T0015,T0023,variant,Ehtesham al-Saltaneh and Ehtesham al-Dowleh are distinct title forms used for the same person P0024 in S0001; do not globally equate them for all people.

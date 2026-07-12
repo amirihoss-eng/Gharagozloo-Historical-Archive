@@ -12,3 +12,6 @@
 0011,0011_add_evidence_classification.sql,3245ced3ec5bbe051d32179ad12fc412b2ba17c23bdb3241fd2469c22b5c0382,2026-07-12T01:29:15.428623+00:00,Applied by tools/apply_migration.py
 0012,0012_complete_chapter1_historical_origins.sql,7cd1810d8f45a4e87b640b89dfa4f8f0573daaf9febb360e2db36e6d55b139c9,2026-07-12T01:30:03.007298+00:00,Applied by tools/apply_migration.py
 0013,0013_master_reconciliation_wave1.sql,49ff394134eb13c6fb348b0af844a7109aab55fd71fc2ef1b9fa060b377401ed,2026-07-12T05:06:50.446746+00:00,Applied by tools/apply_migration.py
+0014,0014_master_reconciliation_wave2.sql,3432a598daaa435d307645420c97d385041614513e240c1b0d719306802abb27,2026-07-12T06:42:13.156420+00:00,Applied by tools/apply_migration.py
+0015,0015_thematic_reconciliation_wave3.sql,6b5e6574310450b947a3f67b5d37273e6fb174f66f8813d8e00e85072923195a,2026-07-12T06:42:29.901518+00:00,Applied by tools/apply_migration.py
+0016,0016_wave3_validation_hotfix.sql,5359d70726d16639746d2858ec5f64288c426e618e29e115ec1b5807e27bc099,2026-07-12T06:50:46.804134+00:00,Applied by tools/apply_migration.py

@@ -1,0 +1,3 @@
+﻿deprecated_person_id,canonical_person_id,resolution_type,rationale,resolved_in_wave
+P0074,P0018,duplicate,P0018 already contained the campaign and regimental record for Rostam/Rustam Khan; P0074 was created later for the same eldest son of P0011.,RW002
+P0075,P0020,duplicate,P0020 already contained Ali-Naqi Khan military data; P0075 was later created for the same named son of P0011.,RW002

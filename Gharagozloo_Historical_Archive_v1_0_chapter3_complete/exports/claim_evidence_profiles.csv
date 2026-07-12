@@ -22,3 +22,15 @@ C0136,NARRATIVE_FACT,author_statement,supports,Explicit lineage.
 C0137,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Chronological reconciliation of Chapter 4.
 C0138,AUTHOR_SYNTHESIS,author_statement,presents,Political interpretation belongs to the book author.
 C0139,ARCHIVE_SYNTHESIS,archive_synthesis,unresolved,Conflict between two passages in S0001.
+C0140,NARRATIVE_FACT,author_statement,supports,Explicit succession statements.
+C0141,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Multiple campaign passages combined.
+C0142,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Regimental and campaign passages combined.
+C0143,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Military and genealogical evidence combined.
+C0144,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Whole-book negative finding.
+C0145,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Rank and campaign evidence combined.
+C0146,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Marriage and diplomatic mission evidence combined.
+C0147,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Hereditary succession reconstruction.
+C0148,NARRATIVE_FACT,author_statement,supports,Explicit dates.
+C0149,AUTHOR_SYNTHESIS,author_statement,presents,Political orientation partly interpretive.
+C0150,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Variant title forms preserved.
+C0151,NARRATIVE_FACT,author_statement,supports,Explicit marriage event.

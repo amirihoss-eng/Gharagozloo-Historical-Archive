@@ -20,8 +20,12 @@ evidence_policy_relationships,Narrative text and explicit captions primary; diag
 evidence_classification_version,1.0
 chapter_1_status,structured_mining_complete_v1
 chapter_1_evidence_policy,Competing origin theories and author inferences remain explicitly classified; no uncertain ancient-to-modern genealogy is asserted.
-archive_version,2.2.0
 master_reconciliation_wave_1,complete
 reconciliation_policy,Text-first; author inference qualified; user testimony explicitly labeled; genealogy diagrams supporting-only unless corroborated.
-last_migration,0013
-updated_at,2026-07-12T05:06:50.446746+00:00
+master_reconciliation_wave_2,complete
+thematic_reconciliation_wave_3,complete
+wave3_data_preservation_note,Migrations 0014 and 0015 are additive; no records from the uploaded post-0013 Git master were deleted.
+archive_version,2.4.1
+wave3_validation_hotfix,Resolved 12 uncited-claim warnings and 2 duplicate-name warnings after migrations 0014-0015.
+last_migration,0016
+updated_at,2026-07-12T06:50:46.804134+00:00

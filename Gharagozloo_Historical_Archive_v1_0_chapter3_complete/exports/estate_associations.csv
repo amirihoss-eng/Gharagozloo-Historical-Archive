@@ -6,3 +6,7 @@ EA0004,EST0004,,ORG0008,principal_center,,,confirmed
 EA0005,EST0005,,ORG0006,family_center,,,confirmed
 EA0006,EST0006,P0031,ORG0006,property_center,,Associated with Haji Amanollah Khan Baha al-Molk.,confirmed
 EA0007,EST0007,P0031,ORG0006,later_property_center,,Later property center described in the narrative.,confirmed
+EA0008,EST0001,P0004,,family_house_center,,Latgah is a principal center of the Amir Nezam family; personal parcel-level ownership not reconstructed.,confirmed
+EA0009,EST0002,P0004,,family_house_center,,Kabudarahang is a major landed center of the Amir Nezam family; exact inherited/acquired division remains unresolved.,confirmed
+EA0010,EST0003,P0023,,principal_estate_zone,,Shervin is a principal center of the Amir Afkham/Hesam al-Molk house.,confirmed
+EA0011,EST0007,P0040,,family_house_center,,Bahar is the center associated with the Naser al-Molk family line.,confirmed

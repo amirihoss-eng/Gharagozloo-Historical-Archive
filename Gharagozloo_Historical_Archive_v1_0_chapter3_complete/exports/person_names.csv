@@ -21,9 +21,7 @@
 20,P0016,شیرعلی خان قراگوزلو,fa,preferred,1
 21,P0017,Rashid Khan Gharagozloo,en,preferred,1
 22,P0017,رشیدخان قراگوزلو,fa,preferred,1
-23,P0018,Rustam Khan Gharagozloo,en,preferred,1
 24,P0019,Ali Khan Nosrat al-Molk Gharagozloo,en,preferred,1
-25,P0020,Ali Naqi Khan Gharagozloo,en,preferred,1
 26,P0021,Lotf Ali Khan Sartip Gharagozloo,en,preferred,1
 27,P0022,Mohammad Hossein Khan Hosam al-Molk Gharagozloo,en,preferred,1
 28,P0023,Zeyn al-Abedin Khan Hosam al-Molk Gharagozloo,en,preferred,1
@@ -90,3 +88,7 @@
 89,P0040,Mirza Abu al-Qasem Khan Naser al-Molk,en,title-form,0
 90,P0040,Nasir al-Mulk,en,transliteration-variant,0
 91,P0040,ناصرالملک,fa,title-form,0
+94,P0022,Mohammad Hossein Khan Hosam al-Molk,en,transliteration-variant,0
+95,P0023,Zeyn al-Abedin Khan Hesam al-Molk,en,title-form,0
+96,P0023,Amir Afkham,en,title-form,0
+97,P0024,Gholamreza Khan Ehtesham al-Saltaneh,en,earlier-title-form,0
