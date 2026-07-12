@@ -1,0 +1,5 @@
+﻿organization_id,preferred_name_en,preferred_name_fa,organization_type,parent_organization_id,verification_status
+ORG0001,Gharagozloo,قراگوزلو,tribe,,confirmed
+ORG0002,Hajilu branch,حاجیلو,tribal_branch,ORG0001,confirmed
+ORG0003,Ashiqloo branch,عاشیقلو,tribal_branch,ORG0001,confirmed
+ORG0004,Uzbeklu branch,ازبکلو,tribal_branch,ORG0001,confirmed

@@ -1,0 +1,15 @@
+﻿command_id,person_id,military_unit_id,command_role_id,date_text,start_date_text,end_date_text,predecessor_person_id,successor_person_id,notes,verification_status
+MC0001,P0062,MU0001,ROLE0009,,,,,,Named as colonel of the Sixth Gharagozloo Regiment.,confirmed
+MC0002,P0063,MU0002,ROLE0009,,,,,,Named as colonel of the Mansur Regiment.,confirmed
+MC0003,P0064,MU0003,ROLE0009,,,,,,Named as colonel/commander of the Mokhberan Regiment.,confirmed
+MC0004,P0003,MU0004,ROLE0008,,,,,P0004,Fadavi Regiment was attached to Mostafa Qoli Khan Mirpanj.,confirmed
+MC0005,P0018,MU0003,ROLE0008,1272 AH,,,,,Commanded two Mokhberan regiments during the Kerman mission.,confirmed
+MC0006,P0030,MU0005,ROLE0008,,,,,,Commanded the Zanganeh Regiment for a period.,confirmed
+MC0007,P0028,MU0006,ROLE0008,1268 AH,,,,,Received command of the Malayer regiment.,confirmed
+MC0008,P0028,MU0007,ROLE0008,1268 AH,,,,,Received command of the Tuyserkan regiment.,confirmed
+MC0009,P0004,MU0004,ROLE0008,,,,P0003,P0012,"After serving as colonel during his father's lifetime, Abdollah Khan later commanded the Fadavi Regiment.",confirmed
+MC0010,P0012,MU0004,ROLE0008,,,,P0004,,Succeeded Abdollah Khan in command of the Fadavi Regiment.,confirmed
+MC0011,P0014,MU0003,ROLE0008,,,,,P0030,Command succession began with Mahmud Khan Naser al-Molk.,confirmed
+MC0012,P0030,MU0003,ROLE0008,,,,P0014,P0064,Succeeded Mahmud Khan in command of the Mokhberan Regiment.,confirmed
+MC0013,P0064,MU0003,ROLE0008,,,,P0030,,Succeeded Ahmad Khan after promotion to Sartip.,confirmed
+MC0014,P0065,MU0003,ROLE0009,,,,,,Served as colonel of the Mokhberan Regiment.,confirmed

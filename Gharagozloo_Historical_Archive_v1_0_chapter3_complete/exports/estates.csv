@@ -1,0 +1,8 @@
+﻿estate_id,preferred_name_en,preferred_name_fa,place_id,estate_type,description,verification_status
+EST0001,Shervin estate,املاک شروین,L0019,family_estate,Principal estate center of the Amir Afkham Shervini family.,confirmed
+EST0002,Letgah estate,املاک لتگاه,L0003,family_estate,Principal estate center of the Amir Nezam Letgahi family.,confirmed
+EST0003,Kabudarahang holdings,املاک کبودراهنگ,L0002,regional_holdings,Important landed area of the Amir Nezam Letgahi family.,confirmed
+EST0004,Bahar holdings,املاک بهار,L0030,regional_holdings,Principal landed area of the Naser al-Molk Bahari family.,confirmed
+EST0005,Abshineh estate,املاک آبشینه,L0031,family_estate,Associated with the Baha al-Molk Abshini family.,confirmed
+EST0006,Sorkhabad estate,املاک سرخ‌آباد,L0032,family_estate,Early property center of Haji Amanollah Khan Baha al-Molk.,confirmed
+EST0007,Zagheh estate,املاک زاغه,L0033,family_estate,Later property center of the Baha al-Molk family.,confirmed

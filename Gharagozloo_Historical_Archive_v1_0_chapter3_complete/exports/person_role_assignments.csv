@@ -1,0 +1,6 @@
+﻿assignment_id,person_id,role_id,organization_id,place_id,date_text,start_date_text,end_date_text,appointing_authority_text,notes,verification_status
+PRA0001,P0023,ROLE0002,,,1304 AH,,,,Reportedly purchased the rank of Sartip-e Awwal.,confirmed
+PRA0002,P0004,ROLE0003,ORG0104,,,,,,Colonel of the Fadavi Regiment during his father's lifetime.,confirmed
+PRA0003,P0004,ROLE0002,ORG0104,,,,,,Later commanded the regiment with the rank of Sartip.,confirmed
+PRA0004,P0012,ROLE0008,ORG0104,,,,,,Succeeded to command of the Fadavi Regiment.,confirmed
+PRA0005,P0064,ROLE0002,ORG0103,,,,,,Promoted to Sartip in connection with command succession.,confirmed

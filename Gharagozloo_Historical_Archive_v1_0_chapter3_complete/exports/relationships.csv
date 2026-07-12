@@ -37,3 +37,5 @@ R0035,P0041,spouse_of,P0055,Chapter 4 pp. 186,confirmed
 R0036,P0054,parent_of,P0055,Chapter 4 pp. 186,confirmed
 R0037,P0040,succeeded,P0014,Chapter 4 pp. 169,confirmed
 R0038,P0040,succeeded_as_regent,P0049,Chapter 4 pp. 182,confirmed
+R0039,P0040,father_of,P0064,Narrative text names Mehdi Khan as the son of Naser al-Molk in the regimental passage.,confirmed
+R0040,P0064,father_of,P0065,Narrative text names Abdol-Ali Khan as Mehdi Khan's eldest son.,confirmed

@@ -1,0 +1,6 @@
+﻿membership_id,person_id,organization_id,membership_role,date_text,notes,verification_status
+OM0001,P0003,ORG0007,family head / ancestor line,,Mostafa Qoli Khan is in the Amir Nezam Letgahi lineage.,confirmed
+OM0002,P0004,ORG0007,family head,,Abdollah Khan is identified as founder/head of the Amir Nezam Letgahi family.,confirmed
+OM0003,P0023,ORG0005,family head,,Zeyn al-Abedin Khan belonged to the Amir Afkham Shervini line.,confirmed
+OM0004,P0031,ORG0006,family founder,,Founder of the Baha al-Molk Abshini family.,confirmed
+OM0005,P0040,ORG0008,family member,,Naser al-Molk belonged to the Bahari line.,confirmed

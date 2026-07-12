@@ -1,0 +1,8 @@
+﻿estate_association_id,estate_id,person_id,organization_id,association_type,date_text,notes,verification_status
+EA0001,EST0001,,ORG0005,principal_center,,,confirmed
+EA0002,EST0002,,ORG0007,principal_center,,,confirmed
+EA0003,EST0003,,ORG0007,major_holdings,,,confirmed
+EA0004,EST0004,,ORG0008,principal_center,,,confirmed
+EA0005,EST0005,,ORG0006,family_center,,,confirmed
+EA0006,EST0006,P0031,ORG0006,property_center,,Associated with Haji Amanollah Khan Baha al-Molk.,confirmed
+EA0007,EST0007,P0031,ORG0006,later_property_center,,Later property center described in the narrative.,confirmed

@@ -1,0 +1,16 @@
+﻿organization_id,preferred_name_en,preferred_name_fa,organization_type,parent_organization_id,date_text,description,verification_status
+ORG0001,Gharagozloo,قراگوزلو,tribe,,,The tribal grouping studied in S0001.,confirmed
+ORG0002,Hajilu branch,حاجیلو,tribal_branch,ORG0001,,One of the principal Gharagozloo branches.,confirmed
+ORG0003,Ashiqloo branch,عاشیقلو,tribal_branch,ORG0001,,One of the principal Gharagozloo branches.,confirmed
+ORG0004,Uzbeklu branch,ازبکلو,tribal_branch,ORG0001,,"A named Gharagozloo branch; later absorption is discussed as a possibility, not a certainty.",confirmed
+ORG0005,Amir Afkham Shervini family,خانواده امیر افخم شروینی,family_branch,ORG0003,,Major landed family centered on Shervin.,confirmed
+ORG0006,Baha al-Molk Abshini family,خانواده بهاءالملک آبشینی,family_branch,ORG0003,,"Major landed family associated with Abshineh, Sorkhabad, and Zagheh.",confirmed
+ORG0007,Amir Nezam Letgahi family,خانواده امیرنظام لتگاهی,family_branch,ORG0002,,Major landed family centered on Letgah and Kabudarahang.,confirmed
+ORG0008,Naser al-Molk Bahari family,خانواده ناصرالملک بهاری,family_branch,ORG0003,,Major landed family centered on Bahar.,confirmed
+ORG0101,Sixth Gharagozloo Regiment,فوج ششم قراگوزلو,military_unit,ORG0001,,One of four principal Gharagozloo regiments named in Chapter 2.,confirmed
+ORG0102,Mansur Gharagozloo Regiment,فوج منصور قراگوزلو,military_unit,ORG0001,,One of four principal Gharagozloo regiments named in Chapter 2.,confirmed
+ORG0103,Mokhberan Gharagozloo Regiment,فوج مخبران قراگوزلو,military_unit,ORG0001,,One of four principal Gharagozloo regiments named in Chapter 2.,confirmed
+ORG0104,Fadavi Gharagozloo Regiment,فوج فدوی قراگوزلو,military_unit,ORG0001,,One of four principal Gharagozloo regiments named in Chapter 2.,confirmed
+ORG0105,Zanganeh Regiment,فوج زنگنه,military_unit,,,A non-Gharagozloo regiment commanded for a time by Ahmad Khan Sartip.,confirmed
+ORG0106,Malayer Regiment,فوج ملایر,military_unit,,1268 AH,Commanded by Abdollah Khan Sarem al-Dowleh in 1268 AH.,confirmed
+ORG0107,Tuyserkan Regiment,فوج تویسرکان,military_unit,,1268 AH,Commanded by Abdollah Khan Sarem al-Dowleh in 1268 AH.,confirmed

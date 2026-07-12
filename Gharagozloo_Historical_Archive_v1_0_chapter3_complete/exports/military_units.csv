@@ -1,0 +1,8 @@
+﻿military_unit_id,organization_id,unit_kind,service_arm,affiliated_branch_id,headquarters_place_id,notes
+MU0001,ORG0101,fowj/regiment,infantry,ORG0003,,Associated mainly with the Ashiqloo branch.
+MU0002,ORG0102,fowj/regiment,infantry,ORG0003,,Associated mainly with the Ashiqloo branch.
+MU0003,ORG0103,fowj/regiment,infantry,ORG0003,,Associated mainly with the Ashiqloo branch.
+MU0004,ORG0104,fowj/regiment,infantry,ORG0002,,Associated mainly with the Hajilu branch.
+MU0005,ORG0105,fowj/regiment,infantry,,,
+MU0006,ORG0106,fowj/regiment,infantry,,L0034,
+MU0007,ORG0107,fowj/regiment,infantry,,L0035,

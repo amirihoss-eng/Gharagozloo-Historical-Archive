@@ -13,5 +13,10 @@ back_matter_status,complete
 back_matter_pages,187-213
 bibliography_catalog_count,129
 documentary_artifact_count,15
-last_migration,0008
-updated_at,2026-07-12T00:21:06.631138+00:00
+archive_schema_version,2.0
+schema_design,institutional-economic-military expansion
+archive_version,2.0.0
+chapter_2_status,structured_mining_complete_v1
+evidence_policy_relationships,Narrative text and explicit captions primary; diagrams corroborative only unless independently confirmed.
+last_migration,0010
+updated_at,2026-07-12T00:46:22.404335+00:00

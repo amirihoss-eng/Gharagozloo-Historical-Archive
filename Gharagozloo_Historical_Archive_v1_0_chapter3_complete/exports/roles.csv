@@ -1,0 +1,13 @@
+﻿role_id,preferred_name_en,preferred_name_fa,role_category,description
+ROLE0001,Amir Tuman,امیرتومان,military_rank,Senior Qajar military rank associated with command over ten regiments in the chapter's description.
+ROLE0002,Sartip,سرتیپ,military_rank,Brigadier-level rank and command role.
+ROLE0003,Sarhang,سرهنگ,military_rank,Colonel and regimental command rank.
+ROLE0004,Yavar,یاور,military_rank,Field-grade military rank.
+ROLE0005,Soltan,سلطان,military_rank,Company-level military rank.
+ROLE0006,Panjah-bashi,پنجاه‌باشی,military_rank,Commander of fifty men.
+ROLE0007,On-bashi,اون‌باشی,military_rank,Commander of ten men.
+ROLE0008,Regimental commander,سرکرده فوج,military_office,Command of a named regiment.
+ROLE0009,Regimental colonel,سرهنگ فوج,military_office,Colonel of a named regiment.
+ROLE0010,Estate manager,مباشر املاک,estate_office,Manager or agent responsible for estate administration.
+ROLE0011,Village headman,کدخدا,estate_office,Village headman within rural administration.
+ROLE0012,Tenant cultivator,رعیت,occupation,Cultivator within the landlord-tenant system.

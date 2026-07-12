@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Safely install and apply a Gharagozloo archive patch ZIP.
+r"""Safely install and apply a Gharagozloo archive patch ZIP.
 
 Run this command from the repository's archive root, the folder containing:
     archive.sqlite

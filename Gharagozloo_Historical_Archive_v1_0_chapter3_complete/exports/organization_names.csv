@@ -1,0 +1,6 @@
+﻿organization_name_id,organization_id,name_text,language,name_type,is_preferred
+1,ORG0001,Gharagozloo,en,preferred,1
+2,ORG0001,قراگوزلو,fa,preferred,1
+3,ORG0002,Hajilu,en,alias,0
+4,ORG0003,Ashiqlo,en,alias,0
+5,ORG0004,Uzbeklu,en,alias,0
