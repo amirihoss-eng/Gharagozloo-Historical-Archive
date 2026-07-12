@@ -25,3 +25,5 @@
 24,2026-07-12T00:21:06.631138+00:00,migration,0008,apply,Applied 0008_add_25_foundational_person_dossiers.sql
 25,2026-07-12T00:46:22.328298+00:00,migration,0009,apply,Applied 0009_expand_schema_v2_0.sql
 26,2026-07-12T00:46:22.404335+00:00,migration,0010,apply,Applied 0010_complete_chapter2_structured_data.sql
+27,2026-07-12T01:29:15.428623+00:00,migration,0011,apply,Applied 0011_add_evidence_classification.sql
+28,2026-07-12T01:30:03.007298+00:00,migration,0012,apply,Applied 0012_complete_chapter1_historical_origins.sql

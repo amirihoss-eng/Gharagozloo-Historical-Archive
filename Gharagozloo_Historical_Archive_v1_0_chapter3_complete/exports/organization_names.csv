@@ -4,3 +4,11 @@
 3,ORG0002,Hajilu,en,alias,0
 4,ORG0003,Ashiqlo,en,alias,0
 5,ORG0004,Uzbeklu,en,alias,0
+6,ORG0201,Oghuz,en,preferred,1
+7,ORG0201,Ghuzz,en,alias,0
+8,ORG0201,غز,fa,alias,0
+9,ORG0202,Bozok,en,preferred,1
+10,ORG0203,Bigdili,en,preferred,1
+11,ORG0203,Bigdeli,en,alias,0
+12,ORG0204,Shamlu,en,preferred,1
+13,ORG0205,Qizilbash,en,preferred,1

@@ -1,0 +1,11 @@
+﻿claim_id,evidence_type_code,assertion_scope,source_position,assessment_notes
+C0117,AUTHOR_SYNTHESIS,author_inference,prefers,The connection is organizational/tribal and should not be presented as a continuous family pedigree.
+C0118,REJECTED_HYPOTHESIS,scholarly_opinion,rejects,"Retained to document historiography, not as an active origin conclusion."
+C0119,SCHOLARLY_OPINION,scholarly_opinion,presents,Attributed to earlier writers including Malcolm and others discussed by the author.
+C0120,AUTHOR_SYNTHESIS,author_inference,prefers,Historical affiliation rather than blood descent.
+C0121,AUTHOR_INFERENCE,author_inference,unresolved,The name Gharagoz may be personal rather than tribal.
+C0122,AUTHOR_INFERENCE,author_inference,unresolved,Possible continuity is discussed but not proved.
+C0123,NARRATIVE_FACT,author_statement,supports,Supported by named Safavid-period officeholders and military actors.
+C0124,AUTHOR_SYNTHESIS,author_statement,supports,Synthesizes military and landed evidence.
+C0125,NARRATIVE_FACT,author_statement,supports,Supported by chronicle reports and named commanders.
+C0126,AUTHOR_SYNTHESIS,author_statement,supports,Records the chapter's methodological caution.

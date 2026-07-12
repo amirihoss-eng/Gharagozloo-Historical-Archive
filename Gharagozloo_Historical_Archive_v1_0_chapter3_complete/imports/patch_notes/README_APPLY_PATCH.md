@@ -1,24 +1,23 @@
-# Gharagozloo Archive v2.0 Patch
+# Gharagozloo Archive v2.1 — Chapter 1 Patch
 
-This patch contains two sequential migrations:
+This patch contains:
 
-1. `0009_expand_schema_v2_0.sql` — adds institutional, military, role, and estate tables.
-2. `0010_complete_chapter2_structured_data.sql` — loads the structured Chapter 2 extraction.
+- `0011_add_evidence_classification.sql`
+- `0012_complete_chapter1_historical_origins.sql`
+- schema documentation;
+- Chapter 1 audit/import summaries.
 
-## Apply with the one-command installer
-
-From the archive folder containing `archive.sqlite`, run:
+Apply from the archive root with:
 
 ```powershell
-py tools\apply_patch.py "C:\full\path\to\Gharagozloo_Archive_v2_0_Chapter2_Patch.zip"
+py tools\apply_patch.py "C:\full\path\to\Gharagozloo_Archive_v2_1_Chapter1_Patch.zip"
 ```
 
-The installer applies both migrations in order, validates the database, and regenerates all CSV exports.
+The installer applies migrations in numerical order, validates the archive, and
+regenerates exports.
 
-## Suggested commit
+Suggested commit:
 
 ```text
-Upgrade archive to v2.0 and complete structured Chapter 2 mining
+Archive v2.1: evidence classification and complete Chapter 1 mining
 ```
-
-Do not copy the outer patch folder into the repository.

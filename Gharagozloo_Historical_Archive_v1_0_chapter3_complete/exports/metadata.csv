@@ -15,8 +15,11 @@ bibliography_catalog_count,129
 documentary_artifact_count,15
 archive_schema_version,2.0
 schema_design,institutional-economic-military expansion
-archive_version,2.0.0
 chapter_2_status,structured_mining_complete_v1
 evidence_policy_relationships,Narrative text and explicit captions primary; diagrams corroborative only unless independently confirmed.
-last_migration,0010
-updated_at,2026-07-12T00:46:22.404335+00:00
+evidence_classification_version,1.0
+archive_version,2.1.0
+chapter_1_status,structured_mining_complete_v1
+chapter_1_evidence_policy,Competing origin theories and author inferences remain explicitly classified; no uncertain ancient-to-modern genealogy is asserted.
+last_migration,0012
+updated_at,2026-07-12T01:30:03.007298+00:00

@@ -14,3 +14,9 @@ ORG0104,Fadavi Gharagozloo Regiment,فوج فدوی قراگوزلو,military_un
 ORG0105,Zanganeh Regiment,فوج زنگنه,military_unit,,,A non-Gharagozloo regiment commanded for a time by Ahmad Khan Sartip.,confirmed
 ORG0106,Malayer Regiment,فوج ملایر,military_unit,,1268 AH,Commanded by Abdollah Khan Sarem al-Dowleh in 1268 AH.,confirmed
 ORG0107,Tuyserkan Regiment,فوج تویسرکان,military_unit,,1268 AH,Commanded by Abdollah Khan Sarem al-Dowleh in 1268 AH.,confirmed
+ORG0201,Oghuz,اغوز / غز,tribe,,,Broad Turkic tribal grouping discussed in the origin chapter.,confirmed
+ORG0202,Bozok,بوزوق,tribal_branch,ORG0201,,Major Oghuz division used in the author's origin discussion.,confirmed
+ORG0203,Bigdili,بیگدلی,tribal_branch,ORG0202,,Oghuz branch to which the author considers a Gharagozloo connection probable.,confirmed
+ORG0204,Shamlu,شاملو,tribe,,,Tribal confederation with which several authors associate the Gharagozloos.,confirmed
+ORG0205,Qizilbash,قزلباش,other,,,Safavid military-political confederation in which the Gharagozloos are described as participating.,confirmed
+ORG0206,Zand alliance,ائتلاف زندیه,other,,mid-12th century AH,Political-military alliance supporting Karim Khan Zand.,confirmed

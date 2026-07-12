@@ -1,0 +1,11 @@
+﻿evidence_type_code,preferred_name_en,preferred_name_fa,description
+PRIMARY_REPORT,Primary historical report,گزارش تاریخی دست اول,A report attributed to a contemporary or near-contemporary historical source.
+NARRATIVE_FACT,Narrative factual statement,گزارش روایی,A factual statement made in the book narrative and supported by cited sources.
+AUTHOR_SYNTHESIS,Author synthesis,جمع‌بندی نویسنده,The author combines multiple sources into an interpretive historical conclusion.
+AUTHOR_INFERENCE,Author inference,استنباط نویسنده,The author explicitly proposes a probable or possible reconstruction.
+SCHOLARLY_OPINION,Scholarly opinion,نظر پژوهشی,An interpretation attributed to a named scholar or earlier author.
+REJECTED_HYPOTHESIS,Rejected hypothesis,فرضیه ردشده,A hypothesis presented for discussion but rejected or substantially questioned by the author.
+DOCUMENTARY_CAPTION,Documentary caption,شرح تصویر یا سند,"A statement contained in a printed caption for a photograph, map, document, or artifact."
+GENEALOGICAL_DIAGRAM,Genealogical diagram,نمودار تبارشناختی,A relationship or identity represented in a genealogy diagram.
+USER_SUPPLIED,User-supplied evidence,اطلاعات ارائه‌شده توسط خانواده,Information supplied directly by the archive owner or another identified family informant.
+ARCHIVE_SYNTHESIS,Archive synthesis,جمع‌بندی آرشیو,A statement synthesized by the archive from multiple structured records.
