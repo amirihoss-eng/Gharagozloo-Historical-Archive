@@ -22,3 +22,4 @@
 21,2026-07-11T17:41:52.802197+00:00,migration,0006,apply,Applied 0006_complete_chapter4_pages_167_186.sql
 22,2026-07-11 18:53:55,migration,0007,apply,"Mine conclusion, bibliography, and documentary appendix pages 187-213."
 23,2026-07-11T18:53:55.582031+00:00,migration,0007,apply,Applied 0007_complete_back_matter_pages_187_213.sql
+24,2026-07-12T00:21:06.631138+00:00,migration,0008,apply,Applied 0008_add_25_foundational_person_dossiers.sql

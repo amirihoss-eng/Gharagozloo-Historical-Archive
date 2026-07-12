@@ -1,0 +1,26 @@
+﻿dossier_id,person_id,sequence_no,file_path,status,preferred_name_en,preferred_name_fa
+DOS001,P0040,1,dossiers/foundational/01_P0040_abu-al-qasem-khan-naser-al-molk-gharagozloo.md,foundational_v0.1,Abu al-Qasem Khan Naser al-Molk Gharagozloo,ابوالقاسم خان ناصرالملک قراگوزلو
+DOS002,P0014,2,dossiers/foundational/02_P0014_mahmoud-khan-gharagozloo.md,foundational_v0.1,Mahmoud Khan Gharagozloo,محمودخان قراگوزلو
+DOS003,P0004,3,dossiers/foundational/03_P0004_abdollah-khan-gharagozloo.md,foundational_v0.1,Abdollah Khan Gharagozloo,عبدالله خان قراگوزلو
+DOS004,P0003,4,dossiers/foundational/04_P0003_mostafa-qoli-khan-gharagozloo.md,foundational_v0.1,Mostafa Qoli Khan Gharagozloo,مصطفی‌قلی خان قراگوزلو
+DOS005,P0005,5,dossiers/foundational/05_P0005_mohtaj-ali-khan-gharagozloo.md,foundational_v0.1,Mohtaj Ali Khan Gharagozloo,محتاجعلی خان قراگوزلو
+DOS006,P0006,6,dossiers/foundational/06_P0006_mansur-ali-khan-gharagozloo.md,foundational_v0.1,Mansur Ali Khan Gharagozloo,منصورعلی خان قراگوزلو
+DOS007,P0008,7,dossiers/foundational/07_P0008_gholamhossein-khan-amiri-gharagozloo.md,foundational_v0.1,Gholamhossein Khan Amiri Gharagozloo,غلامحسین خان امیری قراگوزلو
+DOS008,P0007,8,dossiers/foundational/08_P0007_gholam-ali-gharagozloo.md,foundational_v0.1,Gholam Ali Gharagozloo,غلامعلی قراگوزلو
+DOS009,P0009,9,dossiers/foundational/09_P0009_dr-alireza-amiri-gharagozloo.md,foundational_v0.1,Dr. Alireza Amiri Gharagozloo,دکتر علیرضا امیری قراگوزلو
+DOS010,P0001,10,dossiers/foundational/10_P0001_haji-mohammad-khan-jeyhunabadi.md,foundational_v0.1,Haji Mohammad Khan Jeyhunabadi,حاجی محمدخان جیحون‌آبادی
+DOS011,P0002,11,dossiers/foundational/11_P0002_mohammad-baqer-khan-gharagozloo.md,foundational_v0.1,Mohammad Baqer Khan Gharagozloo,محمدباقرخان قراگوزلو
+DOS012,P0011,12,dossiers/foundational/12_P0011_mohammad-hossein-khan-gharagozloo.md,foundational_v0.1,Mohammad Hossein Khan Gharagozloo,محمدحسین خان قراگوزلو
+DOS013,P0018,13,dossiers/foundational/13_P0018_rustam-khan-gharagozloo.md,foundational_v0.1,Rustam Khan Gharagozloo,رستم خان قراگوزلو
+DOS014,P0019,14,dossiers/foundational/14_P0019_ali-khan-nosrat-al-molk-gharagozloo.md,foundational_v0.1,Ali Khan Nosrat al-Molk Gharagozloo,علی خان نصرت‌الملک قراگوزلو
+DOS015,P0020,15,dossiers/foundational/15_P0020_ali-naqi-khan-gharagozloo.md,foundational_v0.1,Ali Naqi Khan Gharagozloo,علینقی خان قراگوزلو
+DOS016,P0022,16,dossiers/foundational/16_P0022_mohammad-hossein-khan-hosam-al-molk-gharagozloo.md,foundational_v0.1,Mohammad Hossein Khan Hosam al-Molk Gharagozloo,محمدحسین خان حسام‌الملک قراگوزلو
+DOS017,P0023,17,dossiers/foundational/17_P0023_zeyn-al-abedin-khan-hosam-al-molk-gharagozloo.md,foundational_v0.1,Zeyn al-Abedin Khan Hosam al-Molk Gharagozloo,زین‌العابدین خان حسام‌الملک قراگوزلو
+DOS018,P0024,18,dossiers/foundational/18_P0024_gholamreza-khan-ehtesham-al-saltaneh-gharagozloo.md,foundational_v0.1,Gholamreza Khan Ehtesham al-Saltaneh Gharagozloo,غلامرضا خان احتشام‌السلطنه قراگوزلو
+DOS019,P0028,19,dossiers/foundational/19_P0028_abdollah-khan-sarem-al-saltaneh-gharagozloo.md,foundational_v0.1,Abdollah Khan Sarem al-Saltaneh Gharagozloo,عبدالله خان صارم‌السلطنه قراگوزلو
+DOS020,P0031,20,dossiers/foundational/20_P0031_amanollah-khan-baha-al-molk-gharagozloo.md,foundational_v0.1,Amanollah Khan Baha al-Molk Gharagozloo,امان‌الله خان بهاءالملک قراگوزلو
+DOS021,P0032,21,dossiers/foundational/21_P0032_hossein-qoli-khan-zia-al-molk-gharagozloo.md,foundational_v0.1,Hossein Qoli Khan Zia al-Molk Gharagozloo,حسینقلی خان ضیاءالملک قراگوزلو
+DOS022,P0030,22,dossiers/foundational/22_P0030_ahmad-khan-sartip-gharagozloo.md,foundational_v0.1,Ahmad Khan Sartip Gharagozloo,احمد خان سرتیپ قراگوزلو
+DOS023,P0013,23,dossiers/foundational/23_P0013_nabi-khan-gharagozloo.md,foundational_v0.1,Nabi Khan Gharagozloo,نبی‌خان قراگوزلو
+DOS024,P0012,24,dossiers/foundational/24_P0012_hossein-qoli-khan-gharagozloo.md,foundational_v0.1,Hossein Qoli Khan Gharagozloo,حسینقلی خان قراگوزلو
+DOS025,P0037,25,dossiers/foundational/25_P0037_alireza-khan-baha-al-molk-gharagozloo.md,foundational_v0.1,Alireza Khan Baha al-Molk Gharagozloo,علیرضا خان بهاءالملک قراگوزلو

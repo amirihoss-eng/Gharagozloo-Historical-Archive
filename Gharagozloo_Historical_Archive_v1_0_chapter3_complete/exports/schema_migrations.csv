@@ -6,3 +6,4 @@
 0005,0005_complete_chapter3_pages_146_166.sql,85be85ee0dee8a2857765b34b1a0dd904d0ab7995c12ef656f952e89138e719b,2026-07-11T06:03:06.747375+00:00,"Completed Chapter 3, printed pages 146-166"
 0006,0006_complete_chapter4_pages_167_186.sql,37f00a3050c23d42c7ebc7f4e9e970423a8148886a0c4fbe531cc35d530a5788,2026-07-11T17:41:52.802197+00:00,Applied by tools/apply_migration.py
 0007,0007_complete_back_matter_pages_187_213.sql,0940d85f2dd0af01f6cb19ebc7b95c34524c55c4249228bc9ccf768a74e3cd56,2026-07-11T18:53:55.582031+00:00,Applied by tools/apply_migration.py
+0008,0008_add_25_foundational_person_dossiers.sql,5f7399df6d7d48626c6a47b5b75d4f7e623098118f242fe7a1d4452b0f0e4b14,2026-07-12T00:21:06.631138+00:00,Applied by tools/apply_migration.py
