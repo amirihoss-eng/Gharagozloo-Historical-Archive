@@ -160,7 +160,7 @@ def graph_for(person_id: str, depth: int = 2) -> dict:
 
 
 class Handler(BaseHTTPRequestHandler):
-    server_version = "GharagozlooExplorer/0.1"
+    server_version = "GharagozlooExplorer/0.2"
 
     def send_json(self, payload, status=200):
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
@@ -189,7 +189,7 @@ class Handler(BaseHTTPRequestHandler):
             path = parsed.path
             qs = parse_qs(parsed.query)
             if path == "/api/health":
-                return self.send_json({"ok": True, "database": str(DB_PATH), "version": "0.1.0"})
+                return self.send_json({"ok": True, "database": str(DB_PATH), "version": "0.2.0"})
             if path == "/api/dashboard":
                 featured = rows(
                     """SELECT p.person_id,p.preferred_name_en,p.preferred_name_fa,p.branch,p.summary,
@@ -201,6 +201,97 @@ class Handler(BaseHTTPRequestHandler):
                 )
                 branches = rows("SELECT COALESCE(branch,'Unclassified') AS branch, COUNT(*) AS count FROM persons GROUP BY COALESCE(branch,'Unclassified') ORDER BY count DESC, branch")
                 return self.send_json({"counts": counts(), "featured": featured, "branches": branches})
+
+            if path == "/api/timeline":
+                event_type = (qs.get("type", [""])[0] or "").strip()
+                place = (qs.get("place", [""])[0] or "").strip()
+                sql = """SELECT e.event_id,e.event_type,e.title,e.date_text,e.description,e.verification_status,
+                                p.place_id,p.preferred_name_en AS place_en,p.preferred_name_fa AS place_fa,
+                                COUNT(DISTINCT ep.person_id) AS people_count
+                         FROM events e
+                         LEFT JOIN places p ON p.place_id=e.place_id
+                         LEFT JOIN event_persons ep ON ep.event_id=e.event_id
+                         WHERE 1=1"""
+                params=[]
+                if event_type:
+                    sql += " AND e.event_type=?"; params.append(event_type)
+                if place:
+                    sql += " AND e.place_id=?"; params.append(place)
+                sql += " GROUP BY e.event_id ORDER BY COALESCE(e.date_text,''), e.title"
+                return self.send_json({
+                    "events": rows(sql, tuple(params)),
+                    "types": rows("SELECT event_type,COUNT(*) AS count FROM events GROUP BY event_type ORDER BY count DESC,event_type"),
+                    "places": rows("SELECT p.place_id,p.preferred_name_en,COUNT(e.event_id) AS count FROM places p JOIN events e ON e.place_id=p.place_id GROUP BY p.place_id ORDER BY count DESC,p.preferred_name_en")
+                })
+            if path == "/api/estates":
+                data=rows("""SELECT e.*,p.preferred_name_en AS place_en,p.preferred_name_fa AS place_fa,
+                                    COUNT(DISTINCT ea.estate_association_id) AS association_count
+                             FROM estates e LEFT JOIN places p ON p.place_id=e.place_id
+                             LEFT JOIN estate_associations ea ON ea.estate_id=e.estate_id
+                             GROUP BY e.estate_id ORDER BY e.preferred_name_en""")
+                return self.send_json(data)
+            if path.startswith("/api/estate/"):
+                eid=path.split("/")[3]
+                estate=row("""SELECT e.*,p.preferred_name_en AS place_en,p.preferred_name_fa AS place_fa
+                              FROM estates e LEFT JOIN places p ON p.place_id=e.place_id WHERE e.estate_id=?""",(eid,))
+                if not estate: return self.send_json({"error":"Estate not found"},404)
+                estate["associations"]=rows("""SELECT ea.*,pe.preferred_name_en AS person_en,pe.preferred_name_fa AS person_fa,
+                                                       o.preferred_name_en AS organization_en
+                                                FROM estate_associations ea
+                                                LEFT JOIN persons pe ON pe.person_id=ea.person_id
+                                                LEFT JOIN organizations o ON o.organization_id=ea.organization_id
+                                                WHERE ea.estate_id=? ORDER BY COALESCE(ea.date_text,''),ea.association_type""",(eid,))
+                return self.send_json(estate)
+            if path == "/api/organizations":
+                data=rows("""SELECT o.*,po.preferred_name_en AS parent_name,COUNT(DISTINCT om.membership_id) AS member_count,
+                                    COUNT(DISTINCT pra.assignment_id) AS role_count
+                             FROM organizations o LEFT JOIN organizations po ON po.organization_id=o.parent_organization_id
+                             LEFT JOIN organization_memberships om ON om.organization_id=o.organization_id
+                             LEFT JOIN person_role_assignments pra ON pra.organization_id=o.organization_id
+                             GROUP BY o.organization_id ORDER BY o.organization_type,o.preferred_name_en""")
+                return self.send_json(data)
+            if path.startswith("/api/organization/"):
+                oid=path.split("/")[3]
+                org=row("SELECT * FROM organizations WHERE organization_id=?",(oid,))
+                if not org: return self.send_json({"error":"Organization not found"},404)
+                org["members"]=rows("""SELECT om.*,p.preferred_name_en,p.preferred_name_fa FROM organization_memberships om
+                                        JOIN persons p ON p.person_id=om.person_id WHERE om.organization_id=?
+                                        ORDER BY COALESCE(om.date_text,''),p.preferred_name_en""",(oid,))
+                org["roles"]=rows("""SELECT pra.*,p.preferred_name_en,p.preferred_name_fa,r.preferred_name_en AS role_en
+                                      FROM person_role_assignments pra JOIN persons p ON p.person_id=pra.person_id
+                                      JOIN roles r ON r.role_id=pra.role_id WHERE pra.organization_id=?
+                                      ORDER BY COALESCE(pra.start_date_text,pra.date_text,''),p.preferred_name_en""",(oid,))
+                return self.send_json(org)
+            if path == "/api/titles":
+                return self.send_json(rows("""SELECT t.*,COUNT(pt.person_title_id) AS holder_count FROM titles t
+                                              LEFT JOIN person_titles pt ON pt.title_id=t.title_id
+                                              GROUP BY t.title_id ORDER BY holder_count DESC,t.title_en"""))
+            if path.startswith("/api/title/"):
+                tid=path.split("/")[3]
+                title=row("SELECT * FROM titles WHERE title_id=?",(tid,))
+                if not title: return self.send_json({"error":"Title not found"},404)
+                title["holders"]=rows("""SELECT pt.*,p.preferred_name_en,p.preferred_name_fa FROM person_titles pt
+                                          JOIN persons p ON p.person_id=pt.person_id WHERE pt.title_id=?
+                                          ORDER BY COALESCE(pt.date_text,''),p.preferred_name_en""",(tid,))
+                return self.send_json(title)
+            if path == "/api/research":
+                return self.send_json(rows("SELECT * FROM research_questions ORDER BY CASE priority WHEN 'high' THEN 0 WHEN 'medium' THEN 1 ELSE 2 END,status,question_id"))
+            if path == "/api/search":
+                q=(qs.get("q",[""])[0] or "").strip()
+                if not q: return self.send_json([])
+                like=f"%{q}%"
+                result=[]
+                for r in rows("""SELECT DISTINCT p.person_id AS id,p.preferred_name_en AS title,p.preferred_name_fa AS subtitle,'person' AS kind
+                                 FROM persons p LEFT JOIN person_names pn ON pn.person_id=p.person_id
+                                 WHERE p.preferred_name_en LIKE ? OR p.preferred_name_fa LIKE ? OR pn.name_text LIKE ? LIMIT 30""",(like,like,like)):
+                    result.append(r)
+                for r in rows("SELECT estate_id AS id,preferred_name_en AS title,preferred_name_fa AS subtitle,'estate' AS kind FROM estates WHERE preferred_name_en LIKE ? OR preferred_name_fa LIKE ? LIMIT 15",(like,like)):
+                    result.append(r)
+                for r in rows("SELECT organization_id AS id,preferred_name_en AS title,preferred_name_fa AS subtitle,'organization' AS kind FROM organizations WHERE preferred_name_en LIKE ? OR preferred_name_fa LIKE ? LIMIT 15",(like,like)):
+                    result.append(r)
+                for r in rows("SELECT event_id AS id,title,date_text AS subtitle,'event' AS kind FROM events WHERE title LIKE ? OR description LIKE ? LIMIT 15",(like,like)):
+                    result.append(r)
+                return self.send_json(result[:60])
             if path == "/api/people":
                 q = (qs.get("q", [""])[0] or "").strip()
                 branch = (qs.get("branch", [""])[0] or "").strip()
@@ -254,7 +345,7 @@ def main():
         raise SystemExit(1)
     server = ThreadingHTTPServer((HOST, PORT), Handler)
     url = f"http://{HOST}:{PORT}"
-    print("\nGharagozloo Historical Archive Explorer v0.1")
+    print("\nGharagozloo Historical Archive Explorer v0.2")
     print(f"Database: {DB_PATH}")
     print(f"Open: {url}")
     print("Press Ctrl+C to stop.\n")

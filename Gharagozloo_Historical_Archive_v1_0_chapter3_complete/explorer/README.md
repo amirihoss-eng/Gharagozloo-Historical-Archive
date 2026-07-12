@@ -1,35 +1,19 @@
-# Gharagozloo Historical Archive Explorer v0.1
+# Gharagozloo Historical Archive Explorer v0.2
 
-A local, read-only browser application for exploring `archive.sqlite`.
+A read-only local web application that displays the canonical `archive.sqlite` database.
 
-## Windows launch
+## Added in v0.2
 
-1. Confirm the `explorer` folder is in the repository root, beside `archive.sqlite`.
-2. Double-click `explorer\launch_explorer.bat`.
-3. Your default browser opens at `http://127.0.0.1:8765`.
-4. Leave the command window open while using the Explorer.
-5. Close it or press `Ctrl+C` to stop the application.
+- archive-wide search across people, estates, organizations, and events
+- historical timeline with event-type and place filters
+- estate explorer and estate detail pages
+- organization explorer with members and office holders
+- title and honorific explorer with recorded holders
+- research-question dashboard
+- expanded navigation and responsive layout
 
-No external Python packages are required. The application uses Python's standard library and does not modify the database.
+## Launch on Windows
 
-## Included in v0.1
+Double-click `launch_explorer.bat`. Keep the command window open while using the Explorer.
 
-- professional archive dashboard;
-- live archive statistics;
-- searchable and branch-filtered people index;
-- comprehensive person pages;
-- names, titles, roles and offices;
-- family and social relationships;
-- event and role timeline;
-- interactive relationship graph;
-- person-level claims, citations and evidence profiles.
-
-## Architecture
-
-The application reads the canonical database directly from:
-
-```text
-repository root/archive.sqlite
-```
-
-The Explorer is intentionally read-only. Historical changes remain migration-driven.
+The application opens at `http://127.0.0.1:8765` and never writes to the database.
