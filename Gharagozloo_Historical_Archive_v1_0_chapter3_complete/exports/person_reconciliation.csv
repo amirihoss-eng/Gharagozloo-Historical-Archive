@@ -1,0 +1,8 @@
+﻿person_id,wave_id,dossier_level,reconciliation_status,identity_collision_reviewed,relationships_reviewed,timeline_reviewed,citations_reviewed,unresolved_summary,updated_at
+P0011,RW001,silver,complete_for_source,1,1,1,1,Shahbaz relationship remains probable; direct parent link to Haji Mohammad Khan is unverified; some namesake references remain unresolved.,2026-07-11T23:59:00Z
+P0003,RW001,silver,complete_for_source,1,1,1,1,"Exact birth/death dates, full estate list, and details of Urmia governorship remain open.",2026-07-11T23:59:00Z
+P0004,RW001,silver,complete_for_source,1,1,1,1,"Exact dates, wives, and full list of approximately 120 landed properties remain open.",2026-07-11T23:59:00Z
+P0005,RW001,silver,complete_for_source,1,1,1,1,"Amir Arfa title-grant date, office, wife, dates, and personal estates remain unknown.",2026-07-11T23:59:00Z
+P0007,RW001,silver,complete_for_source,1,1,1,1,"Book provides no independent biography; dates, spouse, children, estates, and career require external sources.",2026-07-11T23:59:00Z
+P0008,RW001,silver,complete_for_source,1,1,1,1,"Book provides no secure biography; Majles service, study abroad, estates, dates, and Amiri surname adoption require external verification.",2026-07-11T23:59:00Z
+P0040,RW001,silver,complete_for_source,1,1,1,1,Mehdi Khan child identification conflicts internally; exact details of some appointments and family matters require external verification.,2026-07-11T23:59:00Z

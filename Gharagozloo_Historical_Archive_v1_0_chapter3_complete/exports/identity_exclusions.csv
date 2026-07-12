@@ -1,0 +1,7 @@
+﻿exclusion_id,person_id,excluded_identity_text,reason,evidence_basis
+IX001,P0011,Later Mohammad-Hossein Khan of the Nosrat al-Molk / Hesam al-Molk line,The book explicitly warns that compilers confused the early Ashiqloo chief with a later namesake.,S0001 narrative
+IX002,P0003,"Mohammad-Hasan Khan E'temad al-Saltaneh, court historian","Same honorific title, different person.",S0001 narrative and title dispute
+IX003,P0003,Mostafa-Qoli Khan Qashqai,Different tribal identity and historical episode.,S0001 narrative
+IX004,P0004,Abdollah Khan Sarem al-Saltaneh,"Different branch, generation, and title despite similar name.",S0001 narrative
+IX005,P0008,"Gholamhossein Gharagozloo, author of Hegmataneh ta Hamadan",Bibliographic author is not the archive owner's grandfather.,S0001 bibliography/index
+IX006,P0040,Mahmoud Khan Naser al-Molk,Grandfather and predecessor who bore the same title.,S0001 narrative lineage

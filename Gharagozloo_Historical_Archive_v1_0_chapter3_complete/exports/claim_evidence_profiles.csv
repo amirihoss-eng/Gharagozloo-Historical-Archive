@@ -9,3 +9,16 @@ C0123,NARRATIVE_FACT,author_statement,supports,Supported by named Safavid-period
 C0124,AUTHOR_SYNTHESIS,author_statement,supports,Synthesizes military and landed evidence.
 C0125,NARRATIVE_FACT,author_statement,supports,Supported by chronicle reports and named commanders.
 C0126,AUTHOR_SYNTHESIS,author_statement,supports,Records the chapter's methodological caution.
+C0127,NARRATIVE_FACT,author_statement,supports,Explicit list in narrative text.
+C0128,AUTHOR_INFERENCE,author_inference,questions,Author presents the link as probable.
+C0129,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Combined from multiple dated narrative passages.
+C0130,NARRATIVE_FACT,author_statement,supports,Explicit title-grant context.
+C0131,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Multiple narrative passages reconciled.
+C0132,NARRATIVE_FACT,author_statement,supports,Approximate scale reported by author.
+C0133,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Whole-book negative finding.
+C0134,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Whole-book negative finding.
+C0135,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Identity collision resolved from index and bibliography context.
+C0136,NARRATIVE_FACT,author_statement,supports,Explicit lineage.
+C0137,ARCHIVE_SYNTHESIS,archive_synthesis,supports,Chronological reconciliation of Chapter 4.
+C0138,AUTHOR_SYNTHESIS,author_statement,presents,Political interpretation belongs to the book author.
+C0139,ARCHIVE_SYNTHESIS,archive_synthesis,unresolved,Conflict between two passages in S0001.

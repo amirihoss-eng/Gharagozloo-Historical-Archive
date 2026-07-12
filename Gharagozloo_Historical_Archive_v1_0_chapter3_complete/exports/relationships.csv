@@ -4,12 +4,12 @@ R0002,P0002,parent_of,P0003,,confirmed
 R0003,P0003,parent_of,P0004,,confirmed
 R0004,P0004,parent_of,P0005,,confirmed
 R0005,P0004,parent_of,P0006,,confirmed
-R0006,P0005,parent_of,P0007,Based on user-verified tree; exact published diagram reading still requires image-level confirmation.,provisional
-R0007,P0005,parent_of,P0008,Based on user-verified tree; exact published diagram reading still requires image-level confirmation.,provisional
-R0008,P0007,sibling_of,P0008,,provisional
+R0006,P0005,parent_of,P0007,Family testimony identifies Mohtaj-Ali as father of Gholam-Ali; the small page-213 genealogy is supporting evidence only.,provisional
+R0007,P0005,parent_of,P0008,Family testimony identifies Mohtaj-Ali as father of Gholamhossein; the small page-213 genealogy is supporting evidence only.,provisional
+R0008,P0007,sibling_of,P0008,Family testimony consistently identifies Gholam-Ali and Gholamhossein as brothers; independent textual corroboration remains pending.,provisional
 R0009,P0008,parent_of,P0009,,confirmed
 R0010,P0009,parent_of,P0010,,confirmed
-R0011,P0011,parent_of,P0001,User-supplied ancestral chain; not yet confirmed from S0001.,unverified
+R0011,P0011,parent_of,P0001,"User-supplied ancestral chain places Haji Mohammad Khan after Mohammad-Hossein Khan, but S0001 does not establish this direct parent-child link.",unverified
 R0012,P0004,parent_of,P0012,S0001 explicitly identifies Hossein Qoli Khan as a son of Abdollah Khan.,confirmed
 R0013,P0011,parent_of,P0013,S0001 names Nabi Khan among Mohammad Hossein Khan’s five sons.,confirmed
 R0014,P0013,parent_of,P0014,S0001 identifies Mahmoud Khan as son of Nabi Khan.,confirmed
@@ -37,5 +37,8 @@ R0035,P0041,spouse_of,P0055,Chapter 4 pp. 186,confirmed
 R0036,P0054,parent_of,P0055,Chapter 4 pp. 186,confirmed
 R0037,P0040,succeeded,P0014,Chapter 4 pp. 169,confirmed
 R0038,P0040,succeeded_as_regent,P0049,Chapter 4 pp. 182,confirmed
-R0039,P0040,father_of,P0064,Narrative text names Mehdi Khan as the son of Naser al-Molk in the regimental passage.,confirmed
+R0039,P0040,father_of,P0064,"Chapter 2 calls a Mehdi Khan the son of Naser al-Molk in a regimental passage, but Chapter 4 separately states that Naser al-Molk had two sons, Hossein-Ali and Mohsen, and one daughter. Identity remains unresolved.",provisional
 R0040,P0064,father_of,P0065,Narrative text names Abdol-Ali Khan as Mehdi Khan's eldest son.,confirmed
+R0041,P0011,parent_of,P0074,Narrative text explicitly names Rostam Khan among Mohammad-Hossein Khan's five sons.,confirmed
+R0042,P0011,parent_of,P0062,Narrative text explicitly names Fazlollah Khan among Mohammad-Hossein Khan's five sons.,confirmed
+R0043,P0011,parent_of,P0075,Narrative text explicitly names Ali-Naqi Khan among Mohammad-Hossein Khan's five sons.,confirmed

@@ -18,8 +18,10 @@ schema_design,institutional-economic-military expansion
 chapter_2_status,structured_mining_complete_v1
 evidence_policy_relationships,Narrative text and explicit captions primary; diagrams corroborative only unless independently confirmed.
 evidence_classification_version,1.0
-archive_version,2.1.0
 chapter_1_status,structured_mining_complete_v1
 chapter_1_evidence_policy,Competing origin theories and author inferences remain explicitly classified; no uncertain ancient-to-modern genealogy is asserted.
-last_migration,0012
-updated_at,2026-07-12T01:30:03.007298+00:00
+archive_version,2.2.0
+master_reconciliation_wave_1,complete
+reconciliation_policy,Text-first; author inference qualified; user testimony explicitly labeled; genealogy diagrams supporting-only unless corroborated.
+last_migration,0013
+updated_at,2026-07-12T05:06:50.446746+00:00

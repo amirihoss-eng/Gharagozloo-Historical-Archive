@@ -11,3 +11,4 @@
 0010,0010_complete_chapter2_structured_data.sql,5f34f4263203a61943d3d74bf4bf5585d07e7bfda6eba316724046aaad104fcb,2026-07-12T00:46:22.404335+00:00,Applied by tools/apply_migration.py
 0011,0011_add_evidence_classification.sql,3245ced3ec5bbe051d32179ad12fc412b2ba17c23bdb3241fd2469c22b5c0382,2026-07-12T01:29:15.428623+00:00,Applied by tools/apply_migration.py
 0012,0012_complete_chapter1_historical_origins.sql,7cd1810d8f45a4e87b640b89dfa4f8f0573daaf9febb360e2db36e6d55b139c9,2026-07-12T01:30:03.007298+00:00,Applied by tools/apply_migration.py
+0013,0013_master_reconciliation_wave1.sql,49ff394134eb13c6fb348b0af844a7109aab55fd71fc2ef1b9fa060b377401ed,2026-07-12T05:06:50.446746+00:00,Applied by tools/apply_migration.py
