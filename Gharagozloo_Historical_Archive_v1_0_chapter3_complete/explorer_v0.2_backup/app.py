@@ -160,7 +160,7 @@ def graph_for(person_id: str, depth: int = 2) -> dict:
 
 
 class Handler(BaseHTTPRequestHandler):
-    server_version = "GharagozlooExplorer/0.6.4-expandable-generation-cards"
+    server_version = "GharagozlooExplorer/0.3-graph-core"
 
     def send_json(self, payload, status=200):
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
@@ -189,7 +189,7 @@ class Handler(BaseHTTPRequestHandler):
             path = parsed.path
             qs = parse_qs(parsed.query)
             if path == "/api/health":
-                return self.send_json({"ok": True, "database": str(DB_PATH), "version": "0.6.4-expandable-generation-cards"})
+                return self.send_json({"ok": True, "database": str(DB_PATH), "version": "0.3.0-graph-core"})
             if path == "/api/dashboard":
                 featured = rows(
                     """SELECT p.person_id,p.preferred_name_en,p.preferred_name_fa,p.branch,p.summary,

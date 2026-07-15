@@ -1,19 +1,14 @@
-# Gharagozloo Historical Archive Explorer v0.2
+# Explorer v0.6.4 — Expandable Generation Cards
 
-A read-only local web application that displays the canonical `archive.sqlite` database.
+Improves the left-side generation timeline.
 
-## Added in v0.2
+## New behavior
 
-- archive-wide search across people, estates, organizations, and events
-- historical timeline with event-type and place filters
-- estate explorer and estate detail pages
-- organization explorer with members and office holders
-- title and honorific explorer with recorded holders
-- research-question dashboard
-- expanded navigation and responsive layout
+- click a generation card to expand it;
+- the full rectangle opens to the left, away from the person nodes;
+- the expanded card shows the complete date range, regime, area, and record/estimate status;
+- click it again to collapse;
+- only one generation card is expanded at a time;
+- the timeline on/off toggle remains available.
 
-## Launch on Windows
-
-Double-click `launch_explorer.bat`. Keep the command window open while using the Explorer.
-
-The application opens at `http://127.0.0.1:8765` and never writes to the database.
+Expected health version: `0.6.4-expandable-generation-cards`
