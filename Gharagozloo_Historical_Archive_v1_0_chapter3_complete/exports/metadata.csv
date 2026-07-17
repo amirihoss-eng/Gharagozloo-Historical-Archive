@@ -25,7 +25,8 @@ reconciliation_policy,Text-first; author inference qualified; user testimony exp
 master_reconciliation_wave_2,complete
 thematic_reconciliation_wave_3,complete
 wave3_data_preservation_note,Migrations 0014 and 0015 are additive; no records from the uploaded post-0013 Git master were deleted.
-archive_version,2.4.1
 wave3_validation_hotfix,Resolved 12 uncited-claim warnings and 2 duplicate-name warnings after migrations 0014-0015.
-last_migration,0016
-updated_at,2026-07-12T06:50:46.804134+00:00
+archive_version,2.5.0
+living_family_integration,Added the immediate families of Hossein Gholi and Yassaman Amiri Gharagozloo from direct family testimony.
+last_migration,0017
+updated_at,2026-07-15T04:52:34.310271+00:00

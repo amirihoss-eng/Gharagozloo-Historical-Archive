@@ -45,3 +45,15 @@ R0043,P0011,parent_of,P0075,Narrative text explicitly names Ali-Naqi Khan among 
 R0044,P0011,parent_of,P0018,Narrative text explicitly names Rostam Khan as the eldest son of the early Mohammad-Hossein Khan.,confirmed
 R0045,P0011,parent_of,P0020,Narrative text explicitly names Ali-Naqi Khan among the five sons of the early Mohammad-Hossein Khan.,confirmed
 R0046,P0022,parent_of,P0023,Chapter 2 family-line summary identifies Zeyn al-Abedin Khan as son and successor of Mohammad-Hossein Khan Hesam al-Molk.,confirmed
+R0047,P0009,parent_of,P0076,Dr. Alireza is the father of Yassaman.,confirmed
+R0048,P0010,sibling_of,P0076,Hossein and Yassaman are siblings.,confirmed
+R0049,P0076,spouse_of,P0077,Yassaman is married to Amir Navab.,confirmed
+R0050,P0076,parent_of,P0078,Yassaman is the mother of Yalda Navab.,confirmed
+R0051,P0077,parent_of,P0078,Amir Navab is the father of Yalda Navab.,confirmed
+R0052,P0076,parent_of,P0079,Yassaman is the mother of Aryana Navab.,confirmed
+R0053,P0077,parent_of,P0079,Amir Navab is the father of Aryana Navab.,confirmed
+R0054,P0010,spouse_of,P0080,Hossein is married to Roya Yaghmai.,confirmed
+R0055,P0010,parent_of,P0081,Hossein is the father of Raha Amiri Gharagozloo.,confirmed
+R0056,P0080,parent_of,P0081,Roya Yaghmai is the mother of Raha Amiri Gharagozloo.,confirmed
+R0057,P0010,parent_of,P0082,Hossein is the father of Saam Amiri Gharagozloo.,confirmed
+R0058,P0080,parent_of,P0082,Roya Yaghmai is the mother of Saam Amiri Gharagozloo.,confirmed

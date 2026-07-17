@@ -150,3 +150,10 @@ C0148,person,P0023,life_dates,Zeyn al-Abedin Khan Amir Afkham was born in 1275 A
 C0149,person,P0023,political_and_estate_profile,"Amir Afkham was a major landowner, military patron, provincial governor, and royalist opponent of the Constitutional movement.",probable,active,Mix of narrative facts and author synthesis.
 C0150,person,P0024,title_variation,S0001 uses both Ehtesham al-Saltaneh and Ehtesham al-Dowleh for Gholamreza Khan.,confirmed,active,"Title variation preserved, not flattened."
 C0151,person,P0024,royal_marriage,"Gholamreza Khan married Qamar al-Saltaneh, daughter of Mozaffar al-Din Shah, in 1309 AH.",confirmed,active,Narrative and caption evidence.
+C0152,person,P0076,is child of,Dr. Alireza Amiri Gharagozloo,confirmed,active,Direct family testimony.
+C0153,person,P0076,is spouse of,Amir Navab,confirmed,active,Direct family testimony.
+C0154,person,P0078,is child of,Yassaman Amiri Gharagozloo and Amir Navab,confirmed,active,Direct family testimony.
+C0155,person,P0079,is child of,Yassaman Amiri Gharagozloo and Amir Navab,confirmed,active,Direct family testimony.
+C0156,person,P0080,is spouse of,Hossein Gholi Amiri Gharagozloo,confirmed,active,Direct family testimony.
+C0157,person,P0081,is child of,Hossein Gholi Amiri Gharagozloo and Roya Yaghmai,confirmed,active,Direct family testimony.
+C0158,person,P0082,is child of,Hossein Gholi Amiri Gharagozloo and Roya Yaghmai,confirmed,active,Direct family testimony.

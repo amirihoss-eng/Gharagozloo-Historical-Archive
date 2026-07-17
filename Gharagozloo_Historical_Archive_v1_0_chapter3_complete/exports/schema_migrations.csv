@@ -15,3 +15,4 @@
 0014,0014_master_reconciliation_wave2.sql,3432a598daaa435d307645420c97d385041614513e240c1b0d719306802abb27,2026-07-12T06:42:13.156420+00:00,Applied by tools/apply_migration.py
 0015,0015_thematic_reconciliation_wave3.sql,6b5e6574310450b947a3f67b5d37273e6fb174f66f8813d8e00e85072923195a,2026-07-12T06:42:29.901518+00:00,Applied by tools/apply_migration.py
 0016,0016_wave3_validation_hotfix.sql,5359d70726d16639746d2858ec5f64288c426e618e29e115ec1b5807e27bc099,2026-07-12T06:50:46.804134+00:00,Applied by tools/apply_migration.py
+0017,0017_add_living_family_branch.sql,711252d4bd84518694f43874d86f9e29de988c1e193faa123740ad4c4bb3fbc6,2026-07-15T04:52:34.310271+00:00,Applied by tools/apply_migration.py

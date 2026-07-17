@@ -31,3 +31,4 @@
 30,2026-07-12T06:42:13.156420+00:00,migration,0014,apply,Applied 0014_master_reconciliation_wave2.sql
 31,2026-07-12T06:42:29.901518+00:00,migration,0015,apply,Applied 0015_thematic_reconciliation_wave3.sql
 32,2026-07-12T06:50:46.804134+00:00,migration,0016,apply,Applied 0016_wave3_validation_hotfix.sql
+33,2026-07-15T04:52:34.310271+00:00,migration,0017,apply,Applied 0017_add_living_family_branch.sql
