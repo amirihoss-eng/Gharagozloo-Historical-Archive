@@ -5,7 +5,60 @@ function route(name,arg){if(name==='graphcore')return graphCore(arg);if(name==='
 document.addEventListener('click',e=>{const b=e.target.closest('[data-route]');if(b)route(b.dataset.route,b.dataset.arg)});
 const globalSearch=document.querySelector('#globalSearch'),searchResults=document.querySelector('#searchResults');let searchTimer;globalSearch.addEventListener('input',e=>{clearTimeout(searchTimer);const q=e.target.value.trim();if(!q){searchResults.innerHTML='';searchResults.classList.remove('open');return}searchTimer=setTimeout(async()=>{const data=await api('/api/search?q='+encodeURIComponent(q));searchResults.innerHTML=data.map(x=>`<button data-route="${x.kind}" data-arg="${x.id}"><span>${esc(x.title)}</span><small>${esc(x.kind)}${x.subtitle?' · '+esc(x.subtitle):''}</small></button>`).join('')||'<div class="search-empty">No matches</div>';searchResults.classList.add('open')},180)});globalSearch.addEventListener('keydown',e=>{if(e.key==='Enter'){searchResults.classList.remove('open');route('people',e.target.value)}});document.addEventListener('click',e=>{if(!e.target.closest('.global-search'))searchResults.classList.remove('open')});
 function stats(c){return [['persons','People'],['events','Events'],['claims','Claims'],['relationships','Relationships'],['sources','Sources'],['estates','Estates']].map(([k,l])=>`<div class=stat><b>${c[k]}</b><span>${l}</span></div>`).join('')}
-async function home(){app.innerHTML='<div class=loading>Loading archive dashboard…</div>';const d=state.dashboard=await api('/api/dashboard');app.innerHTML=`<section class=hero><div class=eyebrow>Archive v2.4.1 · Explorer v0.2</div><h1>Explore a family across generations, places, power and evidence.</h1><p>A professional research interface for the Gharagozloo Historical Archive. Follow relationships, inspect biographies, and move from every historical assertion to its supporting source.</p><div class=hero-actions><button class="btn primary" data-route=people>Explore people</button><button class="btn ghost" data-route=person data-arg=P0004>Open a featured dossier</button></div></section><section class=stats>${stats(d.counts)}</section><div class=section-head><div><h2>Featured people</h2><p>Reconciled and richly documented records from Source S0001.</p></div></div><section class=person-grid>${d.featured.map(card).join('')}</section><div class=section-head><div><h2>Browse by branch</h2><p>Open the people index filtered to a family or thematic branch.</p></div></div><div class=branch-list>${d.branches.map(x=>`<button class=branch-btn data-branch="${esc(x.branch)}">${esc(x.branch)} · ${x.count}</button>`).join('')}</div>`;document.querySelectorAll('[data-branch]').forEach(b=>b.onclick=()=>people('',b.dataset.branch))}
+async function home(){
+  app.innerHTML='<div class=loading>Loading archive dashboard…</div>';
+  const d=state.dashboard=await api('/api/dashboard');
+  app.innerHTML=`
+  <section class="archive-landing">
+    <section class="landing-hero">
+      <div class="hero-copy">
+        <div class="eyebrow">The Gharagozloo Historical Archive</div>
+        <h1>A family history preserved as evidence, relationships, places and lives.</h1>
+        <p class="hero-lede">Explore the Gharagozloo family across generations—from its Turkic tribal roots and settlement in western Iran to its long association with Hamadan and Kabudarahang, and the public, military and political roles held by members of the family.</p>
+        <div class="hero-actions">
+          <button class="btn primary" data-route="graphcore">Enter the living family graph</button>
+          <button class="btn ghost" data-route="people">Browse people</button>
+        </div>
+      </div>
+      <div class="hero-emblem" aria-hidden="true">
+        <span class="hero-emblem-ring"></span>
+        <span class="hero-emblem-letter">G</span>
+        <small>قراگوزلو</small>
+      </div>
+    </section>
+
+    <section class="dedication-banner">
+      <span class="dedication-mark">✦</span>
+      <div><small>DEDICATION</small><strong>Thank you, Amoo Ali Amiri Gharagozloo</strong><p>For helping preserve the family’s memory and making this archive possible.</p></div>
+    </section>
+
+    <section class="archive-intro">
+      <div class="intro-kicker">About the archive</div>
+      <h2>From tribal confederation to a documented family history</h2>
+      <p>The Gharagozloos were a Turkic tribal and landholding family whose history became deeply connected with Hamadan and its surrounding districts. Over successive dynasties, branches of the family accumulated estates, military responsibilities, court titles and public offices. Their story intersects with the Safavid, Afsharid, Zand, Qajar and Pahlavi eras, as well as the political and social transformations of modern Iran.</p>
+      <p>This Explorer brings together the people, relationships, offices, estates, events and source-backed historical claims assembled in the archive. The database remains the canonical record; every polished page is an invitation to examine the underlying evidence.</p>
+    </section>
+
+    <section class="quick-access-grid">
+      <button class="access-card featured" data-route="graphcore"><span class="access-icon">⌘</span><div><small>INTERACTIVE</small><h3>Living Family Graph</h3><p>Move through generations, expand branches and open complete person dossiers.</p></div><b>→</b></button>
+      <button class="access-card" data-route="people"><span class="access-icon">人</span><div><small>INDEX</small><h3>People</h3><p>Search names, branches, aliases and biographies.</p></div><b>→</b></button>
+      <button class="access-card" data-route="timeline"><span class="access-icon">◷</span><div><small>CHRONOLOGY</small><h3>Timeline</h3><p>Follow events and careers across historical periods.</p></div><b>→</b></button>
+      <button class="access-card" data-route="estates"><span class="access-icon">⌂</span><div><small>PLACES</small><h3>Estates</h3><p>Explore properties, localities and territorial connections.</p></div><b>→</b></button>
+      <button class="access-card" data-route="titles"><span class="access-icon">♜</span><div><small>AUTHORITY</small><h3>Titles</h3><p>Inspect honorifics, ranks and offices in context.</p></div><b>→</b></button>
+      <button class="access-card" data-route="research"><span class="access-icon">§</span><div><small>EVIDENCE</small><h3>Research</h3><p>Review sources, claims and unresolved questions.</p></div><b>→</b></button>
+    </section>
+
+    <section class="stats landing-stats">${stats(d.counts)}</section>
+
+    <div class="section-head landing-section-head"><div><span class="section-overline">Selected dossiers</span><h2>Featured people</h2><p>Reconciled and richly documented records from the archive.</p></div><button class="text-link" data-route="people">View the complete people index →</button></div>
+    <section class="person-grid featured-grid">${d.featured.map(card).join('')}</section>
+
+    <div class="section-head landing-section-head"><div><span class="section-overline">Family structure</span><h2>Browse by branch</h2><p>Open the people index filtered to a family or thematic branch.</p></div></div>
+    <div class="branch-list landing-branches">${d.branches.map(x=>`<button class="branch-btn" data-branch="${esc(x.branch)}"><span>${esc(x.branch)}</span><b>${x.count}</b></button>`).join('')}</div>
+  </section>`;
+  document.querySelectorAll('[data-branch]').forEach(b=>b.onclick=()=>people('',b.dataset.branch));
+}
+
 function card(p){return `<article class=person-card data-route=person data-arg="${p.person_id}"><h3>${esc(p.preferred_name_en)}</h3><div class=fa>${esc(p.preferred_name_fa||'')}</div><div class=chips>${p.branch?`<span class=chip>${esc(p.branch)}</span>`:''}${p.dossier_level?`<span class="chip ${p.dossier_level}">${esc(p.dossier_level)}</span>`:''}</div><p>${esc((p.summary||'No summary yet.').slice(0,180))}</p></article>`}
 async function people(q='',branch=''){app.innerHTML='<div class=loading>Loading people…</div>';const data=state.people=await api(`/api/people?q=${encodeURIComponent(q)}&branch=${encodeURIComponent(branch)}`);const branches=state.dashboard?.branches||[];app.innerHTML=`<div class=section-head><div><h2>People</h2><p>${data.length} records shown</p></div></div><div class=toolbar><input id=peopleSearch value="${esc(q)}" placeholder="Name, Persian name, alias, branch or biography"><select id=branchSelect><option value="">All branches</option>${branches.map(x=>`<option ${x.branch===branch?'selected':''}>${esc(x.branch)}</option>`).join('')}</select></div><div class=people-table><div class="people-row header"><span>Person</span><span>Branch</span><span>Life</span><span>Status</span></div>${data.map(p=>`<div class=people-row data-route=person data-arg=${p.person_id}><span><strong>${esc(p.preferred_name_en)}</strong><br><span class=muted dir=rtl>${esc(p.preferred_name_fa||'')}</span></span><span>${esc(p.branch||'Unclassified')}</span><span>${esc([p.birth_date_text,p.death_date_text].filter(Boolean).join(' – ')||'—')}</span><span><span class=chip>${esc(p.dossier_level||p.verification_status)}</span></span></div>`).join('')||'<div class=empty>No matching people.</div>'}</div>`;let timer;document.querySelector('#peopleSearch').oninput=e=>{clearTimeout(timer);timer=setTimeout(()=>people(e.target.value,document.querySelector('#branchSelect').value),250)};document.querySelector('#branchSelect').onchange=e=>people(document.querySelector('#peopleSearch').value,e.target.value)}
 function relLabel(r){const m={parent_of:'Parent of',father_of:'Father of',sibling_of:'Sibling of',spouse_of:'Spouse of',grandchild_of:'Grandchild of',father_in_law_of:'Father-in-law of',relative_of:'Relative of',succeeded:'Succeeded',succeeded_as_regent:'Succeeded as regent'};return m[r.relationship_type]||r.relationship_type.replaceAll('_',' ')}
@@ -43,7 +96,7 @@ async function renderPersonDrawer(id){const drawer=document.querySelector('#pers
 function drawerRel(title,items){return `<section class="drawer-section"><h3>${title}</h3>${items.length?items.map(r=>`<button class="drawer-person" data-person-jump="${r.related_person_id}"><span>${esc(r.related_name_en)}</span><small>${esc(r.related_name_fa||'')}</small></button>`).join(''):'<p class="muted">None recorded.</p>'}</section>`}
 document.addEventListener('click',e=>{const x=e.target.closest('[data-person-jump]');if(x&&graphState.data){graphState.selected=x.dataset.personJump;graphState.expanded.add(graphState.selected);drawLivingGraph();renderPersonDrawer(graphState.selected)}});
 
-route('graphcore');
+route('home');
 
 /* Living Historical Graph v2 */
 const graphV2={filtersOpen:true,drawerOpen:true,history:[]};
