@@ -874,6 +874,14 @@ function svgGenerationBandsV064(){
   const dataByGeneration={};
   family.nodes.forEach(n=>(dataByGeneration[Math.max(1,n.generation)]??=[]).push(n));
 
+  // Explorer v0.6.7: use one shared left edge for every generation card.
+  // Reserve enough room for the widest expanded card so no card can cover a person node.
+  const allPositions=Object.values(grouped).flat();
+  const globalMinX=Math.min(...allPositions.map(p=>p.x));
+  const expandedWidth=292;
+  const nodeClearance=58;
+  const alignedLeftX=globalMinX-expandedWidth-nodeClearance;
+
   Object.keys(grouped).map(Number).sort((a,b)=>a-b).forEach(g=>{
     const positions=grouped[g];
     const avgY=positions.reduce((s,p)=>s+p.y,0)/positions.length;
@@ -881,10 +889,9 @@ function svgGenerationBandsV064(){
     const profile=generationProfile(g,dataByGeneration[g]||[]);
     const expanded=graphState.expandedGenerationCard===g;
 
-    const width=expanded ? 292 : 172;
+    const width=expanded ? expandedWidth : 172;
     const height=expanded ? 146 : 96;
-    const gap=expanded ? 58 : 46;
-    const x=minX-width-gap;
+    const x=alignedLeftX;
     const y=avgY-height/2;
     const color=generationColor(g);
 
