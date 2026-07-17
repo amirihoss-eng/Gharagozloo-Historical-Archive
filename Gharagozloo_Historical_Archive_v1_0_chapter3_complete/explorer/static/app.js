@@ -85,6 +85,7 @@ async function research(){app.innerHTML='<div class=loading>Loading research que
 
 // ===== Living Historical Graph: Graph Core =====
 const graphState={root:'P0011',selected:null,expanded:new Set(),branches:new Set(),scale:1,tx:0,ty:0,data:null};
+graphState.connectionStyle=localStorage.getItem('gharagozlooConnectionStyle')||'modern';
 function familyType(t){return ['parent_of','father_of','spouse_of','sibling_of','grandchild_of'].includes(t)}
 function parentChild(e){if(e.relationship_type==='parent_of'||e.relationship_type==='father_of')return [e.person1_id,e.person2_id];if(e.relationship_type==='grandchild_of')return [e.person2_id,e.person1_id];return null}
 async function graphCore(root){app.innerHTML='<div class=loading>Building the living family graph…</div>';const d=graphState.data||await api('/api/graph/core');graphState.data=d;if(root)graphState.root=root;if(!graphState.expanded.size)graphState.expanded.add(graphState.root);graphState.selected=graphState.selected||graphState.root;renderGraphCore()}
@@ -247,6 +248,15 @@ function renderGraphCore(){
         </label>
       </div>
 
+      <div class="filter-section connection-style-section">
+        <h3>Connection style</h3>
+        <p class="filter-help">Switch between flowing curves and a traditional family-tree layout.</p>
+        <div class="connection-style-toggle" role="group" aria-label="Connection style">
+          <button type="button" data-connection-style="modern" class="${graphState.connectionStyle==='modern'?'active':''}">Modern</button>
+          <button type="button" data-connection-style="classic" class="${graphState.connectionStyle==='classic'?'active':''}">Classic</button>
+        </div>
+      </div>
+
       <div class="filter-section">
         <h3>Branches</h3>
         <label class="check-row"><input type="checkbox" id="allBranches" ${graphState.branches.size?'':'checked'}> All branches</label>
@@ -339,6 +349,14 @@ function wireGraphControls(){
     graphState.colorGenerations=e.target.checked;
     drawLivingGraph();
   };
+  document.querySelectorAll('[data-connection-style]').forEach(button=>{
+    button.onclick=()=>{
+      graphState.connectionStyle=button.dataset.connectionStyle;
+      localStorage.setItem('gharagozlooConnectionStyle',graphState.connectionStyle);
+      document.querySelectorAll('[data-connection-style]').forEach(x=>x.classList.toggle('active',x.dataset.connectionStyle===graphState.connectionStyle));
+      drawLivingGraph();
+    };
+  });
   document.querySelector('#gcZoomIn').onclick=()=>{
     graphState.scale=Math.min(3,graphState.scale*1.18); drawLivingGraph();
   };
@@ -451,13 +469,20 @@ function drawLivingGraph(){
       const parent=by[pc[0]], child=by[pc[1]];
       if(!parent||!child) return '';
       const color=parentColor(pc[0]);
-      return `<path class="family-edge parent" data-parent="${pc[0]}" data-child="${pc[1]}"
-        style="--parent-line:${color}"
-        d="M ${parent.x} ${parent.y+58} C ${parent.x} ${(parent.y+child.y)/2}, ${child.x} ${(parent.y+child.y)/2}, ${child.x} ${child.y-58}"></path>
+      const middleY=(parent.y+child.y)/2;
+      const path=graphState.connectionStyle==='classic'
+        ? `M ${parent.x} ${parent.y+58} V ${middleY} H ${child.x} V ${child.y-58}`
+        : `M ${parent.x} ${parent.y+58} C ${parent.x} ${middleY}, ${child.x} ${middleY}, ${child.x} ${child.y-58}`;
+      return `<path class="family-edge parent ${graphState.connectionStyle}" data-parent="${pc[0]}" data-child="${pc[1]}"
+        style="--parent-line:${color}" d="${path}"></path>
         <circle class="parent-endpoint" cx="${child.x}" cy="${child.y-58}" r="5" style="--parent-line:${color}"></circle>`;
     }
     const cls=e.relationship_type==='spouse_of'?'spouse':'sibling';
-    return `<path class="family-edge ${cls}" d="M ${a.x} ${a.y} C ${a.x} ${(a.y+b.y)/2}, ${b.x} ${(a.y+b.y)/2}, ${b.x} ${b.y}"></path>`;
+    const middleY=(a.y+b.y)/2;
+    const path=graphState.connectionStyle==='classic'
+      ? `M ${a.x} ${a.y} V ${middleY} H ${b.x} V ${b.y}`
+      : `M ${a.x} ${a.y} C ${a.x} ${middleY}, ${b.x} ${middleY}, ${b.x} ${b.y}`;
+    return `<path class="family-edge ${cls} ${graphState.connectionStyle}" d="${path}"></path>`;
   }).join('');
 
   const nodeHtml=nodes.map(n=>{

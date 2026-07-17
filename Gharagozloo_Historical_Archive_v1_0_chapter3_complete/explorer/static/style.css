@@ -279,3 +279,12 @@ repeating-linear-gradient(45deg,transparent 0 18px,rgba(255,255,255,.025) 18px 1
   color:#71817d;
 }
 .graph-v2 .drawer-head .eyebrow{margin-top:2px}
+
+
+/* Explorer v0.6.8.1 — Modern / Classic connection style */
+.connection-style-toggle{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;background:#eee8dc;border:1px solid #d8cfbf;border-radius:10px}
+.connection-style-toggle button{border:0;background:transparent;border-radius:7px;padding:8px 10px;font-weight:750;color:var(--muted);cursor:pointer}
+.connection-style-toggle button:hover{background:rgba(255,255,255,.65);color:var(--deep)}
+.connection-style-toggle button.active{background:#fffdf8;color:var(--deep);box-shadow:0 2px 8px rgba(24,45,46,.12)}
+.graph-v2 .family-edge.classic{stroke-linejoin:round;stroke-linecap:square}
+.graph-v2 .family-edge.modern{stroke-linecap:round}
