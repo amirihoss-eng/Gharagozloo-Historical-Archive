@@ -167,13 +167,23 @@ C0165,person,P0084,is child of,Sartip Mohammad-Baqer Khan Gharagozloo,probable,a
 C0166,person,P0085,is child of,Sartip Mohammad-Baqer Khan Gharagozloo,probable,active,Diagram-supported relationship in S0001 Figure 4; personal name corrected from Mahmoud to Majid.
 C0167,person,P0086,is child of,Majid Khan Gharagozloo of the Hajilou/Jeyhunabadi line,probable,active,Diagram-supported relationship in S0001 Figure 4; parent name corrected from Mahmoud to Majid.
 C0168,person,P0087,is child of,Ali-Akbar Khan Gharagozloo,probable,active,Diagram-supported relationship in S0001 Figure 4.
-C0169,person,P0083,children shown in Figure 4,Alireza Khan Abadi (full descriptor partly unresolved) and Noor Mohammad Khan,probable,active,Two-child grouping read directly from the printed genealogy.
+C0169,person,P0083,children shown in Figure 4,Ali Khan Jalal al-Molk and Noor Mohammad Khan,probable,active,Two-child grouping read directly from Figure 4. The upper child's name was confirmed as Ali Khan Jalal al-Molk.
 C0170,person,P0088,is child of,Alireza Khan Gharagozloo (P0083),probable,active,Diagram-supported relationship in S0001 Figure 4.
 C0171,person,P0089,is child of,Alireza Khan Gharagozloo (P0083),probable,active,Diagram-supported relationship in S0001 Figure 4.
 C0172,person,P0088,children shown in Figure 4,Asadollah Khan; Panahollah Khan Jalal al-Saltaneh; Seyfollah Khan Jalali; Hossein Ali Khan Fath al-Saltaneh,probable,active,Four-child grouping read directly from the printed genealogy.
-C0173,person,P0090,is child of,Alireza Khan Abadi Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
-C0174,person,P0091,is child of,Alireza Khan Abadi Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
-C0175,person,P0092,is child of,Alireza Khan Abadi Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
-C0176,person,P0093,is child of,Alireza Khan Abadi Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0173,person,P0090,is child of,Ali Khan Jalal al-Molk Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0174,person,P0091,is child of,Ali Khan Jalal al-Molk Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0175,person,P0092,is child of,Ali Khan Jalal al-Molk Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0176,person,P0093,is child of,Ali Khan Jalal al-Molk Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
 C0177,person,P0091,held title,Jalal al-Saltaneh,probable,active,Title read from S0001 Figure 4.
 C0178,person,P0093,held title,Fath al-Saltaneh,probable,active,Title read from S0001 Figure 4.
+C0179,person,P0088,held title,Jalal al-Molk,probable,active,Title confirmed by direct reading of S0001 Figure 4.
+C0180,person,P0094,branch leadership,Head of the Hajilou branch during the Zand period,confirmed,active,Explicit narrative statement in S0001.
+C0181,person,P0095,parentage,Son of Haji Mohammad Jafar Khan Gharagozloo (P0094),confirmed,active,Explicit narrative statement and Figure 4.
+C0182,person,P0095,children count,Five male children,confirmed,active,Explicit narrative statement; Figure 4 presents five branch heads.
+C0183,person,P0096,parentage,Son of Haji Abdollah Khan Gharagozloo (P0095),probable,active,"Figure 4 reconstruction, supported contextually by the prose."
+C0184,person,P0073,parentage,Son of Haji Abdollah Khan Gharagozloo (P0095),probable,active,"Figure 4 reconstruction, supported contextually by the prose."
+C0185,person,P0097,parentage,Son of Haji Abdollah Khan Gharagozloo (P0095),confirmed,active,Explicit narrative statement and Figure 4.
+C0186,person,P0098,parentage,Son of Haji Abdollah Khan Gharagozloo (P0095),disputed,active,"Figure 4 supports this placement, but the prose may place Haji Mina one generation earlier."
+C0187,person,P0001,parentage,Son of Haji Abdollah Khan Gharagozloo (P0095),probable,active,"Figure 4 reconstruction, supported contextually by the prose."
+C0188,person,P0098,alternative parentage,Possible son of Haji Mohammad Jafar Khan Gharagozloo (P0094),disputed,active,A literal reading of the prose can place Haji Mina among the sons of Haji Mohammad Jafar Khan.

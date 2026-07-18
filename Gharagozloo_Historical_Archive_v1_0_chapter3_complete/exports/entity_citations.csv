@@ -80,7 +80,7 @@ EC0129,relationship,R0060,X0090,supports,Diagram-supported parent-child edge.
 EC0130,relationship,R0061,X0090,supports,Diagram-supported parent-child edge.
 EC0131,relationship,R0062,X0090,supports,Diagram-supported parent-child edge.
 EC0132,relationship,R0063,X0090,supports,Diagram-supported parent-child edge.
-EC0133,person,P0088,X0092,supports,Partial name reading; full descriptor remains unresolved.
+EC0133,person,P0088,X0092,supports,Figure 4 identification confirmed as Ali Khan Jalal al-Molk Gharagozloo; earlier Alireza Khan Abadi reading superseded.
 EC0134,person,P0089,X0092,supports,Figure 4 identification.
 EC0135,person,P0090,X0092,supports,Figure 4 identification; possible trailing descriptor unresolved.
 EC0136,person,P0091,X0092,supports,Figure 4 identification and title.
@@ -94,3 +94,14 @@ EC0143,relationship,R0068,X0092,supports,Diagram-supported parent-child edge.
 EC0144,relationship,R0069,X0092,supports,Diagram-supported parent-child edge.
 EC0145,title,T0026,X0092,supports,Title read in Figure 4.
 EC0146,title,T0027,X0092,supports,Title read in Figure 4.
+EC0147,title,T0028,X0092,supports,Jalal al-Molk title confirmed in Figure 4.
+EC0148,person,P0094,X0093,supports,Narrative identification of early Hajilou chief.
+EC0149,person,P0094,X0094,supports,Figure 4 older trunk.
+EC0150,person,P0095,X0093,supports,Narrative identifies parentage and five sons.
+EC0151,person,P0095,X0094,supports,Figure 4 older trunk.
+EC0152,person,P0096,X0094,supports,Figure 4 branch head.
+EC0153,person,P0073,X0094,supports,Figure 4 branch head.
+EC0154,person,P0097,X0093,supports,Narrative parentage.
+EC0155,person,P0097,X0094,supports,Figure 4 branch head.
+EC0156,person,P0098,X0094,supports,Figure 4 branch head; parentage disputed.
+EC0157,person,P0001,X0094,supports,Figure 4 branch head.

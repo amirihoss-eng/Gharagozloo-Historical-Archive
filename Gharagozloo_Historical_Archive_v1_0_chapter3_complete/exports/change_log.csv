@@ -37,3 +37,10 @@
 36,2026-07-18T02:00:00Z,person,P0085,correct,Corrected provisional Figure 4 reading from Mahmoud Khan to Majid Khan while preserving descendants.
 37,2026-07-18T02:00:00Z,family_group,P0083,expand,"Added two children of Alireza Khan and four grandchildren from S0001 Figure 4, with uncertain readings explicitly flagged."
 38,2026-07-18T02:08:30.795642+00:00,migration,0020,apply,Applied 0020_correct_majid_and_add_alireza_descendants.sql
+39,2026-07-18T03:00:00Z,person,P0088,correct,Corrected P0088 from the provisional Alireza Khan Abadi reading to Ali Khan Jalal al-Molk Gharagozloo; preserved all descendants and relationships.
+40,2026-07-18T02:30:14.635540+00:00,migration,0021,apply,Applied 0021_correct_p0088_ali_khan_jalal_al_molk.sql
+41,2026-07-18T04:00:00Z,person,P0094,insert,Added Haji Mohammad Jafar Khan as the older Hajilou root.
+42,2026-07-18T04:00:00Z,person,P0095,insert,Added Haji Abdollah Khan and reconstructed his five-son grouping from Figure 4.
+43,2026-07-18T04:00:00Z,relationship,R0070-R0075,insert,"Added the older Hajilou trunk and five branch-head relationships, preserving the Haji Mina conflict."
+44,2026-07-18T04:00:00Z,person,P0073,update,Classified Nasrollah Khan as Hajilou/Korijani and linked him into Figure 4.
+45,2026-07-18T03:11:15.275788+00:00,migration,0022,apply,Applied 0022_reconstruct_older_hajilou_trunk.sql

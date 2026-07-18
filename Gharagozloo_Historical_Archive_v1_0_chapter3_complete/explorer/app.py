@@ -189,7 +189,7 @@ class Handler(BaseHTTPRequestHandler):
             path = parsed.path
             qs = parse_qs(parsed.query)
             if path == "/api/health":
-                return self.send_json({"ok": True, "database": str(DB_PATH), "version": "0.6.9-lineage-selector"})
+                return self.send_json({"ok": True, "database": str(DB_PATH), "version": "0.6.10-older-hajilou-trunk"})
             if path == "/api/dashboard":
                 featured = rows(
                     """SELECT p.person_id,p.preferred_name_en,p.preferred_name_fa,p.branch,p.summary,
@@ -215,11 +215,11 @@ class Handler(BaseHTTPRequestHandler):
                                    FROM persons GROUP BY COALESCE(branch,'Unclassified')
                                    ORDER BY count DESC,branch""")
                 lineage_roots = [
-                    {"person_id": "P0001", "label": "Hajilou — Amir Nezam / Amiri line", "branch": "Hajilou"},
+                    {"person_id": "P0094", "label": "Hajilou — historical trunk / Amir Nezam–Amiri line", "branch": "Hajilou"},
                     {"person_id": "P0011", "label": "Ashiqloo historical line", "branch": "Ashiqloo"},
                 ]
                 return self.send_json({"nodes": people, "edges": rels, "branches": branches,
-                                       "default_root": "P0001", "lineage_roots": lineage_roots})
+                                       "default_root": "P0094", "lineage_roots": lineage_roots})
 
             if path == "/api/timeline":
                 event_type = (qs.get("type", [""])[0] or "").strip()

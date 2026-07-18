@@ -111,8 +111,8 @@
 114,P0087,مهدی خان قراگوزلو,fa,canonical,1
 115,P0085,Majid Khan Gharagozloo,en,canonical,1
 116,P0085,مجید خان قراگوزلو,fa,canonical,1
-117,P0088,Alireza Khan Abadi Gharagozloo,en,canonical,1
-118,P0088,علیرضا خان آبادی قراگوزلو,fa,canonical,1
+117,P0088,Alireza Khan Abadi Gharagozloo,en,superseded_reading,0
+118,P0088,علیرضا خان آبادی قراگوزلو,fa,superseded_reading,0
 119,P0088,Alireza Khan [full descriptor unresolved] Abadi,en,partial_chart_reading,0
 120,P0089,Noor Mohammad Khan Gharagozloo,en,canonical,1
 121,P0089,نورمحمد خان قراگوزلو,fa,canonical,1
@@ -124,3 +124,19 @@
 127,P0092,سیف‌الله خان جلالی قراگوزلو,fa,canonical,1
 128,P0093,Hossein Ali Khan Fath al-Saltaneh Gharagozloo,en,canonical,1
 129,P0093,حسینعلی خان فتح‌السلطنه قراگوزلو,fa,canonical,1
+130,P0088,Ali Khan Jalal al-Molk Gharagozloo,en,canonical,1
+131,P0088,علی خان جلال‌الملک قراگوزلو,fa,canonical,1
+132,P0088,Ali Khan Jalal al-Molk,en,title_form,0
+133,P0088,علی خان جلال‌الملک,fa,title_form,0
+134,P0094,Haji Mohammad Jafar Khan Gharagozloo,en,canonical,1
+135,P0094,حاجی محمدجعفر خان قراگوزلو,fa,canonical,1
+136,P0095,Haji Abdollah Khan Gharagozloo,en,canonical,1
+137,P0095,حاجی عبدالله خان قراگوزلو,fa,canonical,1
+138,P0096,Haji Fazlollah Khan Royani Gharagozloo,en,canonical,1
+139,P0096,حاجی فضل‌الله خان رویانی قراگوزلو,fa,canonical,1
+140,P0097,Haji Safar Khan Gharagozloo,en,canonical,1
+141,P0097,حاجی صفر خان قراگوزلو,fa,canonical,1
+142,P0098,Haji Mina Khan Kabudarahangi Gharagozloo,en,canonical,1
+143,P0098,حاجی مینا خان کبودراهنگی قراگوزلو,fa,canonical,1
+144,P0073,Nasrollah Khan Korijani Gharagozloo,en,geographic_form,0
+145,P0073,نصرالله خان کوریجانی قراگوزلو,fa,geographic_form,0

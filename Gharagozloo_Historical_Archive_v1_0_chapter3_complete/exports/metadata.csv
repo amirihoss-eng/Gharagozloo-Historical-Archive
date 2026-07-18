@@ -29,7 +29,9 @@ wave3_validation_hotfix,Resolved 12 uncited-claim warnings and 2 duplicate-name 
 living_family_integration,Added the immediate families of Hossein Gholi and Yassaman Amiri Gharagozloo from direct family testimony.
 hajilou_ashiqloo_backbone_correction,Removed the unsupported P0011-to-P0001 parent edge; established Haji Mohammad Khan Jeyhunabadi as the earliest secure root of the displayed Hajilou direct line pending older Hajilou reconstruction.
 hajilou_figure4_wave1,"Added the complete currently legible son group of Sartip Mohammad-Baqer Khan and the Mahmoud-to-Ali-Akbar-to-Mehdi collateral chain from S0001 Figure 4, with diagram-only links marked probable."
-archive_version,2.6.2
 hajilou_figure4_alireza_branch,Corrected Majid Khan and added the two-child/four-grandchild Alireza branch from S0001 Figure 4. Diagram-supported links remain probable; unresolved words are retained as open research questions.
-last_migration,0020
-updated_at,2026-07-18T02:08:30.795642+00:00
+hajilou_figure4_p0088_correction,P0088 confirmed as Ali Khan Jalal al-Molk Gharagozloo (علی خان جلال‌الملک قراگوزلو). Earlier Alireza Khan Abadi reading retained only as superseded research history.
+archive_version,2.6.4
+hajilou_older_trunk,Reconstructed Haji Mohammad Jafar Khan -> Haji Abdollah Khan -> five Figure 4 branch heads. Haji Mina parentage remains disputed.
+last_migration,0022
+updated_at,2026-07-18T03:11:15.275788+00:00
