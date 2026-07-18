@@ -44,3 +44,7 @@
 43,2026-07-18T04:00:00Z,relationship,R0070-R0075,insert,"Added the older Hajilou trunk and five branch-head relationships, preserving the Haji Mina conflict."
 44,2026-07-18T04:00:00Z,person,P0073,update,Classified Nasrollah Khan as Hajilou/Korijani and linked him into Figure 4.
 45,2026-07-18T03:11:15.275788+00:00,migration,0022,apply,Applied 0022_reconstruct_older_hajilou_trunk.sql
+46,2026-07-18T05:00:00Z,person,P0099,insert,Added Sheikh Mohammad Jafar Khan Majzub Ali Shah Kabudarahangi with prose-supported biography.
+47,2026-07-18T05:00:00Z,person,P0100-P0104,insert,Added the five sons shown beneath Majzub Ali Shah in S0001 Figure 4.
+48,2026-07-18T05:00:00Z,relationship,R0076-R0081,insert,Reconstructed the Haji Safar to Majzub Ali Shah branch and the five-son grouping.
+49,2026-07-18T03:39:56.887707+00:00,migration,0023,apply,Applied 0023_reconstruct_haji_safar_majzub_ali_shah_branch.sql

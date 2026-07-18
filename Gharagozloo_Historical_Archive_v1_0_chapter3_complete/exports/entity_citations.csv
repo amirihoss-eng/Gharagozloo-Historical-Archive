@@ -105,3 +105,13 @@ EC0154,person,P0097,X0093,supports,Narrative parentage.
 EC0155,person,P0097,X0094,supports,Figure 4 branch head.
 EC0156,person,P0098,X0094,supports,Figure 4 branch head; parentage disputed.
 EC0157,person,P0001,X0094,supports,Figure 4 branch head.
+EC0158,person,P0099,X0095,supports,Parentage and Hajilou identity.
+EC0159,person,P0099,X0096,supports,Figure 4 genealogy.
+EC0160,person,P0099,X0097,supports,Death and burial.
+EC0161,person,P0100,X0096,supports,Figure 4 child label.
+EC0162,person,P0101,X0096,supports,Figure 4 child label.
+EC0163,person,P0102,X0096,supports,Figure 4 child label.
+EC0164,person,P0103,X0096,supports,Figure 4 child label.
+EC0165,person,P0104,X0096,supports,Figure 4 child label.
+EC0166,title,T0029,X0095,supports,Majzub Ali Shah title in the narrative.
+EC0167,event,E0075,X0097,supports,Death and burial account.

@@ -187,3 +187,13 @@ C0185,person,P0097,parentage,Son of Haji Abdollah Khan Gharagozloo (P0095),confi
 C0186,person,P0098,parentage,Son of Haji Abdollah Khan Gharagozloo (P0095),disputed,active,"Figure 4 supports this placement, but the prose may place Haji Mina one generation earlier."
 C0187,person,P0001,parentage,Son of Haji Abdollah Khan Gharagozloo (P0095),probable,active,"Figure 4 reconstruction, supported contextually by the prose."
 C0188,person,P0098,alternative parentage,Possible son of Haji Mohammad Jafar Khan Gharagozloo (P0094),disputed,active,A literal reading of the prose can place Haji Mina among the sons of Haji Mohammad Jafar Khan.
+C0189,person,P0099,parentage,Son of Haji Safar Khan Gharagozloo (P0097),confirmed,active,Explicit in S0001 prose and Figure 4.
+C0190,person,P0099,held title,Majzub Ali Shah,confirmed,active,Used in both narrative and Figure 4.
+C0191,person,P0099,death,Died in Tabriz in 1239 AH,confirmed,active,Narrative account in S0001.
+C0192,person,P0099,burial,Buried at the shrine of Seyyed Hamzeh in Tabriz,confirmed,active,Narrative account in S0001.
+C0193,person,P0099,children count,Five sons,probable,active,Figure 4 displays five sons.
+C0194,person,P0100,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
+C0195,person,P0101,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
+C0196,person,P0102,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
+C0197,person,P0103,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
+C0198,person,P0104,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
