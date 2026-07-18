@@ -52,3 +52,7 @@
 51,2026-07-18T06:00:00Z,person,P0105-P0106,insert,Added Gholam Khan and Noor Ali Khan from S0001 Figure 4.
 52,2026-07-18T06:00:00Z,relationship,R0082-R0083,insert,Added Nasrollah Khan -> Gholam Khan -> Noor Ali Khan genealogy.
 53,2026-07-18T04:01:32.202402+00:00,migration,0024,apply,Applied 0024_reconstruct_nasrollah_korijani_branch.sql
+54,2026-07-18T07:00:00Z,person,P0098,update,Enriched Haji Mina Khan’s narrative role and added his complete Figure 4 descendant branch.
+55,2026-07-18T07:00:00Z,person,P0107-P0114,insert,Added eight human-read descendants from the Haji Mina Khan Kabudarahangi branch.
+56,2026-07-18T07:00:00Z,relationship,R0084-R0091,insert,Added the confirmed Figure 4 structure beneath Haji Mina Khan.
+57,2026-07-18T04:25:04.962586+00:00,migration,0025,apply,Applied 0025_reconstruct_haji_mina_kabudarahangi_branch.sql

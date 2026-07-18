@@ -207,3 +207,15 @@ C0205,person,P0073,military service,Served in the 1222 AH mission against Abd al
 C0206,person,P0073,held office,Military administrator of the army in Fars in 1215 AH,confirmed,active,S0001 cites Sir John Malcolm.
 C0207,person,P0073,held office,Minister of Fars from 1220 AH until Nowruz 1223 AH,confirmed,active,S0001 narrative.
 C0208,person,P0073,personal reputation,"Known in Shiraz for poetic ability, good nature, and good character",confirmed,active,Authorial summary in S0001.
+C0209,person,P0098,held role,Adviser and state counsellor to Agha Mohammad Khan Qajar,confirmed,active,Explicit in the S0001 narrative.
+C0210,person,P0098,children count,Two sons shown in Figure 4,probable,active,Morteza Qoli Khan and Shir Ali Khan.
+C0211,person,P0107,parentage,Son of Haji Mina Khan Kabudarahangi (P0098),probable,active,Figure 4.
+C0212,person,P0108,parentage,Son of Haji Mina Khan Kabudarahangi (P0098),probable,active,Figure 4.
+C0213,person,P0109,parentage,Child of Morteza Qoli Khan (P0107),probable,active,Figure 4.
+C0214,person,P0110,parentage,Child of Morteza Qoli Khan (P0107),probable,active,Figure 4.
+C0215,person,P0111,parentage,Child of Mansur al-Molk (P0109),probable,active,Figure 4.
+C0216,person,P0112,parentage,Child of Mansur al-Molk (P0109),probable,active,Figure 4.
+C0217,person,P0113,parentage,Son of Mohammad Mirza Khan (P0110),probable,active,Figure 4.
+C0218,person,P0114,parentage,Son of Mohammad Mirza Khan (P0110),probable,active,Figure 4.
+C0219,person,P0109,held title,Mansur al-Molk,probable,active,Figure 4 identifies the person by this title-form.
+C0220,person,P0114,held rank,Sarhang,probable,active,Figure 4 prints the rank with the name.
