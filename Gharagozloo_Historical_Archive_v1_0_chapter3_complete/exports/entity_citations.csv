@@ -70,3 +70,13 @@ EC0119,person,P0001,X0088,supports,Hajilou branch classification and direct-line
 EC0120,person,P0001,X0089,supports,Hajilou genealogy figure; secondary visual evidence.
 EC0121,person,P0011,X0088,supports,Ashiqloo branch classification.
 EC0122,person,P0011,X0089,supports,Ashiqloo genealogy figure; secondary visual evidence.
+EC0123,person,P0083,X0090,supports,Figure 4 identification; additional descriptor remains unresolved.
+EC0124,person,P0084,X0090,supports,Figure 4 identification.
+EC0125,person,P0085,X0090,supports,Figure 4 identification; distinct from P0014.
+EC0126,person,P0086,X0090,supports,Figure 4 identification.
+EC0127,person,P0087,X0090,supports,Figure 4 identification.
+EC0128,relationship,R0059,X0090,supports,Diagram-supported parent-child edge.
+EC0129,relationship,R0060,X0090,supports,Diagram-supported parent-child edge.
+EC0130,relationship,R0061,X0090,supports,Diagram-supported parent-child edge.
+EC0131,relationship,R0062,X0090,supports,Diagram-supported parent-child edge.
+EC0132,relationship,R0063,X0090,supports,Diagram-supported parent-child edge.

@@ -56,3 +56,8 @@ R0055,P0010,parent_of,P0081,Hossein is the father of Raha Amiri Gharagozloo.,con
 R0056,P0080,parent_of,P0081,Roya Yaghmai is the mother of Raha Amiri Gharagozloo.,confirmed
 R0057,P0010,parent_of,P0082,Hossein is the father of Saam Amiri Gharagozloo.,confirmed
 R0058,P0080,parent_of,P0082,Roya Yaghmai is the mother of Saam Amiri Gharagozloo.,confirmed
+R0059,P0002,parent_of,P0083,Figure 4 depicts Alireza Khan as a son of Sartip Mohammad-Baqer Khan. Diagram-only in this reconstruction wave.,probable
+R0060,P0002,parent_of,P0084,Figure 4 depicts Kazem Khan as a son of Sartip Mohammad-Baqer Khan. Diagram-only in this reconstruction wave.,probable
+R0061,P0002,parent_of,P0085,Figure 4 depicts Mahmoud Khan as a son of Sartip Mohammad-Baqer Khan. Diagram-only in this reconstruction wave.,probable
+R0062,P0085,parent_of,P0086,Figure 4 shows the sequence Mahmoud Khan -> Ali-Akbar Khan.,probable
+R0063,P0086,parent_of,P0087,Figure 4 shows the sequence Ali-Akbar Khan -> Mehdi Khan.,probable

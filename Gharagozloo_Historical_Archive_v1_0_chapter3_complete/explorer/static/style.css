@@ -288,3 +288,7 @@ repeating-linear-gradient(45deg,transparent 0 18px,rgba(255,255,255,.025) 18px 1
 .connection-style-toggle button.active{background:#fffdf8;color:var(--deep);box-shadow:0 2px 8px rgba(24,45,46,.12)}
 .graph-v2 .family-edge.classic{stroke-linejoin:round;stroke-linecap:square}
 .graph-v2 .family-edge.modern{stroke-linecap:round}
+
+/* v0.6.9 — historical lineage selector */
+.graph-v2 .lineage-select{width:100%;padding:10px 12px;margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--deep);font-weight:700;cursor:pointer}
+.graph-v2 .lineage-select:focus{outline:2px solid rgba(184,139,46,.24);border-color:var(--gold)}
