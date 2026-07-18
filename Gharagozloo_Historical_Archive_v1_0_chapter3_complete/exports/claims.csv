@@ -161,9 +161,19 @@ C0159,person,P0001,formerly proposed parentage,Mohammad-Hossein Khan Gharagozloo
 C0160,person,P0001,branch affiliation,Hajilou,confirmed,active,S0001 identifies the Jeyhunabadi/Amir Nezam family line as Hajilou.
 C0161,person,P0011,branch affiliation,Ashiqloo,confirmed,active,S0001 identifies Mohammad-Hossein Khan as the early chief of the Ashiqloo line.
 C0162,person,P0001,earliest secure direct-line root,Haji Mohammad Khan Jeyhunabadi is the earliest securely connected root of the archive owner's displayed direct line pending reconstruction of earlier Hajilou generations.,confirmed,active,This is an archive-level conclusion limited to the evidence currently established from S0001.
-C0163,person,P0002,sons shown in Figure 4,"Alireza Khan, Kazem Khan, Mostafa-Qoli Khan E'temad al-Saltaneh, and Mahmoud Khan",probable,active,The four-son grouping is read from the printed genealogy. Mostafa-Qoli is independently corroborated by prose; the collateral sons await further corroboration.
+C0163,person,P0002,sons shown in Figure 4,"Alireza Khan, Kazem Khan, Mostafa-Qoli Khan E'temad al-Saltaneh, and Majid Khan",probable,active,The four-son grouping is read from the printed genealogy. Mostafa-Qoli is independently corroborated by prose. The collateral sons are diagram-supported; the earlier Mahmoud reading was corrected to Majid.
 C0164,person,P0083,is child of,Sartip Mohammad-Baqer Khan Gharagozloo,probable,active,Diagram-supported relationship in S0001 Figure 4.
 C0165,person,P0084,is child of,Sartip Mohammad-Baqer Khan Gharagozloo,probable,active,Diagram-supported relationship in S0001 Figure 4.
-C0166,person,P0085,is child of,Sartip Mohammad-Baqer Khan Gharagozloo,probable,active,Diagram-supported relationship in S0001 Figure 4.
-C0167,person,P0086,is child of,Mahmoud Khan Gharagozloo of the Hajilou/Jeyhunabadi line,probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0166,person,P0085,is child of,Sartip Mohammad-Baqer Khan Gharagozloo,probable,active,Diagram-supported relationship in S0001 Figure 4; personal name corrected from Mahmoud to Majid.
+C0167,person,P0086,is child of,Majid Khan Gharagozloo of the Hajilou/Jeyhunabadi line,probable,active,Diagram-supported relationship in S0001 Figure 4; parent name corrected from Mahmoud to Majid.
 C0168,person,P0087,is child of,Ali-Akbar Khan Gharagozloo,probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0169,person,P0083,children shown in Figure 4,Alireza Khan Abadi (full descriptor partly unresolved) and Noor Mohammad Khan,probable,active,Two-child grouping read directly from the printed genealogy.
+C0170,person,P0088,is child of,Alireza Khan Gharagozloo (P0083),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0171,person,P0089,is child of,Alireza Khan Gharagozloo (P0083),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0172,person,P0088,children shown in Figure 4,Asadollah Khan; Panahollah Khan Jalal al-Saltaneh; Seyfollah Khan Jalali; Hossein Ali Khan Fath al-Saltaneh,probable,active,Four-child grouping read directly from the printed genealogy.
+C0173,person,P0090,is child of,Alireza Khan Abadi Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0174,person,P0091,is child of,Alireza Khan Abadi Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0175,person,P0092,is child of,Alireza Khan Abadi Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0176,person,P0093,is child of,Alireza Khan Abadi Gharagozloo (P0088),probable,active,Diagram-supported relationship in S0001 Figure 4.
+C0177,person,P0091,held title,Jalal al-Saltaneh,probable,active,Title read from S0001 Figure 4.
+C0178,person,P0093,held title,Fath al-Saltaneh,probable,active,Title read from S0001 Figure 4.

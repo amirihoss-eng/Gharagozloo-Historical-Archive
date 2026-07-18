@@ -72,7 +72,7 @@ EC0121,person,P0011,X0088,supports,Ashiqloo branch classification.
 EC0122,person,P0011,X0089,supports,Ashiqloo genealogy figure; secondary visual evidence.
 EC0123,person,P0083,X0090,supports,Figure 4 identification; additional descriptor remains unresolved.
 EC0124,person,P0084,X0090,supports,Figure 4 identification.
-EC0125,person,P0085,X0090,supports,Figure 4 identification; distinct from P0014.
+EC0125,person,P0085,X0090,supports,Figure 4 identification; provisional Mahmoud reading corrected to Majid after direct Persian review.
 EC0126,person,P0086,X0090,supports,Figure 4 identification.
 EC0127,person,P0087,X0090,supports,Figure 4 identification.
 EC0128,relationship,R0059,X0090,supports,Diagram-supported parent-child edge.
@@ -80,3 +80,17 @@ EC0129,relationship,R0060,X0090,supports,Diagram-supported parent-child edge.
 EC0130,relationship,R0061,X0090,supports,Diagram-supported parent-child edge.
 EC0131,relationship,R0062,X0090,supports,Diagram-supported parent-child edge.
 EC0132,relationship,R0063,X0090,supports,Diagram-supported parent-child edge.
+EC0133,person,P0088,X0092,supports,Partial name reading; full descriptor remains unresolved.
+EC0134,person,P0089,X0092,supports,Figure 4 identification.
+EC0135,person,P0090,X0092,supports,Figure 4 identification; possible trailing descriptor unresolved.
+EC0136,person,P0091,X0092,supports,Figure 4 identification and title.
+EC0137,person,P0092,X0092,supports,Figure 4 identification and Jalali descriptor.
+EC0138,person,P0093,X0092,supports,Figure 4 identification and title.
+EC0139,relationship,R0064,X0092,supports,Diagram-supported parent-child edge.
+EC0140,relationship,R0065,X0092,supports,Diagram-supported parent-child edge.
+EC0141,relationship,R0066,X0092,supports,Diagram-supported parent-child edge.
+EC0142,relationship,R0067,X0092,supports,Diagram-supported parent-child edge.
+EC0143,relationship,R0068,X0092,supports,Diagram-supported parent-child edge.
+EC0144,relationship,R0069,X0092,supports,Diagram-supported parent-child edge.
+EC0145,title,T0026,X0092,supports,Title read in Figure 4.
+EC0146,title,T0027,X0092,supports,Title read in Figure 4.

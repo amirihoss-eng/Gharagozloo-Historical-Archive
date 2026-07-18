@@ -18,3 +18,4 @@
 0017,0017_add_living_family_branch.sql,711252d4bd84518694f43874d86f9e29de988c1e193faa123740ad4c4bb3fbc6,2026-07-15T04:52:34.310271+00:00,Applied by tools/apply_migration.py
 0018,0018_correct_hajilou_ashiqloo_backbone.sql,dc453086d969251bde4553e7b314e5e69f6d63cd07cbfa9e0a92c5438654b5d7,2026-07-17T23:58:56.316517+00:00,Applied by tools/apply_migration.py
 0019,0019_reconstruct_mohammad_baqer_family_group.sql,f3f451fa7fdb9d7dbc04d19408d50b9a9b756baae777fd5666f54a5278b90bf9,2026-07-18T00:31:34.400088+00:00,Applied by tools/apply_migration.py
+0020,0020_correct_majid_and_add_alireza_descendants.sql,e1458c97ff8265680814bbc0a0599d41d60a3ae2e546e769a5de4018481c3c46,2026-07-18T02:08:30.795642+00:00,Applied by tools/apply_migration.py

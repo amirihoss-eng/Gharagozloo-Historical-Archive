@@ -58,6 +58,12 @@ R0057,P0010,parent_of,P0082,Hossein is the father of Saam Amiri Gharagozloo.,con
 R0058,P0080,parent_of,P0082,Roya Yaghmai is the mother of Saam Amiri Gharagozloo.,confirmed
 R0059,P0002,parent_of,P0083,Figure 4 depicts Alireza Khan as a son of Sartip Mohammad-Baqer Khan. Diagram-only in this reconstruction wave.,probable
 R0060,P0002,parent_of,P0084,Figure 4 depicts Kazem Khan as a son of Sartip Mohammad-Baqer Khan. Diagram-only in this reconstruction wave.,probable
-R0061,P0002,parent_of,P0085,Figure 4 depicts Mahmoud Khan as a son of Sartip Mohammad-Baqer Khan. Diagram-only in this reconstruction wave.,probable
-R0062,P0085,parent_of,P0086,Figure 4 shows the sequence Mahmoud Khan -> Ali-Akbar Khan.,probable
+R0061,P0002,parent_of,P0085,Figure 4 depicts Majid Khan as a son of Sartip Mohammad-Baqer Khan. The name was corrected from the earlier provisional reading Mahmoud Khan.,probable
+R0062,P0085,parent_of,P0086,Figure 4 shows the sequence Majid Khan -> Ali-Akbar Khan.,probable
 R0063,P0086,parent_of,P0087,Figure 4 shows the sequence Ali-Akbar Khan -> Mehdi Khan.,probable
+R0064,P0083,parent_of,P0088,Figure 4 shows the upper Alireza/Abadi-labeled person as a child of Alireza Khan P0083. Full descriptor remains partly unread.,probable
+R0065,P0083,parent_of,P0089,Figure 4 shows Noor Mohammad Khan as the lower child of Alireza Khan P0083.,probable
+R0066,P0088,parent_of,P0090,Figure 4 shows Asadollah Khan as a child of P0088.,probable
+R0067,P0088,parent_of,P0091,Figure 4 shows Panahollah Khan Jalal al-Saltaneh as a child of P0088.,probable
+R0068,P0088,parent_of,P0092,Figure 4 shows Seyfollah Khan Jalali as a child of P0088.,probable
+R0069,P0088,parent_of,P0093,Figure 4 shows Hossein Ali Khan Fath al-Saltaneh as a child of P0088.,probable
