@@ -9,7 +9,6 @@ R0007,P0005,parent_of,P0008,Family testimony identifies Mohtaj-Ali as father of 
 R0008,P0007,sibling_of,P0008,Family testimony consistently identifies Gholam-Ali and Gholamhossein as brothers; independent textual corroboration remains pending.,provisional
 R0009,P0008,parent_of,P0009,,confirmed
 R0010,P0009,parent_of,P0010,,confirmed
-R0011,P0011,parent_of,P0001,"User-supplied ancestral chain places Haji Mohammad Khan after Mohammad-Hossein Khan, but S0001 does not establish this direct parent-child link.",unverified
 R0012,P0004,parent_of,P0012,S0001 explicitly identifies Hossein Qoli Khan as a son of Abdollah Khan.,confirmed
 R0013,P0011,parent_of,P0013,S0001 names Nabi Khan among Mohammad Hossein Khan’s five sons.,confirmed
 R0014,P0013,parent_of,P0014,S0001 identifies Mahmoud Khan as son of Nabi Khan.,confirmed

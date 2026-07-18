@@ -157,3 +157,7 @@ C0155,person,P0079,is child of,Yassaman Amiri Gharagozloo and Amir Navab,confirm
 C0156,person,P0080,is spouse of,Hossein Gholi Amiri Gharagozloo,confirmed,active,Direct family testimony.
 C0157,person,P0081,is child of,Hossein Gholi Amiri Gharagozloo and Roya Yaghmai,confirmed,active,Direct family testimony.
 C0158,person,P0082,is child of,Hossein Gholi Amiri Gharagozloo and Roya Yaghmai,confirmed,active,Direct family testimony.
+C0159,person,P0001,formerly proposed parentage,Mohammad-Hossein Khan Gharagozloo (P0011) was formerly placed as the father of Haji Mohammad Khan Jeyhunabadi (P0001).,disputed,superseded,Rejected for the canonical graph: S0001 identifies the two men with different branches and does not establish a parent-child relationship.
+C0160,person,P0001,branch affiliation,Hajilou,confirmed,active,S0001 identifies the Jeyhunabadi/Amir Nezam family line as Hajilou.
+C0161,person,P0011,branch affiliation,Ashiqloo,confirmed,active,S0001 identifies Mohammad-Hossein Khan as the early chief of the Ashiqloo line.
+C0162,person,P0001,earliest secure direct-line root,Haji Mohammad Khan Jeyhunabadi is the earliest securely connected root of the archive owner's displayed direct line pending reconstruction of earlier Hajilou generations.,confirmed,active,This is an archive-level conclusion limited to the evidence currently established from S0001.

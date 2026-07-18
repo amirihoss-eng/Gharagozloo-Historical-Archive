@@ -26,7 +26,8 @@ master_reconciliation_wave_2,complete
 thematic_reconciliation_wave_3,complete
 wave3_data_preservation_note,Migrations 0014 and 0015 are additive; no records from the uploaded post-0013 Git master were deleted.
 wave3_validation_hotfix,Resolved 12 uncited-claim warnings and 2 duplicate-name warnings after migrations 0014-0015.
-archive_version,2.5.0
 living_family_integration,Added the immediate families of Hossein Gholi and Yassaman Amiri Gharagozloo from direct family testimony.
-last_migration,0017
-updated_at,2026-07-15T04:52:34.310271+00:00
+archive_version,2.6.0
+hajilou_ashiqloo_backbone_correction,Removed the unsupported P0011-to-P0001 parent edge; established Haji Mohammad Khan Jeyhunabadi as the earliest secure root of the displayed Hajilou direct line pending older Hajilou reconstruction.
+last_migration,0018
+updated_at,2026-07-17T23:58:56.316517+00:00
