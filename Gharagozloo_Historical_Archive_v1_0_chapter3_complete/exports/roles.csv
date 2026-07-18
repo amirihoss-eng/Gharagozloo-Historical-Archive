@@ -11,3 +11,6 @@ ROLE0009,Regimental colonel,سرهنگ فوج,military_office,Colonel of a named
 ROLE0010,Estate manager,مباشر املاک,estate_office,Manager or agent responsible for estate administration.
 ROLE0011,Village headman,کدخدا,estate_office,Village headman within rural administration.
 ROLE0012,Tenant cultivator,رعیت,occupation,Cultivator within the landlord-tenant system.
+ROLE0013,Head of Gharagozloo forces in Fars,سرکرده قراگوزلویان فارس,military_office,Command responsibility for the Gharagozloo forces serving in Fars.
+ROLE0014,Military administrator of the army in Fars,ناظم نظام لشکر در فارس,military_office,Military administrative office reported for Nasrollah Khan in 1215 AH.
+ROLE0015,Minister of Fars,وزیر فارس,government_office,Senior provincial ministerial office in Fars.

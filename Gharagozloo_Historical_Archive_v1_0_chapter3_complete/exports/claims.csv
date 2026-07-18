@@ -197,3 +197,13 @@ C0195,person,P0101,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (
 C0196,person,P0102,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
 C0197,person,P0103,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
 C0198,person,P0104,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
+C0199,person,P0105,parentage,Son of Nasrollah Khan Korijani Gharagozloo (P0073),probable,active,Figure 4 genealogy.
+C0200,person,P0106,parentage,Son of Gholam Khan Gharagozloo (P0105),probable,active,Figure 4 genealogy.
+C0201,person,P0073,branch affiliation,"Hajilou, Korijani line",confirmed,active,Explicitly identified as Hajilou in the narrative.
+C0202,person,P0073,political-military alliance,Helped advocate Gharagozloo support for Karim Khan Zand,confirmed,active,Narrative account in S0001.
+C0203,person,P0073,military command,Commanded Gharagozloo forces sent toward Yazd in 1194 AH,confirmed,active,Already represented by event E0073 and enriched here.
+C0204,person,P0073,military service,Guarded Isfahan and commanded one thousand cavalry near Qomsheh in 1203 AH,confirmed,active,S0001 narrative; possible capture is not asserted.
+C0205,person,P0073,military service,Served in the 1222 AH mission against Abd al-Rahman Pasha,confirmed,active,S0001 narrative.
+C0206,person,P0073,held office,Military administrator of the army in Fars in 1215 AH,confirmed,active,S0001 cites Sir John Malcolm.
+C0207,person,P0073,held office,Minister of Fars from 1220 AH until Nowruz 1223 AH,confirmed,active,S0001 narrative.
+C0208,person,P0073,personal reputation,"Known in Shiraz for poetic ability, good nature, and good character",confirmed,active,Authorial summary in S0001.

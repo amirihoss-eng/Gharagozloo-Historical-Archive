@@ -113,3 +113,7 @@ E0072,P0011,governor
 E0073,P0073,commander
 E0074,P0011,commander
 E0075,P0099,deceased
+E0076,P0073,commander
+E0077,P0073,commander/participant
+E0078,P0073,appointee
+E0079,P0073,outgoing minister

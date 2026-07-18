@@ -48,3 +48,7 @@
 47,2026-07-18T05:00:00Z,person,P0100-P0104,insert,Added the five sons shown beneath Majzub Ali Shah in S0001 Figure 4.
 48,2026-07-18T05:00:00Z,relationship,R0076-R0081,insert,Reconstructed the Haji Safar to Majzub Ali Shah branch and the five-son grouping.
 49,2026-07-18T03:39:56.887707+00:00,migration,0023,apply,Applied 0023_reconstruct_haji_safar_majzub_ali_shah_branch.sql
+50,2026-07-18T06:00:00Z,person,P0073,update,"Promoted Korijani into Nasrollah Khan’s canonical name and added offices, missions, and biographical evidence."
+51,2026-07-18T06:00:00Z,person,P0105-P0106,insert,Added Gholam Khan and Noor Ali Khan from S0001 Figure 4.
+52,2026-07-18T06:00:00Z,relationship,R0082-R0083,insert,Added Nasrollah Khan -> Gholam Khan -> Noor Ali Khan genealogy.
+53,2026-07-18T04:01:32.202402+00:00,migration,0024,apply,Applied 0024_reconstruct_nasrollah_korijani_branch.sql

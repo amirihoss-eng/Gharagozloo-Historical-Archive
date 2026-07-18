@@ -53,3 +53,13 @@ C0195,GENEALOGICAL_DIAGRAM,genealogical_diagram,presents,Relationship reconstruc
 C0196,GENEALOGICAL_DIAGRAM,genealogical_diagram,presents,Relationship reconstructed from Figure 4.
 C0197,GENEALOGICAL_DIAGRAM,genealogical_diagram,presents,Relationship reconstructed from Figure 4.
 C0198,GENEALOGICAL_DIAGRAM,genealogical_diagram,presents,Relationship reconstructed from Figure 4.
+C0199,GENEALOGICAL_DIAGRAM,genealogical_diagram,presents,Parentage reconstructed from Figure 4 and human-confirmed reading.
+C0200,GENEALOGICAL_DIAGRAM,genealogical_diagram,presents,Parentage reconstructed from Figure 4 and human-confirmed reading.
+C0201,NARRATIVE_FACT,author_statement,supports,Direct branch identification in the prose.
+C0202,NARRATIVE_FACT,author_statement,supports,Narrative political-military account.
+C0203,NARRATIVE_FACT,author_statement,supports,Narrative military mission account.
+C0204,NARRATIVE_FACT,author_statement,supports,Narrative military account; uncertain capture excluded from the claim.
+C0205,NARRATIVE_FACT,author_statement,supports,Narrative western-frontier mission account.
+C0206,NARRATIVE_FACT,author_statement,supports,Office reported by S0001 through Malcolm.
+C0207,NARRATIVE_FACT,author_statement,supports,Direct narrative appointment and dismissal dates.
+C0208,NARRATIVE_FACT,author_statement,supports,Authorial biographical assessment.

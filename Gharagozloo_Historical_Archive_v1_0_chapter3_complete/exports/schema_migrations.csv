@@ -22,3 +22,4 @@
 0021,0021_correct_p0088_ali_khan_jalal_al_molk.sql,a51bd4bc8520faa7cdd907311b0b1359b21f7fb34b287aa3ca858b366aab41e8,2026-07-18T02:30:14.635540+00:00,Applied by tools/apply_migration.py
 0022,0022_reconstruct_older_hajilou_trunk.sql,5d3322c99cb0dbb5e269da8a84a9287b1abb19a2079fd18fc9b658a6f8f85abc,2026-07-18T03:11:15.275788+00:00,Applied by tools/apply_migration.py
 0023,0023_reconstruct_haji_safar_majzub_ali_shah_branch.sql,c7b2da326914ae18a5c82e4c0a59f2ea8ea4e8598948d0de7b924668049accf7,2026-07-18T03:39:56.887707+00:00,Applied by tools/apply_migration.py
+0024,0024_reconstruct_nasrollah_korijani_branch.sql,e851705337188fd59c3221bf63f0c6eddd922f57387731f994a35c295a6b279a,2026-07-18T04:01:32.202402+00:00,Applied by tools/apply_migration.py
