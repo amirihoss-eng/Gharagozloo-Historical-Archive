@@ -24,3 +24,4 @@
 0023,0023_reconstruct_haji_safar_majzub_ali_shah_branch.sql,c7b2da326914ae18a5c82e4c0a59f2ea8ea4e8598948d0de7b924668049accf7,2026-07-18T03:39:56.887707+00:00,Applied by tools/apply_migration.py
 0024,0024_reconstruct_nasrollah_korijani_branch.sql,e851705337188fd59c3221bf63f0c6eddd922f57387731f994a35c295a6b279a,2026-07-18T04:01:32.202402+00:00,Applied by tools/apply_migration.py
 0025,0025_reconstruct_haji_mina_kabudarahangi_branch.sql,c5d6a842f13a37182eb7e9ab4740f184d79de73bdc7dea9ea533fae801dc74c7,2026-07-18T04:25:04.962586+00:00,Applied by tools/apply_migration.py
+0026,0026_reconstruct_haji_fazlollah_royani_branch.sql,253aa767150e6417cc5682cdc91b57ee822241f718d0d4214d7bed88431e08fc,2026-07-18T23:32:12.273866+00:00,Applied by tools/apply_migration.py

@@ -56,3 +56,8 @@
 55,2026-07-18T07:00:00Z,person,P0107-P0114,insert,Added eight human-read descendants from the Haji Mina Khan Kabudarahangi branch.
 56,2026-07-18T07:00:00Z,relationship,R0084-R0091,insert,Added the confirmed Figure 4 structure beneath Haji Mina Khan.
 57,2026-07-18T04:25:04.962586+00:00,migration,0025,apply,Applied 0025_reconstruct_haji_mina_kabudarahangi_branch.sql
+58,2026-07-18T08:00:00Z,person,P0096,update,Rebuilt the Haji Fazlollah Khan Royani node from the archive owner’s corrected row-by-row reconstruction.
+59,2026-07-18T08:00:00Z,person,P0115-P0156,insert,"Added 42 distinct descendants from the user-supplied Haji Fazlollah branch sheet, preserving ? and ?? uncertainty."
+60,2026-07-18T08:00:00Z,relationship,R0092-R0133,insert,Added 42 parent-child edges for the corrected Haji Fazlollah/Royani branch.
+61,2026-07-18T08:00:00Z,conflict,CF005,insert,Preserved the conflict between the Figure 4 reconstruction and the three-son formulation in the comparison family memoir.
+62,2026-07-18T23:32:12.273866+00:00,migration,0026,apply,Applied 0026_reconstruct_haji_fazlollah_royani_branch.sql

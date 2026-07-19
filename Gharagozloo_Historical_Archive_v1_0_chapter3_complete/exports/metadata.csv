@@ -34,7 +34,8 @@ hajilou_figure4_p0088_correction,P0088 confirmed as Ali Khan Jalal al-Molk Ghara
 hajilou_older_trunk,Reconstructed Haji Mohammad Jafar Khan -> Haji Abdollah Khan -> five Figure 4 branch heads. Haji Mina parentage remains disputed.
 haji_safar_majzub_branch,Reconstructed Haji Safar Khan -> Sheikh Mohammad Jafar Khan Majzub Ali Shah -> five sons. Mirza Ali-Naqi additional descriptor remains open as Q0026.
 nasrollah_korijani_branch,Reconstructed P0073 Nasrollah Khan Korijani -> P0105 Gholam Khan -> P0106 Noor Ali Khan and enriched Nasrollah Khan’s Zand-Qajar military and Fars administrative biography.
-archive_version,2.6.7
 haji_mina_kabudarahangi_branch,Reconstructed Haji Mina Khan -> Morteza Qoli Khan / Shir Ali Khan and six later descendants from Figure 4. Parentage conflict for Haji Mina remains unresolved as CF004/Q0025.
-last_migration,0025
-updated_at,2026-07-18T04:25:04.962586+00:00
+archive_version,2.6.8
+haji_fazlollah_royani_branch,"Corrected user-supplied reconstruction added under P0096. Contains P0115-P0156 and R0092-R0133. Question marks are preserved through verification status, alternate transcriptions, and Q0028-Q0035."
+last_migration,0026
+updated_at,2026-07-18T23:32:12.273866+00:00
