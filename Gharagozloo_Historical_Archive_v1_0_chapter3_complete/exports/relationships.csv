@@ -74,9 +74,9 @@ R0073,P0095,parent_of,P0097,The prose explicitly traces Majzub Ali Shah through 
 R0074,P0095,parent_of,P0098,Figure 4 places Haji Mina Khan below Haji Abdollah Khan. The prose may instead place him among the sons of Haji Mohammad Jafar Khan; retained as disputed pending resolution.,disputed
 R0075,P0095,parent_of,P0001,Figure 4 places Haji Mohammad Khan Jeyhunabadi among the five branch heads below Haji Abdollah Khan; prose names him in the same early Hajilou family discussion.,probable
 R0076,P0097,parent_of,P0099,Explicitly stated in the Chapter 2 prose and shown in Figure 4.,confirmed
-R0077,P0099,parent_of,P0100,Figure 4 shows Abd al-Javad among the five sons of Majzub Ali Shah.,probable
+R0077,P0099,parent_of,P0100,The user-supplied reconstruction shows an unnamed first child beneath Majzub Ali Shah; the name was marked ??. Earlier Abd al-Javad identification is superseded.,provisional
 R0078,P0099,parent_of,P0101,Figure 4 shows Agha Mohammad Ebrahim among the five sons of Majzub Ali Shah.,probable
-R0079,P0099,parent_of,P0102,Figure 4 shows Abd al-Majid among the five sons of Majzub Ali Shah.,probable
+R0079,P0099,parent_of,P0102,The user-supplied reconstruction identifies this child as Agha Abdol Hamid.,confirmed
 R0080,P0099,parent_of,P0103,Figure 4 shows Mirza Ali-Naqi among the five sons of Majzub Ali Shah.,probable
 R0081,P0099,parent_of,P0104,Figure 4 shows Mirza Lotfollah among the five sons of Majzub Ali Shah.,probable
 R0082,P0073,parent_of,P0105,Figure 4 shows Gholam Khan as the child of Nasrollah Khan Korijani.,probable
@@ -87,7 +87,7 @@ R0086,P0107,parent_of,P0109,Figure 4 shows Mansur al-Molk as a child of Morteza 
 R0087,P0107,parent_of,P0110,Figure 4 shows Mohammad Mirza Khan as a child of Morteza Qoli Khan.,probable
 R0088,P0109,parent_of,P0111,Figure 4 shows Hasan Agha as a child of Mansur al-Molk.,probable
 R0089,P0109,parent_of,P0112,Figure 4 shows Soltan Ali Khan as a child of Mansur al-Molk.,probable
-R0090,P0110,parent_of,P0113,Figure 4 shows Mohammad Hossein Khan as one of two distinct sons of Mohammad Mirza Khan.,probable
+R0090,P0110,parent_of,P0113,Corrected from Mohammad Hossein Khan to Mohammad Hassan Khan using the archive owner’s row/column reconstruction.,confirmed
 R0091,P0110,parent_of,P0114,Figure 4 shows Sarhang Mohammad Hossein Khan as the second distinct son of Mohammad Mirza Khan.,probable
 R0092,P0096,parent_of,P0115,"Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4. The relationship is retained, while uncertainty applies to the child's name reading.",probable
 R0093,P0096,parent_of,P0116,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable

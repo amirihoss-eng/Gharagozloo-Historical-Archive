@@ -192,9 +192,9 @@ C0190,person,P0099,held title,Majzub Ali Shah,confirmed,active,Used in both narr
 C0191,person,P0099,death,Died in Tabriz in 1239 AH,confirmed,active,Narrative account in S0001.
 C0192,person,P0099,burial,Buried at the shrine of Seyyed Hamzeh in Tabriz,confirmed,active,Narrative account in S0001.
 C0193,person,P0099,children count,Five sons,probable,active,Figure 4 displays five sons.
-C0194,person,P0100,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
+C0194,person,P0100,parentage,Unnamed child of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),possible,active,"The child is present in the chart, but the archive owner marked the name ??; earlier Abd al-Javad reading superseded."
 C0195,person,P0101,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
-C0196,person,P0102,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
+C0196,person,P0102,parentage,"Agha Abdol Hamid, child of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099)",confirmed,active,Corrected from the earlier Abd al-Majid reading using the user-supplied branch reconstruction.
 C0197,person,P0103,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
 C0198,person,P0104,parentage,Son of Sheikh Mohammad Jafar Khan Majzub Ali Shah (P0099),probable,active,Figure 4.
 C0199,person,P0105,parentage,Son of Nasrollah Khan Korijani Gharagozloo (P0073),probable,active,Figure 4 genealogy.
@@ -215,7 +215,7 @@ C0213,person,P0109,parentage,Child of Morteza Qoli Khan (P0107),probable,active,
 C0214,person,P0110,parentage,Child of Morteza Qoli Khan (P0107),probable,active,Figure 4.
 C0215,person,P0111,parentage,Child of Mansur al-Molk (P0109),probable,active,Figure 4.
 C0216,person,P0112,parentage,Child of Mansur al-Molk (P0109),probable,active,Figure 4.
-C0217,person,P0113,parentage,Son of Mohammad Mirza Khan (P0110),probable,active,Figure 4.
+C0217,person,P0113,parentage,"Mohammad Hassan Khan, son of Mohammad Mirza Khan (P0110)",confirmed,active,Corrected from the earlier Mohammad Hossein Khan reading.
 C0218,person,P0114,parentage,Son of Mohammad Mirza Khan (P0110),probable,active,Figure 4.
 C0219,person,P0109,held title,Mansur al-Molk,probable,active,Figure 4 identifies the person by this title-form.
 C0220,person,P0114,held rank,Sarhang,probable,active,Figure 4 prints the rank with the name.

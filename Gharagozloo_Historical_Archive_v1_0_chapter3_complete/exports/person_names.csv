@@ -144,12 +144,12 @@
 147,P0099,شیخ محمدجعفر خان مجذوب‌علیشاه کبودراهنگی قراگوزلو,fa,canonical,1
 148,P0099,Haji Mohammad Jafar Khan Majzub Ali Shah,en,title_form,0
 149,P0099,حاجی محمدجعفر خان مجذوب‌علیشاه,fa,title_form,0
-150,P0100,Abd al-Javad Gharagozloo,en,canonical,1
-151,P0100,عبدالجواد قراگوزلو,fa,canonical,1
+150,P0100,Abd al-Javad Gharagozloo,en,superseded_reading,0
+151,P0100,عبدالجواد قراگوزلو,fa,superseded_reading,0
 152,P0101,Agha Mohammad Ebrahim Gharagozloo,en,canonical,1
 153,P0101,آقا محمدابراهیم قراگوزلو,fa,canonical,1
-154,P0102,Abd al-Majid Gharagozloo,en,canonical,1
-155,P0102,عبدالمجید قراگوزلو,fa,canonical,1
+154,P0102,Abd al-Majid Gharagozloo,en,superseded_reading,0
+155,P0102,عبدالمجید قراگوزلو,fa,superseded_reading,0
 156,P0103,Mirza Ali-Naqi Gharagozloo,en,canonical,1
 157,P0103,میرزا علی‌نقی قراگوزلو,fa,canonical,1
 158,P0104,Mirza Lotfollah Gharagozloo,en,canonical,1
@@ -176,8 +176,8 @@
 179,P0111,حسن آقا قراگوزلو,fa,canonical,1
 180,P0112,Soltan Ali Khan Gharagozloo,en,canonical,1
 181,P0112,سلطان‌علی خان قراگوزلو,fa,canonical,1
-182,P0113,Mohammad Hossein Khan Kabudarahangi Gharagozloo,en,canonical,1
-183,P0113,محمدحسین خان کبودراهنگی قراگوزلو,fa,canonical,1
+182,P0113,Mohammad Hossein Khan Kabudarahangi Gharagozloo,en,superseded_reading,0
+183,P0113,محمدحسین خان کبودراهنگی قراگوزلو,fa,superseded_reading,0
 184,P0113,Mohammad Hossein Khan Gharagozloo,en,figure_form,0
 185,P0113,محمدحسین خان قراگوزلو,fa,figure_form,0
 186,P0114,Sarhang Mohammad Hossein Khan Kabudarahangi Gharagozloo,en,canonical,1
@@ -281,3 +281,17 @@
 284,P0155,محمدحسن خان قراگوزلو,fa,canonical,1
 285,P0156,Farid al-Molk Mirza Mohammad Ali Khan Hamadani Gharagozloo,en,canonical,1
 286,P0156,فریدالملک میرزا محمدعلی خان همدانی قراگوزلو,fa,canonical,1
+287,P0100,Unnamed son of Sheikh Mohammad Jafar Khan Majzub Ali Shah,en,canonical,1
+288,P0100,پسر نامعلوم شیخ محمدجعفر خان مجذوب‌علیشاه,fa,canonical,1
+289,P0100,??,und,user_transcription_with_uncertainty,0
+290,P0102,Agha Abdol Hamid Gharagozloo,en,canonical,1
+291,P0102,آقا عبدالحامد قراگوزلو,fa,canonical,1
+292,P0102,Agha Abd Allah Hamid,en,user_form,0
+293,P0103,Mirza Ali Naghi ? Abadi Mojtahed,en,user_transcription_with_uncertainty,0
+294,P0103,میرزا علی‌نقی ؟ آبادی مجتهد,fa,user_transcription_with_uncertainty,0
+295,P0113,Mohammad Hassan Khan Kabudarahangi Gharagozloo,en,canonical,1
+296,P0113,محمدحسن خان کبودراهنگی قراگوزلو,fa,canonical,1
+297,P0113,Mohammad Hassan Khan,en,user_form,0
+298,P0113,محمدحسن خان,fa,user_form,0
+299,P0112,Soltan Ali ? Khan,en,user_transcription_with_uncertainty,0
+300,P0112,سلطان‌علی ؟ خان,fa,user_transcription_with_uncertainty,0

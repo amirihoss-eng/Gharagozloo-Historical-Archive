@@ -108,9 +108,9 @@ EC0157,person,P0001,X0094,supports,Figure 4 branch head.
 EC0158,person,P0099,X0095,supports,Parentage and Hajilou identity.
 EC0159,person,P0099,X0096,supports,Figure 4 genealogy.
 EC0160,person,P0099,X0097,supports,Death and burial.
-EC0161,person,P0100,X0096,supports,Figure 4 child label.
+EC0161,person,P0100,X0096,supports,Corrected by the archive owner: the first child is present but unnamed/unknown; earlier Abd al-Javad reading superseded.
 EC0162,person,P0101,X0096,supports,Figure 4 child label.
-EC0163,person,P0102,X0096,supports,Figure 4 child label.
+EC0163,person,P0102,X0096,supports,Corrected by the archive owner to Agha Abdol Hamid; earlier Abd al-Majid reading superseded.
 EC0164,person,P0103,X0096,supports,Figure 4 child label.
 EC0165,person,P0104,X0096,supports,Figure 4 child label.
 EC0166,title,T0029,X0095,supports,Majzub Ali Shah title in the narrative.
@@ -134,7 +134,7 @@ EC0183,person,P0109,X0103,supports,Figure 4 title-form and descendants.
 EC0184,person,P0110,X0103,supports,Figure 4 descendant.
 EC0185,person,P0111,X0103,supports,Figure 4 descendant.
 EC0186,person,P0112,X0103,supports,Figure 4 descendant.
-EC0187,person,P0113,X0103,supports,Figure 4 descendant.
+EC0187,person,P0113,X0103,supports,Corrected by the archive owner to Mohammad Hassan Khan; earlier Mohammad Hossein reading superseded.
 EC0188,person,P0114,X0103,supports,Figure 4 descendant and rank.
 EC0189,title,T0030,X0103,supports,Mansur al-Molk title-form in Figure 4.
 EC0190,person,P0115,X0105,supports,Person and placement transcribed from the user-supplied branch sheet.
@@ -179,3 +179,8 @@ EC0228,person,P0153,X0105,supports,Person and placement transcribed from the use
 EC0229,person,P0154,X0105,supports,Person and placement transcribed from the user-supplied branch sheet.
 EC0230,person,P0155,X0105,supports,Person and placement transcribed from the user-supplied branch sheet.
 EC0231,person,P0156,X0105,supports,Person and placement transcribed from the user-supplied branch sheet.
+EC0232,person,P0100,X0108,supports,"User sheet marks this child ??, preserving an unnamed node."
+EC0233,person,P0102,X0108,supports,User sheet identifies Agha Abdol Hamid.
+EC0234,person,P0103,X0108,supports,User sheet preserves the uncertain Abadi/Mojtahed descriptor.
+EC0235,person,P0112,X0108,supports,User sheet marks Soltan Ali ? Khan as uncertain.
+EC0236,person,P0113,X0108,supports,User sheet corrects the name to Mohammad Hassan Khan.

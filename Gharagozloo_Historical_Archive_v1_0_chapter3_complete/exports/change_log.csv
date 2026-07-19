@@ -61,3 +61,8 @@
 60,2026-07-18T08:00:00Z,relationship,R0092-R0133,insert,Added 42 parent-child edges for the corrected Haji Fazlollah/Royani branch.
 61,2026-07-18T08:00:00Z,conflict,CF005,insert,Preserved the conflict between the Figure 4 reconstruction and the three-son formulation in the comparison family memoir.
 62,2026-07-18T23:32:12.273866+00:00,migration,0026,apply,Applied 0026_reconstruct_haji_fazlollah_royani_branch.sql
+63,2026-07-18T09:00:00Z,person,P0100,correct,Replaced the unsupported Abd al-Javad reading with an unnamed child node marked highly uncertain.
+64,2026-07-18T09:00:00Z,person,P0102,correct,Corrected Abd al-Majid to Agha Abdol Hamid.
+65,2026-07-18T09:00:00Z,person,P0113,correct,Corrected Mohammad Hossein Khan to Mohammad Hassan Khan in the Haji Mina branch.
+66,2026-07-18T09:00:00Z,person,P0112,update,Preserved the user-marked uncertainty in the Soltan Ali Khan reading.
+67,2026-07-19T18:58:45.537522+00:00,migration,0027,apply,Applied 0027_correct_haji_safar_and_haji_mina_from_user_sheet.sql
