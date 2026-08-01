@@ -36,7 +36,11 @@ haji_safar_majzub_branch,Reconstructed Haji Safar Khan -> Sheikh Mohammad Jafar 
 nasrollah_korijani_branch,Reconstructed P0073 Nasrollah Khan Korijani -> P0105 Gholam Khan -> P0106 Noor Ali Khan and enriched Nasrollah Khan’s Zand-Qajar military and Fars administrative biography.
 haji_mina_kabudarahangi_branch,Reconstructed Haji Mina Khan -> Morteza Qoli Khan / Shir Ali Khan and six later descendants from Figure 4. Parentage conflict for Haji Mina remains unresolved as CF004/Q0025.
 haji_fazlollah_royani_branch,"Corrected user-supplied reconstruction added under P0096. Contains P0115-P0156 and R0092-R0133. Question marks are preserved through verification status, alternate transcriptions, and Q0028-Q0035."
-archive_version,2.6.9
 remaining_hajilou_user_corrections,Nasrollah branch confirmed unchanged. Haji Safar branch corrected to unnamed child / Agha Mohammad Ebrahim / Agha Abdol Hamid / Mirza Ali-Naqi ? Abadi Mojtahed / Mirza Lotf Allah. Haji Mina branch corrected to Mohammad Hassan Khan and uncertainty preserved for Soltan Ali Khan.
-last_migration,0027
-updated_at,2026-07-19T18:58:45.537522+00:00
+verified_hajilou_powerpoint_tree,Canonical Hajilou relationships corrected from the archive owner’s verified PowerPoint connector objects. Haji Mohammad Khan Jeyhunabadi P0001 and descendants were explicitly excluded from the migration scope.
+abdolhossein_farkhari_children,"Seven direct children verified: Mohammad Morad Beg, Fath Ali Beg, Mohammad Vali Beg, Shir Ali Beg, Ghasem Khan, Moosa Khan, and Mohammad Khan Hajilou."
+jeyhunabadi_branch_expansion,"Haji Mohammad Khan Jeyhunabadi now has five direct children: Mohammad Baqer, Zolfaghar, Haji Yavar Mohammad Gholi, Haji Hamze, and Kazem. Descendants were added beneath the latter three."
+archive_version,2.7.3
+hossein_qoli_amir_nezam_children,Added Mostafa Gharagozloo and Adel Khan Gharagozloo as confirmed children of P0012.
+last_migration,0031
+updated_at,2026-08-01T06:46:09.093176+00:00

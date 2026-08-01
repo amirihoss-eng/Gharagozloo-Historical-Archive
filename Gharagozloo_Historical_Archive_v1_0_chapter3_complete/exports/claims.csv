@@ -231,25 +231,25 @@ C0229,person,P0123,parentage,Child of Hossein Ali Khan Gharagozloo (P0117),proba
 C0230,person,P0124,parentage,Child of Hossein Ali Khan Gharagozloo (P0117),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0231,person,P0125,parentage,Child of Hossein Ali Khan Gharagozloo (P0117),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0232,person,P0126,parentage,Child of Hossein Ali Khan Gharagozloo (P0117),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0233,person,P0127,parentage,Child of Hossein Ali Khan Gharagozloo (P0117),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0234,person,P0128,parentage,Child of Hossein Ali Khan Gharagozloo (P0117),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0235,person,P0129,parentage,Child of Hossein Ali Khan Gharagozloo (P0117),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
+C0233,person,P0127,parentage,Child of Abdolhossein Khan Farkhari Gharagozloo (P0118),confirmed,active,Corrected using the verified PowerPoint.
+C0234,person,P0128,parentage,Child of Abdolhossein Khan Farkhari Gharagozloo (P0118),confirmed,active,Corrected using the verified PowerPoint.
+C0235,person,P0129,parentage,Child of Abdolhossein Khan Farkhari Gharagozloo (P0118),confirmed,active,Corrected using the verified PowerPoint.
 C0236,person,P0130,parentage,Child of Najaf Qoli Khan Gharagozloo (P0124),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0237,person,P0131,parentage,Child of Najaf Qoli Khan Gharagozloo (P0124),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0238,person,P0132,parentage,Child of Ali Khan Gharagozloo (P0130),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0239,person,P0133,parentage,Child of Ali Khan Gharagozloo (P0130),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0240,person,P0134,parentage,Child of Ali Khan Gharagozloo (P0130),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0241,person,P0135,parentage,Child of Heydar Qoli Khan Gharagozloo (P0126),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
+C0238,person,P0132,parentage,Child of Karim Khan Gharagozloo (P0135),confirmed,active,Corrected from Ali Khan to Karim Khan using the verified PowerPoint connector objects.
+C0239,person,P0133,parentage,Child of Karim Khan Gharagozloo (P0135),confirmed,active,Corrected from Ali Khan to Karim Khan using the verified PowerPoint connector objects.
+C0240,person,P0134,parentage,Child of Karim Khan Gharagozloo (P0135),confirmed,active,Corrected from Ali Khan to Karim Khan using the verified PowerPoint connector objects.
+C0241,person,P0135,parentage,Child of Mohammad Morad Beg Gharagozloo (P0127),confirmed,active,Corrected from Heidar Qoli Khan to Mohammad Morad Beg using the verified PowerPoint.
 C0242,person,P0136,parentage,Child of Mohammad Morad Beg Gharagozloo (P0127),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0243,person,P0137,parentage,Child of Mohammad Morad Beg Gharagozloo (P0127),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0244,person,P0138,parentage,Child of Mohammad Morad Beg Gharagozloo (P0127),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0245,person,P0139,parentage,Child of Enayat Allah Khan Gharagozloo (P0137),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
+C0245,person,P0139,parentage,Child of Habib Allah Khan Gharagozloo (P0138),confirmed,active,Corrected from Enayat Allah Khan to Habib Allah Khan using the verified PowerPoint connector objects.
 C0246,person,P0140,parentage,Child of Habib Allah Khan Gharagozloo (P0138),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0247,person,P0141,parentage,Child of Mohammad Vali Beg Gharagozloo (P0129),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0248,person,P0142,parentage,Child of Soltan Fath Ali Gharagozloo (P0141),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
+C0247,person,P0141,parentage,Child of Shir Ali Beg Gharagozloo (P0143),probable,active,Corrected from Mohammad Vali Beg to Shir Ali Beg using the verified PowerPoint connector objects.
+C0248,person,P0142,parentage,Child of Soltan Fath Ali Gharagozloo (P0141),unverified,superseded,Superseded after verification of the PowerPoint connector objects; no separate child is shown beneath Soltan Fath Ali.
 C0249,person,P0143,parentage,Child of Abdolhossein Khan Farkhari Gharagozloo (P0118),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0250,person,P0144,parentage,Child of Shir Ali Beg Gharagozloo (P0143),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0251,person,P0145,parentage,Child of Zolfaghar Khan Gharagozloo (P0144),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
+C0251,person,P0145,parentage,Child of Zolfaghar Khan Gharagozloo (P0144),confirmed,active,Name corrected to Assad Khan; parent-child relationship confirmed in the verified PowerPoint.
 C0252,person,P0146,parentage,Child of Zolfaghar Khan Gharagozloo (P0144),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0253,person,P0147,parentage,Child of Abdolhossein Khan Farkhari Gharagozloo (P0118),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0254,person,P0148,parentage,Child of Ghasem Khan Gharagozloo (P0147),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
@@ -261,3 +261,16 @@ C0259,person,P0153,parentage,Child of Abdolhossein Khan Farkhari Gharagozloo (P0
 C0260,person,P0154,parentage,Child of Mohammad Khan Hajilou Gharagozloo (P0153),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0261,person,P0155,parentage,Child of Mohammad Khan Hajilou Gharagozloo (P0153),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0262,person,P0156,parentage,Child of Mohammad Khan Hajilou Gharagozloo (P0153),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
+C0263,person,P0157,parentage,Child of Mohammad Khan Hajilou Gharagozloo (P0153),unverified,active,"The relationship is visible in the verified PowerPoint, but the child’s name is unreadable and represented as ??."
+C0264,person,P0158,parentage,Child of Haji Mohammad Khan Jeyhunabadi (P0001),confirmed,active,User-confirmed reconstruction.
+C0265,person,P0159,parentage,Child of Haji Mohammad Khan Jeyhunabadi (P0001),confirmed,active,User-confirmed reconstruction.
+C0266,person,P0160,parentage,Child of Haji Mohammad Khan Jeyhunabadi (P0001),confirmed,active,User-confirmed reconstruction.
+C0267,person,P0084,parentage,Child of Haji Mohammad Khan Jeyhunabadi (P0001),confirmed,active,Corrected from Mohammad Baqer Khan.
+C0268,person,P0161,parentage,Child of Haji Yavar Mohammad Gholi Khan (P0159),confirmed,active,User-confirmed reconstruction.
+C0269,person,P0162,parentage,Child of Haji Yavar Mohammad Gholi Khan (P0159),confirmed,active,User-confirmed reconstruction.
+C0270,person,P0163,parentage,Child of Haji Hamze Khan (P0160),confirmed,active,User-confirmed reconstruction.
+C0271,person,P0164,parentage,Child of Haji Hamze Khan (P0160),confirmed,active,User-confirmed reconstruction.
+C0273,person,P0166,parentage,Child of Kazem Khan (P0084),confirmed,active,User-confirmed reconstruction.
+C0274,person,P0167,parentage,Child of Kazem Khan (P0084),confirmed,active,User-confirmed reconstruction.
+C0275,person,P0168,parentage,Child of Hossein Qoli Khan Amir Nezam (P0012),confirmed,active,User-confirmed reconstruction.
+C0276,person,P0169,parentage,Child of Hossein Qoli Khan Amir Nezam (P0012),confirmed,active,User-confirmed reconstruction.

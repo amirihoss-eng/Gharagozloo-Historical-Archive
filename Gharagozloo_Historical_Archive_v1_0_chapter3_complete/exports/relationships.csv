@@ -57,7 +57,7 @@ R0056,P0080,parent_of,P0081,Roya Yaghmai is the mother of Raha Amiri Gharagozloo
 R0057,P0010,parent_of,P0082,Hossein is the father of Saam Amiri Gharagozloo.,confirmed
 R0058,P0080,parent_of,P0082,Roya Yaghmai is the mother of Saam Amiri Gharagozloo.,confirmed
 R0059,P0002,parent_of,P0083,Figure 4 depicts Alireza Khan as a son of Sartip Mohammad-Baqer Khan. Diagram-only in this reconstruction wave.,probable
-R0060,P0002,parent_of,P0084,Figure 4 depicts Kazem Khan as a son of Sartip Mohammad-Baqer Khan. Diagram-only in this reconstruction wave.,probable
+R0060,P0001,parent_of,P0084,"Corrected by the archive owner: Kazem Khan is a direct child of Haji Mohammad Khan Jeyhunabadi, not Mohammad Baqer Khan.",confirmed
 R0061,P0002,parent_of,P0085,Figure 4 depicts Majid Khan as a son of Sartip Mohammad-Baqer Khan. The name was corrected from the earlier provisional reading Mahmoud Khan.,probable
 R0062,P0085,parent_of,P0086,Figure 4 shows the sequence Majid Khan -> Ali-Akbar Khan.,probable
 R0063,P0086,parent_of,P0087,Figure 4 shows the sequence Ali-Akbar Khan -> Mehdi Khan.,probable
@@ -101,22 +101,21 @@ R0100,P0117,parent_of,P0123,"Parent-child placement follows the archive owner's 
 R0101,P0117,parent_of,P0124,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
 R0102,P0117,parent_of,P0125,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
 R0103,P0117,parent_of,P0126,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
-R0104,P0117,parent_of,P0127,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
-R0105,P0117,parent_of,P0128,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
-R0106,P0117,parent_of,P0129,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
+R0104,P0118,parent_of,P0127,Corrected from Hossein Ali Khan to Abdolhossein Khan Farkhari using the verified PowerPoint.,confirmed
+R0105,P0118,parent_of,P0128,Corrected from Hossein Ali Khan to Abdolhossein Khan Farkhari using the verified PowerPoint.,confirmed
+R0106,P0118,parent_of,P0129,Corrected from Hossein Ali Khan to Abdolhossein Khan Farkhari using the verified PowerPoint.,confirmed
 R0107,P0124,parent_of,P0130,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
 R0108,P0124,parent_of,P0131,"Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4. The relationship is retained, while uncertainty applies to the child's name reading.",probable
-R0109,P0130,parent_of,P0132,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
-R0110,P0130,parent_of,P0133,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
-R0111,P0130,parent_of,P0134,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
-R0112,P0126,parent_of,P0135,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
+R0109,P0135,parent_of,P0132,"Verified PowerPoint connectors identify Khair Allah Khan as a child of Karim Khan (P0135), not Ali Khan (P0130).",confirmed
+R0110,P0135,parent_of,P0133,"Verified PowerPoint connectors identify Abdollah Khan as a child of Karim Khan (P0135), not Ali Khan (P0130).",confirmed
+R0111,P0135,parent_of,P0134,"Verified PowerPoint connectors identify Aman Allah Khan as a child of Karim Khan (P0135), not Ali Khan (P0130).",confirmed
+R0112,P0127,parent_of,P0135,Corrected from Heidar Qoli Khan to Mohammad Morad Beg using the verified PowerPoint. Karim Khan is one of Mohammad Morad Beg’s four direct children.,confirmed
 R0113,P0127,parent_of,P0136,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
 R0114,P0127,parent_of,P0137,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
 R0115,P0127,parent_of,P0138,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
-R0116,P0137,parent_of,P0139,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
+R0116,P0138,parent_of,P0139,"Verified PowerPoint connectors identify Noor Allah Khan as a child of Habib Allah Khan (P0138), alongside Nasr Allah Khan.",confirmed
 R0117,P0138,parent_of,P0140,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
-R0118,P0129,parent_of,P0141,"Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4. The relationship is retained, while uncertainty applies to the child's name reading.",probable
-R0119,P0141,parent_of,P0142,"Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4. The relationship is retained, while uncertainty applies to the child's name reading.",probable
+R0118,P0143,parent_of,P0141,"Verified PowerPoint connectors identify Soltan Fath Ali (P0141) as a child of Shir Ali Beg (P0143), not Mohammad Vali Beg.",probable
 R0120,P0118,parent_of,P0143,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
 R0121,P0143,parent_of,P0144,"Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4. The relationship is retained, while uncertainty applies to the child's name reading.",probable
 R0122,P0144,parent_of,P0145,"Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4. The relationship is retained, while uncertainty applies to the child's name reading.",probable
@@ -131,3 +130,16 @@ R0130,P0118,parent_of,P0153,"Parent-child placement follows the archive owner's 
 R0131,P0153,parent_of,P0154,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
 R0132,P0153,parent_of,P0155,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
 R0133,P0153,parent_of,P0156,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
+R0134,P0153,parent_of,P0157,"Verified PowerPoint connectors show an additional unnamed child, labelled ??, beneath Mohammad Khan Hajilou.",provisional
+R0135,P0001,parent_of,P0158,User-confirmed direct child of Haji Mohammad Khan Jeyhunabadi.,confirmed
+R0136,P0001,parent_of,P0159,User-confirmed direct child of Haji Mohammad Khan Jeyhunabadi.,confirmed
+R0137,P0001,parent_of,P0160,User-confirmed direct child of Haji Mohammad Khan Jeyhunabadi.,confirmed
+R0138,P0159,parent_of,P0161,User-confirmed child of Haji Yavar Mohammad Gholi Khan.,confirmed
+R0139,P0159,parent_of,P0162,User-confirmed child of Haji Yavar Mohammad Gholi Khan.,confirmed
+R0140,P0160,parent_of,P0163,User-confirmed child of Haji Hamze Khan.,confirmed
+R0141,P0160,parent_of,P0164,User-confirmed child of Haji Hamze Khan.,confirmed
+R0142,P0084,parent_of,P0165,User-confirmed child of Kazem Khan; name unreadable as ? Khan.,provisional
+R0143,P0084,parent_of,P0166,User-confirmed child of Kazem Khan.,confirmed
+R0144,P0084,parent_of,P0167,User-confirmed child of Kazem Khan.,confirmed
+R0145,P0012,parent_of,P0168,User-confirmed child of Hossein Qoli Khan Amir Nezam.,confirmed
+R0146,P0012,parent_of,P0169,User-confirmed child of Hossein Qoli Khan Amir Nezam.,confirmed

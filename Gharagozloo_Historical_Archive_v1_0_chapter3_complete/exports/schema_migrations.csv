@@ -26,3 +26,7 @@
 0025,0025_reconstruct_haji_mina_kabudarahangi_branch.sql,c5d6a842f13a37182eb7e9ab4740f184d79de73bdc7dea9ea533fae801dc74c7,2026-07-18T04:25:04.962586+00:00,Applied by tools/apply_migration.py
 0026,0026_reconstruct_haji_fazlollah_royani_branch.sql,253aa767150e6417cc5682cdc91b57ee822241f718d0d4214d7bed88431e08fc,2026-07-18T23:32:12.273866+00:00,Applied by tools/apply_migration.py
 0027,0027_correct_haji_safar_and_haji_mina_from_user_sheet.sql,39d326d9f413f35a5e036cbf9cc6d11d8b9b2eb07c083b0d9407c816d6d00fc4,2026-07-19T18:58:45.537522+00:00,Applied by tools/apply_migration.py
+0028,0028_correct_hajilou_tree_from_verified_powerpoint.sql,33ede46f2991b6a6fc5af4213295f8bf4d137f58027c9d96de64844fd0f6d24e,2026-08-01T03:07:08.700355+00:00,Applied by tools/apply_migration.py
+0029,0029_restore_abdolhossein_khan_seven_children.sql,ed9f40d094ac5339136cf4356ede70c8f990e22fc310adbf765399a4f62b50ad,2026-08-01T03:48:19.046585+00:00,Applied by tools/apply_migration.py
+0030,0030_expand_haji_mohammad_khan_jeyhunabadi_children.sql,fbb8df6b1e0fd602ac2339d06df3151ec33078087ad7232726f49c8dc72b69e8,2026-08-01T03:55:33.421906+00:00,Applied by tools/apply_migration.py
+0031,0031_add_hossein_gholi_khan_children.sql,5229af488efa857b1bfd7be9c7e711eb0348f839b2bdba2f4724fabab2f44e7c,2026-08-01T06:46:09.093176+00:00,Applied by tools/apply_migration.py

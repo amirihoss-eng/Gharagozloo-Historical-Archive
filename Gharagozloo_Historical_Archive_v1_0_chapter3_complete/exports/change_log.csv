@@ -66,3 +66,22 @@
 65,2026-07-18T09:00:00Z,person,P0113,correct,Corrected Mohammad Hossein Khan to Mohammad Hassan Khan in the Haji Mina branch.
 66,2026-07-18T09:00:00Z,person,P0112,update,Preserved the user-marked uncertainty in the Soltan Ali Khan reading.
 67,2026-07-19T18:58:45.537522+00:00,migration,0027,apply,Applied 0027_correct_haji_safar_and_haji_mina_from_user_sheet.sql
+68,2026-07-31T18:47:00-07:00,relationship,R0109-R0111,correct,"Reparented Khair Allah, Abdollah, and Aman Allah from Ali Khan to Karim Khan."
+69,2026-07-31T18:47:00-07:00,relationship,R0116,correct,Reparented Noor Allah Khan from Enayat Allah Khan to Habib Allah Khan.
+70,2026-07-31T18:47:00-07:00,relationship,R0118,correct,Reparented Soltan Fath Ali from Mohammad Vali Beg to Shir Ali Beg.
+71,2026-07-31T18:47:00-07:00,person,P0142,delete,Disconnected the spurious Hasan node created by the earlier spreadsheet interpretation and retained it only as superseded audit history.
+72,2026-07-31T18:47:00-07:00,person,P0145,correct,Corrected the name to Assad Khan and retained the verified parent Zolfaghar Khan.
+73,2026-07-31T18:47:00-07:00,person,P0157,insert,Added the unnamed child shown beneath Mohammad Khan Hajilou.
+74,2026-07-31T18:47:00-07:00,scope,P0001,preserve,Migration 0028 intentionally made no changes to Haji Mohammad Khan Jeyhunabadi or his descendants.
+75,2026-08-01T03:07:08.700355+00:00,migration,0028,apply,Applied 0028_correct_hajilou_tree_from_verified_powerpoint.sql
+76,2026-07-31T20:34:00-07:00,relationship,R0104-R0106,correct,"Restored Mohammad Morad Beg, Fath Ali Beg, and Mohammad Vali Beg as direct children of Abdolhossein Khan Farkhari, giving him seven direct children."
+77,2026-07-31T20:34:00-07:00,relationship,R0112,correct,Restored Karim Khan as a direct child of Mohammad Morad Beg.
+78,2026-07-31T20:34:00-07:00,scope,P0001,preserve,Migration 0029 made no changes to Haji Mohammad Khan Jeyhunabadi or descendants.
+79,2026-08-01T03:48:19.046585+00:00,migration,0029,apply,Applied 0029_restore_abdolhossein_khan_seven_children.sql
+80,2026-07-31T20:50:00-07:00,relationship,R0060,correct,Reparented existing Kazem Khan from Mohammad Baqer Khan to Haji Mohammad Khan Jeyhunabadi.
+81,2026-07-31T20:50:00-07:00,person,P0158-P0167,insert,"Added ten new people to the Jeyhunabadi branch, including one unnamed provisional child."
+82,2026-07-31T20:50:00-07:00,relationship,R0135-R0144,insert,Added ten user-confirmed parent-child relationships in the expanded Jeyhunabadi branch.
+83,2026-08-01T03:55:33.421906+00:00,migration,0030,apply,Applied 0030_expand_haji_mohammad_khan_jeyhunabadi_children.sql
+84,2026-07-31T21:00:00-07:00,person,P0168-P0169,insert,Added Mostafa Gharagozloo and Adel Khan Gharagozloo as children of Hossein Qoli Khan Amir Nezam (P0012).
+85,2026-07-31T21:00:00-07:00,relationship,R0145-R0146,insert,Added two parent-child relationships beneath Hossein Qoli Khan Amir Nezam (P0012).
+86,2026-08-01T06:46:09.093176+00:00,migration,0031,apply,Applied 0031_add_hossein_gholi_khan_children.sql
