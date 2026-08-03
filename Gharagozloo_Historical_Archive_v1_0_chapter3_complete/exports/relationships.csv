@@ -25,7 +25,7 @@ R0024,P0031,parent_of,P0033,,confirmed
 R0025,P0031,parent_of,P0034,,confirmed
 R0026,P0024,spouse_of,P0036,Qamar al-Saltaneh was wife of Gholamreza Khan Ehtesham al-Dowleh.,confirmed
 R0027,P0030,parent_of,P0040,Chapter 4 pp. 167,confirmed
-R0028,P0014,parent_of,P0030,Chapter 4 pp. 167,confirmed
+R0028,P0014,parent_of,P0030,Duplicate of canonical relationship R0020; retained only for audit history.,superseded
 R0029,P0040,grandchild_of,P0014,Chapter 4 pp. 167,confirmed
 R0030,P0040,parent_of,P0041,Chapter 4 pp. 186,confirmed
 R0031,P0040,parent_of,P0042,Chapter 4 pp. 186,confirmed
@@ -36,8 +36,8 @@ R0035,P0041,spouse_of,P0055,Chapter 4 pp. 186,confirmed
 R0036,P0054,parent_of,P0055,Chapter 4 pp. 186,confirmed
 R0037,P0040,succeeded,P0014,Chapter 4 pp. 169,confirmed
 R0038,P0040,succeeded_as_regent,P0049,Chapter 4 pp. 182,confirmed
-R0039,P0040,father_of,P0064,"Chapter 2 calls a Mehdi Khan the son of Naser al-Molk in a regimental passage, but Chapter 4 separately states that Naser al-Molk had two sons, Hossein-Ali and Mohsen, and one daughter. Identity remains unresolved.",provisional
-R0040,P0064,father_of,P0065,Narrative text names Abdol-Ali Khan as Mehdi Khan's eldest son.,confirmed
+R0039,P0030,parent_of,P0064,"Reconciled from Figure 3 plus explicit later prose: Mehdi Khan is a son of Ahmad Khan Sartip and Negar Khanom, not a son of Naser al-Molk.",confirmed
+R0040,P0030,parent_of,P0065,Canonical placement follows Figure 3 and explicit later prose: Abdol Ali Khan is a son of Ahmad Khan Sartip and Negar Khanom.,confirmed
 R0041,P0011,parent_of,P0074,Narrative text explicitly names Rostam Khan among Mohammad-Hossein Khan's five sons. Superseded by canonical relationship R0044.,superseded
 R0042,P0011,parent_of,P0062,Narrative text explicitly names Fazlollah Khan among Mohammad-Hossein Khan's five sons.,confirmed
 R0043,P0011,parent_of,P0075,Narrative text explicitly names Ali-Naqi Khan among Mohammad-Hossein Khan's five sons. Superseded by canonical relationship R0045.,superseded
@@ -143,3 +143,14 @@ R0143,P0084,parent_of,P0166,User-confirmed child of Kazem Khan.,confirmed
 R0144,P0084,parent_of,P0167,User-confirmed child of Kazem Khan.,confirmed
 R0145,P0012,parent_of,P0168,User-confirmed child of Hossein Qoli Khan Amir Nezam.,confirmed
 R0146,P0012,parent_of,P0169,User-confirmed child of Hossein Qoli Khan Amir Nezam.,confirmed
+R0147,P0023,parent_of,P0170,Figure 3/prose reconciliation: Gholam Ali is a son of Zeyn al-Abedin.,confirmed
+R0148,P0019,parent_of,P0021,Figure 3: Lotf Ali Khan is a son of Ali Khan Nosrat al-Molk.,confirmed
+R0149,P0013,parent_of,P0171,Figure 3: earlier Mehdi Qoli Khan is a direct son of Nabi Khan.,confirmed
+R0150,P0064,parent_of,P0038,Narrative evidence identifies Mohammad Ebrahim Khan as son of Mehdi Khan Amir Tuman.,confirmed
+R0151,P0033,parent_of,P0037,Figure 3 places Alireza Khan beneath Ali Qoli Khan Baha al-Molk.,confirmed
+R0152,P0033,parent_of,P0172,Figure 3: Yahya Khan is a child of Ali Qoli Khan Baha al-Molk.,confirmed
+R0153,P0037,parent_of,P0173,Figure 3: Manouchehr is a child of Alireza Khan.,confirmed
+R0154,P0062,parent_of,P0174,Figure 3: Fath Ali Khan is a child of Fazlollah Khan.,confirmed
+R0155,P0028,parent_of,P0175,Figure 3 positively presents Mohammad Shafi as a son; prose later doubts that Abdollah had male children. Conflict preserved.,disputed
+R0156,P0175,parent_of,P0176,Figure 3: Ezzat Allah Saremi descends from Mohammad Shafi Khan.,confirmed
+R0157,P0028,parent_of,P0177,Figure 3 positively presents Abdolhossein as a son; prose later doubts that Abdollah had male children. Conflict preserved.,disputed

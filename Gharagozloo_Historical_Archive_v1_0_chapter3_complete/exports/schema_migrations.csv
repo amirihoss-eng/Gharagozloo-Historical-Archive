@@ -30,3 +30,5 @@
 0029,0029_restore_abdolhossein_khan_seven_children.sql,ed9f40d094ac5339136cf4356ede70c8f990e22fc310adbf765399a4f62b50ad,2026-08-01T03:48:19.046585+00:00,Applied by tools/apply_migration.py
 0030,0030_expand_haji_mohammad_khan_jeyhunabadi_children.sql,fbb8df6b1e0fd602ac2339d06df3151ec33078087ad7232726f49c8dc72b69e8,2026-08-01T03:55:33.421906+00:00,Applied by tools/apply_migration.py
 0031,0031_add_hossein_gholi_khan_children.sql,5229af488efa857b1bfd7be9c7e711eb0348f839b2bdba2f4724fabab2f44e7c,2026-08-01T06:46:09.093176+00:00,Applied by tools/apply_migration.py
+0032,0032_hajilou_final_reconciliation_cleanup.sql,a7954451cdbdbdc0ac6ad5d67490b82b9907f6c0e0c84c7fb761d024ce71874b,2026-08-02T20:17:50.225081+00:00,Applied by tools/apply_migration.py
+0033,0033_final_ashiqloo_figure3_reconciliation.sql,83a0ab56b9f3e9fc6b67c67a2f0c8be0463551d6977f434b3450ff76f6a6b8fd,2026-08-02T20:18:34.938535+00:00,Applied by tools/apply_migration.py

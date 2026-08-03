@@ -40,7 +40,9 @@ remaining_hajilou_user_corrections,Nasrollah branch confirmed unchanged. Haji Sa
 verified_hajilou_powerpoint_tree,Canonical Hajilou relationships corrected from the archive owner’s verified PowerPoint connector objects. Haji Mohammad Khan Jeyhunabadi P0001 and descendants were explicitly excluded from the migration scope.
 abdolhossein_farkhari_children,"Seven direct children verified: Mohammad Morad Beg, Fath Ali Beg, Mohammad Vali Beg, Shir Ali Beg, Ghasem Khan, Moosa Khan, and Mohammad Khan Hajilou."
 jeyhunabadi_branch_expansion,"Haji Mohammad Khan Jeyhunabadi now has five direct children: Mohammad Baqer, Zolfaghar, Haji Yavar Mohammad Gholi, Haji Hamze, and Kazem. Descendants were added beneath the latter three."
-archive_version,2.7.3
 hossein_qoli_amir_nezam_children,Added Mostafa Gharagozloo and Adel Khan Gharagozloo as confirmed children of P0012.
-last_migration,0031
-updated_at,2026-08-01T06:46:09.093176+00:00
+hajilou_final_reconciliation,Hajilou genealogy topology verified; final metadata cleanup complete. P0012 Amir Nezam confirmed by published evidence.
+archive_version,2.8.0
+ashiqloo_final_reconciliation,Figure 3 literal reconstruction verified by archive owner and reconciled with prose. Canonical topology updated while preserving source conflicts.
+last_migration,0033
+updated_at,2026-08-02T20:18:34.938535+00:00

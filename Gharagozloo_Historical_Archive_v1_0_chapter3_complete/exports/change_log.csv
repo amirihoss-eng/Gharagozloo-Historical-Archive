@@ -85,3 +85,11 @@
 84,2026-07-31T21:00:00-07:00,person,P0168-P0169,insert,Added Mostafa Gharagozloo and Adel Khan Gharagozloo as children of Hossein Qoli Khan Amir Nezam (P0012).
 85,2026-07-31T21:00:00-07:00,relationship,R0145-R0146,insert,Added two parent-child relationships beneath Hossein Qoli Khan Amir Nezam (P0012).
 86,2026-08-01T06:46:09.093176+00:00,migration,0031,apply,Applied 0031_add_hossein_gholi_khan_children.sql
+87,2026-08-01T09:00:00-07:00,person,P0012,enrich,Added confirmed Amir Nezam title and normalized the Amir Nezam Letgahi branch label.
+88,2026-08-01T09:00:00-07:00,person,P0142,supersede,Marked obsolete Hasan node superseded; retained only for audit history.
+89,2026-08-01T09:00:00-07:00,claim,C0272,restore,Restored the missing parentage claim for Kazem Khan's unnamed child.
+90,2026-08-02T20:17:50.225081+00:00,migration,0032,apply,Applied 0032_hajilou_final_reconciliation_cleanup.sql
+91,2026-08-01T09:10:00-07:00,branch,Ashiqloo,reconcile,"Completed Figure 3 + prose reconciliation: added eight missing people, corrected/reused existing identities, and preserved source conflicts."
+92,2026-08-01T09:10:00-07:00,relationship,R0039-R0040,correct,Corrected Mehdi and Abdol Ali parentage beneath Ahmad Khan Sartip while retaining the older wording as evidence history.
+93,2026-08-01T09:10:00-07:00,evidence_conflict,CF006-CF009,insert,"Recorded Amanollah, Abdollah Sarem al-Dowleh, Abdol Ali, and Rostam-line Figure/prose reconciliation issues."
+94,2026-08-02T20:18:34.938535+00:00,migration,0033,apply,Applied 0033_final_ashiqloo_figure3_reconciliation.sql

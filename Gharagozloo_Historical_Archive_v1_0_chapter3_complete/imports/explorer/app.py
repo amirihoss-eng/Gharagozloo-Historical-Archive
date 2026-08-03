@@ -189,7 +189,7 @@ class Handler(BaseHTTPRequestHandler):
             path = parsed.path
             qs = parse_qs(parsed.query)
             if path == "/api/health":
-                return self.send_json({"ok": True, "database": str(DB_PATH), "version": "0.6.11-family-graph-edge-filter"})
+                return self.send_json({"ok": True, "database": str(DB_PATH), "version": "0.6.4-expandable-generation-cards"})
             if path == "/api/dashboard":
                 featured = rows(
                     """SELECT p.person_id,p.preferred_name_en,p.preferred_name_fa,p.branch,p.summary,
@@ -213,19 +213,14 @@ class Handler(BaseHTTPRequestHandler):
                                       verification_status,notes
                                FROM relationships
                                WHERE verification_status NOT IN ('superseded')
-                                 AND relationship_type IN ('parent_of','father_of','spouse_of')
                                ORDER BY relationship_id""")
                 branches = rows("""SELECT COALESCE(branch,'Unclassified') AS branch,COUNT(*) AS count
                                    FROM persons
                                    WHERE verification_status NOT IN ('merged_duplicate','superseded')
                                    GROUP BY COALESCE(branch,'Unclassified')
                                    ORDER BY count DESC,branch""")
-                lineage_roots = [
-                    {"person_id": "P0001", "label": "Hajilou — Amir Nezam / Amiri line", "branch": "Hajilou"},
-                    {"person_id": "P0011", "label": "Ashiqloo historical line", "branch": "Ashiqloo"},
-                ]
                 return self.send_json({"nodes": people, "edges": rels, "branches": branches,
-                                       "default_root": "P0001", "lineage_roots": lineage_roots})
+                                       "default_root": "P0011"})
 
             if path == "/api/timeline":
                 event_type = (qs.get("type", [""])[0] or "").strip()

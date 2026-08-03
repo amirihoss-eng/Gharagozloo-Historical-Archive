@@ -137,7 +137,7 @@ C0135,person,P0008,identity_separation,Index references to Gholamhossein Gharago
 C0136,person,P0040,canonical_lineage,Naser al-Molk was son of Ahmad Khan Sartip and grandson of Mahmoud Khan Naser al-Molk.,confirmed,active,Narrative-text lineage.
 C0137,person,P0040,career_summary,"Naser al-Molk studied at Oxford, served as court translator and diplomat, became finance minister and prime minister, and later served as regent.",confirmed,active,Chapter 4 synthesis.
 C0138,person,P0040,political_interpretation,The author interprets Naser al-Molk as a conservative landed aristocrat who considered constitutional change premature.,probable,active,"Authorial interpretation, not a neutral self-description."
-C0139,person,P0040,child_identity_conflict,"The Chapter 2 identification of Mehdi Khan as Naser al-Molk's son conflicts with Chapter 4's statement that his children were Hossein-Ali, Mohsen, and one daughter.",disputed,active,Preserved as an unresolved identity conflict.
+C0139,person,P0040,child_identity_conflict,"The Chapter 2 identification of Mehdi Khan as Naser al-Molk's son conflicts with Chapter 4's statement that his children were Hossein-Ali, Mohsen, and one daughter.",disputed,superseded,Superseded by Figure 3 + explicit later prose. The Chapter 2 military passage is now treated as command succession/ambiguous wording rather than proof that Mehdi was Naser al-Molk's son.
 C0140,person,P0018,succession,Rostam Khan was the eldest son and contested successor of the early Mohammad-Hossein Khan.,confirmed,active,Text-derived.
 C0141,person,P0018,military_career,"Rostam Khan served in the Mahmudabad/Herat, Kerman, Bandar Abbas, and Anglo-Persian southern campaigns and commanded Mokhberan regiments.",confirmed,active,Archive synthesis from S0001 narrative.
 C0142,person,P0028,military_career,Abdollah Khan Sarem al-Saltaneh commanded Malayer and Tuyserkan regiments and participated in southern campaigns.,confirmed,active,Text-derived.
@@ -274,3 +274,18 @@ C0273,person,P0166,parentage,Child of Kazem Khan (P0084),confirmed,active,User-c
 C0274,person,P0167,parentage,Child of Kazem Khan (P0084),confirmed,active,User-confirmed reconstruction.
 C0275,person,P0168,parentage,Child of Hossein Qoli Khan Amir Nezam (P0012),confirmed,active,User-confirmed reconstruction.
 C0276,person,P0169,parentage,Child of Hossein Qoli Khan Amir Nezam (P0012),confirmed,active,User-confirmed reconstruction.
+C0272,person,P0165,parentage,Child of Kazem Khan Gharagozloo (P0084),confirmed,active,Relationship confirmed by the owner-verified Jeyhunabadi reconstruction. The child's personal name remains unreadable and is tracked separately as an open research question.
+C0277,person,P0012,held_title,Amir Nezam (امیرنظام),confirmed,active,Explicitly attested in S0001 and independently corroborated by S0003. Family oral history also remembers him primarily by this title.
+C0278,person,P0170,parentage,Child of Zeyn al-Abedin Khan P0023,confirmed,active,Figure 3/prose reconciliation.
+C0279,person,P0021,parentage,Child of Ali Khan Nosrat al-Molk P0019,confirmed,active,Figure 3.
+C0280,person,P0171,parentage,Child of Nabi Khan P0013,confirmed,active,Figure 3; separate from P0064.
+C0281,person,P0064,parentage,Child of Ahmad Khan Sartip P0030 and Negar Khanom P0029,confirmed,active,Corrects an earlier extraction error that placed him beneath Naser al-Molk.
+C0282,person,P0065,parentage,Child of Ahmad Khan Sartip P0030 and Negar Khanom P0029,confirmed,active,Figure 3 plus explicit later prose; older military wording remains noted as an ambiguity.
+C0283,person,P0038,parentage,Child of Mehdi Khan P0064,confirmed,active,Narrative evidence.
+C0284,person,P0037,parentage,Child of Ali Qoli Khan Baha al-Molk P0033,confirmed,active,Figure 3.
+C0285,person,P0172,parentage,Child of Ali Qoli Khan Baha al-Molk P0033,confirmed,active,Figure 3.
+C0286,person,P0173,parentage,Child of Alireza Khan P0037,confirmed,active,Figure 3.
+C0287,person,P0174,parentage,Child of Fazlollah Khan P0062,confirmed,active,Figure 3.
+C0288,person,P0175,parentage,Figure 3 presents Mohammad Shafi Khan as a son of Abdollah Sarem al-Dowleh P0028,disputed,active,Prose says Abdollah probably had no male children; retain both assertions.
+C0289,person,P0176,parentage,Child of Mohammad Shafi Khan P0175,confirmed,active,Figure 3.
+C0290,person,P0177,parentage,Figure 3 presents Abdolhossein Khan as a son of Abdollah Sarem al-Dowleh P0028,disputed,active,Prose says Abdollah probably had no male children; retain both assertions.
