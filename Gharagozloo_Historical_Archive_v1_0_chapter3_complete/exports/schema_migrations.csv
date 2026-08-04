@@ -42,3 +42,4 @@
 0041,0041_add_majmooe_asaar_kalat_naderi_enrichment.sql,87d3227cf3655407df0fb70dc71a84bef191f4d459d15aa60fb6ae7fe4fc3996,2026-08-04T01:14:03.354386+00:00,Applied by tools/apply_migration.py
 0042,0042_add_majmooe_asaar_fars_fiscal_enrichment.sql,2a24ac01f7cb6abbe6c0439ddd445ae091ea21978c4d1a6e24e782ee2b4f9a34,2026-08-04T01:22:58.636700+00:00,Applied by tools/apply_migration.py
 0043,0043_add_majmooe_asaar_editorial_identity_enrichment.sql,5a7ecd8cfdff9416f96eb368d9e9b5842263861f4aac1fe1a774ff14e7936c82,2026-08-04T01:35:54.726600+00:00,Applied by tools/apply_migration.py
+0044,0044_add_abdollah_khan_documentary_artifacts.sql,cd20f7569a426b0d672aae3115d9ae5ac395f1eab180ce33595ad50e969a9db4,2026-08-04T01:49:58.454630+00:00,Applied by tools/apply_migration.py

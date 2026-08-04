@@ -143,3 +143,7 @@
 142,2026-08-04T03:40:00Z,claim,C1300-C1317,insert,"Added secondary chronology, title, identity, estate/property and unresolved ambiguity claims."
 143,2026-08-04T03:40:00Z,database,archive,release,Prepared v2.9.0 Majmooe Asaar Editorial Notes and Identity Enrichment checkpoint.
 144,2026-08-04T01:35:54.726600+00:00,migration,0043,apply,Applied 0043_add_majmooe_asaar_editorial_identity_enrichment.sql
+145,2026-08-04T04:15:00Z,migration,0044,apply,Cataloged Abdollah Khan documentary appendix as primary documentary artifacts; exact transcription remains pending.
+146,2026-08-04T04:15:00Z,artifact,A0201-A0209,insert,Added nine page-level official-document artifact records from Majmooe Asaar PDF pages 43–51 and linked them to P0004.
+147,2026-08-04T04:15:00Z,database,archive,release,"Prepared v2.9.1 Abdollah Khan Decrees, Appointments and Documentary Artifacts checkpoint."
+148,2026-08-04T01:49:58.454630+00:00,migration,0044,apply,Applied 0044_add_abdollah_khan_documentary_artifacts.sql
