@@ -147,3 +147,8 @@
 146,2026-08-04T04:15:00Z,artifact,A0201-A0209,insert,Added nine page-level official-document artifact records from Majmooe Asaar PDF pages 43–51 and linked them to P0004.
 147,2026-08-04T04:15:00Z,database,archive,release,"Prepared v2.9.1 Abdollah Khan Decrees, Appointments and Documentary Artifacts checkpoint."
 148,2026-08-04T01:49:58.454630+00:00,migration,0044,apply,Applied 0044_add_abdollah_khan_documentary_artifacts.sql
+149,2026-08-04T05:20:00Z,migration,0045,apply,"Added Aqeli Gharagozloo late-Qajar/Pahlavi biographical, estate, waqf, and conflict evidence; canonical genealogy unchanged."
+150,2026-08-04T05:20:00Z,source,S0202,insert,Added Bagher Aqeli Gharagozloo chapter as a secondary biographical source.
+151,2026-08-04T05:20:00Z,event,E0400,insert,Added Aqeli late-generation source-reconciliation evidence cluster for contextual figures whose live person IDs were not guessed.
+152,2026-08-04T05:20:00Z,database,archive,release,Prepared v2.9.2 Aqeli Gharagozloo Late-Qajar and Pahlavi Biographical Enrichment checkpoint.
+153,2026-08-04T02:33:39.689469+00:00,migration,0045,apply,Applied 0045_add_aqeli_gharagozloo_pahlavi_enrichment.sql

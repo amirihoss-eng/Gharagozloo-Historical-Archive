@@ -234,3 +234,6 @@ EC1201,place,L0311,X1202,supports,Darab fiscal example.
 EC1202,place,L0012,X1205,supports,Laristan / Haji Rostam Khan example.
 EC1203,event,E0320,X1207,supports,Pishkesh and intermediary-capture argument.
 EC1204,event,E0320,X1209,supports,Baqi-ye Fars accounting interpretation.
+EC1500,person,P0004,X1500,supports,Aqeli secondary biography of Abdollah Khan Amir Nezam.
+EC1501,event,E0400,X1501,supports,Aqeli Hossein Qoli Khan biography preserved in reconciliation cluster pending explicit live-ID attachment.
+EC1502,event,E0400,X1502,supports,Aqeli Hossein Qoli Khan estate/waqf evidence preserved in reconciliation cluster pending explicit live-ID attachment.
