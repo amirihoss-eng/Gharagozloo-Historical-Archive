@@ -93,3 +93,53 @@
 92,2026-08-01T09:10:00-07:00,relationship,R0039-R0040,correct,Corrected Mehdi and Abdol Ali parentage beneath Ahmad Khan Sartip while retaining the older wording as evidence history.
 93,2026-08-01T09:10:00-07:00,evidence_conflict,CF006-CF009,insert,"Recorded Amanollah, Abdollah Sarem al-Dowleh, Abdol Ali, and Rostam-line Figure/prose reconciliation issues."
 94,2026-08-02T20:18:34.938535+00:00,migration,0033,apply,Applied 0033_final_ashiqloo_figure3_reconciliation.sql
+95,2026-08-03T00:00:00Z,migration,0034,apply,Added Majmooe Asaar opening-genealogy evidence checkpoint on top of v2.8.0 without changing canonical genealogy topology.
+96,2026-08-03T00:00:00Z,source,S0200,insert,Cataloged Majmooe Asaar and documented provenance distinction between the inherited family genealogy and Haji Abdollah Khan's own firsthand reports.
+97,2026-08-03T00:00:00Z,claim,C0500-C0522,insert,"Added evidence-level claims from the opening genealogy for ancestral tradition, Haji Fathollah, Jeyhunabadi, Haji Safar, Haji Mina, Haji Fazlollah and Nasrollah branches."
+98,2026-08-03T00:00:00Z,evidence_conflict,CF010-CF011,insert,Preserved Haji Fathollah sixth-son discrepancy and Jeyhunabadi child-list discrepancy as unresolved evidence conflicts.
+99,2026-08-03T00:00:00Z,database,archive,release,Prepared Archive v2.8.1 — Majmooe Asaar Opening Genealogy Evidence Checkpoint; canonical genealogy unchanged.
+100,2026-08-03T23:00:22.084134+00:00,migration,0034,apply,Applied 0034_add_majmooe_asaar_opening_genealogy_evidence.sql
+101,2026-08-03T23:40:00Z,migration,0035,apply,Added Majmooe Asaar Sarakhs/Naseriyeh mission historical enrichment; canonical genealogy topology unchanged.
+102,2026-08-03T23:40:00Z,event,E0200-E0202,insert,Added Sarakhs frontier mission and two source-transmitted historical Sarakhs episodes.
+103,2026-08-03T23:40:00Z,claim,C0600-C0626,insert,"Added cited mission, garrison, logistics, water, agriculture, reform, Turkmen and Salur claims from Majmooe Asaar."
+104,2026-08-03T23:40:00Z,database,archive,release,Prepared v2.8.2 Sarakhs/Naseriyeh historical enrichment checkpoint.
+105,2026-08-03T23:44:34.452260+00:00,migration,0035,apply,Applied 0035_add_majmooe_asaar_sarakhs_mission_enrichment.sql
+106,2026-08-04T00:20:00Z,migration,0036,apply,Added Majmooe Asaar Khuzestan/Lorestan mission historical enrichment; canonical genealogy topology unchanged.
+107,2026-08-04T00:20:00Z,event,E0210-E0213,insert,"Added Khuzestan mission, Fadavi deployment, Falahiyah crisis and Ahvaz infrastructure-assessment events."
+108,2026-08-04T00:20:00Z,claim,C0700-C0731,insert,"Added cited military, geographic, urban, economic, infrastructure, tribal and political claims from Abdollah Khan's Khuzestan/Lorestan report."
+109,2026-08-04T00:20:00Z,database,archive,release,Prepared v2.8.3 Khuzestan/Lorestan historical enrichment checkpoint.
+110,2026-08-04T00:05:50.236522+00:00,migration,0036,apply,Applied 0036_add_majmooe_asaar_khuzestan_lorestan_enrichment.sql
+111,2026-08-04T00:40:00Z,person,P0004,update,Expanded Abdollah Khan Amir Nezam curated Explorer summary from evidence already checkpointed in migrations 0035–0036.
+112,2026-08-04T00:40:00Z,dossier,P0004,update,Registered enriched multi-source Abdollah Khan dossier for Explorer/publication use; canonical genealogy unchanged.
+113,2026-08-04T00:40:00Z,database,archive,release,Prepared v2.8.4 Abdollah Khan Explorer dossier enrichment checkpoint.
+114,2026-08-04T00:20:45.497954+00:00,migration,0037,apply,Applied 0037_enrich_abdollah_khan_explorer_dossier.sql
+115,2026-08-04T01:15:00Z,migration,0038,apply,"Added Abdollah Khan mature-career and constitutional-era historical enrichment, including death date; canonical genealogy unchanged."
+116,2026-08-04T01:15:00Z,person,P0004,update,Updated Abdollah Khan death date and Explorer summary through 1334 AH / 1916 CE.
+117,2026-08-04T01:15:00Z,event,E0230-E0243,insert,"Added Fars, Hamadan, Khuzestan, constitutional-era, cabinet, Majles and death events."
+118,2026-08-04T01:15:00Z,database,archive,release,Prepared v2.8.5 Abdollah Khan mature-career enrichment checkpoint.
+119,2026-08-04T00:34:33.519198+00:00,migration,0038,apply,Applied 0038_enrich_abdollah_khan_mature_career.sql
+120,2026-08-04T01:45:00Z,migration,0039,apply,Added Abdollah Khan Mecca pilgrimage and international-travel enrichment; canonical genealogy unchanged.
+121,2026-08-04T01:45:00Z,person,P0004,update,Expanded Explorer summary and dossier to include the 1319 AH Mecca travelogue and referenced European journeys.
+122,2026-08-04T01:45:00Z,event,E0260-E0264,insert,"Added pilgrimage, cholera, bereavement, Sharif meeting and international-route events."
+123,2026-08-04T01:45:00Z,database,archive,release,Prepared v2.8.6 Pilgrimage and International Travel enrichment checkpoint.
+124,2026-08-04T00:48:50.043419+00:00,migration,0039,apply,Applied 0039_enrich_abdollah_khan_mecca_pilgrimage.sql
+125,2026-08-04T02:10:00Z,migration,0040,apply,Added Majmooe Asaar Merv and Turkmen Frontier historical enrichment; canonical genealogy unchanged.
+126,2026-08-04T02:10:00Z,event,E0280-E0283,insert,"Added Merv booklet, Tejen irrigation, Khivan conflict and post-Qushid political-fragmentation events."
+127,2026-08-04T02:10:00Z,claim,C1000-C1028,insert,"Added cited Merv political, military, social, economic and environmental claims."
+128,2026-08-04T02:10:00Z,database,archive,release,Prepared v2.8.7 Merv and Turkmen Frontier enrichment checkpoint.
+129,2026-08-04T01:02:43.665417+00:00,migration,0040,apply,Applied 0040_add_majmooe_asaar_merv_turkmen_enrichment.sql
+130,2026-08-04T02:40:00Z,migration,0041,apply,Added Majmooe Asaar Kalat Naderi Frontier historical enrichment; canonical genealogy unchanged.
+131,2026-08-04T02:40:00Z,event,E0300-E0302,insert,Added the three distinct Kalat report/inspection source events.
+132,2026-08-04T02:40:00Z,claim,C1100-C1139,insert,"Added cited Kalat resource, defense, artillery, engineering, logistics, fiscal and governance claims."
+133,2026-08-04T02:40:00Z,database,archive,release,Prepared v2.8.8 Kalat Naderi Frontier enrichment checkpoint.
+134,2026-08-04T01:14:03.354386+00:00,migration,0041,apply,Applied 0041_add_majmooe_asaar_kalat_naderi_enrichment.sql
+135,2026-08-04T03:05:00Z,migration,0042,apply,Added Majmooe Asaar Fars Fiscal Administration historical enrichment; canonical genealogy unchanged.
+136,2026-08-04T03:05:00Z,event,E0320,insert,Added Abdollah Khan's Fars taxation treatise as a distinct historical-analysis event.
+137,2026-08-04T03:05:00Z,claim,C1200-C1227,insert,"Added cited claims on Fars taxation, intermediary capture, tribal and khalesegi systems, pishkesh, tafavot-e amal, arbitrary exactions, and arrears."
+138,2026-08-04T03:05:00Z,database,archive,release,Prepared v2.8.9 Fars Fiscal Administration enrichment checkpoint.
+139,2026-08-04T01:22:58.636700+00:00,migration,0042,apply,Applied 0042_add_majmooe_asaar_fars_fiscal_enrichment.sql
+140,2026-08-04T03:40:00Z,migration,0043,apply,Added Majmooe Asaar editorial notes and identity enrichment; secondary evidence kept distinct from primary writings.
+141,2026-08-04T03:40:00Z,source,S0201,insert,Added Enayatollah Majidi editorial notes as a distinct secondary source layer.
+142,2026-08-04T03:40:00Z,claim,C1300-C1317,insert,"Added secondary chronology, title, identity, estate/property and unresolved ambiguity claims."
+143,2026-08-04T03:40:00Z,database,archive,release,Prepared v2.9.0 Majmooe Asaar Editorial Notes and Identity Enrichment checkpoint.
+144,2026-08-04T01:35:54.726600+00:00,migration,0043,apply,Applied 0043_add_majmooe_asaar_editorial_identity_enrichment.sql

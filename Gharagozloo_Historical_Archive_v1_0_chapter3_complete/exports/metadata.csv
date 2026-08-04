@@ -6,7 +6,6 @@ preferred_transliteration,Gharagozloo
 primary_source_id,S0001
 sync_model,append-only change log + stable IDs + re-runnable imports
 chapter3_status,complete
-database_version,1.2
 chapter4_status,complete
 chapter4_pages,167-186
 back_matter_status,complete
@@ -44,5 +43,8 @@ hossein_qoli_amir_nezam_children,Added Mostafa Gharagozloo and Adel Khan Gharago
 hajilou_final_reconciliation,Hajilou genealogy topology verified; final metadata cleanup complete. P0012 Amir Nezam confirmed by published evidence.
 archive_version,2.8.0
 ashiqloo_final_reconciliation,Figure 3 literal reconstruction verified by archive owner and reconciled with prose. Canonical topology updated while preserving source conflicts.
-last_migration,0033
-updated_at,2026-08-02T20:18:34.938535+00:00
+database_version,2.9.0
+historical_enrichment_phase,Majmooe Asaar opening genealogy evidence checkpoint
+historical_enrichment_checkpoint,Majmooe Asaar Editorial Notes and Identity Enrichment
+last_migration,0043
+updated_at,2026-08-04T01:35:54.726600+00:00

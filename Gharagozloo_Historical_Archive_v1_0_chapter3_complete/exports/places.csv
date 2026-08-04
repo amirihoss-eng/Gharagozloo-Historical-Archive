@@ -49,3 +49,40 @@ L0047,Fars,فارس,province,,Major area of military and administrative service 
 L0048,Isfahan,اصفهان,city/province,,Nasrollah Khan was responsible for guarding Isfahan in 1203 AH.
 L0049,Qomsheh (Shahreza),قمشه (شهرضا),town,L0048,Area of Nasrollah Khan’s 1203 AH cavalry engagement with Zand forces.
 L0050,Shahrizor,شهرزور,region,,Area associated with the 1222 AH mission against Abd al-Rahman Pasha.
+L0200,Sarakhs,سرخس,frontier city/region,,Historic northeastern Iranian frontier region discussed extensively in Abdollah Khan's 1294–1296 AH mission reports.
+L0201,Naseriyeh Fortress,قلعه ناصریه,fortress,L0200,Qajar frontier fortress at Sarakhs; principal setting of Abdollah Khan's Sarakhs report.
+L0202,Old Sarakhs (Sarakhs-e Kohneh),سرخس کهنه,historic settlement,L0200,Older Sarakhs settlement distinguished in the source from Naseriyeh Fortress; described as about one farsakh away.
+L0203,Qal'eh Now (Sarakhs),قلعه نو,fort/outpost,L0200,Small river-side outpost above Sarakhs used to protect workers at the water-control works.
+L0204,Qal'eh Qassab (Sarakhs),قلعه قصاب,fort/ruin,L0200,Ancient ruined and uninhabited fort described upstream from Sarakhs.
+L0205,Qushid Khan Fortress (Sarakhs),قلعه قوشید خان,fort/ruin,L0200,Ruined fortress near Sarakhs associated in Abdollah Khan's account with the Teke leader Qushid Khan.
+L0211,Dezful,دزفول,city,L0005,Principal early operational base of the Fadavi Regiment during the Khuzestan mission.
+L0212,Shushtar,شوشتر,city,L0005,Major city described in detail by Abdollah Khan; later base for portions of the regiment.
+L0213,Shush (Susa),شوش,ancient city/site,L0005,"Ancient ruined city near the shrine of the Prophet Daniel, described on the Dezful corridor."
+L0214,Ahvaz,اهواز,city,L0005,Khuzestan city and irrigation/river-infrastructure setting discussed by Abdollah Khan.
+L0215,Falahiyah,فلاحیه,town/district,L0005,Lower Khuzestan district and scene of the 1305–1308 AH Fadavi deployment and local political crisis.
+L0216,Hoveyzeh,حویزه,town/district,L0005,Town and tribal-political district described extensively by Abdollah Khan.
+L0217,Mohammerah,محمره,port city,L0005,"Lower Karun/Shatt al-Arab port city, commercial and military setting in Abdollah Khan's report."
+L0218,Govanak (Khuzestan),گوانک,road stage/village,L0005,Intermediate road stage between Dezful and Shushtar; source describes saline water and Bakhtiari Chahar-Lang residents.
+L0250,Mecca,مکه,city,,Principal destination of Abdollah Khan's 1319 AH pilgrimage travelogue.
+L0251,Jeddah,جده,port city,,Red Sea port used by Abdollah Khan on the Mecca pilgrimage route.
+L0253,Alexandria,اسکندریه,port city,,Mediterranean port on the through-ticket route from Istanbul toward Jeddah.
+L0254,Suez,سوئز,port city,,Egyptian port and railway terminus on Abdollah Khan's route to Jeddah.
+L0255,Ismailia,اسماعیلیه,city/rail stage,,Railway stage noted by Abdollah Khan between Alexandria/Egypt and Suez.
+L0256,Baku,باکو,city/transport hub,,Caucasus transport hub in Abdollah Khan's discussion of routes toward Istanbul.
+L0257,Tiflis (Tbilisi),تفلیس,city/transport hub,,Caucasus rail route option discussed by Abdollah Khan.
+L0258,Batum (Batumi),باطوم,port city/transport hub,,Black Sea route option discussed by Abdollah Khan.
+L0259,Sevastopol,سواستوپل,port city,,Northern Black Sea route option discussed by Abdollah Khan.
+L0270,Merv,مرو,city/region,,Principal geographic focus of Abdollah Khan's Kitabcheh-ye Merv.
+L0271,Tejen,تجن,river/region,,"Tejen River and settlement zone discussed in relation to Teke migration, irrigation and Qarli Band."
+L0272,Qarli Band,قرلی بند,dam/irrigation work,L0271,Historical irrigation barrier associated by the source with Araz Khan and agricultural expansion.
+L0273,Qushid Khan Fortress,قلعه قوشید خان,fortress,,Fortress near Sarakhs associated with Qushid Khan and later used in the conflict with Mohammad Amin Khan of Khiva.
+L0290,Kalat Naderi,کلات نادری,fortified region,,Mountain fortress region surveyed by Abdollah Khan in three distinct reports.
+L0291,Darband-e Arghavan Shah,دربند ارغوان شاه,mountain pass/gate,L0290,One of the five principal Kalat entrances; surviving/partly usable defensive works described.
+L0292,Darband-e Kashtani,دربند کشتانی,mountain pass/gate,L0290,One of the five principal Kalat entrances.
+L0293,Darband-e Chub Mast,دربند چوب مست,mountain pass/gate,L0290,One of the five principal Kalat entrances.
+L0294,Darband-e Nafta,دربند نفتا,mountain pass/gate,L0290,One of the five principal Kalat entrances; artillery and defensive works described.
+L0295,Darband-e Dehcheh,دربند دهچه,mountain pass/gate,L0290,One of the five principal Kalat entrances.
+L0296,Kobud Gonbad,کبود گنبد,settlement/position,L0290,Kalat position where two artillery pieces were reported lying without carriages.
+L0311,Darab,داراب,district,L0047,District used by Abdollah Khan as an example of intermediary fiscal capture.
+L0313,Qir-o Karzin,قیر و کارزین,district,L0047,Named among khalesegi-style fiscal districts in Fars.
+L0314,Behbahan,بهبهان,district/region,L0047,Named among districts discussed in relation to Fars fiscal administration.

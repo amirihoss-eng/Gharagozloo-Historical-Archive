@@ -194,3 +194,43 @@ EC0243,person,P0129,X0110,supports,Verified as a direct child of Abdolhossein Kh
 EC0244,person,P0135,X0110,supports,Verified as a direct child of Mohammad Morad Beg.
 EC0245,person,P0168,X0112,supports,User-confirmed child of Hossein Qoli Khan Amir Nezam.
 EC0246,person,P0169,X0112,supports,User-confirmed child of Hossein Qoli Khan Amir Nezam.
+EC0600,event,E0200,X0600,supports,Mission identity and chronology.
+EC0601,place,L0201,X0601,supports,Fortress and defensive setting.
+EC0602,place,L0203,X0605,supports,Outpost and waterworks protection.
+EC0603,place,L0204,X0605,supports,Ruined upstream fort.
+EC0604,event,E0201,X0609,supports,Salur relocation/displacement narrative.
+EC0605,event,E0202,X0611,supports,Abbas Mirza Sarakhs campaign as transmitted in Kitabche-ye Merv.
+EC0700,event,E0210,X0700,supports,Mission framing and authorship context.
+EC0701,event,E0211,X0702,supports,Fadavi deployment and summer operation.
+EC0702,event,E0212,X0708,supports,Falahiyah political crisis.
+EC0703,place,L0211,X0707,supports,Dezful urban/economic description.
+EC0704,place,L0216,X0711,supports,Hoveyzeh political-administrative material.
+EC0705,event,E0213,X0709,supports,Ahvaz irrigation/dam assessment.
+EC0800,event,E0231,X0801,supports,1310 AH detention and imprisonment.
+EC0801,event,E0233,X0802,supports,Fars deputy governorship and Shiraz unrest.
+EC0802,event,E0234,X0802,supports,1314 AH Khuzestan governorship.
+EC0803,event,E0237,X0804,supports,Restoration to favor and Amir Nezam title.
+EC0804,event,E0239,X0805,supports,Finance-ministry service.
+EC0805,event,E0242,X0806,supports,Third Majles election.
+EC0806,event,E0243,X0806,supports,Death date and circumstances.
+EC0900,event,E0260,X0900,supports,Overall Mecca pilgrimage and surviving diary.
+EC0901,event,E0261,X0907,supports,Cholera crisis and travel decisions.
+EC0902,event,E0262,X0908,supports,Death of Abdollah Khan's wife during pilgrimage.
+EC0903,event,E0263,X0909,supports,Meeting with the Sharif of Mecca.
+EC0904,event,E0264,X0902,supports,International transport route toward Jeddah.
+EC1000,event,E0280,X1000,supports,Merv booklet authorship and completion.
+EC1001,event,E0281,X1001,supports,Qarli Band / Tejen irrigation account.
+EC1002,event,E0282,X1004,supports,Khivan campaign and Teke defense.
+EC1003,event,E0283,X1005,supports,Post-Qushid leadership fragmentation.
+EC1004,place,L0270,X1006,supports,Merv economy and environmental observations.
+EC1100,event,E0300,X1100,supports,Report 1 livestock/resource observations.
+EC1101,event,E0301,X1105,supports,"Report 2 strategic defense survey, dated 1302 AH."
+EC1102,event,E0302,X1110,supports,Report 3 detailed repair/route inspection.
+EC1103,place,L0291,X1109,supports,Arghavan Shah principal pass and defensive works.
+EC1104,place,L0294,X1109,supports,Nafta principal pass and defensive works.
+EC1105,place,L0296,X1108,supports,Kobud Gonbad artillery condition.
+EC1200,event,E0320,X1200,supports,Fars fiscal treatise and central reform argument.
+EC1201,place,L0311,X1202,supports,Darab fiscal example.
+EC1202,place,L0012,X1205,supports,Laristan / Haji Rostam Khan example.
+EC1203,event,E0320,X1207,supports,Pishkesh and intermediary-capture argument.
+EC1204,event,E0320,X1209,supports,Baqi-ye Fars accounting interpretation.
