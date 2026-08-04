@@ -237,3 +237,8 @@ EC1204,event,E0320,X1209,supports,Baqi-ye Fars accounting interpretation.
 EC1500,person,P0004,X1500,supports,Aqeli secondary biography of Abdollah Khan Amir Nezam.
 EC1501,event,E0400,X1501,supports,Aqeli Hossein Qoli Khan biography preserved in reconciliation cluster pending explicit live-ID attachment.
 EC1502,event,E0400,X1502,supports,Aqeli Hossein Qoli Khan estate/waqf evidence preserved in reconciliation cluster pending explicit live-ID attachment.
+EC1510,person,P0012,X1501,supports,Aqeli biography attached to canonical Hossein Qoli Khan Amir Nezam II.
+EC1511,person,P0005,X1505,supports,Aqeli biography attached to canonical Mohtaj Ali Khan Amir Arfa.
+EC1512,person,P0006,X1506,supports,Aqeli biography attached to canonical Mansur Ali Khan Sardar Akram.
+EC1513,person,P0008,X1503,supports,Aqeli biography attached to canonical Gholamhossein Khan Amiri Gharagozloo.
+EC1514,person,P0008,X1504,supports,Aqeli waqf evidence attached to canonical Gholamhossein Khan Amiri Gharagozloo.

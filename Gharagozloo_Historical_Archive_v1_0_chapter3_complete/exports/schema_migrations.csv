@@ -44,3 +44,4 @@
 0043,0043_add_majmooe_asaar_editorial_identity_enrichment.sql,5a7ecd8cfdff9416f96eb368d9e9b5842263861f4aac1fe1a774ff14e7936c82,2026-08-04T01:35:54.726600+00:00,Applied by tools/apply_migration.py
 0044,0044_add_abdollah_khan_documentary_artifacts.sql,cd20f7569a426b0d672aae3115d9ae5ac395f1eab180ce33595ad50e969a9db4,2026-08-04T01:49:58.454630+00:00,Applied by tools/apply_migration.py
 0045,0045_add_aqeli_gharagozloo_pahlavi_enrichment.sql,5ae5cdb04371315fa373999bcc53665d3287030c0e78ff021e4fea7455bd82e9,2026-08-04T02:33:39.689469+00:00,Applied by tools/apply_migration.py
+0046,0046_bind_aqeli_late_generation_claims.sql,9f0fa75301d35f87db8976e13fc4b9b4f0cbf6af4ce6ed4ee3d7d02ab3229eb8,2026-08-04T05:43:05.786594+00:00,Applied by tools/apply_migration.py

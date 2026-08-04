@@ -152,3 +152,9 @@
 151,2026-08-04T05:20:00Z,event,E0400,insert,Added Aqeli late-generation source-reconciliation evidence cluster for contextual figures whose live person IDs were not guessed.
 152,2026-08-04T05:20:00Z,database,archive,release,Prepared v2.9.2 Aqeli Gharagozloo Late-Qajar and Pahlavi Biographical Enrichment checkpoint.
 153,2026-08-04T02:33:39.689469+00:00,migration,0045,apply,Applied 0045_add_aqeli_gharagozloo_pahlavi_enrichment.sql
+154,2026-08-04T03:05:00Z,person,P0012,aqeli_identity_binding,Bound reviewed Aqeli claims from E0400 to Hossein Qoli Khan Amir Nezam II.
+155,2026-08-04T03:05:00Z,person,P0005,aqeli_identity_binding,Bound reviewed Aqeli claims from E0400 to Mohtaj Ali Khan Amir Arfa.
+156,2026-08-04T03:05:00Z,person,P0006,aqeli_identity_binding,Bound reviewed Aqeli claims from E0400 to Mansur Ali Khan Sardar Akram.
+157,2026-08-04T03:05:00Z,person,P0008,aqeli_identity_binding,Bound reviewed Aqeli claims from E0400 to Gholamhossein Khan Amiri Gharagozloo.
+158,2026-08-04T03:05:00Z,migration,0046,apply,Bound reviewed Aqeli late-generation claims to exact canonical person records; genealogy unchanged.
+159,2026-08-04T05:43:05.786594+00:00,migration,0046,apply,Applied 0046_bind_aqeli_late_generation_claims.sql
