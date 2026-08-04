@@ -1,97 +1,92 @@
 # P0004 — Haji Abdollah Khan Gharagozloo Amir Nezam
 
 **Archive person ID:** P0004  
-**Dossier status:** Multi-source historical enrichment through Migration 0038 / v2.8.5  
+**Dossier status:** Multi-source historical enrichment through Migration 0039 / v2.8.6  
 **Birth:** not established  
 **Death:** 23 Sha'ban 1334 AH / 1916 CE  
-**Canonical genealogy:** unchanged by this dossier update
+**Canonical genealogy:** unchanged
 
 ## Short biography
 
-Haji Abdollah Khan Gharagozloo, known at different stages as **Sa'ed al-Saltaneh**, **Sardar Akram**, and **Amir Nezam**, was a senior Qajar military commander, provincial administrator, landholder, author, cabinet minister, and later Majles deputy in the Amir Nezam branch of the Hajilou Gharagozloo family.
+Haji Abdollah Khan Gharagozloo, known as Sa'ed al-Saltaneh, Sardar Akram, and later Amir Nezam, was a senior Qajar military commander, provincial administrator, landholder, author, cabinet minister, Majles deputy, and international traveler.
 
-His career stretched from frontier military service under Naser al-Din Shah into the Constitutional Revolution and the First World War. The surviving archive now documents not only his offices and titles, but his own observations of frontier defense, roads, water, agriculture, military logistics, trade, settlement, and provincial politics.
+The archive now contains evidence from his own surviving writings on Sarakhs, Khuzestan/Lorestan, and the Mecca pilgrimage, together with later biographical material covering his mature political career.
 
-## Chronological career
+## Pilgrimage and international travel — 1319 AH
 
-### 1294–1296 AH — Sarakhs frontier
-Served on the Sarakhs frontier and authored the report on **Sarakhs and Naseriyeh Fortress**.
+Abdollah Khan's surviving **Safarnameh-ye Makkah** records an international pilgrimage journey through modern transport networks linking the Caucasus, Ottoman Empire, Egypt, the Red Sea, Jeddah, and Mecca.
 
-### 1298 AH onward — Astarabad
-Appointed governor of Astarabad; the exact end of the tenure remains less certain.
+### Transport and route observation
 
-### 1305–1308 AH — Khuzestan and the Lorestan road
-Commanded the **Fadavi Regiment** during a major Khuzestan/Lorestan assignment and left a detailed report on Dezful, Shush, Shushtar, Falahiyah, Ahvaz, Hoveyzeh, Mohammerah, military conditions, roads, irrigation, agriculture, trade, and local politics.
+The diary compares alternative routes from Baku toward Istanbul and then describes integrated ship-and-rail travel from Istanbul through Alexandria and Suez toward Jeddah.
 
-### 1309 AH — Shiraz and Fars
-Moved to Shiraz with the Fadavi Regiment and was assigned security of the city and citadel.
+Abdollah Khan repeatedly records:
+- travel times;
+- ticketing systems and class-based fares;
+- rail and steamship connections;
+- baggage handling;
+- harbor navigation;
+- quarantine and route risk.
 
-### 1310 AH — Hamadan crisis, imprisonment, and rehabilitation
-During the Molla Abdollah Borujerdi crisis, Abdollah Khan was summoned to Tehran, interrogated, imprisoned, and put in chains. Sources differ over the relative importance of political, religious, and financial motives.
+The archive preserves these observations as source-stated historical transport data rather than silently modernizing them.
 
-Within months he was restored to command and appointed to lead the Fars forces.
+### Jeddah
 
-### 1311 AH — Deputy governor of Fars
-After Nezam al-Saltaneh Mafi's removal, Abdollah Khan became deputy governor of Fars. His regiment participated in suppressing unrest in Shiraz; the source reports approximately seven or eight deaths. He resigned afterward.
+Abdollah Khan describes the rocky approach to Jeddah and the need for a local harbor pilot to board the vessel and guide it safely toward anchorage.
 
-### 1314 AH — Governor and military head of Khuzestan
-Now bearing the title **Sardar Akram**, Abdollah Khan took the Khuzestan governorship from Ahmad Khan Ala al-Dowleh and served as both governor and military head.
+He also strongly criticizes the Iranian consular establishment associated with pilgrimage administration, alleging repeated fees, transport commissions, and abuses involving property of deceased pilgrims.
 
-The same phase included title transfers within his immediate family and later a source-reported jeweled sword awarded in recognition of Khuzestan service.
+These are stored as **Abdollah Khan's accusations and reform recommendations**, not as independently adjudicated misconduct.
 
-### 1324–1326 AH — Constitutional Revolution and royalist alignment
-Sources portray Sardar Akram as strongly opposed to the early Majles and constitutional movement in 1324 AH.
+### Mecca
 
-During the Hamadan grain crisis he was among the powerful landholders accused of withholding grain. His own later instruction to his steward denying approval of hoarding is preserved as counter-evidence.
+The diary records:
+- an estimated population of roughly 80,000;
+- multi-story stone-and-plaster houses;
+- urban sanitation conditions;
+- pilgrimage ritual and sacred sites;
+- interactions with the Sharif of Mecca.
 
-In 1325 AH his command was abolished, his military salary stopped, and a nomination to govern Kurdistan was blocked by the Majles.
+### Cholera
 
-On 27 Rabi II 1326 AH a Fadavi Regiment wage protest led to his questioning at the War Ministry and dismissal from government office.
+A severe cholera outbreak dominates the closing days of the surviving diary.
 
-After Mohammad Ali Shah's coup against the constitutional order, Abdollah Khan was restored to royal favor, received the title **Amir Nezam**, and later commanded Hamadan forces in the campaign against constitutionalist Tabriz.
+Abdollah Khan records reconsidering the Medina route, consulting estekhareh, seeing roughly fifty dead people on 14 Dhu al-Hijjah, and delaying departure when transport animals could not be obtained.
 
-### 1327 AH and 1333 AH — Minister of Finance
-Abdollah Khan served as **Minister of Finance** on two occasions.
+### Death of his wife
 
-A retrospective account by Mohammad Mosaddegh was sharply critical of his competence and alleged that he relied on divination when considering appointments. The archive stores this as **Mosaddegh's retrospective criticism**, not as an uncontested fact.
+The editor's notes state that Abdollah Khan's wife became gravely ill during the pilgrimage and died on **15 Dhu al-Hijjah 1319 AH** after completing the rites as far as possible.
 
-### By 1328 AH — Kurdistan
-The editor identifies Abdollah Khan as governor of Kurdistan by 1328 AH, but the precise beginning and end of the governorship remain research questions.
+Her identity has not yet been established in the archive and is intentionally left as an open research question rather than converted into a speculative person record.
 
-### 1328 AH — Kordabad excavation controversy
-Government officials investigated archaeological/antiquities digging on Abdollah Khan's Kordabad property. Reports accused him of extensive excavations; he reportedly claimed to have paid the government 3,000 tomans for the right to excavate his own land. No final finding is asserted in the archive without further evidence.
+### Meeting with the Sharif
 
-### c.1330 AH — Salar al-Dowleh crisis
-Abdollah Khan initially associated his forces with Salar al-Dowleh while retaining operational distance, then joined government forces under Farmanfarma after Salar al-Dowleh's retreat.
+On 17 Dhu al-Hijjah, Abdollah Khan records meeting the Sharif of Mecca.
 
-### 1332 AH — Third Majles
-On **28 Rajab 1332 AH**, Abdollah Khan was elected as one of Hamadan's deputies to the **Third Majles**, with a source-reported **4,829 votes**.
+Before entering, the Iranian consul told him that custom required kissing the Sharif's hand. Abdollah Khan refused. He entered without performing that gesture and then discussed the treatment and concerns of pilgrims.
 
-This creates one of the most striking political reversals in his life: a man documented as opposing the early constitutional movement later entered the parliamentary system himself.
+This is one of the clearest first-person character moments in the surviving diary.
 
-### 1334 AH / 1916 CE — Death
-Abdollah Khan died on **Sunday, 23 Sha'ban 1334 AH (1916 CE)** after a partial stroke, during the period when the First World War had reached Hamadan.
+### Surviving endpoint
 
-## Historical interpretation
+The surviving Mecca travelogue does **not** provide a complete return-home itinerary after its final Mecca entries. The archive therefore does not invent one from route possibilities discussed earlier in the text.
 
-Across several decades, Abdollah Khan moved through the old Qajar military-landed order, provincial governorship, constitutional conflict, royalist restoration, cabinet office, and parliamentary representation.
+## The missing Europe travelogue
 
-The archive does not reduce that trajectory to a single political label. His dated actions and offices are stored separately so that change over time remains visible.
+The editor states that Abdollah Khan refers in the Mecca diary to a separate **Safarnameh-ye Europa**, but that work was not among the eight writings the editor was able to locate.
 
-## Evidence policy
+The surviving material nevertheless contains retrospective references to European travel, including Rome, Paris, St. Petersburg and Moscow, and a reported meeting with the King of Italy.
 
-This dossier is a publication-facing synthesis. Verification remains in the structured evidence layer:
-- events and event participation;
-- claims and claim-citation links;
-- direct entity citations;
-- titles and roles;
-- open research questions and conflicts.
+These references are preserved as evidence of earlier international travel, but **the missing Europe diary is not treated as if the archive possesses it**.
 
-Accusations, hostile political descriptions, and retrospective criticism remain attributed to their sources.
+Locating that manuscript is now a high-priority research question.
 
 ## Narrative-ready chapter
 
-**From Prison to Power — and Into Parliament**
+### The Pilgrim and the Modern World
 
-Potential story arc:
-Shiraz guard duty → Hamadan crisis → chains in Tehran → rapid return to command → Fars deputy governorship → Khuzestan governorship and royal honors → Constitutional Revolution → fall from favor → restoration as Amir Nezam → Tabriz campaign → finance ministry → Kurdistan → Third Majles → final years in wartime Hamadan.
+Possible sequence:
+
+Baku rail station → Black Sea route choices → Istanbul imperial procession → Mediterranean steamship → Alexandria railway → Suez → Red Sea steamer → dangerous Jeddah harbor → caravan to Mecca → pilgrimage rituals → cholera → death in the traveling party → final circumambulations → meeting with the Sharif → diary falls silent before the full return journey.
+
+The movie/animation layer is a derivative storytelling layer. The archive's claims, events and citations remain the evidentiary foundation.
