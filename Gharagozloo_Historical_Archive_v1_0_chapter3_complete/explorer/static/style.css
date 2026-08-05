@@ -292,3 +292,51 @@ repeating-linear-gradient(45deg,transparent 0 18px,rgba(255,255,255,.025) 18px 1
 /* v0.6.9 — historical lineage selector */
 .graph-v2 .lineage-select{width:100%;padding:10px 12px;margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--deep);font-weight:700;cursor:pointer}
 .graph-v2 .lineage-select:focus{outline:2px solid rgba(184,139,46,.24);border-color:var(--gold)}
+
+
+/* Explorer v0.7.0 — archive-wide and person-level galleries */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.gallery-card{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 8px 24px rgba(20,35,36,.05)}
+.gallery-image-wrap{aspect-ratio:4/3;background:#eee8dc;display:grid;place-items:center;overflow:hidden;color:var(--muted);font-size:12px}
+.gallery-image-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-missing{padding:24px;text-align:center}
+.gallery-card-body{padding:16px}
+.gallery-card-body h3{font:700 19px Georgia,serif;margin:10px 0 7px}
+.gallery-card-body p{font-size:13px;line-height:1.55;color:var(--muted);min-height:2.8em}
+.gallery-card-body small{color:#7b827e}
+.gallery-people{margin-top:10px;font-size:12px;font-weight:700;color:var(--deep)}
+@media(max-width:720px){.gallery-grid{grid-template-columns:1fr}}
+
+
+/* Explorer v0.6.7 — clickable gallery lightbox */
+.gallery-image-wrap.gallery-open{border:0;padding:0;width:100%;cursor:zoom-in;font:inherit;color:inherit;text-align:inherit}
+.gallery-image-wrap.gallery-open:hover img{transform:scale(1.025)}
+.gallery-image-wrap img{transition:transform .18s ease}
+.person-portrait.portrait-clickable{cursor:zoom-in}
+body.lightbox-open{overflow:hidden}
+.archive-lightbox{position:fixed;inset:0;z-index:5000;display:grid;place-items:center;padding:28px}
+.archive-lightbox.hidden{display:none}
+.lightbox-backdrop{position:absolute;inset:0;background:rgba(8,12,13,.88);backdrop-filter:blur(4px)}
+.lightbox-shell{position:relative;z-index:1;width:min(94vw,1400px);height:min(92vh,1000px);display:grid;grid-template-columns:64px 1fr 64px;align-items:center}
+.lightbox-shell figure{margin:0;min-width:0;min-height:0;height:100%;display:grid;grid-template-rows:minmax(0,1fr) auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.48);grid-column:2}
+.lightbox-image{width:100%;height:100%;min-height:0;object-fit:contain;background:#090b0b;display:block}
+.lightbox-shell figcaption{background:var(--card);padding:15px 20px 17px;border-top:1px solid var(--line)}
+.lightbox-title{margin:7px 0 5px;font:700 20px Georgia,serif}
+.lightbox-description{margin:0 0 6px;color:var(--muted);font-size:13px;line-height:1.5}
+.lightbox-source{color:#747b78}
+.lightbox-people{margin-top:7px;font-size:12px;font-weight:700;color:var(--deep)}
+.lightbox-close,.lightbox-nav{border:0;background:rgba(255,255,255,.9);color:#142022;cursor:pointer;box-shadow:0 8px 26px rgba(0,0,0,.25)}
+.lightbox-close{position:absolute;right:74px;top:10px;z-index:3;width:42px;height:42px;border-radius:50%;font-size:30px;line-height:1}
+.lightbox-nav{width:48px;height:64px;border-radius:14px;font-size:42px;display:grid;place-items:center;justify-self:center}
+.lightbox-nav.hidden{visibility:hidden}
+.lightbox-prev{grid-column:1}
+.lightbox-next{grid-column:3}
+@media(max-width:720px){.archive-lightbox{padding:10px}.lightbox-shell{width:98vw;height:94vh;grid-template-columns:42px 1fr 42px}.lightbox-nav{width:36px;height:54px;font-size:34px}.lightbox-close{right:48px;top:8px;width:38px;height:38px}.lightbox-shell figcaption{padding:12px 14px}.lightbox-title{font-size:17px}}
+
+
+.gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.gallery-filter-btn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 12px;border-radius:999px;font-weight:700;cursor:pointer}
+.gallery-filter-btn:hover{background:#f3eee4}
+.gallery-filter-btn.active{background:var(--deep);border-color:var(--deep);color:#fff}
+.gallery-card[hidden]{display:none!important}
+.unresolved-label{color:#8a6b2f;font-weight:700}

@@ -1,0 +1,44 @@
+﻿artifact_id,verification_class,display_status,selection_notes
+A0210,source_captioned,visible,Legacy portrait retained as current primary until a better verified portrait is deliberately selected.
+A0211,source_captioned,visible,Legacy portrait retained as current primary until a better verified portrait is deliberately selected.
+A0212,source_captioned,visible,Legacy portrait retained as current primary until a better verified portrait is deliberately selected.
+A0213,family_verified,visible,Family-verified individual portrait; selected as primary portrait for P0022.
+A0214,family_verified,visible,Family-verified group photograph; may serve as P0005 primary until a verified individual portrait is available.
+A0215,family_verified,visible,Family-verified individual portrait; selected as primary portrait for P0170.
+A0216,family_verified,visible,Family-verified individual portrait; selected as primary portrait for P0019.
+A0217,family_verified,visible,Family-verified historical/event image; intentionally not a primary portrait.
+A0218,family_verified,visible,Family-verified historical/event image; intentionally not a primary portrait.
+A0219,family_verified,visible,Family-verified two-person photograph; retained in P0008 gallery but legacy individual portrait remains primary.
+A0220,family_verified,visible,Family-verified individual portrait; selected as primary portrait for P0006.
+A0221,family_verified,visible,Family-verified individual portrait; selected as primary portrait for P0004.
+A0222,family_verified,visible,Family-verified childhood group photograph; gallery image for P0005 and P0006.
+A0223,family_verified,visible,Family-verified individual portrait; selected as primary portrait for P0041.
+A0224,source_captioned,visible,"Visible globally; P0042 linked from caption, remaining identities contextual."
+A0225,source_captioned,visible,Visible globally and in P0023 Gallery.
+A0226,source_captioned,visible,Visible globally; no forced person linkage while canonical identity remains unresolved.
+A0227,source_captioned,visible,Visible globally and in P0033 Gallery.
+A0228,source_captioned,visible,Visible globally; deliberately not conflated with P0008.
+A0229,source_captioned,visible,Visible globally; unresolved/new-person candidate.
+A0230,source_captioned,visible,Visible globally and in P0093 Gallery; spouse remains caption-only.
+A0231,source_captioned,visible,Visible globally; unresolved exact canonical identity.
+A0232,source_captioned,visible,Visible globally and in P0022 Gallery; does not replace family-verified primary portrait.
+A0233,source_captioned,visible,Visible globally and in P0023 Gallery.
+A0234,source_captioned,visible,Visible globally and in P0024 Gallery.
+A0235,source_captioned,visible,Visible globally; unresolved exact canonical identity.
+A0236,source_captioned,visible,Visible globally and in P0005 Gallery; explicitly selected by user as P0005 primary portrait.
+A0237,family_verified,visible,"Verified family identity; unresolved canonical node, global Gallery only."
+A0238,family_verified,visible,"Verified family identity; unresolved canonical node, global Gallery only."
+A0239,family_verified,visible,Verified family identity; do not conflate with P0002.
+A0240,family_verified,visible,"Verified family identity; unresolved canonical node, global Gallery only."
+A0241,family_verified,visible,Verified individual portrait linked to P0023; selected as P0023 primary portrait.
+A0242,family_verified,visible,"Verified family identity; unresolved canonical node, global Gallery only."
+A0243,family_verified,visible,Second verified image linked to P0023.
+A0244,family_verified,visible,Verified family group linked to canonical identified members only.
+A0245,family_verified,visible,Verified individual portrait linked to P0008; selected as primary portrait under agreed policy.
+A0246,family_verified,visible,Second verified Nosratollah portrait; unresolved canonical node.
+A0247,family_verified,visible,Verified contextual photograph linked to P0042.
+A0248,family_verified,visible,Verified artifact; identity unresolved from clipped caption.
+A0249,family_verified,visible,Verified identity caption; canonical P-ID unresolved.
+A0250,family_verified,visible,Verified family photograph; identities unresolved from clipped caption.
+A0251,family_verified,visible,Verified individual photograph; identity unresolved from clipped caption.
+A0252,family_verified,visible,Verified event photograph; linked to P0042 only.

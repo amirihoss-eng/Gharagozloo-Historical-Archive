@@ -1,0 +1,12 @@
+﻿person_id,artifact_id,selection_basis,selected_by,notes
+P0037,A0211,Legacy Explorer portrait preserved during gallery migration,archive migration 0047,May later be replaced by a stronger verified/source-captioned portrait without deleting this artifact.
+P0040,A0212,Legacy Explorer portrait preserved during gallery migration,archive migration 0047,May later be replaced by a stronger verified/source-captioned portrait without deleting this artifact.
+P0022,A0213,Family-verified clear individual portrait,archive migration 0048,Preferred over no/less-certain portrait.
+P0170,A0215,Family-verified clear individual portrait,archive migration 0048,Selected under archive primary-portrait policy.
+P0019,A0216,Family-verified clear individual portrait,archive migration 0048,Selected under archive primary-portrait policy.
+P0006,A0220,Family-verified clear individual portrait,archive migration 0048,Preferred over childhood/group images.
+P0004,A0221,Family-verified clear individual portrait,archive migration 0048,Selected under archive primary-portrait policy.
+P0041,A0223,Family-verified clear individual portrait,archive migration 0048,Selected under archive primary-portrait policy.
+P0005,A0236,User-curated individual portrait preferred over group photograph,archive curator / explicit user selection,Source-captioned individual portrait from Facebook compilation. A0214 remains family-verified and preserved in P0005 Gallery.
+P0023,A0241,Family-verified clear individual portrait,archive migration 0050,Selected from the verified family collection; A0243 remains a second Gallery image.
+P0008,A0245,Family-verified clear individual portrait,archive migration 0050,Replaces the prior legacy portrait as the database-selected primary. Earlier portraits and A0219 remain preserved in the Gallery.

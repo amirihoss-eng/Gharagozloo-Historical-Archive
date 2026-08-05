@@ -158,3 +158,7 @@
 157,2026-08-04T03:05:00Z,person,P0008,aqeli_identity_binding,Bound reviewed Aqeli claims from E0400 to Gholamhossein Khan Amiri Gharagozloo.
 158,2026-08-04T03:05:00Z,migration,0046,apply,Bound reviewed Aqeli late-generation claims to exact canonical person records; genealogy unchanged.
 159,2026-08-04T05:43:05.786594+00:00,migration,0046,apply,Applied 0046_bind_aqeli_late_generation_claims.sql
+160,2026-08-05T00:28:42.575296+00:00,migration,0047,apply,Applied 0047_add_gallery_and_primary_portraits.sql
+161,2026-08-05T00:52:49.965417+00:00,migration,0048,apply,Applied 0048_import_family_verified_facebook_photos_batch1.sql
+162,2026-08-05T01:28:31.757862+00:00,migration,0049,apply,Applied 0049_import_facebook_source_captioned_photos_batch2.sql
+163,2026-08-05T01:43:26.935420+00:00,migration,0050,apply,Applied 0050_import_remaining_family_verified_photos_batch3.sql

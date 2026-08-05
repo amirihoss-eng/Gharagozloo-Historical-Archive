@@ -124,6 +124,22 @@ def person_summary(person_id: str) -> dict | None:
     p["dossier"] = row(
         "SELECT * FROM person_dossiers WHERE person_id=? ORDER BY sequence_no LIMIT 1", (person_id,)
     )
+    p["gallery"] = rows(
+        """SELECT a.artifact_id,a.title,a.description,a.file_reference,a.notes,
+                  a.printed_page,a.confidence,s.source_id,s.short_title,s.full_title,
+                  ap.role,agm.verification_class,agm.display_status,
+                  CASE WHEN ppp.artifact_id IS NOT NULL THEN 1 ELSE 0 END AS is_primary
+           FROM artifact_persons ap
+           JOIN artifacts a ON a.artifact_id=ap.artifact_id
+           JOIN sources s ON s.source_id=a.source_id
+           LEFT JOIN artifact_gallery_metadata agm ON agm.artifact_id=a.artifact_id
+           LEFT JOIN person_primary_portraits ppp
+                  ON ppp.person_id=ap.person_id AND ppp.artifact_id=a.artifact_id
+           WHERE ap.person_id=? AND a.artifact_type IN ('photograph','portrait','image')
+           ORDER BY is_primary DESC, a.artifact_id""",
+        (person_id,),
+    ) if row("SELECT name FROM sqlite_master WHERE type='table' AND name='artifact_gallery_metadata'") else []
+    p["primary_portrait"] = next((x for x in p["gallery"] if x.get("is_primary")), None)
     return p
 
 
@@ -226,6 +242,28 @@ class Handler(BaseHTTPRequestHandler):
                 ]
                 return self.send_json({"nodes": people, "edges": rels, "branches": branches,
                                        "default_root": "P0001", "lineage_roots": lineage_roots})
+
+            if path == "/api/gallery":
+                has_meta = row("SELECT name FROM sqlite_master WHERE type='table' AND name='artifact_gallery_metadata'")
+                if not has_meta:
+                    return self.send_json([])
+                data = rows(
+                    """SELECT a.artifact_id,a.title,a.description,a.file_reference,a.notes,
+                              a.printed_page,a.confidence,s.source_id,s.short_title,s.full_title,
+                              agm.verification_class,agm.display_status,
+                              GROUP_CONCAT(DISTINCT p.person_id) AS person_ids,
+                              GROUP_CONCAT(DISTINCT p.preferred_name_en) AS person_names
+                       FROM artifacts a
+                       JOIN sources s ON s.source_id=a.source_id
+                       JOIN artifact_gallery_metadata agm ON agm.artifact_id=a.artifact_id
+                       LEFT JOIN artifact_persons ap ON ap.artifact_id=a.artifact_id
+                       LEFT JOIN persons p ON p.person_id=ap.person_id
+                       WHERE a.artifact_type IN ('photograph','portrait','image')
+                         AND COALESCE(agm.display_status,'visible')='visible'
+                       GROUP BY a.artifact_id
+                       ORDER BY a.artifact_id DESC"""
+                )
+                return self.send_json(data)
 
             if path == "/api/timeline":
                 event_type = (qs.get("type", [""])[0] or "").strip()
