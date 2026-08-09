@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import mimetypes
+import os
 import sqlite3
 import sys
 import threading
@@ -14,8 +15,8 @@ APP_DIR = Path(__file__).resolve().parent
 REPO_ROOT = APP_DIR.parent
 DB_PATH = REPO_ROOT / "archive.sqlite"
 STATIC_DIR = APP_DIR / "static"
-HOST = "127.0.0.1"
-PORT = 8765
+PORT = int(os.environ.get("PORT", "8765"))
+HOST = "0.0.0.0" if "PORT" in os.environ else "127.0.0.1"
 
 
 def db() -> sqlite3.Connection:
@@ -221,28 +222,149 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/graph/core":
                 people = rows("""SELECT p.person_id,p.preferred_name_en,p.preferred_name_fa,p.branch,
                                         p.birth_date_text,p.death_date_text,p.summary,p.verification_status,
-                                        COALESCE(pr.dossier_level,'') AS dossier_level
-                                 FROM persons p LEFT JOIN person_reconciliation pr ON pr.person_id=p.person_id
+                                        COALESCE(pr.dossier_level,'') AS dossier_level,
+                                        pp.artifact_id AS primary_artifact_id,
+                                        a.file_reference AS primary_file_reference
+                                 FROM persons p
+                                 LEFT JOIN person_reconciliation pr ON pr.person_id=p.person_id
+                                 LEFT JOIN person_primary_portraits pp ON pp.person_id=p.person_id
+                                 LEFT JOIN artifacts a ON a.artifact_id=pp.artifact_id
                                  WHERE p.verification_status NOT IN ('merged_duplicate','superseded')
                                  ORDER BY p.preferred_name_en""")
                 rels = rows("""SELECT relationship_id,person1_id,person2_id,relationship_type,
                                       verification_status,notes
                                FROM relationships
                                WHERE verification_status NOT IN ('superseded')
-                                 AND relationship_type IN ('parent_of','father_of','spouse_of')
+                                 AND relationship_type IN (
+                                     'parent_of','father_of','spouse_of',
+                                     'ancestral_hypothesis'
+                                 )
                                ORDER BY relationship_id""")
+
+                # UI-only historical context node. This is intentionally NOT a person record
+                # and does not assert a fictional common ancestor.
+                people.append({
+                    "person_id": "CTX_GHARAGOZLOO",
+                    "preferred_name_en": "Gharagozloo — common tribal ancestry",
+                    "preferred_name_fa": "قراگوزلو — نیای مشترک ایلی",
+                    "branch": "Historical context",
+                    "birth_date_text": None,
+                    "death_date_text": None,
+                    "summary": (
+                        "Hajilou and Ashiqloo are documented as Gharagozloo branches, "
+                        "but the specific named common ancestor linking the two trunks "
+                        "is not established in the sources currently held by the archive."
+                    ),
+                    "verification_status": "context",
+                    "dossier_level": "",
+                    "node_type": "context",
+                })
+                rels.extend([
+                    {
+                        "relationship_id": "CTX001",
+                        "person1_id": "CTX_GHARAGOZLOO",
+                        "person2_id": "P0179",
+                        "relationship_type": "ancestral_context",
+                        "verification_status": "context",
+                        "notes": "Visual context connection to the Hajilou family-tradition origin node; not a parent-child assertion."
+                    },
+                    {
+                        "relationship_id": "CTX002",
+                        "person1_id": "CTX_GHARAGOZLOO",
+                        "person2_id": "P0070",
+                        "relationship_type": "ancestral_context",
+                        "verification_status": "context",
+                        "notes": "Visual context connection to the extended Ashiqloo historical hypothesis path; not a parent-child assertion."
+                    },
+                ])
+
                 branches = rows("""SELECT COALESCE(branch,'Unclassified') AS branch,COUNT(*) AS count
                                    FROM persons
                                    WHERE verification_status NOT IN ('merged_duplicate','superseded')
                                    GROUP BY COALESCE(branch,'Unclassified')
                                    ORDER BY count DESC,branch""")
                 lineage_roots = [
-                    {"person_id": "P0001", "label": "Hajilou — Amir Nezam / Amiri line", "branch": "Hajilou"},
-                    {"person_id": "P0011", "label": "Ashiqloo historical line", "branch": "Ashiqloo"},
+                    {"person_id": "CTX_GHARAGOZLOO", "label": "Gharagozloo — combined historical ancestry", "branch": "Historical context"},
+                    {"person_id": "P0179", "label": "Hajilou — Qara Mohammad family-tradition origin", "branch": "Hajilou"},
+                    {"person_id": "P0070", "label": "Ashiqloo — historical trunk", "branch": "Ashiqloo"},
                 ]
                 return self.send_json({"nodes": people, "edges": rels, "branches": branches,
-                                       "default_root": "P0001", "lineage_roots": lineage_roots})
+                                       "default_root": "CTX_GHARAGOZLOO", "lineage_roots": lineage_roots})
 
+            if path == "/api/timeline":
+                event_type = (qs.get("type", [""])[0] or "").strip()
+                place = (qs.get("place", [""])[0] or "").strip()
+                sql = """SELECT e.event_id,e.event_type,e.title,e.date_text,e.description,e.verification_status,
+                                p.place_id,p.preferred_name_en AS place_en,p.preferred_name_fa AS place_fa,
+                                COUNT(DISTINCT ep.person_id) AS people_count
+                         FROM events e
+                         LEFT JOIN places p ON p.place_id=e.place_id
+                         LEFT JOIN event_persons ep ON ep.event_id=e.event_id
+                         WHERE 1=1"""
+                params=[]
+                if event_type:
+                    sql += " AND e.event_type=?"; params.append(event_type)
+                if place:
+                    sql += " AND e.place_id=?"; params.append(place)
+                sql += " GROUP BY e.event_id ORDER BY COALESCE(e.date_text,''), e.title"
+                return self.send_json({
+                    "events": rows(sql, tuple(params)),
+                    "types": rows("SELECT event_type,COUNT(*) AS count FROM events GROUP BY event_type ORDER BY count DESC,event_type"),
+                    "places": rows("SELECT p.place_id,p.preferred_name_en,COUNT(e.event_id) AS count FROM places p JOIN events e ON e.place_id=p.place_id GROUP BY p.place_id ORDER BY count DESC,p.preferred_name_en")
+                })
+            if path == "/api/estates":
+                data=rows("""SELECT e.*,p.preferred_name_en AS place_en,p.preferred_name_fa AS place_fa,
+                                    COUNT(DISTINCT ea.estate_association_id) AS association_count
+                             FROM estates e LEFT JOIN places p ON p.place_id=e.place_id
+                             LEFT JOIN estate_associations ea ON ea.estate_id=e.estate_id
+                             GROUP BY e.estate_id ORDER BY e.preferred_name_en""")
+                return self.send_json(data)
+            if path.startswith("/api/estate/"):
+                eid=path.split("/")[3]
+                estate=row("""SELECT e.*,p.preferred_name_en AS place_en,p.preferred_name_fa AS place_fa
+                              FROM estates e LEFT JOIN places p ON p.place_id=e.place_id WHERE e.estate_id=?""",(eid,))
+                if not estate: return self.send_json({"error":"Estate not found"},404)
+                estate["associations"]=rows("""SELECT ea.*,pe.preferred_name_en AS person_en,pe.preferred_name_fa AS person_fa,
+                                                       o.preferred_name_en AS organization_en
+                                                FROM estate_associations ea
+                                                LEFT JOIN persons pe ON pe.person_id=ea.person_id
+                                                LEFT JOIN organizations o ON o.organization_id=ea.organization_id
+                                                WHERE ea.estate_id=? ORDER BY COALESCE(ea.date_text,''),ea.association_type""",(eid,))
+                return self.send_json(estate)
+            if path == "/api/organizations":
+                data=rows("""SELECT o.*,po.preferred_name_en AS parent_name,COUNT(DISTINCT om.membership_id) AS member_count,
+                                    COUNT(DISTINCT pra.assignment_id) AS role_count
+                             FROM organizations o LEFT JOIN organizations po ON po.organization_id=o.parent_organization_id
+                             LEFT JOIN organization_memberships om ON om.organization_id=o.organization_id
+                             LEFT JOIN person_role_assignments pra ON pra.organization_id=o.organization_id
+                             GROUP BY o.organization_id ORDER BY o.organization_type,o.preferred_name_en""")
+                return self.send_json(data)
+            if path.startswith("/api/organization/"):
+                oid=path.split("/")[3]
+                org=row("SELECT * FROM organizations WHERE organization_id=?",(oid,))
+                if not org: return self.send_json({"error":"Organization not found"},404)
+                org["members"]=rows("""SELECT om.*,p.preferred_name_en,p.preferred_name_fa FROM organization_memberships om
+                                        JOIN persons p ON p.person_id=om.person_id WHERE om.organization_id=?
+                                        ORDER BY COALESCE(om.date_text,''),p.preferred_name_en""",(oid,))
+                org["roles"]=rows("""SELECT pra.*,p.preferred_name_en,p.preferred_name_fa,r.preferred_name_en AS role_en
+                                      FROM person_role_assignments pra JOIN persons p ON p.person_id=pra.person_id
+                                      JOIN roles r ON r.role_id=pra.role_id WHERE pra.organization_id=?
+                                      ORDER BY COALESCE(pra.start_date_text,pra.date_text,''),p.preferred_name_en""",(oid,))
+                return self.send_json(org)
+            if path == "/api/titles":
+                return self.send_json(rows("""SELECT t.*,COUNT(pt.person_title_id) AS holder_count FROM titles t
+                                              LEFT JOIN person_titles pt ON pt.title_id=t.title_id
+                                              GROUP BY t.title_id ORDER BY holder_count DESC,t.title_en"""))
+            if path.startswith("/api/title/"):
+                tid=path.split("/")[3]
+                title=row("SELECT * FROM titles WHERE title_id=?",(tid,))
+                if not title: return self.send_json({"error":"Title not found"},404)
+                title["holders"]=rows("""SELECT pt.*,p.preferred_name_en,p.preferred_name_fa FROM person_titles pt
+                                          JOIN persons p ON p.person_id=pt.person_id WHERE pt.title_id=?
+                                          ORDER BY COALESCE(pt.date_text,''),p.preferred_name_en""",(tid,))
+                return self.send_json(title)
+            if path == "/api/research":
+                return self.send_json(rows("SELECT * FROM research_questions ORDER BY CASE priority WHEN 'high' THEN 0 WHEN 'medium' THEN 1 ELSE 2 END,status,question_id"))
             if path == "/api/gallery":
                 has_meta = row("SELECT name FROM sqlite_master WHERE type='table' AND name='artifact_gallery_metadata'")
                 if not has_meta:
@@ -412,7 +534,8 @@ def main():
     print(f"Database: {DB_PATH}")
     print(f"Open: {url}")
     print("Press Ctrl+C to stop.\n")
-    threading.Timer(0.8, lambda: webbrowser.open(url)).start()
+    if "PORT" not in os.environ:
+        threading.Timer(0.8, lambda: webbrowser.open(url)).start()
     try:
         server.serve_forever()
     except KeyboardInterrupt:

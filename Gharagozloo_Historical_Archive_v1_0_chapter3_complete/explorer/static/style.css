@@ -340,3 +340,92 @@ body.lightbox-open{overflow:hidden}
 .gallery-filter-btn.active{background:var(--deep);border-color:var(--deep);color:#fff}
 .gallery-card[hidden]{display:none!important}
 .unresolved-label{color:#8a6b2f;font-weight:700}
+
+/* v2.9.7c — graph UI refinements */
+.graph-v2 .generation-context-toggle{
+  top:86px;
+  bottom:auto;
+  right:18px;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:11px;
+  background:rgba(255,253,248,.94);
+  border:1px solid rgba(150,135,110,.28);
+  box-shadow:0 6px 18px rgba(25,38,39,.10);
+}
+.graph-v2 .person-float:not(.hidden) ~ .generation-context-toggle{
+  right:332px;
+}
+@media(max-width:1200px){
+  .graph-v2 .person-float:not(.hidden) ~ .generation-context-toggle{right:18px;top:72px}
+}
+
+/* v2.9.8 — evidence-aware ancestry graph */
+.family-edge.certainty-confirmed{stroke-dasharray:none}
+.family-edge.certainty-probable{stroke-dasharray:12 8}
+.family-edge.certainty-hypothesis{stroke-dasharray:2 9;stroke-linecap:round}
+.family-edge.certainty-context{stroke:#8b7b5b!important;stroke-width:2!important;opacity:.55;stroke-dasharray:5 7}
+.parent-endpoint.certainty-probable{opacity:.75}
+.parent-endpoint.certainty-hypothesis{opacity:.55}
+.parent-endpoint.certainty-context{fill:#8b7b5b!important;opacity:.55}
+.edge-certainty-badge rect{fill:rgba(255,253,248,.96);stroke:#b7aa91;stroke-width:1}
+.edge-certainty-badge text{font-size:10px;font-weight:800;text-anchor:middle;fill:#695d49;letter-spacing:.02em}
+.family-node.context-node rect{fill:#f0eadc;stroke:#9c8965;stroke-width:2.2;stroke-dasharray:6 5}
+.family-node.context-node .generation-stripe{fill:#9c8965!important}
+.family-node.context-node .node-branch{fill:#75654a;font-weight:800}
+.family-node.context-node .node-name{font-weight:800}
+.family-node.context-node .node-life{font-style:italic;fill:#75654a}
+.ancestry-certainty-legend{display:grid;gap:7px}
+.legend-line.certainty-confirmed{border-top:3px solid #3f7f76}
+.legend-line.certainty-probable{border-top:3px dashed #3f7f76}
+.legend-line.certainty-hypothesis{border-top:3px dotted #3f7f76}
+.legend-line.certainty-context{border-top:2px dashed #8b7b5b;opacity:.7}
+
+/* v2.9.9c — primary portraits on Family Graph cards */
+.family-node .node-portrait-ring{fill:#fffdf8;stroke:#c3a25d;stroke-width:2;pointer-events:none}
+.family-node .node-portrait-img{pointer-events:none}
+.family-node.selected .node-portrait-ring{stroke:#d9ad47;stroke-width:3}
+
+/* v2.9.9d — memorial dedication */
+.dedication-feature{
+  display:grid;
+  grid-template-columns:minmax(180px,280px) 1fr;
+  gap:28px;
+  align-items:center;
+  padding:22px;
+}
+.dedication-photo-wrap{
+  overflow:hidden;
+  border-radius:16px;
+  aspect-ratio:4/3;
+  background:#e8e1d2;
+  box-shadow:0 10px 28px rgba(22,44,42,.12);
+}
+.dedication-photo{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+}
+.dedication-copy{
+  min-width:0;
+}
+.dedication-copy small{
+  display:block;
+  margin-bottom:7px;
+}
+.dedication-copy strong{
+  display:block;
+  margin-bottom:10px;
+  font-size:1.15rem;
+}
+.dedication-copy p{
+  margin:0;
+  max-width:78ch;
+  line-height:1.65;
+}
+@media(max-width:760px){
+  .dedication-feature{grid-template-columns:1fr}
+  .dedication-photo-wrap{max-height:360px}
+}

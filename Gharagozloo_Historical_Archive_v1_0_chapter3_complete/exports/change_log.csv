@@ -162,3 +162,12 @@
 161,2026-08-05T00:52:49.965417+00:00,migration,0048,apply,Applied 0048_import_family_verified_facebook_photos_batch1.sql
 162,2026-08-05T01:28:31.757862+00:00,migration,0049,apply,Applied 0049_import_facebook_source_captioned_photos_batch2.sql
 163,2026-08-05T01:43:26.935420+00:00,migration,0050,apply,Applied 0050_import_remaining_family_verified_photos_batch3.sql
+164,2026-08-05T00:00:00Z,relationship,R0158,add,Added probable Shahbaz Khan → Mohammad Hossein Khan parentage with source citation and evidence-aware graph status.
+165,2026-08-05T00:00:00Z,relationship,R0159,add,Added non-parental ancestry hypothesis from Safavid Ebrahim Khan to Shahbaz Khan; explicitly marked possible.
+166,2026-08-05T00:00:00Z,explorer,CTX_GHARAGOZLOO,design,Explorer uses a UI-only common Gharagozloo ancestry context node; no fictional person was added to archive.sqlite.
+167,2026-08-08T22:51:01.429132+00:00,migration,0051,apply,Applied 0051_add_evidence_aware_early_ashiqloo_ancestry.sql
+168,2026-08-08T00:00:00Z,person,P0178,add,Added Ali Amiri Gharagozloo as confirmed son of P0008 and brother of P0009; linked existing VERIFIED artifact A0219.
+169,2026-08-08T00:00:00Z,person,P0179,add,"Added Qara Mohammad as the named remote Hajilou ancestor reported in Majmooe Asaar, with explicit family-tradition/provisional status."
+170,2026-08-08T00:00:00Z,relationship,R0161,add,Added dotted non-parental ancestry hypothesis from Qara Mohammad to the later documented Hajilou trunk; intermediate genealogy remains unresolved.
+171,2026-08-08T00:00:00Z,explorer,generation_context,fix,Removed fabricated 30-year generation estimates; undated generations now display Date range not established.
+172,2026-08-08T23:29:38.741541+00:00,migration,0052,apply,Applied 0052_add_ali_amiri_qara_mohammad_and_fix_generation_dates.sql

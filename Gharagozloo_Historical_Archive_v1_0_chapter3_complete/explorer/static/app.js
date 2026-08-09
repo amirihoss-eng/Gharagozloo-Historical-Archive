@@ -27,9 +27,16 @@ async function home(){
       </div>
     </section>
 
-    <section class="dedication-banner">
-      <span class="dedication-mark">✦</span>
-      <div><small>DEDICATION</small><strong>Thank you, Amoo Ali Amiri Gharagozloo</strong><p>For helping preserve the family’s memory and making this archive possible.</p></div>
+    <section class="dedication-banner dedication-feature">
+      <div class="dedication-photo-wrap">
+        <img class="dedication-photo" src="/static/images/amoo.jpg"
+             alt="Family photograph accompanying the dedication to Ali Amiri Gharagozloo">
+      </div>
+      <div class="dedication-copy">
+        <small>DEDICATION</small>
+        <strong>In memory of Ali Amiri Gharagozloo</strong>
+        <p>This project was inspired by my late uncle, Ali Amiri Gharagozloo, whose deep love of history and remarkable knowledge of Gharagozloo genealogy helped preserve our family’s story for future generations. His passion and memory continue to live on through this archive. May he rest in peace.</p>
+      </div>
     </section>
 
     <section class="archive-intro">
@@ -96,10 +103,17 @@ async function research(){app.innerHTML='<div class=loading>Loading research que
 // ===== Living Historical Graph: Graph Core =====
 const graphState={root:'P0094',lineageRoot:'P0094',selected:null,expanded:new Set(),branches:new Set(),scale:1,tx:0,ty:0,data:null};
 graphState.connectionStyle=localStorage.getItem('gharagozlooConnectionStyle')||'modern';
-function familyType(t){return ['parent_of','father_of','spouse_of','sibling_of','grandchild_of'].includes(t)}
-function parentChild(e){if(e.relationship_type==='parent_of'||e.relationship_type==='father_of')return [e.person1_id,e.person2_id];if(e.relationship_type==='grandchild_of')return [e.person2_id,e.person1_id];return null}
+function familyType(t){return ['parent_of','father_of','spouse_of','sibling_of','grandchild_of','ancestral_context','ancestral_hypothesis'].includes(t)}
+function parentChild(e){if(['parent_of','father_of','ancestral_context','ancestral_hypothesis'].includes(e.relationship_type))return [e.person1_id,e.person2_id];if(e.relationship_type==='grandchild_of')return [e.person2_id,e.person1_id];return null}
 async function graphCore(root){app.innerHTML='<div class=loading>Building the living family graph…</div>';const d=graphState.data||await api('/api/graph/core');graphState.data=d;if(root)graphState.root=root;if(!graphState.expanded.size)graphState.expanded.add(graphState.root);graphState.selected=graphState.selected||graphState.root;renderGraphCore()}
-function renderGraphCore(){const d=graphState.data,people=d.nodes,branches=d.branches;app.innerHTML=`<section class="living-layout"><aside class="graph-sidebar"><div class="eyebrow">Living Historical Graph</div><h2>Family tree</h2><p>Expand branches, center on any person, and open a living record without leaving the graph.</p><label class="field-label">Find and center</label><input id="graphFind" list="graphPeople" placeholder="Type a name…"><datalist id="graphPeople">${people.map(p=>`<option value="${esc(p.preferred_name_en)}" data-id="${p.person_id}"></option>`).join('')}</datalist><div class="side-actions"><button id="centerRoot" class="btn primary">Center selected</button><button id="expandAllVisible" class="btn">Expand visible</button><button id="collapseAll" class="btn">Collapse</button></div><h3>Branches</h3><label class="check-row"><input type="checkbox" id="allBranches" checked> All branches</label>${branches.map(b=>`<label class="check-row"><input type="checkbox" class="branchCheck" value="${esc(b.branch)}"> ${esc(b.branch)} <small>${b.count}</small></label>`).join('')}<h3>Relationships</h3><div class="legend"><span><i class="legend-line parent"></i>Parent / child</span><span><i class="legend-line spouse"></i>Spouse</span><span><i class="legend-line sibling"></i>Sibling</span></div></aside><section class="living-canvas"><div class="graph-toolbar"><button id="gcZoomIn">＋</button><button id="gcZoomOut">－</button><button id="gcFit">Fit</button><button id="gcHome">Original root</button><span id="visibleCount"></span></div><svg id="livingGraph" viewBox="0 0 1400 850"></svg></section><aside id="personDrawer" class="person-drawer"></aside></section>`;wireGraphControls();drawLivingGraph();renderPersonDrawer(graphState.selected)}
+
+function graphPortraitUrl(n){
+  if(n?.primary_file_reference) return `/static/artifacts/photos/${encodeURIComponent(n.primary_file_reference)}`;
+  if(n?.primary_artifact_id) return `/static/artifacts/photos/${encodeURIComponent(n.primary_artifact_id)}.jpg`;
+  return `/static/people/${encodeURIComponent(n.person_id)}.jpg`;
+}
+
+function renderGraphCore(){const d=graphState.data,people=d.nodes,branches=d.branches;app.innerHTML=`<section class="living-layout"><aside class="graph-sidebar"><div class="eyebrow">Living Historical Graph</div><h2>Family tree</h2><p>Expand branches, center on any person, and open a living record without leaving the graph.</p><label class="field-label">Find and center</label><input id="graphFind" list="graphPeople" placeholder="Type a name…"><datalist id="graphPeople">${people.map(p=>`<option value="${esc(p.preferred_name_en)}" data-id="${p.person_id}"></option>`).join('')}</datalist><div class="side-actions"><button id="centerRoot" class="btn primary">Center selected</button><button id="expandAllVisible" class="btn">Expand visible</button><button id="collapseAll" class="btn">Collapse</button></div><h3>Branches</h3><label class="check-row"><input type="checkbox" id="allBranches" checked> All branches</label>${branches.map(b=>`<label class="check-row"><input type="checkbox" class="branchCheck" value="${esc(b.branch)}"> ${esc(b.branch)} <small>${b.count}</small></label>`).join('')}<h3>Relationships</h3><div class="legend"><span><i class="legend-line parent"></i>Parent / child</span><span><i class="legend-line spouse"></i>Spouse</span><span><i class="legend-line sibling"></i>Sibling</span></div></aside><section class="living-canvas"><div class="graph-toolbar"><button id="gcZoomIn">＋</button><button id="gcZoomOut">－</button><button id="gcFit">Fit</button><button id="gcHome" title="Return to the earliest canonical root of the selected lineage">Original root</button><span id="visibleCount"></span></div><svg id="livingGraph" viewBox="0 0 1400 850"></svg></section><aside id="personDrawer" class="person-drawer"></aside></section>`;wireGraphControls();drawLivingGraph();renderPersonDrawer(graphState.selected)}
 function wireGraphControls(){const input=document.querySelector('#graphFind');input.onchange=()=>{const p=graphState.data.nodes.find(x=>x.preferred_name_en===input.value||x.preferred_name_fa===input.value);if(p){graphState.selected=p.person_id;graphState.root=p.person_id;graphState.expanded.add(p.person_id);graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph();renderPersonDrawer(p.person_id)}};document.querySelector('#centerRoot').onclick=()=>{if(graphState.selected){graphState.root=graphState.selected;graphState.expanded.add(graphState.root);graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()}};document.querySelector('#collapseAll').onclick=()=>{graphState.expanded=new Set([graphState.root]);drawLivingGraph()};document.querySelector('#expandAllVisible').onclick=()=>{visibleFamily().nodes.forEach(n=>graphState.expanded.add(n.person_id));drawLivingGraph()};document.querySelector('#allBranches').onchange=e=>{if(e.target.checked){graphState.branches.clear();document.querySelectorAll('.branchCheck').forEach(x=>x.checked=false)}drawLivingGraph()};document.querySelectorAll('.branchCheck').forEach(c=>c.onchange=()=>{graphState.branches=new Set([...document.querySelectorAll('.branchCheck:checked')].map(x=>x.value));document.querySelector('#allBranches').checked=!graphState.branches.size;drawLivingGraph()});document.querySelector('#gcZoomIn').onclick=()=>{graphState.scale*=1.15;drawLivingGraph()};document.querySelector('#gcZoomOut').onclick=()=>{graphState.scale/=1.15;drawLivingGraph()};document.querySelector('#gcFit').onclick=()=>{graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()};document.querySelector('#gcHome').onclick=()=>{graphState.root=graphState.data.default_root;graphState.selected=graphState.root;graphState.expanded=new Set([graphState.root]);graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph();renderPersonDrawer(graphState.root)}}
 function visibleFamily(){const d=graphState.data,by=Object.fromEntries(d.nodes.map(n=>[n.person_id,n])),children={},parents={},spouses={},siblings={};d.edges.forEach(e=>{const pc=parentChild(e);if(pc){(children[pc[0]]??=[]).push(pc[1]);(parents[pc[1]]??=[]).push(pc[0])}else if(e.relationship_type==='spouse_of'){(spouses[e.person1_id]??=[]).push(e.person2_id);(spouses[e.person2_id]??=[]).push(e.person1_id)}else if(e.relationship_type==='sibling_of'){(siblings[e.person1_id]??=[]).push(e.person2_id);(siblings[e.person2_id]??=[]).push(e.person1_id)}});const seen=new Set(),levels=new Map(),queue=[[graphState.root,0]];while(queue.length){const [id,l]=queue.shift();if(seen.has(id)||!by[id])continue;const node=by[id];if(graphState.branches.size&&!graphState.branches.has(node.branch||'Unclassified')&&id!==graphState.root)continue;seen.add(id);levels.set(id,l);if(graphState.expanded.has(id)){(children[id]||[]).forEach(x=>queue.push([x,l+1]));(parents[id]||[]).forEach(x=>queue.push([x,l-1]));(spouses[id]||[]).forEach(x=>queue.push([x,l]));(siblings[id]||[]).forEach(x=>queue.push([x,l]))}}const edges=d.edges.filter(e=>seen.has(e.person1_id)&&seen.has(e.person2_id)&&familyType(e.relationship_type));return {nodes:[...seen].map(id=>({...by[id],level:levels.get(id)||0})),edges,children,parents,spouses,siblings}}
 function drawLivingGraph(){const svg=document.querySelector('#livingGraph');if(!svg)return;const family=visibleFamily(),nodes=family.nodes,edges=family.edges;document.querySelector('#visibleCount').textContent=`${nodes.length} people · ${edges.length} links`;const groups={};nodes.forEach(n=>(groups[n.level]??=[]).push(n));Object.keys(groups).forEach(k=>groups[k].sort((a,b)=>a.preferred_name_en.localeCompare(b.preferred_name_en)));const minL=Math.min(...nodes.map(n=>n.level),0),maxL=Math.max(...nodes.map(n=>n.level),0),levelGap=210;Object.entries(groups).forEach(([lv,arr])=>{const y=425+(Number(lv)-(minL+maxL)/2)*levelGap;const gap=Math.min(250,1180/Math.max(arr.length,1));arr.forEach((n,i)=>{n.x=700+(i-(arr.length-1)/2)*gap;n.y=y})});const by=Object.fromEntries(nodes.map(n=>[n.person_id,n]));const transform=`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`;svg.innerHTML=`<g transform="${transform}">${edges.map(e=>{const a=by[e.person1_id],b=by[e.person2_id];if(!a||!b)return'';const cls=e.relationship_type==='spouse_of'?'spouse':e.relationship_type==='sibling_of'?'sibling':'parent';const label=e.relationship_type.replaceAll('_',' ');return `<path class="family-edge ${cls}" d="M ${a.x} ${a.y} C ${a.x} ${(a.y+b.y)/2}, ${b.x} ${(a.y+b.y)/2}, ${b.x} ${b.y}"></path><text class="family-edge-label" x="${(a.x+b.x)/2}" y="${(a.y+b.y)/2-5}">${esc(label)}</text>`}).join('')}${nodes.map(n=>{const hasKids=(family.children[n.person_id]||[]).length+(family.parents[n.person_id]||[]).length+(family.spouses[n.person_id]||[]).length+(family.siblings[n.person_id]||[]).length>0;const expanded=graphState.expanded.has(n.person_id);return `<g class="family-node ${n.person_id===graphState.selected?'selected':''}" data-person="${n.person_id}" transform="translate(${n.x} ${n.y})"><rect x="-88" y="-46" width="176" height="92" rx="14"></rect><text class="node-name" y="-12"><tspan x="0">${esc((n.preferred_name_en||'').split(' ').slice(0,3).join(' '))}</tspan><tspan x="0" dy="17">${esc((n.preferred_name_en||'').split(' ').slice(3,6).join(' '))}</tspan></text><text class="node-fa" y="27">${esc(n.preferred_name_fa||'')}</text>${hasKids?`<g class="expand-control" data-expand="${n.person_id}" transform="translate(72 35)"><circle r="13"></circle><text y="5">${expanded?'−':'+'}</text></g>`:''}</g>`}).join('')}</g>`;svg.querySelectorAll('[data-person]').forEach(g=>g.onclick=e=>{if(e.target.closest('[data-expand]'))return;graphState.selected=g.dataset.person;drawLivingGraph();renderPersonDrawer(g.dataset.person)});svg.querySelectorAll('[data-expand]').forEach(g=>g.onclick=e=>{e.stopPropagation();const id=g.dataset.expand;graphState.expanded.has(id)?graphState.expanded.delete(id):graphState.expanded.add(id);drawLivingGraph()});let drag=false,lx=0,ly=0;svg.onpointerdown=e=>{if(e.target.closest('[data-person]'))return;drag=true;lx=e.clientX;ly=e.clientY;svg.setPointerCapture(e.pointerId)};svg.onpointermove=e=>{if(!drag)return;graphState.tx+=e.clientX-lx;graphState.ty+=e.clientY-ly;lx=e.clientX;ly=e.clientY;drawLivingGraph()};svg.onpointerup=()=>drag=false;svg.onwheel=e=>{e.preventDefault();graphState.scale*=e.deltaY<0?1.08:.92;drawLivingGraph()}}
@@ -110,19 +124,38 @@ document.addEventListener('click',e=>{const x=e.target.closest('[data-person-jum
 route('home');
 
 /* Living Historical Graph v2 */
-const graphV2={filtersOpen:true,drawerOpen:true,history:[]};
+const graphV2={filtersOpen:false,drawerOpen:true,history:[]};
 function route(name,arg){document.body.classList.toggle('graph-mode',name==='graphcore');if(name==='graphcore')return graphCore(arg);if(name==='home')return home();if(name==='people')return people(arg||'');if(name==='person')return person(arg);if(name==='timeline')return timeline();if(name==='gallery')return gallery();if(name==='estates')return estates();if(name==='estate')return estate(arg);if(name==='organizations')return organizations();if(name==='organization')return organization(arg);if(name==='titles')return titles();if(name==='title')return title(arg);if(name==='research')return research();}
 async function graphCore(root){document.body.classList.add('graph-mode');app.innerHTML='<div class=loading>Building the living family graph…</div>';try{const d=graphState.data||await api('/api/graph/core');graphState.data=d;const requested=root||d.default_root||'P0094';if(!graphState.expanded.size){graphState.root=requested;graphState.lineageRoot=requested;graphState.expanded.add(requested)}else if(root){graphState.root=root}graphState.selected=graphState.selected||graphState.root;if(!graphV2.history.length)graphV2.history=[graphState.root];renderGraphCore()}catch(err){app.innerHTML=`<div class="panel"><h2>Graph could not load</h2><p>${esc(err.message)}</p><p>Open <code>/api/health</code> and confirm the server reports version 0.4.0-living-graph-v2.</p></div>`}}
-function renderGraphCore(){const d=graphState.data;const selected=d.nodes.find(n=>n.person_id===graphState.selected);app.innerHTML=`<section class="graph-v2"><section class="living-canvas"><div class="canvas-help">Drag to move · Scroll to zoom · Click a person · Use + to expand</div><svg id="livingGraph" viewBox="0 0 1600 1000"></svg><div id="hoverCard" class="hover-card"></div></section><aside class="floating-panel graph-command"><h2>Living Historical Graph</h2><p>Explore the family without losing your place.</p><label class="field-label">Find and center a person</label><input id="graphFind" list="graphPeople" placeholder="Type a name…"><datalist id="graphPeople">${d.nodes.map(n=>`<option value="${esc(n.preferred_name_en)}">${esc(n.preferred_name_fa||'')}</option>`).join('')}</datalist><div class="quick-actions"><button id="centerRoot">Make selected root</button><button id="collapseAll">Collapse</button><button id="expandAllVisible">Expand visible</button><button id="gcHome">Original root</button></div></aside><aside id="filterDrawer" class="floating-panel filter-drawer ${graphV2.filtersOpen?'':'collapsed'}"><div class="filter-section"><h3>Branches</h3><label class="check-row"><input type="checkbox" id="allBranches" ${graphState.branches.size?'':'checked'}> All branches</label>${d.branches.map(b=>`<label class="check-row"><input type="checkbox" class="branchCheck" value="${esc(b.branch)}" ${graphState.branches.has(b.branch)?'checked':''}> ${esc(b.branch)} <small>${b.count}</small></label>`).join('')}</div><div class="filter-section"><h3>Relationship layers</h3><label class="check-row"><input type="checkbox" checked disabled> Parent / child</label><label class="check-row"><input type="checkbox" checked disabled> Spouse</label><label class="check-row"><input type="checkbox" checked disabled> Sibling</label></div><div class="filter-section"><h3>Legend</h3><div class="legend"><span><i class="legend-line parent"></i>Parent / child</span><span><i class="legend-line spouse"></i>Spouse</span><span><i class="legend-line sibling"></i>Sibling</span></div></div></aside><button id="filterToggle" class="floating-panel filter-toggle icon-btn">${graphV2.filtersOpen?'Hide filters':'Show filters'}</button><div id="breadcrumbs" class="breadcrumbs"></div><aside id="personDrawer" class="floating-panel person-float ${graphV2.drawerOpen?'':'hidden'}"></aside><div class="zoom-cluster"><button id="gcZoomIn" title="Zoom in">＋</button><button id="gcZoomOut" title="Zoom out">－</button><button id="gcFit" title="Fit graph">Fit</button></div><div id="visibleCount" class="graph-status"></div></section>`;wireGraphControls();drawLivingGraph();renderBreadcrumbs();renderPersonDrawer(graphState.selected)}
+function renderGraphCore(){const d=graphState.data;const selected=d.nodes.find(n=>n.person_id===graphState.selected);app.innerHTML=`<section class="graph-v2"><section class="living-canvas"><div class="canvas-help">Drag to move · Scroll to zoom · Click a person · Use + to expand</div><svg id="livingGraph" viewBox="0 0 1600 1000"></svg><div id="hoverCard" class="hover-card"></div></section><aside class="floating-panel graph-command"><h2>Living Historical Graph</h2><p>Explore the family without losing your place.</p><label class="field-label">Find and center a person</label><input id="graphFind" list="graphPeople" placeholder="Type a name…"><datalist id="graphPeople">${d.nodes.filter(n=>!isContextNode(n.person_id)).map(n=>`<option value="${esc(n.preferred_name_en)}">${esc(n.preferred_name_fa||'')}</option>`).join('')}</datalist><div class="quick-actions"><button id="centerRoot">Make selected root</button><button id="collapseAll">Collapse all</button><button id="expandAllVisible">Expand visible</button><button id="gcHome" title="Return to the earliest canonical root of the selected lineage">Original root</button></div></aside><aside id="filterDrawer" class="floating-panel filter-drawer ${graphV2.filtersOpen?'':'collapsed'}"><div class="filter-section"><h3>Branches</h3><label class="check-row"><input type="checkbox" id="allBranches" ${graphState.branches.size?'':'checked'}> All branches</label>${d.branches.map(b=>`<label class="check-row"><input type="checkbox" class="branchCheck" value="${esc(b.branch)}" ${graphState.branches.has(b.branch)?'checked':''}> ${esc(b.branch)} <small>${b.count}</small></label>`).join('')}</div><div class="filter-section"><h3>Relationship layers</h3><label class="check-row"><input type="checkbox" checked disabled> Parent / child</label><label class="check-row"><input type="checkbox" checked disabled> Spouse</label><label class="check-row"><input type="checkbox" checked disabled> Sibling</label></div><div class="filter-section"><h3>Legend</h3><div class="legend"><span><i class="legend-line parent"></i>Parent / child</span><span><i class="legend-line spouse"></i>Spouse</span><span><i class="legend-line sibling"></i>Sibling</span></div></div></aside><button id="filterToggle" class="floating-panel filter-toggle icon-btn">${graphV2.filtersOpen?'Hide filters':'Show filters'}</button><div id="breadcrumbs" class="breadcrumbs"></div><aside id="personDrawer" class="floating-panel person-float ${graphV2.drawerOpen?'':'hidden'}"></aside><div class="zoom-cluster"><button id="gcZoomIn" title="Zoom in">＋</button><button id="gcZoomOut" title="Zoom out">－</button><button id="gcFit" title="Fit graph">Fit</button></div><div id="visibleCount" class="graph-status"></div></section>`;wireGraphControls();drawLivingGraph();renderBreadcrumbs();renderPersonDrawer(graphState.selected)}
 function renderBreadcrumbs(){const el=document.querySelector('#breadcrumbs');if(!el)return;const by=Object.fromEntries(graphState.data.nodes.map(n=>[n.person_id,n]));const ids=graphV2.history.slice(-6);el.innerHTML=ids.map((id,i)=>`${i?'<i>›</i>':''}<button data-crumb="${id}">${esc(by[id]?.preferred_name_en||id)}</button>`).join('');el.querySelectorAll('[data-crumb]').forEach(b=>b.onclick=()=>selectGraphPerson(b.dataset.crumb,false))}
 function selectGraphPerson(id,push=true){if(!graphState.data.nodes.some(n=>n.person_id===id))return;graphState.selected=id;graphState.expanded.add(id);graphV2.drawerOpen=true;if(push&&graphV2.history.at(-1)!==id)graphV2.history.push(id);drawLivingGraph();renderBreadcrumbs();renderPersonDrawer(id)}
 function wireGraphControls(){const input=document.querySelector('#graphFind');input.onchange=()=>{const p=graphState.data.nodes.find(x=>x.preferred_name_en===input.value||x.preferred_name_fa===input.value);if(p){graphState.root=p.person_id;graphState.scale=1;graphState.tx=graphState.ty=0;selectGraphPerson(p.person_id)}};document.querySelector('#centerRoot').onclick=()=>{if(graphState.selected){graphState.root=graphState.selected;graphState.expanded.add(graphState.root);graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()}};document.querySelector('#collapseAll').onclick=()=>{graphState.expanded=new Set([graphState.root]);drawLivingGraph()};document.querySelector('#expandAllVisible').onclick=()=>{visibleFamily().nodes.forEach(n=>graphState.expanded.add(n.person_id));drawLivingGraph()};document.querySelector('#allBranches').onchange=e=>{if(e.target.checked){graphState.branches.clear();document.querySelectorAll('.branchCheck').forEach(x=>x.checked=false)}drawLivingGraph()};document.querySelectorAll('.branchCheck').forEach(c=>c.onchange=()=>{graphState.branches=new Set([...document.querySelectorAll('.branchCheck:checked')].map(x=>x.value));document.querySelector('#allBranches').checked=!graphState.branches.size;drawLivingGraph()});document.querySelector('#gcZoomIn').onclick=()=>{graphState.scale=Math.min(3,graphState.scale*1.18);drawLivingGraph()};document.querySelector('#gcZoomOut').onclick=()=>{graphState.scale=Math.max(.3,graphState.scale/1.18);drawLivingGraph()};document.querySelector('#gcFit').onclick=()=>{graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()};document.querySelector('#gcHome').onclick=()=>{graphState.root=graphState.data.default_root;graphState.selected=graphState.root;graphState.expanded=new Set([graphState.root]);graphState.scale=1;graphState.tx=graphState.ty=0;graphV2.history.push(graphState.root);drawLivingGraph();renderBreadcrumbs();renderPersonDrawer(graphState.root)};document.querySelector('#filterToggle').onclick=()=>{graphV2.filtersOpen=!graphV2.filtersOpen;document.querySelector('#filterDrawer').classList.toggle('collapsed',!graphV2.filtersOpen);document.querySelector('#filterToggle').textContent=graphV2.filtersOpen?'Hide filters':'Show filters'}}
-function drawLivingGraph(){const svg=document.querySelector('#livingGraph');if(!svg)return;const family=visibleFamily(),nodes=family.nodes,edges=family.edges;document.querySelector('#visibleCount').textContent=`${nodes.length} people · ${edges.length} links`;const groups={};nodes.forEach(n=>(groups[n.level]??=[]).push(n));Object.keys(groups).forEach(k=>groups[k].sort((a,b)=>a.preferred_name_en.localeCompare(b.preferred_name_en)));const minL=Math.min(...nodes.map(n=>n.level),0),maxL=Math.max(...nodes.map(n=>n.level),0),levelGap=235;Object.entries(groups).forEach(([lv,arr])=>{const y=500+(Number(lv)-(minL+maxL)/2)*levelGap;const gap=Math.min(290,1380/Math.max(arr.length,1));arr.forEach((n,i)=>{n.x=800+(i-(arr.length-1)/2)*gap;n.y=y})});const by=Object.fromEntries(nodes.map(n=>[n.person_id,n]));const transform=`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`;svg.innerHTML=`<g transform="${transform}">${edges.map(e=>{const a=by[e.person1_id],b=by[e.person2_id];if(!a||!b)return'';const cls=e.relationship_type==='spouse_of'?'spouse':e.relationship_type==='sibling_of'?'sibling':'parent';return `<path class="family-edge ${cls}" d="M ${a.x} ${a.y} C ${a.x} ${(a.y+b.y)/2}, ${b.x} ${(a.y+b.y)/2}, ${b.x} ${b.y}"></path>`}).join('')}${nodes.map(n=>{const links=(family.children[n.person_id]||[]).length+(family.parents[n.person_id]||[]).length+(family.spouses[n.person_id]||[]).length+(family.siblings[n.person_id]||[]).length;const expanded=graphState.expanded.has(n.person_id);const life=[n.birth_date_text,n.death_date_text].filter(Boolean).join(' – ');return `<g class="family-node ${n.person_id===graphState.selected?'selected':''}" data-person="${n.person_id}" transform="translate(${n.x} ${n.y})"><rect x="-105" y="-58" width="210" height="116" rx="16"></rect><text class="node-branch" y="-37">${esc(n.branch||'Unclassified')}</text><text class="node-name" y="-13"><tspan x="0">${esc((n.preferred_name_en||'').split(' ').slice(0,3).join(' '))}</tspan><tspan x="0" dy="17">${esc((n.preferred_name_en||'').split(' ').slice(3,7).join(' '))}</tspan></text><text class="node-fa" y="27">${esc(n.preferred_name_fa||'')}</text><text class="node-life" y="46">${esc(life||'Dates not established')}</text>${links?`<g class="expand-control" data-expand="${n.person_id}" transform="translate(91 47)"><circle r="14"></circle><text y="5">${expanded?'−':'+'}</text></g>`:''}</g>`}).join('')}</g>`;svg.querySelectorAll('[data-person]').forEach(g=>{g.onclick=e=>{if(e.target.closest('[data-expand]'))return;selectGraphPerson(g.dataset.person)};g.onmouseenter=e=>showHover(g.dataset.person,e);g.onmousemove=e=>moveHover(e);g.onmouseleave=hideHover});svg.querySelectorAll('[data-expand]').forEach(g=>g.onclick=e=>{e.stopPropagation();const id=g.dataset.expand;graphState.expanded.has(id)?graphState.expanded.delete(id):graphState.expanded.add(id);drawLivingGraph()});let drag=false,lx=0,ly=0;svg.onpointerdown=e=>{if(e.target.closest('[data-person]'))return;drag=true;lx=e.clientX;ly=e.clientY;svg.setPointerCapture(e.pointerId)};svg.onpointermove=e=>{if(!drag)return;graphState.tx+=e.clientX-lx;graphState.ty+=e.clientY-ly;lx=e.clientX;ly=e.clientY;svg.querySelector('g').setAttribute('transform',`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`)};svg.onpointerup=()=>drag=false;svg.onwheel=e=>{e.preventDefault();graphState.scale=Math.max(.3,Math.min(3,graphState.scale*(e.deltaY<0?1.08:.92)));svg.querySelector('g').setAttribute('transform',`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`)}}
+function drawLivingGraph(){const svg=document.querySelector('#livingGraph');if(!svg)return;const family=visibleFamily(),nodes=family.nodes,edges=family.edges;document.querySelector('#visibleCount').textContent=`${nodes.length} people · ${edges.length} links`;const groups={};nodes.forEach(n=>(groups[n.level]??=[]).push(n));Object.keys(groups).forEach(k=>groups[k].sort((a,b)=>a.preferred_name_en.localeCompare(b.preferred_name_en)));const minL=Math.min(...nodes.map(n=>n.level),0),maxL=Math.max(...nodes.map(n=>n.level),0),levelGap=235;Object.entries(groups).forEach(([lv,arr])=>{const y=500+(Number(lv)-(minL+maxL)/2)*levelGap;const gap=Math.min(290,1380/Math.max(arr.length,1));arr.forEach((n,i)=>{n.x=800+(i-(arr.length-1)/2)*gap;n.y=y})});const by=Object.fromEntries(nodes.map(n=>[n.person_id,n]));const transform=`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`;svg.innerHTML=`<g transform="${transform}">${edges.map(e=>{const a=by[e.person1_id],b=by[e.person2_id];if(!a||!b)return'';const cls=e.relationship_type==='spouse_of'?'spouse':e.relationship_type==='sibling_of'?'sibling':'parent';return `<path class="family-edge ${cls}" d="M ${a.x} ${a.y} C ${a.x} ${(a.y+b.y)/2}, ${b.x} ${(a.y+b.y)/2}, ${b.x} ${b.y}"></path>`}).join('')}${nodes.map(n=>{const links=(family.children[n.person_id]||[]).length+(family.parents[n.person_id]||[]).length+(family.spouses[n.person_id]||[]).length+(family.siblings[n.person_id]||[]).length;const expanded=graphState.expanded.has(n.person_id);const life=[n.birth_date_text,n.death_date_text].filter(Boolean).join(' – ');return `<g class="family-node ${n.person_id===graphState.selected?'selected':''}" data-person="${n.person_id}" transform="translate(${n.x} ${n.y})"><rect x="-105" y="-58" width="210" height="116" rx="16"></rect><text class="node-branch" y="-37">${esc(n.branch||'Unclassified')}</text><text class="node-name" y="-13"><tspan x="0">${esc((n.preferred_name_en||'').split(' ').slice(0,3).join(' '))}</tspan><tspan x="0" dy="17">${esc((n.preferred_name_en||'').split(' ').slice(3,7).join(' '))}</tspan></text><text class="node-fa" y="27">${esc(n.preferred_name_fa||'')}</text><text class="node-life" y="46">${contextNode?'specific common ancestor unknown':esc(life||'Dates not established')}</text>${links?`<g class="expand-control" data-expand="${n.person_id}" transform="translate(91 47)"><circle r="14"></circle><text y="5">${expanded?'−':'+'}</text></g>`:''}</g>`}).join('')}</g>`;svg.querySelectorAll('[data-person]').forEach(g=>{g.onclick=e=>{if(e.target.closest('[data-expand]'))return;selectGraphPerson(g.dataset.person)};g.onmouseenter=e=>showHover(g.dataset.person,e);g.onmousemove=e=>moveHover(e);g.onmouseleave=hideHover});svg.querySelectorAll('[data-expand]').forEach(g=>g.onclick=e=>{e.stopPropagation();const id=g.dataset.expand;graphState.expanded.has(id)?graphState.expanded.delete(id):graphState.expanded.add(id);drawLivingGraph()});let drag=false,lx=0,ly=0;svg.onpointerdown=e=>{if(e.target.closest('[data-person]'))return;drag=true;lx=e.clientX;ly=e.clientY;svg.setPointerCapture(e.pointerId)};svg.onpointermove=e=>{if(!drag)return;graphState.tx+=e.clientX-lx;graphState.ty+=e.clientY-ly;lx=e.clientX;ly=e.clientY;svg.querySelector('g').setAttribute('transform',`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`)};svg.onpointerup=()=>drag=false;svg.onwheel=e=>{e.preventDefault();graphState.scale=Math.max(.3,Math.min(3,graphState.scale*(e.deltaY<0?1.08:.92)));svg.querySelector('g').setAttribute('transform',`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`)}}
 function showHover(id,e){const p=graphState.data.nodes.find(n=>n.person_id===id),h=document.querySelector('#hoverCard');if(!p||!h)return;h.innerHTML=`<strong>${esc(p.preferred_name_en)}</strong><small>${esc(p.preferred_name_fa||p.branch||'')}</small><div>${esc(([p.birth_date_text,p.death_date_text].filter(Boolean).join(' – ')||'Dates not established'))}</div>`;h.style.display='block';moveHover(e)}function moveHover(e){const h=document.querySelector('#hoverCard');if(h){h.style.left=(e.clientX+16)+'px';h.style.top=(e.clientY+16)+'px'}}function hideHover(){const h=document.querySelector('#hoverCard');if(h)h.style.display='none'}
 function personInitials(name){return String(name||'?').split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'?'}
 function portraitMarkup(p){return `<div class="person-portrait" data-portrait-frame><img data-person-portrait alt="Portrait of ${esc(p.preferred_name_en)}"><div class="portrait-placeholder" aria-hidden="true"><span>${esc(personInitials(p.preferred_name_en))}</span><small>Portrait not yet added</small></div></div>`}
 function initPersonPortrait(img,personId,primaryPortrait=null){if(!img)return;const frame=img.closest('[data-portrait-frame]');const legacy=['webp','jpg','jpeg','png'].map(ext=>`/static/people/${encodeURIComponent(personId)}.${ext}`);const candidates=[];if(primaryPortrait?.file_reference)candidates.push(galleryImageUrl(primaryPortrait));candidates.push(...legacy);let i=0;const tryNext=()=>{if(i>=candidates.length){frame?.classList.add('portrait-missing');img.removeAttribute('src');return}img.src=candidates[i++]};img.onload=()=>frame?.classList.add('portrait-loaded');img.onerror=tryNext;if(primaryPortrait?.file_reference){frame?.classList.add('portrait-clickable');frame?.setAttribute('title','Click to enlarge');frame.onclick=()=>{lightboxItems=[primaryPortrait];showLightbox(0)}}tryNext()}
-async function renderPersonDrawer(id){const drawer=document.querySelector('#personDrawer');if(!drawer)return;drawer.classList.remove('hidden');drawer.innerHTML='<div class=loading>Opening person…</div>';try{const p=await api('/api/person/'+id);const rels=p.relationships||[];const relation=types=>rels.filter(r=>types.includes(r.relationship_type));drawer.innerHTML=`<button class="close-float" id="closeDrawer">×</button><div class="drawer-head">${portraitMarkup(p)}<div class="eyebrow">${esc(p.person_id)} · ${esc(p.branch||'Branch unclassified')}</div><h2>${esc(p.preferred_name_en)}</h2><div class="fa">${esc(p.preferred_name_fa||'')}</div><p>${esc(p.summary||'No biographical summary yet.')}</p><div class="chips"><span class="chip">${esc(p.verification_status)}</span>${p.reconciliation?`<span class="chip silver">${esc(p.reconciliation.dossier_level)}</span>`:''}</div></div><div class="drawer-actions"><button class="btn primary" data-route="person" data-arg="${p.person_id}">Open full record</button><button class="btn" id="drawerCenter">Make graph root</button></div><div class="drawer-rel-grid">${drawerRel('Parents',relation(['parent_of','father_of','grandchild_of']).filter(r=>r.direction==='incoming'||r.relationship_type==='grandchild_of'))}${drawerRel('Children',relation(['parent_of','father_of']).filter(r=>r.direction==='outgoing'))}${drawerRel('Siblings',relation(['sibling_of']))}${drawerRel('Spouses',relation(['spouse_of']))}</div><section class="drawer-section"><h3>Titles and roles</h3>${p.titles.slice(0,5).map(x=>`<div class="drawer-item"><strong>${esc(x.title_en)}</strong><small>${esc(x.date_text||'')}</small></div>`).join('')}${p.roles.slice(0,5).map(x=>`<div class="drawer-item"><strong>${esc(x.role_en)}</strong><small>${esc(x.date_text||x.start_date_text||'')}</small></div>`).join('')||'<p class="muted">No structured titles or roles.</p>'}</section><section class="drawer-section"><h3>Evidence snapshot</h3><div class="drawer-metrics"><span><b>${p.claims.length}</b> claims</span><span><b>${p.events.length}</b> events</span><span><b>${p.relationships.length}</b> relationships</span></div><button class="text-link" data-route="person" data-arg="${p.person_id}">Inspect claims and citations →</button></section>`;initPersonPortrait(drawer.querySelector('[data-person-portrait]'),p.person_id,p.primary_portrait);document.querySelector('#closeDrawer').onclick=()=>{graphV2.drawerOpen=false;drawer.classList.add('hidden')};document.querySelector('#drawerCenter').onclick=()=>{graphState.root=p.person_id;graphState.expanded.add(p.person_id);graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()}}catch(err){drawer.innerHTML=`<button class="close-float" id="closeDrawer">×</button><p>Could not open person: ${esc(err.message)}</p>`}}
+async function renderPersonDrawer(id){const drawer=document.querySelector('#personDrawer');if(!drawer)return;
+if(isContextNode(id)){
+  drawer.classList.remove('hidden');
+  drawer.innerHTML=`<button class="close-float" id="closeDrawer">×</button>
+    <div class="drawer-head">
+      <div class="eyebrow">HISTORICAL CONTEXT · NOT A PERSON RECORD</div>
+      <h2>Gharagozloo — common tribal ancestry</h2>
+      <div class="fa">قراگوزلو — نیای مشترک ایلی</div>
+      <p>Hajilou and Ashiqloo are both documented Gharagozloo branches. The specific named common ancestor connecting their surviving genealogical trunks is not established in the sources currently in the archive.</p>
+      <div class="chips"><span class="chip">context node</span><span class="chip silver">common ancestor unknown</span></div>
+    </div>
+    <section class="drawer-section"><h3>How to read the ancestry above</h3>
+      <p><b>Solid line</b> = confirmed parent-child.</p>
+      <p><b>Dashed line</b> = probable / inferred parent-child.</p>
+      <p><b>Dotted line</b> = historical ancestry hypothesis, not a direct-parent assertion.</p>
+    </section>`;
+  document.querySelector('#closeDrawer').onclick=()=>{graphV2.drawerOpen=false;drawer.classList.add('hidden')};
+  return;
+}
+drawer.classList.remove('hidden');drawer.innerHTML='<div class=loading>Opening person…</div>';try{const p=await api('/api/person/'+id);const rels=p.relationships||[];const relation=types=>rels.filter(r=>types.includes(r.relationship_type));drawer.innerHTML=`<button class="close-float" id="closeDrawer">×</button><div class="drawer-head">${portraitMarkup(p)}<div class="eyebrow">${esc(p.person_id)} · ${esc(p.branch||'Branch unclassified')}</div><h2>${esc(p.preferred_name_en)}</h2><div class="fa">${esc(p.preferred_name_fa||'')}</div><p>${esc(p.summary||'No biographical summary yet.')}</p><div class="chips"><span class="chip">${esc(p.verification_status)}</span>${p.reconciliation?`<span class="chip silver">${esc(p.reconciliation.dossier_level)}</span>`:''}</div></div><div class="drawer-actions"><button class="btn primary" data-route="person" data-arg="${p.person_id}">Open full record</button><button class="btn" id="drawerCenter">Make graph root</button></div><div class="drawer-rel-grid">${drawerRel('Parents',relation(['parent_of','father_of','grandchild_of']).filter(r=>r.direction==='incoming'||r.relationship_type==='grandchild_of'))}${drawerRel('Children',relation(['parent_of','father_of']).filter(r=>r.direction==='outgoing'))}${drawerRel('Siblings',relation(['sibling_of']))}${drawerRel('Spouses',relation(['spouse_of']))}</div><section class="drawer-section"><h3>Titles and roles</h3>${p.titles.slice(0,5).map(x=>`<div class="drawer-item"><strong>${esc(x.title_en)}</strong><small>${esc(x.date_text||'')}</small></div>`).join('')}${p.roles.slice(0,5).map(x=>`<div class="drawer-item"><strong>${esc(x.role_en)}</strong><small>${esc(x.date_text||x.start_date_text||'')}</small></div>`).join('')||'<p class="muted">No structured titles or roles.</p>'}</section><section class="drawer-section"><h3>Evidence snapshot</h3><div class="drawer-metrics"><span><b>${p.claims.length}</b> claims</span><span><b>${p.events.length}</b> events</span><span><b>${p.relationships.length}</b> relationships</span></div><button class="text-link" data-route="person" data-arg="${p.person_id}">Inspect claims and citations →</button></section>`;initPersonPortrait(drawer.querySelector('[data-person-portrait]'),p.person_id,p.primary_portrait);document.querySelector('#closeDrawer').onclick=()=>{graphV2.drawerOpen=false;drawer.classList.add('hidden')};document.querySelector('#drawerCenter').onclick=()=>{graphState.root=p.person_id;graphState.expanded.add(p.person_id);graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()}}catch(err){drawer.innerHTML=`<button class="close-float" id="closeDrawer">×</button><p>Could not open person: ${esc(err.message)}</p>`}}
 
 
 // ===== Explorer v0.5 — generation filters and traceable parent lines =====
@@ -149,6 +182,26 @@ function parentColor(parentId){ return stableColor(parentId, lineagePalette); }
 function generationColor(generation){
   return generationPalette[Math.max(0, generation-1)%generationPalette.length];
 }
+
+
+function edgeCertainty(e){
+  // Conservative display policy:
+  // Legacy relationship verification_status values are archival workflow metadata,
+  // NOT instructions to visually downgrade genealogy in the graph.
+  // Only explicitly reviewed evidence-aware relationships receive special styling.
+  if(e.relationship_type==='ancestral_context') return 'context';
+  if(e.relationship_id==='R0158') return 'probable';
+  if(['R0159','R0161'].includes(e.relationship_id) || e.relationship_type==='ancestral_hypothesis') return 'hypothesis';
+  return 'confirmed';
+}
+function edgeCertaintyLabel(e){
+  const c=edgeCertainty(e);
+  if(c==='context') return 'Shared ancestry context';
+  if(c==='probable') return 'Probable';
+  if(c==='hypothesis') return 'Hypothesized ancestry';
+  return '';
+}
+function isContextNode(id){ return id==='CTX_GHARAGOZLOO'; }
 
 function buildFamilyIndex(){
   const d=graphState.data, by=Object.fromEntries(d.nodes.map(n=>[n.person_id,n]));
@@ -242,12 +295,12 @@ function renderGraphCore(){
       </select>
       <label class="field-label">Find and center a person</label>
       <input id="graphFind" list="graphPeople" placeholder="Type a name…">
-      <datalist id="graphPeople">${d.nodes.map(n=>`<option value="${esc(n.preferred_name_en)}">${esc(n.preferred_name_fa||'')}</option>`).join('')}</datalist>
+      <datalist id="graphPeople">${d.nodes.filter(n=>!isContextNode(n.person_id)).map(n=>`<option value="${esc(n.preferred_name_en)}">${esc(n.preferred_name_fa||'')}</option>`).join('')}</datalist>
       <div class="quick-actions">
         <button id="centerRoot">Make selected root</button>
-        <button id="collapseAll">Collapse</button>
+        <button id="collapseAll">Collapse all</button>
         <button id="expandAllVisible">Expand visible</button>
-        <button id="gcHome">Original root</button>
+        <button id="gcHome" title="Return to the earliest canonical root of the selected lineage">Original root</button>
       </div>
     </aside>
 
@@ -284,11 +337,19 @@ function renderGraphCore(){
       </div>
 
       <div class="filter-section">
+        <h3>Ancestry certainty</h3>
+        <div class="legend ancestry-certainty-legend">
+          <span><i class="legend-line certainty-confirmed"></i>Confirmed parent-child</span>
+          <span><i class="legend-line certainty-probable"></i>Explicitly reviewed probable / inferred</span>
+          <span><i class="legend-line certainty-hypothesis"></i>Historical hypothesis</span>
+          <span><i class="legend-line certainty-context"></i>Shared ancestry context</span>
+        </div>
+      </div>
+      <div class="filter-section">
         <h3>Other relationships</h3>
         <div class="legend">
           <span><i class="legend-line spouse"></i>Spouse</span>
           <span><i class="legend-line sibling"></i>Sibling</span>
-          <span><i class="legend-line uncertain"></i>Uncertain / multiple</span>
         </div>
       </div>
     </aside>
@@ -343,8 +404,10 @@ function wireGraphControls(){
     }
   };
   document.querySelector('#collapseAll').onclick=()=>{
-    graphState.expanded=new Set([graphState.root]);
+    graphState.expanded=new Set();
     graphState.generationOnly=null;
+    graphState.selected=graphState.root;
+    graphState.scale=1; graphState.tx=graphState.ty=0;
     renderGraphCore();
   };
   document.querySelector('#expandAllVisible').onclick=()=>{
@@ -418,7 +481,7 @@ function drawParentLegend(family){
   const el=document.querySelector('#parentLegend');
   if(!el) return;
   const by=Object.fromEntries(graphState.data.nodes.map(n=>[n.person_id,n]));
-  const parentIds=[...new Set(family.edges.map(edgeParentId).filter(Boolean))];
+  const parentIds=[...new Set(family.edges.filter(e=>['parent_of','father_of','grandchild_of'].includes(e.relationship_type)).map(edgeParentId).filter(Boolean))];
   if(!parentIds.length){
     el.innerHTML='<span class="muted">No visible parent-child lines in this view.</span>';
     return;
@@ -464,8 +527,9 @@ function drawLivingGraph(){
   const family=visibleFamily(), nodes=family.nodes, edges=family.edges;
   const count=document.querySelector('#visibleCount');
   if(count){
+    const peopleCount=nodes.filter(n=>!isContextNode(n.person_id)).length;
     count.textContent=graphState.generationOnly===null
-      ? `${nodes.length} people · ${edges.length} links`
+      ? `${peopleCount} people${nodes.some(n=>isContextNode(n.person_id))?' + context':''} · ${edges.length} links`
       : `Generation ${graphState.generationOnly} · ${nodes.length} people`;
   }
 
@@ -495,14 +559,18 @@ function drawLivingGraph(){
     if(pc){
       const parent=by[pc[0]], child=by[pc[1]];
       if(!parent||!child) return '';
-      const color=parentColor(pc[0]);
+      const certainty=edgeCertainty(e);
+      const contextEdge=e.relationship_type==='ancestral_context';
+      const color=contextEdge?'#8b7b5b':parentColor(pc[0]);
       const middleY=(parent.y+child.y)/2;
       const path=graphState.connectionStyle==='classic'
         ? `M ${parent.x} ${parent.y+58} V ${middleY} H ${child.x} V ${child.y-58}`
         : `M ${parent.x} ${parent.y+58} C ${parent.x} ${middleY}, ${child.x} ${middleY}, ${child.x} ${child.y-58}`;
-      return `<path class="family-edge parent ${graphState.connectionStyle}" data-parent="${pc[0]}" data-child="${pc[1]}"
-        style="--parent-line:${color}" d="${path}"></path>
-        <circle class="parent-endpoint" cx="${child.x}" cy="${child.y-58}" r="5" style="--parent-line:${color}"></circle>`;
+      const badge=edgeCertaintyLabel(e);
+      return `<path class="family-edge parent ${graphState.connectionStyle} certainty-${certainty}" data-parent="${pc[0]}" data-child="${pc[1]}"
+        style="--parent-line:${color}" d="${path}"><title>${esc(badge||'Confirmed parent-child')}</title></path>
+        <circle class="parent-endpoint certainty-${certainty}" cx="${child.x}" cy="${child.y-58}" r="5" style="--parent-line:${color}"></circle>
+        ${badge&&certainty!=='context'?`<g class="edge-certainty-badge" transform="translate(${(parent.x+child.x)/2} ${middleY-9})"><rect x="-56" y="-12" width="112" height="22" rx="11"></rect><text y="4">${esc(badge)}</text></g>`:''}`;
     }
     const cls=e.relationship_type==='spouse_of'?'spouse':'sibling';
     const middleY=(a.y+b.y)/2;
@@ -525,20 +593,24 @@ function drawLivingGraph(){
       .slice(0,3)
       .map((pid,i)=>`<circle class="parent-dot" cx="${-94+i*13}" cy="-48" r="4.5" style="--parent-line:${parentColor(pid)}"></circle>`)
       .join('');
-    return `<g class="family-node ${n.person_id===graphState.selected?'selected':''} generation-${gen}"
+    const contextNode=isContextNode(n.person_id);
+    return `<g class="family-node ${contextNode?'context-node':''} ${n.person_id===graphState.selected?'selected':''} generation-${gen}"
       data-person="${n.person_id}" data-generation="${gen}" transform="translate(${n.x} ${n.y})"
       style="--generation-color:${genColor}">
       <rect x="-105" y="-58" width="210" height="116" rx="16"></rect>
       ${graphState.colorGenerations?`<rect class="generation-stripe" x="-105" y="-58" width="210" height="8" rx="8"></rect>`:''}
       ${parentDots}
-      <text class="node-generation" x="92" y="-43">G${gen}</text>
-      <text class="node-branch" y="-37">${esc(n.branch||'Unclassified')}</text>
-      <text class="node-name" y="-13">
-        <tspan x="0">${esc((n.preferred_name_en||'').split(' ').slice(0,3).join(' '))}</tspan>
-        <tspan x="0" dy="17">${esc((n.preferred_name_en||'').split(' ').slice(3,7).join(' '))}</tspan>
+      <text class="node-generation" x="92" y="-43">${contextNode?'CTX':`G${gen}`}</text>
+      ${!contextNode?`<defs><clipPath id="portrait-${n.person_id}"><circle cx="-78" cy="-8" r="20"></circle></clipPath></defs>
+        <circle class="node-portrait-ring" cx="-78" cy="-8" r="22"></circle>
+        <image class="node-portrait-img" href="${graphPortraitUrl(n)}" x="-98" y="-28" width="40" height="40" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait-${n.person_id})" onerror="this.style.display='none';this.previousElementSibling.style.display='none'"></image>`:''}
+      <text class="node-branch" x="${contextNode?0:18}" y="-37">${esc(n.branch||'Unclassified')}</text>
+      <text class="node-name" x="${contextNode?0:18}" y="-13">
+        <tspan x="${contextNode?0:18}">${esc((n.preferred_name_en||'').split(' ').slice(0,3).join(' '))}</tspan>
+        <tspan x="${contextNode?0:18}" dy="17">${esc((n.preferred_name_en||'').split(' ').slice(3,7).join(' '))}</tspan>
       </text>
-      <text class="node-fa" y="27">${esc(n.preferred_name_fa||'')}</text>
-      <text class="node-life" y="46">${esc(life||'Dates not established')}</text>
+      <text class="node-fa" x="${contextNode?0:18}" y="27">${esc(n.preferred_name_fa||'')}</text>
+      <text class="node-life" x="${contextNode?0:18}" y="46">${contextNode?'specific common ancestor unknown':esc(life||'Dates not established')}</text>
       ${showControl?`<g class="expand-control" data-expand="${n.person_id}" transform="translate(91 47)">
         <circle r="14"></circle><text y="5">${expanded?'−':'+'}</text>
       </g>`:''}
@@ -583,7 +655,7 @@ function drawLivingGraph(){
 }
 
 // ===== Explorer v0.6 — generation historical context =====
-graphState.showGenerationContext = graphState.showGenerationContext ?? true;
+graphState.showGenerationContext = graphState.showGenerationContext ?? false;
 
 function extractYear(value){
   if(!value) return null;
@@ -594,39 +666,17 @@ function extractYear(value){
 function generationProfile(g, nodes){
   const years=[];
   nodes.forEach(n=>{
-    [n.birth_date_text,n.death_date_text,n.birth_date,n.death_date,n.date_text,n.notes]
+    [n.birth_date_text,n.death_date_text,n.birth_date,n.death_date]
       .map(extractYear).filter(Number.isFinite).forEach(y=>years.push(y));
   });
-  let start,end,basis;
-  if(years.length){
-    start=Math.min(...years);
-    end=Math.max(...years);
-    if(start===end) end=start+30;
-    basis='records';
-  } else {
-    start=1780+(g-1)*30;
-    end=start+30;
-    basis='estimated';
-  }
-  const mid=(start+end)/2;
-  let regime='Undetermined';
-  if(mid<1736) regime='Late Safavid';
-  else if(mid<1747) regime='Afsharid';
-  else if(mid<1794) regime='Zand / late Afsharid';
-  else if(mid<1834) regime='Early Qajar · Fath-Ali Shah';
-  else if(mid<1848) regime='Qajar · Mohammad Shah';
-  else if(mid<1896) regime='Qajar · Naser al-Din Shah';
-  else if(mid<1907) regime='Late Qajar · Mozaffar al-Din Shah';
-  else if(mid<1925) regime='Constitutional / late Qajar';
-  else if(mid<1941) regime='Pahlavi · Reza Shah';
-  else if(mid<1979) regime='Pahlavi · Mohammad Reza Shah';
-  else regime='Islamic Republic period';
 
+  const ids=new Set(nodes.map(n=>n.person_id));
   const labels={};
   nodes.forEach(n=>{
     const b=(n.branch||'').toLowerCase();
     let label='Hamadan region';
     if(b.includes('amiri')) label='Hamadan / Kabudarahang';
+    else if(b.includes('living family')) label='Contemporary family';
     else if(b.includes('naser')) label='Bahar / Hamadan';
     else if(b.includes('ashiq')) label='Hamadan and western Iran';
     else if(b.includes('hajilu')) label='Hamadan / Lalejin / Kabudarahang';
@@ -634,7 +684,50 @@ function generationProfile(g, nodes){
     labels[label]=(labels[label]||0)+1;
   });
   const area=Object.entries(labels).sort((a,b)=>b[1]-a[1])[0]?.[0]||'Hamadan region';
-  return {g,start,end,regime,area,basis};
+
+  // Prefer actual recorded CE years when they exist.
+  if(years.length){
+    const start=Math.min(...years), end=Math.max(...years);
+    const rangeLabel=start===end ? String(start) : `${start}–${end}`;
+    const mid=(start+end)/2;
+    let regime='Undetermined';
+    if(mid<1736) regime='Late Safavid';
+    else if(mid<1747) regime='Afsharid';
+    else if(mid<1794) regime='Zand / late Afsharid';
+    else if(mid<1834) regime='Early Qajar · Fath-Ali Shah';
+    else if(mid<1848) regime='Qajar · Mohammad Shah';
+    else if(mid<1896) regime='Qajar · Naser al-Din Shah';
+    else if(mid<1907) regime='Late Qajar · Mozaffar al-Din Shah';
+    else if(mid<1925) regime='Constitutional / late Qajar';
+    else if(mid<1941) regime='Pahlavi · Reza Shah';
+    else if(mid<1979) regime='Pahlavi · Mohammad Reza Shah';
+    else regime='Contemporary / Islamic Republic period';
+    return {g,start,end,rangeLabel,regime,area,basis:'records'};
+  }
+
+  // Contextual estimates are deliberately curated from source-era evidence and
+  // direct family knowledge. They are NOT synthetic 30-year projections.
+  const contextual=[
+    {ids:['P0179'], rangeLabel:'c. 1500s', regime:'Early Safavid / end-Timurid setting', area:'Turkestan → Tasaran / Hamadan region'},
+    {ids:['P0094'], rangeLabel:'c. 1750–1780', regime:'Zand period · Karim Khan Zand', area:'Hamadan region'},
+    {ids:['P0095'], rangeLabel:'c. 1770–1810', regime:'Late Zand / early Qajar', area:'Hamadan region'},
+    {ids:['P0001','P0096','P0073','P0097','P0098'], rangeLabel:'c. 1790–1830', regime:'Early Qajar', area:'Hamadan region'},
+    {ids:['P0002'], rangeLabel:'c. 1810–1850', regime:'Early / mid-Qajar', area:'Hamadan region'},
+    {ids:['P0003'], rangeLabel:'c. 1840–1880', regime:'Naser al-Din Shah era', area:'Hamadan / Qajar service'},
+    {ids:['P0004'], rangeLabel:'c. 1855–1916', regime:'Late Qajar / Constitutional era', area:'Hamadan and provincial service'},
+    {ids:['P0005','P0006','P0012'], rangeLabel:'c. 1880–1940', regime:'Late Qajar / early Pahlavi', area:'Hamadan / Tehran'},
+    {ids:['P0008'], rangeLabel:'c. 1900s–1970s', regime:'Pahlavi era', area:'Hamadan / Tehran'},
+    {ids:['P0009'], rangeLabel:'1931–2014', regime:'Pahlavi / Islamic Republic period', area:'Hamadan / Tehran'},
+    {ids:['P0010','P0076'], rangeLabel:'1970s', regime:'Contemporary generation', area:'Iran / United States'},
+    {ids:['P0081','P0082','P0078','P0079'], rangeLabel:'2010s', regime:'Contemporary generation', area:'United States'}
+  ];
+  for(const h of contextual){
+    if(h.ids.some(id=>ids.has(id))){
+      return {g,start:null,end:null,rangeLabel:h.rangeLabel,regime:h.regime,area:h.area,basis:'context'};
+    }
+  }
+
+  return {g,start:null,end:null,rangeLabel:'Date range not established',regime:'Undated generation',area,basis:'unknown'};
 }
 
 function generationContextHtml(family){
@@ -647,17 +740,17 @@ function generationContextHtml(family){
       <div><span class="eyebrow">Historical orientation</span><h3>Generation Context</h3></div>
       <button id="closeGenerationContext" class="mini-close">×</button>
     </div>
-    <p class="generation-context-note">Ranges use recorded years when available; otherwise they are marked estimates.</p>
+    <p class="generation-context-note">Ranges use recorded CE years when available. Otherwise, selected generations may use source-based or family-confirmed contextual estimates; these are labeled Contextual estimate.</p>
     <div class="generation-context-list">
       ${rows.map(r=>`<button class="generation-context-row" data-generation-context="${r.g}" style="--generation-color:${generationColor(r.g)}">
         <i></i><span class="generation-context-main">
-          <b>G${r.g}</b><strong>${r.start}–${r.end}</strong>
+          <b>G${r.g}</b><strong>${esc(r.rangeLabel)}</strong>
           <small>(${esc(r.regime)})</small><em>${esc(r.area)}</em>
-        </span><span class="context-basis ${r.basis==='estimated'?'estimated':''}">${r.basis==='estimated'?'estimated':'from records'}</span>
+        </span><span class="context-basis ${r.basis==='estimated'?'estimated':''}">${r.basis==='records'?'from records':r.basis==='context'?'contextual estimate':'no recorded dates'}</span>
       </button>`).join('')}
     </div>
   </aside>
-  <button id="showGenerationContext" class="floating-panel generation-context-toggle ${graphState.showGenerationContext?'hidden':''}">Show generation context</button>`;
+  <button id="showGenerationContext" class="floating-panel generation-context-toggle ${graphState.showGenerationContext?'hidden':''}">Generations</button>`;
 }
 
 const renderGraphCoreBeforeV06 = renderGraphCore;
@@ -711,7 +804,7 @@ function generationBandHtml(family){
       <i></i>
       <div>
         <b>G${r.g}</b>
-        <strong>${r.start}–${r.end}</strong>
+        <strong>${esc(r.rangeLabel)}</strong>
         <small>(${esc(r.regime)})</small>
         <em>${esc(r.area)}</em>
       </div>
@@ -784,10 +877,10 @@ function svgGenerationBands(){
       <rect class="svg-generation-bg" x="0" y="0" width="190" height="100" rx="12"></rect>
       <rect class="svg-generation-rule" x="0" y="0" width="6" height="100" rx="3"></rect>
       <text class="svg-generation-g" x="18" y="24">G${g}</text>
-      <text class="svg-generation-years" x="54" y="24">${profile.start}–${profile.end}</text>
+      <text class="svg-generation-years" x="54" y="24">${esc(profile.rangeLabel)}</text>
       <text class="svg-generation-regime" x="18" y="45">(${esc(profile.regime)})</text>
       <text class="svg-generation-area" x="18" y="64">${esc(profile.area)}</text>
-      <text class="svg-generation-basis" x="18" y="84">${profile.basis==='estimated'?'Estimated range':'Range from records'}</text>
+      <text class="svg-generation-basis" x="18" y="84">${profile.basis==='records'?'Range from records':profile.basis==='context'?'Contextual estimate':'No recorded date range'}</text>
     `;
     label.addEventListener('click',()=>{
       graphState.generationOnly=graphState.generationOnly===g?null:g;
@@ -858,10 +951,10 @@ function svgGenerationBandsV063(){
       <rect class="svg-generation-bg" x="0" y="0" width="${width}" height="96" rx="12"></rect>
       <rect class="svg-generation-rule" x="0" y="0" width="6" height="96" rx="3"></rect>
       <text class="svg-generation-g" x="17" y="23">G${g}</text>
-      <text class="svg-generation-years" x="49" y="23">${profile.start}–${profile.end}</text>
+      <text class="svg-generation-years" x="49" y="23">${esc(profile.rangeLabel)}</text>
       <text class="svg-generation-regime" x="17" y="43">${esc('('+profile.regime+')')}</text>
       <text class="svg-generation-area" x="17" y="62">${esc(profile.area)}</text>
-      <text class="svg-generation-basis" x="17" y="82">${profile.basis==='estimated'?'Estimated range':'Range from records'}</text>
+      <text class="svg-generation-basis" x="17" y="82">${profile.basis==='records'?'Range from records':profile.basis==='context'?'Contextual estimate':'No recorded date range'}</text>
     `;
     label.addEventListener('click',()=>{
       graphState.generationOnly=graphState.generationOnly===g?null:g;
@@ -959,10 +1052,10 @@ function svgGenerationBandsV064(){
       <rect class="svg-generation-rule" x="0" y="0" width="6" height="${height}" rx="3"></rect>
 
       <text class="svg-generation-g" x="17" y="23">G${g}</text>
-      <text class="svg-generation-years" x="49" y="23">${profile.start}–${profile.end}</text>
+      <text class="svg-generation-years" x="49" y="23">${esc(profile.rangeLabel)}</text>
       <text class="svg-generation-regime" x="17" y="43">${esc('('+profile.regime+')')}</text>
       <text class="svg-generation-area" x="17" y="62">${esc(profile.area)}</text>
-      <text class="svg-generation-basis" x="17" y="82">${profile.basis==='estimated'?'Estimated range':'Range from records'}</text>
+      <text class="svg-generation-basis" x="17" y="82">${profile.basis==='records'?'Range from records':profile.basis==='context'?'Contextual estimate':'No recorded date range'}</text>
 
       <g class="svg-generation-expand" transform="translate(${width-22} 24)">
         <circle r="13"></circle>
