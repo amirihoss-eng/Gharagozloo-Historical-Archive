@@ -435,6 +435,12 @@ body.lightbox-open{overflow:hidden}
 .curator-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:22px}
 .curator-form h3,.curator-form button{grid-column:1/-1}
 .curator-form-help{grid-column:1/-1;margin:-6px 0 4px;color:var(--muted)}
+.curator-wide{grid-column:1/-1}
+.curator-person-card{grid-template-columns:1fr}
+.curator-rel{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.curator-edit-details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.curator-edit-details summary{cursor:pointer;font-weight:800;color:var(--deep)}
+.curator-inline-form{margin:14px 0 0;padding:14px;background:#f8f4eb;border-radius:10px}
 .curator-divider{display:flex;align-items:center;gap:12px;margin:8px 0 22px;color:var(--muted);font-weight:800;letter-spacing:.12em}
 .curator-divider:before,.curator-divider:after{content:"";height:1px;background:var(--line);flex:1}
 .curator-form label{display:grid;gap:6px;font-size:13px;font-weight:700}

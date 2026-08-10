@@ -97,6 +97,20 @@ def next_artifact_id(con) -> str:
     return f"A{maximum + 1:04d}"
 
 
+def next_entity_id(con, table, column, prefix, entity_type) -> str:
+    maximum = con.execute(
+        f"""SELECT MAX(number) FROM (
+                SELECT CAST(SUBSTR({column},2) AS INTEGER) AS number
+                  FROM {table} WHERE {column} GLOB ?
+                UNION ALL
+                SELECT CAST(SUBSTR(entity_key,2) AS INTEGER) AS number
+                  FROM manual_edit_entities
+                 WHERE entity_type=? AND entity_key GLOB ?
+            )""", (prefix + "[0-9]*", entity_type, prefix + "[0-9]*"),
+    ).fetchone()[0] or 0
+    return f"{prefix}{maximum + 1:04d}"
+
+
 def counts() -> dict:
     names = [
         "persons", "events", "places", "organizations", "sources", "claims",
@@ -323,6 +337,29 @@ class Handler(BaseHTTPRequestHandler):
                        WHERE r.provenance='Manual Edit' AND r.action='remove'
                          AND NOT EXISTS (SELECT 1 FROM edit_revisions x WHERE x.reverted_revision_id=r.revision_id)
                        ORDER BY r.revision_id DESC LIMIT 50"""))
+            if path == "/api/curator/people":
+                if not self.require_curator(): return
+                people = rows(
+                    """SELECT p.*,
+                              CASE WHEN mee.entity_key IS NULL THEN 0 ELSE 1 END manual_person
+                       FROM persons p
+                       LEFT JOIN manual_edit_entities mee ON mee.entity_type='person'
+                            AND mee.entity_key=p.person_id AND mee.active=1
+                       WHERE p.verification_status NOT IN ('merged_duplicate','superseded')
+                       ORDER BY p.preferred_name_en"""
+                )
+                rels = rows(
+                    """SELECT r.*,p1.preferred_name_en person1_name,p2.preferred_name_en person2_name,
+                              CASE WHEN mee.entity_key IS NULL THEN 0 ELSE 1 END manual_relationship
+                       FROM relationships r
+                       JOIN persons p1 ON p1.person_id=r.person1_id
+                       JOIN persons p2 ON p2.person_id=r.person2_id
+                       LEFT JOIN manual_edit_entities mee ON mee.entity_type='relationship'
+                            AND mee.entity_key=r.relationship_id AND mee.active=1
+                       WHERE r.verification_status NOT IN ('superseded')
+                       ORDER BY r.relationship_id DESC"""
+                )
+                return self.send_json({"people":people,"relationships":rels})
             if path == "/api/dashboard":
                 featured = rows(
                     """SELECT p.person_id,p.preferred_name_en,p.preferred_name_fa,p.branch,p.summary,
@@ -656,6 +693,16 @@ class Handler(BaseHTTPRequestHandler):
                 return self.curator_remove_artifact(payload)
             if path == "/api/curator/revert":
                 return self.curator_revert(payload)
+            if path == "/api/curator/people/create":
+                return self.curator_person_create(payload)
+            if path == "/api/curator/people/metadata":
+                return self.curator_person_metadata(payload)
+            if path == "/api/curator/people/remove":
+                return self.curator_person_remove(payload)
+            if path == "/api/curator/relationships/create":
+                return self.curator_relationship_create(payload)
+            if path == "/api/curator/relationships/remove":
+                return self.curator_relationship_remove(payload)
             return self.send_json({"error": "Not found"}, 404)
         except (ValueError, KeyError, json.JSONDecodeError, binascii.Error) as exc:
             self.send_json({"error": str(exc)}, 400)
@@ -799,9 +846,109 @@ class Handler(BaseHTTPRequestHandler):
                 for primary in before.get("primary",[]): con.execute("INSERT INTO person_primary_portraits VALUES(:person_id,:artifact_id,:selection_basis,:selected_by,:notes)",primary)
                 con.execute("UPDATE manual_edit_entities SET active=1 WHERE entity_type='artifact' AND entity_key=?",(rev["entity_key"],))
                 con.execute("UPDATE manual_edit_entities SET active=1 WHERE entity_type='artifact_person' AND entity_key LIKE ?",(rev["entity_key"]+"|%",))
+            elif rev["entity_type"]=="relationship":
+                con.execute("INSERT INTO relationships VALUES(:relationship_id,:person1_id,:relationship_type,:person2_id,:notes,:verification_status)",before)
+                con.execute("UPDATE manual_edit_entities SET active=1 WHERE entity_type='relationship' AND entity_key=?",(rev["entity_key"],))
+            elif rev["entity_type"]=="person":
+                person=before["person"]
+                con.execute("""INSERT INTO persons(person_id,preferred_name_en,preferred_name_fa,sex,birth_date_text,
+                             death_date_text,branch,summary,verification_status,created_at,updated_at)
+                             VALUES(:person_id,:preferred_name_en,:preferred_name_fa,:sex,:birth_date_text,
+                             :death_date_text,:branch,:summary,:verification_status,:created_at,:updated_at)""",person)
+                for name in before.get("names",[]):
+                    con.execute("INSERT INTO person_names(person_id,name_text,language,name_type,is_preferred) VALUES(:person_id,:name_text,:language,:name_type,:is_preferred)",name)
+                con.execute("UPDATE manual_edit_entities SET active=1 WHERE entity_type='person' AND entity_key=?",(rev["entity_key"],))
             else: raise ValueError("Unsupported removal revision")
             record_revision(con,"revert",rev["entity_type"],rev["entity_key"],after=before,reverted_revision_id=revision_id)
         return self.send_json({"ok":True})
+
+    def curator_person_create(self,p):
+        name=str(p.get("preferred_name_en","")).strip()
+        if not name: raise ValueError("English display name is required")
+        sex=p.get("sex") or "U"
+        if sex not in ("M","F","U"): raise ValueError("Sex must be M, F, or U")
+        with db() as con:
+            pid=next_entity_id(con,"persons","person_id","P","person")
+            person={"person_id":pid,"preferred_name_en":name,
+                    "preferred_name_fa":str(p.get("preferred_name_fa","")).strip() or None,
+                    "sex":sex,"birth_date_text":str(p.get("birth_date_text","")).strip() or None,
+                    "death_date_text":str(p.get("death_date_text","")).strip() or None,
+                    "branch":str(p.get("branch","")).strip() or None,
+                    "summary":str(p.get("summary","")).strip() or None,
+                    "verification_status":"provisional","created_at":"Manual Edit","updated_at":"Manual Edit"}
+            con.execute("""INSERT INTO persons(person_id,preferred_name_en,preferred_name_fa,sex,birth_date_text,
+                         death_date_text,branch,summary,verification_status,created_at,updated_at)
+                         VALUES(:person_id,:preferred_name_en,:preferred_name_fa,:sex,:birth_date_text,
+                         :death_date_text,:branch,:summary,:verification_status,:created_at,:updated_at)""",person)
+            for text,language in ((person["preferred_name_en"],"en"),(person["preferred_name_fa"],"fa")):
+                if text: con.execute("INSERT INTO person_names(person_id,name_text,language,name_type,is_preferred) VALUES(?,?,?,'preferred',1)",(pid,text,language))
+            rid=record_revision(con,"create","person",pid,after=person); mark_manual(con,"person",pid,rid)
+        return self.send_json({"ok":True,"person_id":pid},201)
+
+    def curator_person_metadata(self,p):
+        pid=p["person_id"]; fields=("preferred_name_en","preferred_name_fa","sex","birth_date_text","death_date_text","branch","summary")
+        with db() as con:
+            before=json_row(con,"SELECT * FROM persons WHERE person_id=?",(pid,))
+            if not before: raise ValueError("Person does not exist")
+            before_audit={"person":before,"preferred_names":[dict(x) for x in con.execute(
+                "SELECT person_id,name_text,language,name_type,is_preferred FROM person_names WHERE person_id=? AND is_preferred=1",(pid,))]}
+            after={**before,**{k:(str(p[k]).strip() or None) for k in fields if k in p}}
+            if not after.get("preferred_name_en"): raise ValueError("English display name is required")
+            if after.get("sex") not in ("M","F","U"): raise ValueError("Sex must be M, F, or U")
+            after["updated_at"]="Manual Edit"
+            con.execute("""UPDATE persons SET preferred_name_en=?,preferred_name_fa=?,sex=?,birth_date_text=?,
+                         death_date_text=?,branch=?,summary=?,updated_at=? WHERE person_id=?""",
+                        (after["preferred_name_en"],after["preferred_name_fa"],after["sex"],after["birth_date_text"],
+                         after["death_date_text"],after["branch"],after["summary"],after["updated_at"],pid))
+            for language,text in (("en",after["preferred_name_en"]),("fa",after["preferred_name_fa"])):
+                current=con.execute("SELECT person_name_id FROM person_names WHERE person_id=? AND language=? AND is_preferred=1 ORDER BY person_name_id LIMIT 1",(pid,language)).fetchone()
+                if current and text: con.execute("UPDATE person_names SET name_text=? WHERE person_name_id=?",(text,current[0]))
+                elif current: con.execute("DELETE FROM person_names WHERE person_name_id=?",(current[0],))
+                elif text: con.execute("INSERT INTO person_names(person_id,name_text,language,name_type,is_preferred) VALUES(?,?,?,'preferred',1)",(pid,text,language))
+            after_audit={"person":after,"preferred_names":[dict(x) for x in con.execute(
+                "SELECT person_id,name_text,language,name_type,is_preferred FROM person_names WHERE person_id=? AND is_preferred=1",(pid,))]}
+            record_revision(con,"update","person_metadata",pid,before_audit,after_audit)
+        return self.send_json({"ok":True})
+
+    def curator_person_remove(self,p):
+        pid=p["person_id"]
+        with db() as con:
+            if not is_manual(con,"person",pid): raise ValueError("Only people created by Manual Edit may be removed")
+            if con.execute("SELECT 1 FROM relationships WHERE person1_id=? OR person2_id=?",(pid,pid)).fetchone(): raise ValueError("Remove this person's relationships first")
+            if con.execute("SELECT 1 FROM artifact_persons WHERE person_id=?",(pid,)).fetchone(): raise ValueError("Remove this person's photo links first")
+            person=json_row(con,"SELECT * FROM persons WHERE person_id=?",(pid,))
+            if not person: raise ValueError("Person does not exist")
+            snapshot={"person":person,"names":[dict(x) for x in con.execute("SELECT person_id,name_text,language,name_type,is_preferred FROM person_names WHERE person_id=?",(pid,))]}
+            con.execute("DELETE FROM persons WHERE person_id=?",(pid,))
+            record_revision(con,"remove","person",pid,before=snapshot)
+            con.execute("UPDATE manual_edit_entities SET active=0 WHERE entity_type='person' AND entity_key=?",(pid,))
+        return self.send_json({"ok":True,"revert_available":True})
+
+    def curator_relationship_create(self,p):
+        p1,p2=p["person1_id"],p["person2_id"]; kind=str(p.get("relationship_type","")).strip()
+        allowed={"parent_of","father_of","spouse_of","sibling_of","relative_of"}
+        if kind not in allowed: raise ValueError("Unsupported relationship type")
+        if p1==p2: raise ValueError("A person cannot be related to themselves")
+        with db() as con:
+            for pid in (p1,p2):
+                if not con.execute("SELECT 1 FROM persons WHERE person_id=?",(pid,)).fetchone(): raise ValueError(f"Person does not exist: {pid}")
+            rid=next_entity_id(con,"relationships","relationship_id","R","relationship")
+            rel={"relationship_id":rid,"person1_id":p1,"relationship_type":kind,"person2_id":p2,
+                 "notes":str(p.get("notes","")).strip() or None,"verification_status":"provisional"}
+            con.execute("INSERT INTO relationships VALUES(:relationship_id,:person1_id,:relationship_type,:person2_id,:notes,:verification_status)",rel)
+            revision=record_revision(con,"create","relationship",rid,after=rel); mark_manual(con,"relationship",rid,revision)
+        return self.send_json({"ok":True,"relationship_id":rid},201)
+
+    def curator_relationship_remove(self,p):
+        rid=p["relationship_id"]
+        with db() as con:
+            if not is_manual(con,"relationship",rid): raise ValueError("Only relationships created by Manual Edit may be removed")
+            before=json_row(con,"SELECT * FROM relationships WHERE relationship_id=?",(rid,))
+            if not before: raise ValueError("Relationship does not exist")
+            con.execute("DELETE FROM relationships WHERE relationship_id=?",(rid,))
+            record_revision(con,"remove","relationship",rid,before=before)
+            con.execute("UPDATE manual_edit_entities SET active=0 WHERE entity_type='relationship' AND entity_key=?",(rid,))
+        return self.send_json({"ok":True,"revert_available":True})
 
     def log_message(self, fmt, *args):
         print(f"[Explorer] {self.address_string()} - {fmt % args}")
