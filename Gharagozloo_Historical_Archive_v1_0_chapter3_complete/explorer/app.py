@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import base64
+import binascii
 import mimetypes
 import os
 import sqlite3
@@ -17,6 +19,10 @@ DB_PATH = REPO_ROOT / "archive.sqlite"
 STATIC_DIR = APP_DIR / "static"
 PORT = int(os.environ.get("PORT", "8765"))
 HOST = "0.0.0.0" if "PORT" in os.environ else "127.0.0.1"
+CURATOR_ENABLED = "PORT" not in os.environ and os.environ.get("CURATOR_MODE", "1") != "0"
+PHOTO_DIR = STATIC_DIR / "artifacts" / "photos"
+MAX_UPLOAD_BYTES = 15 * 1024 * 1024
+ALLOWED_IMAGES = {"image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp"}
 
 
 def db() -> sqlite3.Connection:
@@ -37,6 +43,58 @@ def row(query: str, params: tuple = ()) -> dict | None:
     with db() as con:
         r = con.execute(query, params).fetchone()
         return dict(r) if r else None
+
+
+def json_row(con: sqlite3.Connection, query: str, params: tuple) -> dict | None:
+    value = con.execute(query, params).fetchone()
+    return dict(value) if value else None
+
+
+def entity_key(*parts: str) -> str:
+    return "|".join(parts)
+
+
+def record_revision(con, action, entity_type, key, before=None, after=None,
+                    reverted_revision_id=None, notes=None) -> int:
+    cur = con.execute(
+        """INSERT INTO edit_revisions
+           (changed_at,provenance,action,entity_type,entity_key,before_json,after_json,reverted_revision_id,notes)
+           VALUES(datetime('now'),'Manual Edit',?,?,?,?,?,?,?)""",
+        (action, entity_type, key,
+         json.dumps(before, ensure_ascii=False) if before is not None else None,
+         json.dumps(after, ensure_ascii=False) if after is not None else None,
+         reverted_revision_id, notes),
+    )
+    return cur.lastrowid
+
+
+def mark_manual(con, entity_type, key, revision_id):
+    con.execute(
+        "INSERT INTO manual_edit_entities(entity_type,entity_key,created_revision_id) VALUES(?,?,?)",
+        (entity_type, key, revision_id),
+    )
+
+
+def is_manual(con, entity_type, key) -> bool:
+    return con.execute(
+        "SELECT 1 FROM manual_edit_entities WHERE entity_type=? AND entity_key=? AND active=1",
+        (entity_type, key),
+    ).fetchone() is not None
+
+
+def next_artifact_id(con) -> str:
+    # Include retired Manual Edit IDs so an audit identity is never reused.
+    maximum = con.execute(
+        """SELECT MAX(number) FROM (
+               SELECT CAST(SUBSTR(artifact_id,2) AS INTEGER) AS number
+                 FROM artifacts WHERE artifact_id GLOB 'A[0-9]*'
+               UNION ALL
+               SELECT CAST(SUBSTR(entity_key,2) AS INTEGER) AS number
+                 FROM manual_edit_entities
+                WHERE entity_type='artifact' AND entity_key GLOB 'A[0-9]*'
+           )"""
+    ).fetchone()[0] or 0
+    return f"A{maximum + 1:04d}"
 
 
 def counts() -> dict:
@@ -129,6 +187,10 @@ def person_summary(person_id: str) -> dict | None:
         """SELECT a.artifact_id,a.title,a.description,a.file_reference,a.notes,
                   a.printed_page,a.confidence,s.source_id,s.short_title,s.full_title,
                   ap.role,agm.verification_class,agm.display_status,
+                  (SELECT GROUP_CONCAT(linked.preferred_name_en, ', ')
+                     FROM artifact_persons ap2
+                     JOIN persons linked ON linked.person_id=ap2.person_id
+                    WHERE ap2.artifact_id=a.artifact_id) AS person_names,
                   CASE WHEN ppp.artifact_id IS NOT NULL THEN 1 ELSE 0 END AS is_primary
            FROM artifact_persons ap
            JOIN artifacts a ON a.artifact_id=ap.artifact_id
@@ -200,6 +262,21 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def read_json(self):
+        length = int(self.headers.get("Content-Length", "0"))
+        if length <= 0 or length > MAX_UPLOAD_BYTES * 2:
+            raise ValueError("Request body is empty or too large")
+        return json.loads(self.rfile.read(length).decode("utf-8"))
+
+    def require_curator(self):
+        if not CURATOR_ENABLED:
+            self.send_json({"error": "Not found"}, 404)
+            return False
+        if not row("SELECT name FROM sqlite_master WHERE type='table' AND name='edit_revisions'"):
+            self.send_json({"error": "Curator audit migration 0053 has not been applied"}, 503)
+            return False
+        return True
+
     def do_GET(self):
         try:
             parsed = urlparse(self.path)
@@ -207,6 +284,45 @@ class Handler(BaseHTTPRequestHandler):
             qs = parse_qs(parsed.query)
             if path == "/api/health":
                 return self.send_json({"ok": True, "database": str(DB_PATH), "version": "0.6.11-family-graph-edge-filter"})
+            if path == "/api/capabilities":
+                return self.send_json({"curator_mode": CURATOR_ENABLED})
+            if path == "/api/curator/photos":
+                if not self.require_curator(): return
+                data = rows(
+                    """SELECT a.artifact_id,a.title,a.description,a.file_reference,a.notes,a.source_id,
+                              agm.verification_class,agm.display_status,
+                              GROUP_CONCAT(DISTINCT p.person_id) person_ids,
+                              GROUP_CONCAT(DISTINCT p.preferred_name_en) person_names,
+                              CASE WHEN mee.entity_key IS NULL THEN 0 ELSE 1 END manual_artifact
+                       FROM artifacts a
+                       JOIN artifact_gallery_metadata agm ON agm.artifact_id=a.artifact_id
+                       LEFT JOIN artifact_persons ap ON ap.artifact_id=a.artifact_id
+                       LEFT JOIN persons p ON p.person_id=ap.person_id
+                       LEFT JOIN manual_edit_entities mee ON mee.entity_type='artifact'
+                            AND mee.entity_key=a.artifact_id AND mee.active=1
+                       WHERE a.artifact_type IN ('photograph','portrait','image')
+                       GROUP BY a.artifact_id ORDER BY a.artifact_id DESC"""
+                )
+                for photo in data:
+                    photo["links"] = rows(
+                        """SELECT ap.person_id,p.preferred_name_en,ap.role,ap.notes,
+                                  CASE WHEN mee.entity_key IS NULL THEN 0 ELSE 1 END manual_link,
+                                  CASE WHEN ppp.artifact_id IS NULL THEN 0 ELSE 1 END is_primary
+                           FROM artifact_persons ap JOIN persons p ON p.person_id=ap.person_id
+                           LEFT JOIN manual_edit_entities mee ON mee.entity_type='artifact_person'
+                                AND mee.entity_key=(ap.artifact_id||'|'||ap.person_id||'|'||ap.role) AND mee.active=1
+                           LEFT JOIN person_primary_portraits ppp ON ppp.person_id=ap.person_id AND ppp.artifact_id=ap.artifact_id
+                           WHERE ap.artifact_id=? ORDER BY p.preferred_name_en""", (photo["artifact_id"],))
+                return self.send_json({"photos": data, "people": rows(
+                    "SELECT person_id,preferred_name_en,preferred_name_fa FROM persons WHERE verification_status NOT IN ('merged_duplicate','superseded') ORDER BY preferred_name_en"
+                ), "sources": rows("SELECT source_id,short_title FROM sources ORDER BY short_title")})
+            if path == "/api/curator/revisions":
+                if not self.require_curator(): return
+                return self.send_json(rows(
+                    """SELECT r.* FROM edit_revisions r
+                       WHERE r.provenance='Manual Edit' AND r.action='remove'
+                         AND NOT EXISTS (SELECT 1 FROM edit_revisions x WHERE x.reverted_revision_id=r.revision_id)
+                       ORDER BY r.revision_id DESC LIMIT 50"""))
             if path == "/api/dashboard":
                 featured = rows(
                     """SELECT p.person_id,p.preferred_name_en,p.preferred_name_fa,p.branch,p.summary,
@@ -517,6 +633,175 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_file(STATIC_DIR / "index.html")
         except Exception as exc:
             self.send_json({"error": str(exc)}, 500)
+
+    def do_POST(self):
+        try:
+            path = urlparse(self.path).path
+            if not path.startswith("/api/curator/"):
+                return self.send_json({"error": "Not found"}, 404)
+            if not self.require_curator():
+                return
+            payload = self.read_json()
+            if path == "/api/curator/photos/upload":
+                return self.curator_upload(payload)
+            if path == "/api/curator/photos/link":
+                return self.curator_link(payload)
+            if path == "/api/curator/photos/metadata":
+                return self.curator_metadata(payload)
+            if path == "/api/curator/photos/primary":
+                return self.curator_primary(payload)
+            if path == "/api/curator/photos/remove-link":
+                return self.curator_remove_link(payload)
+            if path == "/api/curator/photos/remove-artifact":
+                return self.curator_remove_artifact(payload)
+            if path == "/api/curator/revert":
+                return self.curator_revert(payload)
+            return self.send_json({"error": "Not found"}, 404)
+        except (ValueError, KeyError, json.JSONDecodeError, binascii.Error) as exc:
+            self.send_json({"error": str(exc)}, 400)
+        except sqlite3.IntegrityError as exc:
+            self.send_json({"error": f"Database constraint rejected the edit: {exc}"}, 409)
+        except Exception as exc:
+            self.send_json({"error": str(exc)}, 500)
+
+    def curator_upload(self, p):
+        mime = p.get("mime_type", "")
+        if mime not in ALLOWED_IMAGES: raise ValueError("Only JPEG, PNG, and WebP images are accepted")
+        raw = base64.b64decode(p["data_base64"], validate=True)
+        if not raw or len(raw) > MAX_UPLOAD_BYTES: raise ValueError("Image must be between 1 byte and 15 MB")
+        title = str(p.get("title", "")).strip()
+        if not title: raise ValueError("A title or caption is required")
+        people = list(dict.fromkeys(p.get("person_ids") or []))
+        with db() as con:
+            aid = next_artifact_id(con)
+            source_id = p.get("source_id") or "U0001"
+            if not con.execute("SELECT 1 FROM sources WHERE source_id=?", (source_id,)).fetchone():
+                raise ValueError("Selected source does not exist")
+            for pid in people:
+                if not con.execute("SELECT 1 FROM persons WHERE person_id=?", (pid,)).fetchone():
+                    raise ValueError(f"Person does not exist: {pid}")
+            filename = aid + ALLOWED_IMAGES[mime]
+            artifact = {"artifact_id": aid, "source_id": source_id, "artifact_type": "photograph",
+                        "title": title, "description": str(p.get("description", "")).strip() or None,
+                        "transcription_status": "not_applicable", "confidence": "confirmed",
+                        "file_reference": filename, "notes": str(p.get("notes", "")).strip() or None}
+            con.execute("""INSERT INTO artifacts(artifact_id,source_id,artifact_type,title,description,
+                         transcription_status,confidence,file_reference,notes) VALUES
+                         (:artifact_id,:source_id,:artifact_type,:title,:description,:transcription_status,
+                          :confidence,:file_reference,:notes)""", artifact)
+            verification = p.get("verification_class", "unresolved")
+            con.execute("INSERT INTO artifact_gallery_metadata VALUES(?,?,?,?)",
+                        (aid, verification, "visible", "Added through Local Curator Mode"))
+            rid = record_revision(con, "create", "artifact", aid, after=artifact)
+            mark_manual(con, "artifact", aid, rid)
+            for pid in people:
+                link = {"artifact_id": aid, "person_id": pid, "role": "subject", "notes": "Linked through Local Curator Mode"}
+                con.execute("INSERT INTO artifact_persons VALUES(:artifact_id,:person_id,:role,:notes)", link)
+                lrid = record_revision(con, "create", "artifact_person", entity_key(aid,pid,"subject"), after=link)
+                mark_manual(con, "artifact_person", entity_key(aid,pid,"subject"), lrid)
+            primary = p.get("primary_person_id")
+            if primary:
+                if primary not in people: raise ValueError("Primary portrait person must also be linked")
+                self.set_primary(con, primary, aid)
+            PHOTO_DIR.mkdir(parents=True, exist_ok=True)
+            (PHOTO_DIR / filename).write_bytes(raw)
+        return self.send_json({"ok": True, "artifact_id": aid}, 201)
+
+    def curator_link(self, p):
+        aid, pid = p["artifact_id"], p["person_id"]
+        role = p.get("role") or "subject"; key = entity_key(aid,pid,role)
+        link = {"artifact_id":aid,"person_id":pid,"role":role,"notes":str(p.get("notes","")).strip() or None}
+        with db() as con:
+            con.execute("INSERT INTO artifact_persons VALUES(:artifact_id,:person_id,:role,:notes)", link)
+            rid=record_revision(con,"create","artifact_person",key,after=link); mark_manual(con,"artifact_person",key,rid)
+        return self.send_json({"ok":True})
+
+    def curator_metadata(self, p):
+        aid=p["artifact_id"]
+        allowed=("title","description","notes","source_id")
+        with db() as con:
+            before=json_row(con,"SELECT artifact_id,title,description,notes,source_id FROM artifacts WHERE artifact_id=?",(aid,))
+            if not before: raise ValueError("Photo does not exist")
+            after={**before, **{k:(str(p[k]).strip() or None) for k in allowed if k in p}}
+            if not after.get("title"): raise ValueError("Title cannot be empty")
+            if not after.get("source_id") or not con.execute("SELECT 1 FROM sources WHERE source_id=?",(after["source_id"],)).fetchone():
+                raise ValueError("Selected source does not exist")
+            con.execute("UPDATE artifacts SET title=?,description=?,notes=?,source_id=? WHERE artifact_id=?",
+                        (after["title"],after["description"],after["notes"],after["source_id"],aid))
+            record_revision(con,"update","artifact_metadata",aid,before,after)
+        return self.send_json({"ok":True})
+
+    def set_primary(self, con, pid, aid):
+        if not con.execute("SELECT 1 FROM artifact_persons WHERE artifact_id=? AND person_id=?",(aid,pid)).fetchone():
+            raise ValueError("The photo must be linked to the person before it can be primary")
+        before=json_row(con,"SELECT * FROM person_primary_portraits WHERE person_id=?",(pid,))
+        after={"person_id":pid,"artifact_id":aid,"selection_basis":"Selected through Local Curator Mode",
+               "selected_by":"Manual Edit","notes":None}
+        con.execute("""INSERT INTO person_primary_portraits VALUES(:person_id,:artifact_id,:selection_basis,:selected_by,:notes)
+                     ON CONFLICT(person_id) DO UPDATE SET artifact_id=excluded.artifact_id,
+                     selection_basis=excluded.selection_basis,selected_by=excluded.selected_by,notes=excluded.notes""",after)
+        record_revision(con,"update","primary_portrait",pid,before,after)
+
+    def curator_primary(self,p):
+        with db() as con: self.set_primary(con,p["person_id"],p["artifact_id"])
+        return self.send_json({"ok":True})
+
+    def curator_remove_link(self,p):
+        aid,pid,role=p["artifact_id"],p["person_id"],p.get("role") or "subject"; key=entity_key(aid,pid,role)
+        with db() as con:
+            if not is_manual(con,"artifact_person",key): raise ValueError("Only links created by Manual Edit may be removed")
+            before=json_row(con,"SELECT * FROM artifact_persons WHERE artifact_id=? AND person_id=? AND role=?",(aid,pid,role))
+            if not before: raise ValueError("Link does not exist")
+            if con.execute("SELECT 1 FROM person_primary_portraits WHERE person_id=? AND artifact_id=?",(pid,aid)).fetchone():
+                raise ValueError("Choose another primary portrait before removing this link")
+            con.execute("DELETE FROM artifact_persons WHERE artifact_id=? AND person_id=? AND role=?",(aid,pid,role))
+            record_revision(con,"remove","artifact_person",key,before=before)
+            con.execute("UPDATE manual_edit_entities SET active=0 WHERE entity_type='artifact_person' AND entity_key=?",(key,))
+        return self.send_json({"ok":True})
+
+    def curator_remove_artifact(self,p):
+        aid=p["artifact_id"]
+        with db() as con:
+            if not is_manual(con,"artifact",aid): raise ValueError("Only artifacts created by Manual Edit may be removed")
+            artifact=json_row(con,"SELECT * FROM artifacts WHERE artifact_id=?",(aid,))
+            if not artifact: raise ValueError("Photo does not exist")
+            if con.execute("SELECT 1 FROM person_primary_portraits WHERE artifact_id=?",(aid,)).fetchone():
+                raise ValueError("Choose another primary portrait before removing this artifact")
+            snapshot={"artifact":artifact,"gallery":json_row(con,"SELECT * FROM artifact_gallery_metadata WHERE artifact_id=?",(aid,)),
+                      "links":[dict(x) for x in con.execute("SELECT * FROM artifact_persons WHERE artifact_id=?",(aid,))],
+                      "primary":[dict(x) for x in con.execute("SELECT * FROM person_primary_portraits WHERE artifact_id=?",(aid,))]}
+            con.execute("DELETE FROM person_primary_portraits WHERE artifact_id=?",(aid,))
+            con.execute("DELETE FROM artifacts WHERE artifact_id=?",(aid,))
+            record_revision(con,"remove","artifact",aid,before=snapshot)
+            con.execute("UPDATE manual_edit_entities SET active=0 WHERE entity_type='artifact' AND entity_key=?",(aid,))
+            con.execute("UPDATE manual_edit_entities SET active=0 WHERE entity_type='artifact_person' AND entity_key LIKE ?",(aid+"|%",))
+        return self.send_json({"ok":True,"revert_available":True})
+
+    def curator_revert(self,p):
+        revision_id=int(p["revision_id"])
+        with db() as con:
+            rev=json_row(con,"SELECT * FROM edit_revisions WHERE revision_id=?",(revision_id,))
+            if not rev or rev["provenance"]!="Manual Edit" or rev["action"]!="remove":
+                raise ValueError("Only a Manual Edit removal revision can be reverted here")
+            if con.execute("SELECT 1 FROM edit_revisions WHERE reverted_revision_id=?",(revision_id,)).fetchone():
+                raise ValueError("This revision has already been reverted")
+            before=json.loads(rev["before_json"])
+            if rev["entity_type"]=="artifact_person":
+                con.execute("INSERT INTO artifact_persons VALUES(:artifact_id,:person_id,:role,:notes)",before)
+                con.execute("UPDATE manual_edit_entities SET active=1 WHERE entity_type='artifact_person' AND entity_key=?",(rev["entity_key"],))
+            elif rev["entity_type"]=="artifact":
+                a=before["artifact"]
+                cols=",".join(a); binds=",".join(":"+x for x in a)
+                con.execute(f"INSERT INTO artifacts({cols}) VALUES({binds})",a)
+                g=before.get("gallery")
+                if g: con.execute("INSERT INTO artifact_gallery_metadata VALUES(:artifact_id,:verification_class,:display_status,:selection_notes)",g)
+                for link in before.get("links",[]): con.execute("INSERT INTO artifact_persons VALUES(:artifact_id,:person_id,:role,:notes)",link)
+                for primary in before.get("primary",[]): con.execute("INSERT INTO person_primary_portraits VALUES(:person_id,:artifact_id,:selection_basis,:selected_by,:notes)",primary)
+                con.execute("UPDATE manual_edit_entities SET active=1 WHERE entity_type='artifact' AND entity_key=?",(rev["entity_key"],))
+                con.execute("UPDATE manual_edit_entities SET active=1 WHERE entity_type='artifact_person' AND entity_key LIKE ?",(rev["entity_key"]+"|%",))
+            else: raise ValueError("Unsupported removal revision")
+            record_revision(con,"revert",rev["entity_type"],rev["entity_key"],after=before,reverted_revision_id=revision_id)
+        return self.send_json({"ok":True})
 
     def log_message(self, fmt, *args):
         print(f"[Explorer] {self.address_string()} - {fmt % args}")
