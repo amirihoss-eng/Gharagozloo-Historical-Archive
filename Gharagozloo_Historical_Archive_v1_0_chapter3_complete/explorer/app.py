@@ -5,7 +5,10 @@ import base64
 import binascii
 import mimetypes
 import os
-import sqlite3
+try:
+    import sqlite3
+except ModuleNotFoundError:  # Cloudflare's Python image omits the optional module.
+    import pysqlite3 as sqlite3
 import sys
 import threading
 import webbrowser

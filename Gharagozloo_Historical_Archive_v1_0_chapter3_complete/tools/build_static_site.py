@@ -103,7 +103,8 @@ def main() -> int:
     env["PORT"] = str(port)
     process = subprocess.Popen(
         [sys.executable, str(ROOT / "explorer" / "app.py")],
-        cwd=ROOT, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        cwd=ROOT, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE,
+        text=True,
     )
     base = f"http://127.0.0.1:{port}"
     try:
@@ -113,7 +114,11 @@ def main() -> int:
                 break
             except Exception:
                 if process.poll() is not None:
-                    raise RuntimeError("The temporary export server stopped unexpectedly")
+                    details = process.stderr.read().strip() if process.stderr else ""
+                    raise RuntimeError(
+                        "The temporary export server stopped unexpectedly"
+                        + (f":\n{details}" if details else "")
+                    )
                 time.sleep(0.1)
         else:
             raise RuntimeError("Timed out starting the temporary export server")
