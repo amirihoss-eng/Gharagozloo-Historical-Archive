@@ -1,3 +1,4 @@
 
 # Local SQLite migration backups
 backups/
+cloudflare_dist/
