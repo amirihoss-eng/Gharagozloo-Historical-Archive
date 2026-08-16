@@ -7,7 +7,10 @@ import json
 import os
 import shutil
 import socket
-import sqlite3
+try:
+    import sqlite3
+except ModuleNotFoundError:  # Cloudflare's Python image omits the optional module.
+    import pysqlite3 as sqlite3
 import subprocess
 import sys
 import time
