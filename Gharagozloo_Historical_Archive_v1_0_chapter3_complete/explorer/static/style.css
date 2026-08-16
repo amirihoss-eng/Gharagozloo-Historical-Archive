@@ -441,6 +441,10 @@ body.lightbox-open{overflow:hidden}
 .curator-edit-details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
 .curator-edit-details summary{cursor:pointer;font-weight:800;color:var(--deep)}
 .curator-inline-form{margin:14px 0 0;padding:14px;background:#f8f4eb;border-radius:10px}
+.curator-fieldset{border:0;margin:0;padding:0;min-width:0}
+.curator-fieldset>.curator-form{margin:0;padding:0}
+.curator-selection-summary{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:9px;background:#f8f4eb}
+.curator-selection-summary span{color:var(--muted)}
 .curator-divider{display:flex;align-items:center;gap:12px;margin:8px 0 22px;color:var(--muted);font-weight:800;letter-spacing:.12em}
 .curator-divider:before,.curator-divider:after{content:"";height:1px;background:var(--line);flex:1}
 .curator-form label{display:grid;gap:6px;font-size:13px;font-weight:700}

@@ -122,10 +122,12 @@ async function curatorPeople(){
   try{
     const [{people,relationships},revisions]=await Promise.all([api('/api/curator/people'),api('/api/curator/revisions')]);
     const personOptions=people.map(p=>`<option value="${p.person_id}">${esc(p.preferred_name_en)} (${p.person_id})</option>`).join('');
+    const personSearchOptions=people.map(p=>`<option value="${esc(p.preferred_name_en)} (${p.person_id})">${esc(p.preferred_name_fa||'')}</option>`).join('');
     const manualPeople=people.filter(p=>p.manual_person);
     const manualRels=relationships.filter(r=>r.manual_relationship);
     app.innerHTML=`<section class=curator-shell><div class=section-head><div><div class=eyebrow>LOCAL ONLY · MANUAL EDIT</div><h2>People & Relationship Curator</h2><p>Create nodes and family links with full audit provenance.</p></div><button class=btn data-route=curator>← Photo Curator</button></div><div id=curatorMessage class=curator-message hidden></div>
       <form id=createPerson class="panel curator-form"><h3>Create a new person/node</h3><p class=curator-form-help>The new record starts as provisional and receives the next permanent P-ID.</p><label>English display name<input name=preferred_name_en required></label><label>Persian name<input name=preferred_name_fa dir=rtl></label><label>Sex<select name=sex><option value=U>Unknown / unspecified</option><option value=M>Male</option><option value=F>Female</option></select></label><label>Branch<input name=branch></label><label>Birth date text<input name=birth_date_text placeholder="e.g. 1940 or circa 1940"></label><label>Death date text<input name=death_date_text></label><label class=curator-wide>Summary<textarea name=summary></textarea></label><button class="btn primary">Create this person</button></form>
+      <form id=editExistingPerson class="panel curator-form"><h3>Edit an existing person</h3><p class=curator-form-help>Search by name, select the exact P-ID, then review and save the existing record. Every change is recorded as Manual Edit; research records remain protected from deletion.</p><label class=curator-wide>Find person<input id=existingPersonSearch name=person_search list=existingPeopleList placeholder="Type a name…" autocomplete=off required><datalist id=existingPeopleList>${personSearchOptions}</datalist></label><div id=existingPersonIdentity class="curator-wide curator-selection-summary" hidden></div><fieldset id=existingPersonFields class="curator-fieldset curator-wide" disabled><div class=curator-form><label>English display name<input name=preferred_name_en required></label><label>Persian name<input name=preferred_name_fa dir=rtl></label><label>Sex<select name=sex><option value=U>Unknown / unspecified</option><option value=M>Male</option><option value=F>Female</option></select></label><label>Branch<input name=branch></label><label>Birth date text<input name=birth_date_text></label><label>Death date text<input name=death_date_text></label><label class=curator-wide>Summary<textarea name=summary></textarea></label></div></fieldset><button id=saveExistingPerson class="btn primary" disabled>Save changes to this person</button></form>
       <form id=createRelationship class="panel curator-form"><h3>Create a relationship</h3><p class=curator-form-help>For “parent of” and “father of,” Person 1 is the parent. Spouse and sibling links are displayed symmetrically.</p><label>Person 1<select name=person1_id required><option value="">Choose Person 1…</option>${personOptions}</select></label><label>Relationship<select name=relationship_type required><option value=parent_of>Parent of</option><option value=father_of>Father of</option><option value=spouse_of>Spouse of</option><option value=sibling_of>Sibling of</option><option value=relative_of>Relative of</option></select></label><label>Person 2<select name=person2_id required><option value="">Choose Person 2…</option>${personOptions}</select></label><label>Notes<input name=notes></label><button class=btn>Create this relationship</button></form>
       <div class=section-head><div><h3>Manual Edit people</h3><p>${manualPeople.length} removable node${manualPeople.length===1?'':'s'}</p></div></div><div class=curator-list>${manualPeople.map(p=>`<article class="curator-card curator-person-card" data-person-id="${p.person_id}"><div><div class=chips><span class="chip silver">Manual Edit</span><span class=chip>${p.person_id}</span></div><h3>${esc(p.preferred_name_en)}</h3><p>${esc(p.preferred_name_fa||'')} · ${esc(p.branch||'Unclassified')}</p><p>${esc(p.summary||'')}</p><details class=curator-edit-details><summary>Edit details</summary><form data-person-edit-form class="curator-form curator-inline-form"><label>English name<input name=preferred_name_en value="${esc(p.preferred_name_en)}" required></label><label>Persian name<input name=preferred_name_fa value="${esc(p.preferred_name_fa||'')}" dir=rtl></label><label>Sex<select name=sex><option value=U ${p.sex==='U'?'selected':''}>Unknown</option><option value=M ${p.sex==='M'?'selected':''}>Male</option><option value=F ${p.sex==='F'?'selected':''}>Female</option></select></label><label>Branch<input name=branch value="${esc(p.branch||'')}"></label><label>Birth date text<input name=birth_date_text value="${esc(p.birth_date_text||'')}"></label><label>Death date text<input name=death_date_text value="${esc(p.death_date_text||'')}"></label><label class=curator-wide>Summary<textarea name=summary>${esc(p.summary||'')}</textarea></label><button class="btn primary">Save changes</button></form></details><div class=curator-actions><button class=danger data-remove-person>Remove person</button></div></div></article>`).join('')||'<p class=muted>No people have been created manually yet.</p>'}</div>
       <div class=section-head><div><h3>Manual Edit relationships</h3><p>${manualRels.length} removable link${manualRels.length===1?'':'s'}</p></div></div><div class=panel>${manualRels.map(r=>`<div class="list-item curator-rel" data-relationship-id="${r.relationship_id}"><span><b>${esc(r.person1_name)}</b> ${esc(r.relationship_type.replaceAll('_',' '))} <b>${esc(r.person2_name)}</b> · ${r.relationship_id}</span><button class=danger data-remove-relationship>Remove relationship</button></div>`).join('')||'<p class=muted>No relationships have been created manually yet.</p>'}</div>
@@ -135,7 +137,13 @@ async function curatorPeople(){
 }
 function wirePeopleCurator(people){
   const personName=id=>people.find(p=>p.person_id===id)?.preferred_name_en||id;
+  const personLabel=p=>`${p.preferred_name_en} (${p.person_id})`;
   document.querySelector('#createPerson').onsubmit=async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));if(!confirm(`Create a new person named “${f.preferred_name_en}”?`))return;try{const result=await post('/api/curator/people/create',f);alert(`Created ${f.preferred_name_en} as ${result.person_id}.`);graphState.data=null;state.dashboard=null;await curatorPeople()}catch(err){curatorNotice(err.message,true)}};
+  const editForm=document.querySelector('#editExistingPerson'),search=document.querySelector('#existingPersonSearch'),fields=document.querySelector('#existingPersonFields'),summary=document.querySelector('#existingPersonIdentity'),save=document.querySelector('#saveExistingPerson');
+  let selectedExistingPerson=null;
+  const loadExistingPerson=()=>{selectedExistingPerson=people.find(p=>personLabel(p)===search.value)||null;if(!selectedExistingPerson){fields.disabled=true;save.disabled=true;summary.hidden=true;return}const p=selectedExistingPerson;editForm.preferred_name_en.value=p.preferred_name_en||'';editForm.preferred_name_fa.value=p.preferred_name_fa||'';editForm.sex.value=p.sex||'U';editForm.branch.value=p.branch||'';editForm.birth_date_text.value=p.birth_date_text||'';editForm.death_date_text.value=p.death_date_text||'';editForm.summary.value=p.summary||'';summary.innerHTML=`<b>${esc(p.preferred_name_en)}</b><span>${p.person_id} · ${p.manual_person?'Manual Edit record':'Research / Migration record'}</span>`;summary.hidden=false;fields.disabled=false;save.disabled=false};
+  search.onchange=loadExistingPerson;search.oninput=()=>{if(selectedExistingPerson&&search.value!==personLabel(selectedExistingPerson)){selectedExistingPerson=null;fields.disabled=true;save.disabled=true;summary.hidden=true}};
+  editForm.onsubmit=async e=>{e.preventDefault();if(!selectedExistingPerson)return curatorNotice('Choose an existing person from the search suggestions.',true);const f=Object.fromEntries(new FormData(editForm));delete f.person_search;const oldName=selectedExistingPerson.preferred_name_en,newName=f.preferred_name_en;if(!confirm(`Save changes to ${oldName} (${selectedExistingPerson.person_id})${newName!==oldName?` and change the display name to “${newName}”`:''}?`))return;try{await post('/api/curator/people/metadata',{person_id:selectedExistingPerson.person_id,...f});graphState.data=null;state.dashboard=null;await curatorPeople()}catch(err){curatorNotice(err.message,true)}};
   document.querySelector('#createRelationship').onsubmit=async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));if(!f.person1_id||!f.person2_id)return curatorNotice('Choose both people.',true);if(!confirm(`Create “${personName(f.person1_id)} ${f.relationship_type.replaceAll('_',' ')} ${personName(f.person2_id)}”?`))return;try{await post('/api/curator/relationships/create',f);graphState.data=null;await curatorPeople()}catch(err){curatorNotice(err.message,true)}};
   document.querySelectorAll('[data-person-edit-form]').forEach(form=>form.onsubmit=async e=>{e.preventDefault();const card=form.closest('[data-person-id]'),fields=Object.fromEntries(new FormData(form));try{await post('/api/curator/people/metadata',{person_id:card.dataset.personId,...fields});graphState.data=null;state.dashboard=null;await curatorPeople()}catch(err){curatorNotice(err.message,true)}});
   document.querySelectorAll('[data-remove-relationship]').forEach(b=>b.onclick=async()=>{if(!confirm('Remove this Manual Edit relationship?'))return;try{await post('/api/curator/relationships/remove',{relationship_id:b.closest('[data-relationship-id]').dataset.relationshipId});graphState.data=null;await curatorPeople()}catch(err){curatorNotice(err.message,true)}});
@@ -579,6 +587,39 @@ function highlightParentLines(parentId){
   });
 }
 
+function layoutGenerationRow(arr,spouses,y){
+  const visibleIds=new Set(arr.map(n=>n.person_id));
+  const nodeById=Object.fromEntries(arr.map(n=>[n.person_id,n]));
+  const ordered=[...arr].sort((a,b)=>a.preferred_name_en.localeCompare(b.preferred_name_en));
+  const used=new Set(), households=[];
+  ordered.forEach(start=>{
+    if(used.has(start.person_id)) return;
+    const household=[],queue=[start.person_id];
+    used.add(start.person_id);
+    while(queue.length){
+      const id=queue.shift(),node=nodeById[id];
+      if(node) household.push(node);
+      (spouses[id]||[])
+        .filter(spouseId=>visibleIds.has(spouseId)&&!used.has(spouseId))
+        .sort((a,b)=>nodeById[a].preferred_name_en.localeCompare(nodeById[b].preferred_name_en))
+        .forEach(spouseId=>{used.add(spouseId);queue.push(spouseId)});
+    }
+    households.push(household);
+  });
+
+  const cardWidth=210, spouseGap=24, householdGap=92;
+  const widths=households.map(group=>group.length*cardWidth+Math.max(0,group.length-1)*spouseGap);
+  const totalWidth=widths.reduce((sum,width)=>sum+width,0)+Math.max(0,households.length-1)*householdGap;
+  let cursor=800-totalWidth/2;
+  households.forEach((group,index)=>{
+    group.forEach((node,memberIndex)=>{
+      node.x=cursor+cardWidth/2+memberIndex*(cardWidth+spouseGap);
+      node.y=y;
+    });
+    cursor+=widths[index]+householdGap;
+  });
+}
+
 function drawLivingGraph(){
   const svg=document.querySelector('#livingGraph');
   if(!svg) return;
@@ -603,8 +644,7 @@ function drawLivingGraph(){
   const minL=Math.min(...nodes.map(n=>n.level),0), maxL=Math.max(...nodes.map(n=>n.level),0), levelGap=235;
   Object.entries(groups).forEach(([lv,arr])=>{
     const y=500+(Number(lv)-(minL+maxL)/2)*levelGap;
-    const gap=Math.min(290,1380/Math.max(arr.length,1));
-    arr.forEach((n,i)=>{n.x=800+(i-(arr.length-1)/2)*gap;n.y=y});
+    layoutGenerationRow(arr,family.spouses,y);
   });
 
   const by=Object.fromEntries(nodes.map(n=>[n.person_id,n]));
