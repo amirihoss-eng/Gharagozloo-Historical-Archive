@@ -429,6 +429,13 @@ body.lightbox-open{overflow:hidden}
   .dedication-feature{grid-template-columns:1fr}
   .dedication-photo-wrap{max-height:360px}
 }
+@media(min-width:721px) and (max-width:1340px){
+  .dedication-banner{margin:20px 30px 0}
+  .dedication-feature{display:flex;align-items:center}
+  .dedication-photo-wrap{flex:0 0 240px;width:240px;height:180px;aspect-ratio:auto}
+  .dedication-copy{flex:1}
+  .archive-intro{margin-top:56px}
+}
 
 /* Local-only Curator Mode */
 .curator-shell{max-width:1180px;margin:0 auto}
