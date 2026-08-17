@@ -623,7 +623,15 @@ function highlightParentLines(parentId){
 function layoutGenerationRow(arr,spouses,y){
   const visibleIds=new Set(arr.map(n=>n.person_id));
   const nodeById=Object.fromEntries(arr.map(n=>[n.person_id,n]));
-  const ordered=[...arr].sort((a,b)=>a.preferred_name_en.localeCompare(b.preferred_name_en));
+  const branchColumn=n=>{
+    const branch=(n.branch||'').toLowerCase();
+    if(branch.includes('hajilou')||branch.includes('hajilu')) return 0;
+    if(branch.includes('ashiqloo')||branch.includes('ashiq')) return 2;
+    return 1;
+  };
+  const ordered=[...arr].sort((a,b)=>
+    branchColumn(a)-branchColumn(b) || a.preferred_name_en.localeCompare(b.preferred_name_en)
+  );
   const used=new Set(), households=[];
   ordered.forEach(start=>{
     if(used.has(start.person_id)) return;

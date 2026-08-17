@@ -441,7 +441,7 @@ class Handler(BaseHTTPRequestHandler):
                                    ORDER BY count DESC,branch""")
                 lineage_roots = [
                     {"person_id": "CTX_GHARAGOZLOO", "label": "Gharagozloo — combined historical ancestry", "branch": "Historical context"},
-                    {"person_id": "P0179", "label": "Hajilou — Qara Mohammad family-tradition origin", "branch": "Hajilou"},
+                    {"person_id": "P0179", "label": "Hajilou ancestral tradition — Qara Mohammad", "branch": "Hajilou ancestral tradition"},
                     {"person_id": "P0070", "label": "Ashiqloo — historical trunk", "branch": "Ashiqloo"},
                 ]
                 return self.send_json({"nodes": people, "edges": rels, "branches": branches,
