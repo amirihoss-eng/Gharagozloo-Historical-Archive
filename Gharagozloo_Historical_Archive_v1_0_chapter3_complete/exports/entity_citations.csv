@@ -249,3 +249,11 @@ EC1518,relationship,R0164,X1516,supports,Family-verified photograph caption.
 EC1519,relationship,R0165,X1517,supports,Confirmed older-family testimony.
 EC1520,relationship,R0166,X1517,supports,Direct family testimony.
 EC1521,relationship,R0167,X1517,supports,Direct family testimony.
+EC1522,person,P0184,X1518,supports,Opening matter identifies Masoud Farid Gharagozloo as compiler.
+EC1523,person,P0184,X1520,supports,Signed introduction identifies the compiler and his relationship to the memoirist.
+EC1524,relationship,R0168,X1519,supports,Direct father-son statement in the opening biography.
+EC1525,relationship,R0168,X1520,supports,Masoud repeatedly calls the memoirist his father.
+EC1526,person,P0156,X1519,supports,Confirms P0156 identity and Farid al-Molk title.
+EC1527,person,P0153,X1519,supports,Names Mohammad Khan Hajilou as father of Farid al-Molk.
+EC1528,relationship,R0133,X1519,supports,Independent support for the existing P0153 -> P0156 placement.
+EC1529,research_question,Q0035,X1519,supports,"Evidence resolving the identity, title, and placement question."

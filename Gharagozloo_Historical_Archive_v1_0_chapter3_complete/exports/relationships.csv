@@ -129,7 +129,7 @@ R0129,P0118,parent_of,P0152,Parent-child placement follows the archive owner's 2
 R0130,P0118,parent_of,P0153,"Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4. The relationship is retained, while uncertainty applies to the child's name reading.",probable
 R0131,P0153,parent_of,P0154,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
 R0132,P0153,parent_of,P0155,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
-R0133,P0153,parent_of,P0156,Parent-child placement follows the archive owner's 2026-07-18 spreadsheet reconstruction of S0001 Figure 4.,probable
+R0133,P0153,parent_of,P0156,Khateraat-e Farid independently identifies Farid al-Molk P0156 as a son of Mohammad Khan Hajilou P0153; this confirms the existing Figure 4 placement.,confirmed
 R0134,P0153,parent_of,P0157,"Verified PowerPoint connectors show an additional unnamed child, labelled ??, beneath Mohammad Khan Hajilou.",provisional
 R0135,P0001,parent_of,P0158,User-confirmed direct child of Haji Mohammad Khan Jeyhunabadi.,confirmed
 R0136,P0001,parent_of,P0159,User-confirmed direct child of Haji Mohammad Khan Jeyhunabadi.,confirmed
@@ -164,3 +164,4 @@ R0164,P0022,parent_of,P0182,Family-verified photograph A0240 identifies Amirzade
 R0165,P0182,parent_of,P0183,"Direct archive-owner family testimony dated 2026-08-22, confirmed after consultation with older family members: Amirzadeh Khanom was the mother of Akhtar Piran.",confirmed
 R0166,P0183,spouse_of,P0008,Direct archive-owner family testimony identifies Akhtar Piran as the spouse of Gholamhossein Khan Amiri Gharagozloo P0008.,confirmed
 R0167,P0183,parent_of,P0009,Direct archive-owner family testimony identifies Akhtar Piran as the mother of Dr. Alireza Amiri Gharagozloo P0009 and therefore the paternal grandmother of P0010.,confirmed
+R0168,P0156,parent_of,P0184,Khateraat-e Farid opening matter and Masoud Farid's signed introduction identify the memoirist P0156 as his father.,confirmed

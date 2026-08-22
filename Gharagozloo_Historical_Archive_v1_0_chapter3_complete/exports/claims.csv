@@ -260,7 +260,7 @@ C0258,person,P0152,parentage,Child of Abdolhossein Khan Farkhari Gharagozloo (P0
 C0259,person,P0153,parentage,Child of Abdolhossein Khan Farkhari Gharagozloo (P0118),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0260,person,P0154,parentage,Child of Mohammad Khan Hajilou Gharagozloo (P0153),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
 C0261,person,P0155,parentage,Child of Mohammad Khan Hajilou Gharagozloo (P0153),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
-C0262,person,P0156,parentage,Child of Mohammad Khan Hajilou Gharagozloo (P0153),probable,active,User-supplied branch reconstruction aligned to S0001 Figure 4.
+C0262,person,P0156,parentage,Child of Mohammad Khan Hajilou Gharagozloo (P0153),confirmed,active,"Existing Figure 4 placement independently confirmed by Khateraat-e Farid opening biography, citation X1519."
 C0263,person,P0157,parentage,Child of Mohammad Khan Hajilou Gharagozloo (P0153),unverified,active,"The relationship is visible in the verified PowerPoint, but the child’s name is unreadable and represented as ??."
 C0264,person,P0158,parentage,Child of Haji Mohammad Khan Jeyhunabadi (P0001),confirmed,active,User-confirmed reconstruction.
 C0265,person,P0159,parentage,Child of Haji Mohammad Khan Jeyhunabadi (P0001),confirmed,active,User-confirmed reconstruction.
@@ -584,3 +584,6 @@ C1554,person,P0182,parentage,Amirzadeh Khanom P0182 is a daughter of Mohammad-Ho
 C1555,person,P0183,parentage,Akhtar Piran P0183 is a daughter of Amirzadeh Khanom Gharagozloo P0182.,confirmed,active,Direct family testimony confirmed through older family members.
 C1556,person,P0183,spouse,Akhtar Piran P0183 is the spouse of Gholamhossein Khan Amiri Gharagozloo P0008.,confirmed,active,Direct archive-owner family testimony.
 C1557,person,P0009,maternal_parentage,Dr. Alireza Amiri Gharagozloo P0009 is a son of Akhtar Piran P0183.,confirmed,active,Direct archive-owner family testimony.
+C1558,person,P0184,identity,Masoud Farid Gharagozloo is the compiler of Khateraat-e Farid.,confirmed,active,Named on the book's opening matter and signed introduction.
+C1559,person,P0184,parentage,Masoud Farid Gharagozloo P0184 is a son of Mirza Mohammad Ali Khan Farid al-Molk Hamadani Gharagozloo P0156.,confirmed,active,Masoud explicitly identifies the memoirist as his father.
+C1560,person,P0156,identity_and_title,"P0156 is Mirza Mohammad Ali Khan, titled Farid al-Molk Hamadani, son of Mohammad Khan Hajilou P0153.",confirmed,active,"Independent primary-family memoir confirmation of identity, title, and placement."
