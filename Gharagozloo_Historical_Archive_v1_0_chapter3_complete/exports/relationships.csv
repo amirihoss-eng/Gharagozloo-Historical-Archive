@@ -158,3 +158,9 @@ R0158,P0072,parent_of,P0011,"Alvandi treats Shahbaz Khan as the probable father 
 R0159,P0070,ancestral_hypothesis,P0072,Alvandi raises the possibility that Shahbaz Khan was among the descendants of Safavid-era Ebrahim Khan Gharagozloo. This is an ancestry hypothesis only and is NOT a direct parent-child assertion.,possible
 R0160,P0008,parent_of,P0178,"Direct archive-owner family testimony: Gholamhossein Khan Amiri Gharagozloo had two sons, Dr. Alireza Amiri Gharagozloo P0009 and Ali Amiri Gharagozloo P0178. A0219 independently preserves a family-verified photograph of father and son.",confirmed
 R0161,P0179,ancestral_hypothesis,P0094,Majmooe Asaar calls Qara Mohammad the remote ancestor of the Hajilou branch and preserves additional intermediate family-tradition names in the opening genealogy. This edge means ancestry only; it does NOT assert that Qara Mohammad was the direct father of P0094 Haji Mohammad Jafar Khan.,possible
+R0162,P0180,spouse_of,P0009,,provisional
+R0163,P0181,spouse_of,P0178,,provisional
+R0164,P0022,parent_of,P0182,Family-verified photograph A0240 identifies Amirzadeh Khanom as a daughter of Hossein Khan Hesam al-Molk I P0022.,confirmed
+R0165,P0182,parent_of,P0183,"Direct archive-owner family testimony dated 2026-08-22, confirmed after consultation with older family members: Amirzadeh Khanom was the mother of Akhtar Piran.",confirmed
+R0166,P0183,spouse_of,P0008,Direct archive-owner family testimony identifies Akhtar Piran as the spouse of Gholamhossein Khan Amiri Gharagozloo P0008.,confirmed
+R0167,P0183,parent_of,P0009,Direct archive-owner family testimony identifies Akhtar Piran as the mother of Dr. Alireza Amiri Gharagozloo P0009 and therefore the paternal grandmother of P0010.,confirmed

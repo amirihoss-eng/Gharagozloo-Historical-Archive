@@ -12,15 +12,15 @@
 11,P0012,Hossein Qoli Khan Ejlal al-Dowleh,en,title-form,0
 12,P0012,حسینقلی خان اجلال‌الدوله امیرتومان,fa,title-form,0
 13,P0013,Nabi Khan Gharagozloo,en,preferred,1
-14,P0013,نبی‌خان قراگوزلو,fa,preferred,1
+14,P0013,نبی‌خان قراگزلو,fa,preferred,1
 15,P0014,Mahmoud Khan Gharagozloo,en,preferred,1
-16,P0014,محمودخان قراگوزلو,fa,preferred,1
+16,P0014,محمودخان قراگزلو,fa,preferred,1
 17,P0015,Abdollah Khan Gharagozloo (Herat officer),en,preferred,1
-18,P0015,عبدالله خان قراگوزلو,fa,preferred,1
+18,P0015,عبدالله خان قراگزلو,fa,preferred,1
 19,P0016,Shir Ali Khan Gharagozloo,en,preferred,1
-20,P0016,شیرعلی خان قراگوزلو,fa,preferred,1
+20,P0016,شیرعلی خان قراگزلو,fa,preferred,1
 21,P0017,Rashid Khan Gharagozloo,en,preferred,1
-22,P0017,رشیدخان قراگوزلو,fa,preferred,1
+22,P0017,رشیدخان قراگزلو,fa,preferred,1
 24,P0019,Ali Khan Nosrat al-Molk Gharagozloo,en,preferred,1
 26,P0021,Lotf Ali Khan Sartip Gharagozloo,en,preferred,1
 27,P0022,Mohammad Hossein Khan Hosam al-Molk Gharagozloo,en,preferred,1
@@ -43,9 +43,9 @@
 44,P0039,Zia al-Molk Farmand Gharagozloo,en,preferred,1
 45,P0040,Abu al-Qasem Khan Naser al-Molk Gharagozloo,en,preferred,1
 46,P0041,Hossein Ali Gharagozloo,en,preferred,1
-47,P0041,حسینعلی قراگوزلو,fa,preferred,1
+47,P0041,حسینعلی قراگزلو,fa,preferred,1
 48,P0042,Mohsen Gharagozloo,en,preferred,1
-49,P0042,محسن قراگوزلو,fa,preferred,1
+49,P0042,محسن قراگزلو,fa,preferred,1
 50,P0043,Unnamed daughter of Naser al-Molk,en,preferred,1
 51,P0043,دختر ناصرالملک,fa,preferred,1
 52,P0044,Mirza Mehdi Khan Monshi-Bashi,en,preferred,1
@@ -100,203 +100,203 @@
 103,P0081,Raha Amiri Gharagozloo,en,canonical,1
 104,P0082,Saam Amiri Gharagozloo,en,canonical,1
 105,P0083,Alireza Khan Gharagozloo,en,canonical,1
-106,P0083,علیرضا خان قراگوزلو,fa,canonical,1
+106,P0083,علیرضا خان قراگزلو,fa,canonical,1
 107,P0084,Kazem Khan Gharagozloo,en,canonical,1
-108,P0084,کاظم خان قراگوزلو,fa,canonical,1
+108,P0084,کاظم خان قراگزلو,fa,canonical,1
 109,P0085,Mahmoud Khan Gharagozloo,en,superseded_reading,0
-110,P0085,محمود خان قراگوزلو,fa,superseded_reading,0
+110,P0085,محمود خان قراگزلو,fa,superseded_reading,0
 111,P0086,Ali Akbar Khan Gharagozloo,en,canonical,1
-112,P0086,علی‌اکبر خان قراگوزلو,fa,canonical,1
+112,P0086,علی‌اکبر خان قراگزلو,fa,canonical,1
 113,P0087,Mehdi Khan Gharagozloo,en,canonical,1
-114,P0087,مهدی خان قراگوزلو,fa,canonical,1
+114,P0087,مهدی خان قراگزلو,fa,canonical,1
 115,P0085,Majid Khan Gharagozloo,en,canonical,1
-116,P0085,مجید خان قراگوزلو,fa,canonical,1
+116,P0085,مجید خان قراگزلو,fa,canonical,1
 117,P0088,Alireza Khan Abadi Gharagozloo,en,superseded_reading,0
-118,P0088,علیرضا خان آبادی قراگوزلو,fa,superseded_reading,0
+118,P0088,علیرضا خان آبادی قراگزلو,fa,superseded_reading,0
 119,P0088,Alireza Khan [full descriptor unresolved] Abadi,en,partial_chart_reading,0
 120,P0089,Noor Mohammad Khan Gharagozloo,en,canonical,1
-121,P0089,نورمحمد خان قراگوزلو,fa,canonical,1
+121,P0089,نورمحمد خان قراگزلو,fa,canonical,1
 122,P0090,Asadollah Khan Gharagozloo,en,canonical,1
-123,P0090,اسدالله خان قراگوزلو,fa,canonical,1
+123,P0090,اسدالله خان قراگزلو,fa,canonical,1
 124,P0091,Panahollah Khan Jalal al-Saltaneh Gharagozloo,en,canonical,1
-125,P0091,پناه‌الله خان جلال‌السلطنه قراگوزلو,fa,canonical,1
+125,P0091,پناه‌الله خان جلال‌السلطنه قراگزلو,fa,canonical,1
 126,P0092,Seyfollah Khan Jalali Gharagozloo,en,canonical,1
-127,P0092,سیف‌الله خان جلالی قراگوزلو,fa,canonical,1
+127,P0092,سیف‌الله خان جلالی قراگزلو,fa,canonical,1
 128,P0093,Hossein Ali Khan Fath al-Saltaneh Gharagozloo,en,canonical,1
-129,P0093,حسینعلی خان فتح‌السلطنه قراگوزلو,fa,canonical,1
+129,P0093,حسینعلی خان فتح‌السلطنه قراگزلو,fa,canonical,1
 130,P0088,Ali Khan Jalal al-Molk Gharagozloo,en,canonical,1
-131,P0088,علی خان جلال‌الملک قراگوزلو,fa,canonical,1
+131,P0088,علی خان جلال‌الملک قراگزلو,fa,canonical,1
 132,P0088,Ali Khan Jalal al-Molk,en,title_form,0
 133,P0088,علی خان جلال‌الملک,fa,title_form,0
 134,P0094,Haji Mohammad Jafar Khan Gharagozloo,en,canonical,1
-135,P0094,حاجی محمدجعفر خان قراگوزلو,fa,canonical,1
+135,P0094,حاجی محمدجعفر خان قراگزلو,fa,canonical,1
 136,P0095,Haji Abdollah Khan Gharagozloo,en,canonical,1
-137,P0095,حاجی عبدالله خان قراگوزلو,fa,canonical,1
+137,P0095,حاجی عبدالله خان قراگزلو,fa,canonical,1
 138,P0096,Haji Fazlollah Khan Royani Gharagozloo,en,canonical,1
-139,P0096,حاجی فضل‌الله خان رویانی قراگوزلو,fa,canonical,1
+139,P0096,حاجی فضل‌الله خان رویانی قراگزلو,fa,canonical,1
 140,P0097,Haji Safar Khan Gharagozloo,en,canonical,1
-141,P0097,حاجی صفر خان قراگوزلو,fa,canonical,1
+141,P0097,حاجی صفر خان قراگزلو,fa,canonical,1
 142,P0098,Haji Mina Khan Kabudarahangi Gharagozloo,en,canonical,1
-143,P0098,حاجی مینا خان کبودراهنگی قراگوزلو,fa,canonical,1
+143,P0098,حاجی مینا خان کبودراهنگی قراگزلو,fa,canonical,1
 144,P0073,Nasrollah Khan Korijani Gharagozloo,en,canonical,1
-145,P0073,نصرالله خان کوریجانی قراگوزلو,fa,canonical,1
+145,P0073,نصرالله خان کوریجانی قراگزلو,fa,canonical,1
 146,P0099,Sheikh Mohammad Jafar Khan Majzub Ali Shah Kabudarahangi Gharagozloo,en,canonical,1
-147,P0099,شیخ محمدجعفر خان مجذوب‌علیشاه کبودراهنگی قراگوزلو,fa,canonical,1
+147,P0099,شیخ محمدجعفر خان مجذوب‌علیشاه کبودراهنگی قراگزلو,fa,canonical,1
 148,P0099,Haji Mohammad Jafar Khan Majzub Ali Shah,en,title_form,0
 149,P0099,حاجی محمدجعفر خان مجذوب‌علیشاه,fa,title_form,0
 150,P0100,Abd al-Javad Gharagozloo,en,superseded_reading,0
-151,P0100,عبدالجواد قراگوزلو,fa,superseded_reading,0
+151,P0100,عبدالجواد قراگزلو,fa,superseded_reading,0
 152,P0101,Agha Mohammad Ebrahim Gharagozloo,en,canonical,1
-153,P0101,آقا محمدابراهیم قراگوزلو,fa,canonical,1
+153,P0101,آقا محمدابراهیم قراگزلو,fa,canonical,1
 154,P0102,Abd al-Majid Gharagozloo,en,superseded_reading,0
-155,P0102,عبدالمجید قراگوزلو,fa,superseded_reading,0
+155,P0102,عبدالمجید قراگزلو,fa,superseded_reading,0
 156,P0103,Mirza Ali-Naqi Gharagozloo,en,canonical,1
-157,P0103,میرزا علی‌نقی قراگوزلو,fa,canonical,1
+157,P0103,میرزا علی‌نقی قراگزلو,fa,canonical,1
 158,P0104,Mirza Lotfollah Gharagozloo,en,canonical,1
-159,P0104,میرزا لطف‌الله قراگوزلو,fa,canonical,1
+159,P0104,میرزا لطف‌الله قراگزلو,fa,canonical,1
 160,P0073,Nasrollah Khan Gharagozloo,en,short_form,0
-161,P0073,نصرالله خان قراگوزلو,fa,short_form,0
+161,P0073,نصرالله خان قراگزلو,fa,short_form,0
 162,P0105,Gholam Khan Gharagozloo,en,canonical,1
-163,P0105,غلام خان قراگوزلو,fa,canonical,1
+163,P0105,غلام خان قراگزلو,fa,canonical,1
 164,P0106,Noor Ali Khan Gharagozloo,en,canonical,1
-165,P0106,نورعلی خان قراگوزلو,fa,canonical,1
+165,P0106,نورعلی خان قراگزلو,fa,canonical,1
 166,P0107,Morteza Qoli Khan Kabudarahangi Gharagozloo,en,canonical,1
-167,P0107,مرتضی‌قلی خان کبودراهنگی قراگوزلو,fa,canonical,1
+167,P0107,مرتضی‌قلی خان کبودراهنگی قراگزلو,fa,canonical,1
 168,P0107,Morteza Qoli Khan Gharagozloo,en,figure_form,0
-169,P0107,مرتضی‌قلی خان قراگوزلو,fa,figure_form,0
+169,P0107,مرتضی‌قلی خان قراگزلو,fa,figure_form,0
 170,P0108,Shir Ali Khan Kabudarahangi Gharagozloo,en,canonical,0
-171,P0108,شیرعلی خان کبودراهنگی قراگوزلو,fa,canonical,0
+171,P0108,شیرعلی خان کبودراهنگی قراگزلو,fa,canonical,0
 172,P0108,Shir Ali Khan Gharagozloo,en,figure_form,0
-173,P0108,شیرعلی خان قراگوزلو,fa,figure_form,0
+173,P0108,شیرعلی خان قراگزلو,fa,figure_form,0
 174,P0109,Mansur al-Molk Gharagozloo,en,canonical,1
-175,P0109,منصورالملک قراگوزلو,fa,canonical,1
+175,P0109,منصورالملک قراگزلو,fa,canonical,1
 176,P0110,Mohammad Mirza Khan Gharagozloo,en,canonical,1
-177,P0110,محمدمیرزا خان قراگوزلو,fa,canonical,1
+177,P0110,محمدمیرزا خان قراگزلو,fa,canonical,1
 178,P0111,Hasan Agha Gharagozloo,en,canonical,0
-179,P0111,حسن آقا قراگوزلو,fa,canonical,0
+179,P0111,حسن آقا قراگزلو,fa,canonical,0
 180,P0112,Soltan Ali Khan Gharagozloo,en,canonical,1
-181,P0112,سلطان‌علی خان قراگوزلو,fa,canonical,1
+181,P0112,سلطان‌علی خان قراگزلو,fa,canonical,1
 182,P0113,Mohammad Hossein Khan Kabudarahangi Gharagozloo,en,superseded_reading,0
-183,P0113,محمدحسین خان کبودراهنگی قراگوزلو,fa,superseded_reading,0
+183,P0113,محمدحسین خان کبودراهنگی قراگزلو,fa,superseded_reading,0
 184,P0113,Mohammad Hossein Khan Gharagozloo,en,figure_form,0
-185,P0113,محمدحسین خان قراگوزلو,fa,figure_form,0
+185,P0113,محمدحسین خان قراگزلو,fa,figure_form,0
 186,P0114,Sarhang Mohammad Hossein Khan Kabudarahangi Gharagozloo,en,canonical,1
-187,P0114,سرهنگ محمدحسین خان کبودراهنگی قراگوزلو,fa,canonical,1
+187,P0114,سرهنگ محمدحسین خان کبودراهنگی قراگزلو,fa,canonical,1
 188,P0114,Sarhang Mohammad Hossein Khan Gharagozloo,en,figure_form,0
-189,P0114,سرهنگ محمدحسین خان قراگوزلو,fa,figure_form,0
+189,P0114,سرهنگ محمدحسین خان قراگزلو,fa,figure_form,0
 190,P0096,Haji Fazl Allah Khan Gharagozloo,en,user_form,0
-191,P0096,حاجی فضل‌الله خان قراگوزلو,fa,user_form,0
+191,P0096,حاجی فضل‌الله خان قراگزلو,fa,user_form,0
 192,P0115,Mohammad Hassan Khan Gharagozloo,en,canonical,1
-193,P0115,محمدحسن خان قراگوزلو,fa,canonical,1
+193,P0115,محمدحسن خان قراگزلو,fa,canonical,1
 194,P0115,Mohammad Hassan Khan ?,en,user_transcription_with_uncertainty,0
 195,P0116,Ali Khan Gharagozloo,en,canonical,1
-196,P0116,علی خان قراگوزلو,fa,canonical,1
+196,P0116,علی خان قراگزلو,fa,canonical,1
 197,P0117,Hossein Ali Khan Gharagozloo,en,canonical,1
-198,P0117,حسینعلی خان قراگوزلو,fa,canonical,1
+198,P0117,حسینعلی خان قراگزلو,fa,canonical,1
 199,P0117,Hossein Ali Khan ?,en,user_transcription_with_uncertainty,0
 200,P0118,Abdolhossein Khan Farkhari Gharagozloo,en,canonical,1
-201,P0118,عبدالحسین خان فرخاری قراگوزلو,fa,canonical,1
+201,P0118,عبدالحسین خان فرخاری قراگزلو,fa,canonical,1
 202,P0119,Ali Mohammad Khan Gharagozloo,en,canonical,1
-203,P0119,علی‌محمد خان قراگوزلو,fa,canonical,1
+203,P0119,علی‌محمد خان قراگزلو,fa,canonical,1
 204,P0120,Shafi Khan Gharagozloo,en,canonical,1
-205,P0120,شفیع خان قراگوزلو,fa,canonical,1
+205,P0120,شفیع خان قراگزلو,fa,canonical,1
 206,P0121,Gholam Ali Khan Gharagozloo,en,canonical,1
-207,P0121,غلامعلی خان قراگوزلو,fa,canonical,1
+207,P0121,غلامعلی خان قراگزلو,fa,canonical,1
 208,P0122,Sadegh Khan Gharagozloo,en,canonical,1
-209,P0122,صادق خان قراگوزلو,fa,canonical,1
+209,P0122,صادق خان قراگزلو,fa,canonical,1
 210,P0123,Mirza Soltan Gharagozloo,en,canonical,1
-211,P0123,میرزا سلطان قراگوزلو,fa,canonical,1
+211,P0123,میرزا سلطان قراگزلو,fa,canonical,1
 212,P0123,Mirza Soltan ?,en,user_transcription_with_uncertainty,0
 213,P0124,Najaf Qoli Khan Gharagozloo,en,canonical,1
-214,P0124,نجف‌قلی خان قراگوزلو,fa,canonical,1
+214,P0124,نجف‌قلی خان قراگزلو,fa,canonical,1
 215,P0125,Abdolrahman Gharagozloo,en,canonical,1
-216,P0125,عبدالرحمان قراگوزلو,fa,canonical,1
+216,P0125,عبدالرحمان قراگزلو,fa,canonical,1
 217,P0126,Heydar Qoli Khan Gharagozloo,en,canonical,1
-218,P0126,حیدرقلی خان قراگوزلو,fa,canonical,1
+218,P0126,حیدرقلی خان قراگزلو,fa,canonical,1
 219,P0127,Mohammad Morad Beg Gharagozloo,en,canonical,1
-220,P0127,محمدمراد بیگ قراگوزلو,fa,canonical,1
+220,P0127,محمدمراد بیگ قراگزلو,fa,canonical,1
 221,P0128,Fath Ali Beg Gharagozloo,en,canonical,1
-222,P0128,فتحعلی بیگ قراگوزلو,fa,canonical,1
+222,P0128,فتحعلی بیگ قراگزلو,fa,canonical,1
 223,P0129,Mohammad Vali Beg Gharagozloo,en,canonical,1
-224,P0129,محمدولی بیگ قراگوزلو,fa,canonical,1
+224,P0129,محمدولی بیگ قراگزلو,fa,canonical,1
 225,P0130,Ali Khan Gharagozloo,en,canonical,1
-226,P0130,علی خان قراگوزلو,fa,canonical,1
+226,P0130,علی خان قراگزلو,fa,canonical,1
 227,P0131,Mohammad Zahir Fath al-Dowleh Gharagozloo,en,canonical,1
-228,P0131,محمدظاهر فتح‌الدوله قراگوزلو,fa,canonical,1
+228,P0131,محمدظاهر فتح‌الدوله قراگزلو,fa,canonical,1
 229,P0131,Mohammad Zaher ? Fath Dolleh ?,en,user_transcription_with_uncertainty,0
 230,P0132,Khair Allah Khan Gharagozloo,en,canonical,1
-231,P0132,خیرالله خان قراگوزلو,fa,canonical,1
+231,P0132,خیرالله خان قراگزلو,fa,canonical,1
 232,P0133,Abdollah Khan Gharagozloo,en,canonical,1
-233,P0133,عبدالله خان قراگوزلو,fa,canonical,1
+233,P0133,عبدالله خان قراگزلو,fa,canonical,1
 234,P0134,Aman Allah Khan Gharagozloo,en,canonical,1
-235,P0134,امان‌الله خان قراگوزلو,fa,canonical,1
+235,P0134,امان‌الله خان قراگزلو,fa,canonical,1
 236,P0135,Karim Khan Gharagozloo,en,canonical,1
-237,P0135,کریم خان قراگوزلو,fa,canonical,1
+237,P0135,کریم خان قراگزلو,fa,canonical,1
 238,P0136,Mahmoud Khan Gharagozloo,en,canonical,1
-239,P0136,محمود خان قراگوزلو,fa,canonical,1
+239,P0136,محمود خان قراگزلو,fa,canonical,1
 240,P0137,Enayat Allah Khan Gharagozloo,en,canonical,1
-241,P0137,عنایت‌الله خان قراگوزلو,fa,canonical,1
+241,P0137,عنایت‌الله خان قراگزلو,fa,canonical,1
 242,P0138,Habib Allah Khan Gharagozloo,en,canonical,1
-243,P0138,حبیب‌الله خان قراگوزلو,fa,canonical,1
+243,P0138,حبیب‌الله خان قراگزلو,fa,canonical,1
 244,P0139,Noor Allah Khan Gharagozloo,en,canonical,1
-245,P0139,نورالله خان قراگوزلو,fa,canonical,1
+245,P0139,نورالله خان قراگزلو,fa,canonical,1
 246,P0140,Nasr Allah Khan Gharagozloo,en,canonical,1
-247,P0140,نصرالله خان قراگوزلو,fa,canonical,1
+247,P0140,نصرالله خان قراگزلو,fa,canonical,1
 248,P0141,Soltan Fath Ali Gharagozloo,en,canonical,1
-249,P0141,سلطان فتحعلی قراگوزلو,fa,canonical,1
+249,P0141,سلطان فتحعلی قراگزلو,fa,canonical,1
 250,P0141,Soltan Fath Ali ?,en,user_transcription_with_uncertainty,0
 251,P0142,Hasan Gharagozloo,en,canonical,1
-252,P0142,حسن قراگوزلو,fa,canonical,1
+252,P0142,حسن قراگزلو,fa,canonical,1
 253,P0142,Hassan ??,en,user_transcription_with_uncertainty,0
 254,P0143,Shir Ali Beg Gharagozloo,en,canonical,1
-255,P0143,شیرعلی بیگ قراگوزلو,fa,canonical,1
+255,P0143,شیرعلی بیگ قراگزلو,fa,canonical,1
 256,P0144,Zolfaghar Khan Gharagozloo,en,canonical,1
-257,P0144,ذوالفقار خان قراگوزلو,fa,canonical,1
+257,P0144,ذوالفقار خان قراگزلو,fa,canonical,1
 258,P0144,Zolfaghar Khan ??,en,user_transcription_with_uncertainty,0
 259,P0145,Hasan Gharagozloo,en,superseded_reading,0
-260,P0145,حسن قراگوزلو,fa,superseded_reading,0
+260,P0145,حسن قراگزلو,fa,superseded_reading,0
 261,P0145,Hassan ??,en,user_transcription_with_uncertainty,0
 262,P0146,Fath Ali Khan Gharagozloo,en,canonical,1
-263,P0146,فتحعلی خان قراگوزلو,fa,canonical,1
+263,P0146,فتحعلی خان قراگزلو,fa,canonical,1
 264,P0147,Ghasem Khan Gharagozloo,en,canonical,1
-265,P0147,قاسم خان قراگوزلو,fa,canonical,1
+265,P0147,قاسم خان قراگزلو,fa,canonical,1
 266,P0148,Nasr Allah Khan Gharagozloo,en,canonical,1
-267,P0148,نصرالله خان قراگوزلو,fa,canonical,1
+267,P0148,نصرالله خان قراگزلو,fa,canonical,1
 268,P0149,Hossein Ali Khan Gharagozloo,en,canonical,1
-269,P0149,حسینعلی خان قراگوزلو,fa,canonical,1
+269,P0149,حسینعلی خان قراگزلو,fa,canonical,1
 270,P0149,Hossein Ali Khan ?,en,user_transcription_with_uncertainty,0
 271,P0150,Aziz Khan Gharagozloo,en,canonical,1
-272,P0150,عزیز خان قراگوزلو,fa,canonical,1
+272,P0150,عزیز خان قراگزلو,fa,canonical,1
 273,P0150,Aziz ? Khan,en,user_transcription_with_uncertainty,0
 274,P0151,Fazl Allah Khan Gharagozloo,en,canonical,1
-275,P0151,فضل‌الله خان قراگوزلو,fa,canonical,1
+275,P0151,فضل‌الله خان قراگزلو,fa,canonical,1
 276,P0152,Moosa Khan Gharagozloo,en,canonical,1
-277,P0152,موسی خان قراگوزلو,fa,canonical,1
+277,P0152,موسی خان قراگزلو,fa,canonical,1
 278,P0153,Mohammad Khan Hajilou Gharagozloo,en,canonical,1
-279,P0153,محمد خان حاجیلو قراگوزلو,fa,canonical,1
+279,P0153,محمد خان حاجیلو قراگزلو,fa,canonical,1
 280,P0153,Mohammad Khan Hajilou ??,en,user_transcription_with_uncertainty,0
 281,P0154,Taghi Khan Gharagozloo,en,canonical,1
-282,P0154,تقی خان قراگوزلو,fa,canonical,1
+282,P0154,تقی خان قراگزلو,fa,canonical,1
 283,P0155,Mohammad Hassan Khan Gharagozloo,en,canonical,1
-284,P0155,محمدحسن خان قراگوزلو,fa,canonical,1
+284,P0155,محمدحسن خان قراگزلو,fa,canonical,1
 285,P0156,Farid al-Molk Mirza Mohammad Ali Khan Hamadani Gharagozloo,en,canonical,1
-286,P0156,فریدالملک میرزا محمدعلی خان همدانی قراگوزلو,fa,canonical,1
+286,P0156,فریدالملک میرزا محمدعلی خان همدانی قراگزلو,fa,canonical,1
 287,P0100,Unnamed son of Sheikh Mohammad Jafar Khan Majzub Ali Shah,en,canonical,1
 288,P0100,پسر نامعلوم شیخ محمدجعفر خان مجذوب‌علیشاه,fa,canonical,1
 289,P0100,??,und,user_transcription_with_uncertainty,0
 290,P0102,Agha Abdol Hamid Gharagozloo,en,canonical,1
-291,P0102,آقا عبدالحامد قراگوزلو,fa,canonical,1
+291,P0102,آقا عبدالحامد قراگزلو,fa,canonical,1
 292,P0102,Agha Abd Allah Hamid,en,user_form,0
 293,P0103,Mirza Ali Naghi ? Abadi Mojtahed,en,user_transcription_with_uncertainty,0
 294,P0103,میرزا علی‌نقی ؟ آبادی مجتهد,fa,user_transcription_with_uncertainty,0
 295,P0113,Mohammad Hassan Khan Kabudarahangi Gharagozloo,en,canonical,1
-296,P0113,محمدحسن خان کبودراهنگی قراگوزلو,fa,canonical,1
+296,P0113,محمدحسن خان کبودراهنگی قراگزلو,fa,canonical,1
 297,P0113,Mohammad Hassan Khan,en,user_form,0
 298,P0113,محمدحسن خان,fa,user_form,0
 299,P0112,Soltan Ali ? Khan,en,user_transcription_with_uncertainty,0
 300,P0112,سلطان‌علی ؟ خان,fa,user_transcription_with_uncertainty,0
 301,P0145,Assad Khan Gharagozloo,en,canonical,1
-302,P0145,اسد خان قراگوزلو,fa,canonical,1
+302,P0145,اسد خان قراگزلو,fa,canonical,1
 303,P0145,Assas Khan ??,en,powerpoint_uncertain_form,0
 304,P0111,Hassan Agha Gharagozloo,en,canonical,1
 306,P0111,Haqssan Agha,en,powerpoint_misspelling,0
@@ -305,17 +305,17 @@
 311,P0157,فرزند نامعلوم محمد خان حاجیلو,fa,canonical,1
 312,P0157,??,und,powerpoint_uncertain_form,0
 313,P0158,Zolfaghar Khan Gharagozloo,en,canonical,1
-314,P0158,ذوالفقار خان قراگوزلو,fa,canonical,1
+314,P0158,ذوالفقار خان قراگزلو,fa,canonical,1
 315,P0159,Haji Yavar Mohammad Gholi Khan Gharagozloo,en,canonical,1
-316,P0159,حاجی یاور محمدقلی خان قراگوزلو,fa,canonical,1
+316,P0159,حاجی یاور محمدقلی خان قراگزلو,fa,canonical,1
 317,P0160,Haji Hamze Khan Gharagozloo,en,canonical,1
-318,P0160,حاجی حمزه خان قراگوزلو,fa,canonical,1
+318,P0160,حاجی حمزه خان قراگزلو,fa,canonical,1
 319,P0161,Fath Ali Khan Gharagozloo,en,canonical,1
-320,P0161,فتحعلی خان قراگوزلو,fa,canonical,1
+320,P0161,فتحعلی خان قراگزلو,fa,canonical,1
 321,P0162,Sarhang Mohammad Amin Khan Gharagozloo,en,canonical,1
-322,P0162,سرهنگ محمدامین خان قراگوزلو,fa,canonical,1
+322,P0162,سرهنگ محمدامین خان قراگزلو,fa,canonical,1
 323,P0163,Haji Sadegh Khan Gharagozloo,en,canonical,1
-324,P0163,حاجی صادق خان قراگوزلو,fa,canonical,1
+324,P0163,حاجی صادق خان قراگزلو,fa,canonical,1
 325,P0164,"Haji Ali Khan, son of Haji Hamze Khan",en,canonical,1
 326,P0164,حاجی علی خان، فرزند حاجی حمزه خان,fa,canonical,1
 327,P0164,Haji Ali Khan,en,short_form,0
@@ -326,31 +326,48 @@
 332,P0166,حاجی علی خان، فرزند کاظم خان,fa,canonical,1
 333,P0166,Haji Ali Khan,en,short_form,0
 334,P0167,Sharif Khan Gharagozloo,en,canonical,1
-335,P0167,شریف خان قراگوزلو,fa,canonical,1
+335,P0167,شریف خان قراگزلو,fa,canonical,1
 336,P0168,Mostafa Gharagozloo,en,canonical,1
-337,P0168,مصطفی قراگوزلو,fa,canonical,1
+337,P0168,مصطفی قراگزلو,fa,canonical,1
 338,P0169,Adel Khan Gharagozloo,en,canonical,1
-339,P0169,عادل خان قراگوزلو,fa,canonical,1
+339,P0169,عادل خان قراگزلو,fa,canonical,1
 340,P0012,Hossein Qoli Khan Amir Nezam,en,title-form,0
 341,P0012,حسینقلی خان امیرنظام,fa,title-form,0
 342,P0170,Gholam Ali Khan Hesam al-Molk Gharagozloo,en,canonical,1
-343,P0170,غلامعلی خان حسام‌الملک قراگوزلو,fa,canonical,1
+343,P0170,غلامعلی خان حسام‌الملک قراگزلو,fa,canonical,1
 344,P0171,Mehdi Qoli Khan Gharagozloo,en,canonical,1
-345,P0171,مهدی‌قلی خان قراگوزلو,fa,canonical,1
+345,P0171,مهدی‌قلی خان قراگزلو,fa,canonical,1
 346,P0172,Yahya Khan Gharagozloo,en,canonical,1
-347,P0172,یحیی خان قراگوزلو,fa,canonical,1
+347,P0172,یحیی خان قراگزلو,fa,canonical,1
 348,P0173,Manouchehr Gharagozloo,en,canonical,1
-349,P0173,منوچهر قراگوزلو,fa,canonical,1
+349,P0173,منوچهر قراگزلو,fa,canonical,1
 350,P0174,Fath Ali Khan Gharagozloo,en,canonical,1
-351,P0174,فتحعلی خان قراگوزلو,fa,canonical,1
+351,P0174,فتحعلی خان قراگزلو,fa,canonical,1
 352,P0175,Mohammad Shafi Khan Gharagozloo,en,canonical,1
-353,P0175,محمدشفیع خان قراگوزلو,fa,canonical,1
+353,P0175,محمدشفیع خان قراگزلو,fa,canonical,1
 354,P0176,Ezzat Allah Saremi,en,canonical,1
 355,P0176,عزت‌الله صارمی,fa,canonical,1
 356,P0177,Abdolhossein Khan Gharagozloo,en,canonical,1
-357,P0177,عبدالحسین خان قراگوزلو,fa,canonical,1
+357,P0177,عبدالحسین خان قراگزلو,fa,canonical,1
 358,P0178,Ali Gharagozloo,en,short-form,0
 359,P0178,Ali Amiri,en,short-form,0
 360,P0179,Qara Mohammad,en,short-form,0
 361,P0179,Ghara Mohammad,en,variant,0
 362,P0179,قرا محمد,fa,short-form,0
+363,P0180,Soudabeh Keykavousi,en,preferred,1
+364,P0181,Mahrokhzas SamSaam bakhtiar,en,preferred,1
+365,P0181,ماهرخ زاد صمصام بختیار,fa,preferred,1
+366,P0076,یاسمن امیری قراگزلو,fa,preferred,1
+367,P0180,سودابه کیکاووسی,fa,preferred,1
+368,P0079,آریانا نواب,fa,preferred,1
+369,P0078,یلدا نواب,fa,preferred,1
+370,P0081,رها امیری قراگزلو,fa,preferred,1
+371,P0082,سام امیری قراگزلو,fa,preferred,1
+372,P0077,امیر نواب,fa,preferred,1
+373,P0080,رویا یغمایی,fa,preferred,1
+374,P0179,Qara Mohammad Gharagozloo,en,superseded_archive_form,0
+375,P0179,قرا محمد قراگزلو,fa,superseded_archive_form,0
+376,P0182,Amirzadeh Khanom,en,short-form,0
+377,P0182,امیرزاده خانم,fa,short-form,0
+378,P0183,Akhtar Piran,en,canonical,1
+379,P0183,اختر پیران,fa,canonical,1

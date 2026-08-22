@@ -125,3 +125,6 @@ A0245,P0008,subject,Captioned and family-verified identity.
 A0247,P0042,subject,Caption identifies Mohsen Gharagozloo.
 A0252,P0042,attendee,Caption identifies Mohsen Gharagozloo among attendees.
 A0219,P0178,subject,Family-verified caption identifies Ali Amiri Gharagozloo with his father P0008.
+A0254,P0178,subject,Linked through Local Curator Mode
+A0255,P0009,subject,
+A0240,P0182,subject,Family-verified photographs of Amirzadeh Khanom; canonical identity established in migration 0056.

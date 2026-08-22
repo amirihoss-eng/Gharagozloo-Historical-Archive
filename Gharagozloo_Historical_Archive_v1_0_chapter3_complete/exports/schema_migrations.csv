@@ -51,3 +51,7 @@
 0050,0050_import_remaining_family_verified_photos_batch3.sql,7947b4ae9c50d326d900021c2c11e104918bf87309f88f00b190eff845965668,2026-08-05T01:43:26.935420+00:00,Applied by tools/apply_migration.py
 0051,0051_add_evidence_aware_early_ashiqloo_ancestry.sql,4e09e746ca65b702af843225b88cb1ef13f8306e6bca69d10d91c93d1f52a11e,2026-08-08T22:51:01.429132+00:00,Applied by tools/apply_migration.py
 0052,0052_add_ali_amiri_qara_mohammad_and_fix_generation_dates.sql,c333df196b27a8a228c98f521ec3c8b26101940a663d31dfd2cd956c91aa5d99,2026-08-08T23:29:38.741541+00:00,Applied by tools/apply_migration.py
+0053,0053_add_manual_edit_audit_framework.sql,a3629cf16b19d8b9dd75c4c15e0687432f93ea97bfd8460425f3dcf34949b4a0,2026-08-10T01:11:16.749214+00:00,Applied by tools/apply_migration.py
+0054,0054_normalize_persian_gharagozloo_spelling.sql,1aa202540d3df12cac8510576e92acaf3c45b3c3b1d81bca123b232461aa6e0b,2026-08-16T00:20:40.265656+00:00,Applied by tools/apply_migration.py
+0055,0055_refine_qara_mohammad_identity.sql,a03a8ca0cc5a6a2c89e62c351c4502f6a5fd376e4202c83e2e8096c9f19fa9d8,2026-08-17T23:01:58.415047+00:00,Applied by tools/apply_migration.py
+0056,0056_add_amirzadeh_akhtar_maternal_line.sql,c875f411a2f49f45110a1c45b78dd53d122d6f445759ffa389a8e0a9b1adb49a,2026-08-22T19:41:38.203434+00:00,Applied by tools/apply_migration.py

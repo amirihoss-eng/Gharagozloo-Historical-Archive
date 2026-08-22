@@ -242,3 +242,10 @@ EC1511,person,P0005,X1505,supports,Aqeli biography attached to canonical Mohtaj 
 EC1512,person,P0006,X1506,supports,Aqeli biography attached to canonical Mansur Ali Khan Sardar Akram.
 EC1513,person,P0008,X1503,supports,Aqeli biography attached to canonical Gholamhossein Khan Amiri Gharagozloo.
 EC1514,person,P0008,X1504,supports,Aqeli waqf evidence attached to canonical Gholamhossein Khan Amiri Gharagozloo.
+EC1515,person,P0182,X1516,supports,Family-verified identity and paternal placement.
+EC1516,person,P0182,X1517,supports,Direct family testimony for motherhood of Akhtar.
+EC1517,person,P0183,X1517,supports,Direct family testimony for identity and immediate family placement.
+EC1518,relationship,R0164,X1516,supports,Family-verified photograph caption.
+EC1519,relationship,R0165,X1517,supports,Confirmed older-family testimony.
+EC1520,relationship,R0166,X1517,supports,Direct family testimony.
+EC1521,relationship,R0167,X1517,supports,Direct family testimony.

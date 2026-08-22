@@ -42,3 +42,5 @@ A0249,family_verified,visible,Verified identity caption; canonical P-ID unresolv
 A0250,family_verified,visible,Verified family photograph; identities unresolved from clipped caption.
 A0251,family_verified,visible,Verified individual photograph; identity unresolved from clipped caption.
 A0252,family_verified,visible,Verified event photograph; linked to P0042 only.
+A0254,family_verified,visible,Added through Local Curator Mode
+A0255,family_verified,visible,Added through Local Curator Mode

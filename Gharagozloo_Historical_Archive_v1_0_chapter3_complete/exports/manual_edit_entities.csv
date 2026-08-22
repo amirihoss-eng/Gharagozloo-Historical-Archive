@@ -1,0 +1,12 @@
+﻿entity_type,entity_key,created_revision_id,active
+artifact_person,A0252|P0065|subject,1,0
+artifact,A0253,3,0
+artifact_person,A0253|P0178|subject,4,0
+artifact,A0254,6,1
+artifact_person,A0254|P0178|subject,7,1
+person,P0180,9,1
+relationship,R0162,10,1
+person,P0181,12,1
+relationship,R0163,13,1
+artifact,A0255,22,1
+artifact_person,A0255|P0009|subject,23,1
