@@ -56,3 +56,4 @@
 0055,0055_refine_qara_mohammad_identity.sql,a03a8ca0cc5a6a2c89e62c351c4502f6a5fd376e4202c83e2e8096c9f19fa9d8,2026-08-17T23:01:58.415047+00:00,Applied by tools/apply_migration.py
 0056,0056_add_amirzadeh_akhtar_maternal_line.sql,c875f411a2f49f45110a1c45b78dd53d122d6f445759ffa389a8e0a9b1adb49a,2026-08-22T19:41:38.203434+00:00,Applied by tools/apply_migration.py
 0057,0057_add_masoud_farid_and_resolve_farid_identity.sql,d52e3e5a1f0ffbd5ced7d44d69e0e0389d2d26757ba3d6dc54145d696c8d23c8,2026-08-22T20:09:56.576000+00:00,Applied by tools/apply_migration.py
+0058,0058_correct_amanollah_parentage.sql,14f7c311f79e785ce710047b906a14ccb1d40b37db1caae2b95cdac9c6fb6eac,2026-08-23T00:41:56.793032+00:00,Applied by tools/apply_migration.py

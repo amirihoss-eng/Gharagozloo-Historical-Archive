@@ -10,3 +10,5 @@ person,P0181,12,1
 relationship,R0163,13,1
 artifact,A0255,22,1
 artifact_person,A0255|P0009|subject,23,1
+artifact,A0256,26,1
+artifact_person,A0256|P0184|subject,27,1

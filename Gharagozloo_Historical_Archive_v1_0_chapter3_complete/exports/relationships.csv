@@ -19,7 +19,7 @@ R0018,P0011,parent_of,P0028,Book identifies Abdollah Khan Sarem al-Saltaneh as a
 R0019,P0028,parent_of,P0029,Negar Khanom was his daughter.,confirmed
 R0020,P0014,parent_of,P0030,Ahmad Khan Sartip was a son of Mahmoud Khan Naser al-Molk.,confirmed
 R0021,P0030,spouse_of,P0029,Marriage produced Mehdi Khan and Abd al-Ali Khan.,confirmed
-R0022,P0013,parent_of,P0031,Amanollah Khan was a son of Nabi Khan.,confirmed
+R0022,P0013,parent_of,P0031,"Superseded in migration 0058 after confirmed rereading of S0001 Figure 3 (X0115): Figure 3 places Amanollah Khan Baha al-Molk beneath Mahmoud Khan, not directly beneath Nabi Khan. The former prose-based interpretation is retained here for audit history.",superseded
 R0023,P0031,parent_of,P0032,,confirmed
 R0024,P0031,parent_of,P0033,,confirmed
 R0025,P0031,parent_of,P0034,,confirmed
@@ -165,3 +165,4 @@ R0165,P0182,parent_of,P0183,"Direct archive-owner family testimony dated 2026-08
 R0166,P0183,spouse_of,P0008,Direct archive-owner family testimony identifies Akhtar Piran as the spouse of Gholamhossein Khan Amiri Gharagozloo P0008.,confirmed
 R0167,P0183,parent_of,P0009,Direct archive-owner family testimony identifies Akhtar Piran as the mother of Dr. Alireza Amiri Gharagozloo P0009 and therefore the paternal grandmother of P0010.,confirmed
 R0168,P0156,parent_of,P0184,Khateraat-e Farid opening matter and Masoud Farid's signed introduction identify the memoirist P0156 as his father.,confirmed
+R0169,P0014,parent_of,P0031,"S0001 Figure 3 (X0115, printed p. 212) places Amanollah Khan Baha al-Molk beneath Mahmoud Khan in the Ashiqloo genealogy.",confirmed

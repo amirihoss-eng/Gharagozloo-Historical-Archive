@@ -257,3 +257,8 @@ EC1526,person,P0156,X1519,supports,Confirms P0156 identity and Farid al-Molk tit
 EC1527,person,P0153,X1519,supports,Names Mohammad Khan Hajilou as father of Farid al-Molk.
 EC1528,relationship,R0133,X1519,supports,Independent support for the existing P0153 -> P0156 placement.
 EC1529,research_question,Q0035,X1519,supports,"Evidence resolving the identity, title, and placement question."
+EC1530,relationship,R0014,X0115,supports,Figure 3 confirms Nabi Khan P0013 -> Mahmoud Khan P0014.
+EC1531,relationship,R0169,X0115,supports,Figure 3 confirms Mahmoud Khan P0014 -> Amanollah Khan P0031.
+EC1532,person,P0031,X0115,supports,Figure 3 supports Amanollah's corrected canonical placement.
+EC1533,research_question,Q0040,X0115,supports,Confirmed figure reading resolves the earlier compression-versus-parentage question.
+EC1534,evidence_conflict,CF006,X0115,supports,Confirmed figure reading resolves the preserved parentage conflict.

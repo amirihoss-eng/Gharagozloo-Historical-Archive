@@ -57,7 +57,7 @@ C0055,person,P0014,ministerial_office,Mahmoud Khan became the first minister of 
 C0056,person,P0028,death,Abdollah Khan Sarem al-Saltaneh died in Dhu al-Qada 1278 AH.,confirmed,active,
 C0057,person,P0028,marriage,His wife was a granddaughter of Abbas Mirza and daughter of Mohammad Shah.,confirmed,active,
 C0058,person,P0029,marriages,"Negar Khanom married Ahmad Khan Sartip and later Abd al-Samad Mirza, governor of Hamadan.",confirmed,active,
-C0059,person,P0031,lineage,Amanollah Khan Baha al-Molk was a son of Nabi Khan and founder of the Baha al-Molk Abshini family.,confirmed,active,
+C0059,person,P0031,lineage,Amanollah Khan Baha al-Molk was a son of Nabi Khan and founder of the Baha al-Molk Abshini family.,confirmed,superseded,"Superseded in migration 0058. Confirmed rereading of S0001 Figure 3 (X0115) establishes Mahmoud Khan P0014, not Nabi Khan P0013, as Amanollah's father. Original claim and X0029 provenance retained for history."
 C0060,person,P0031,children,"His sons were Hossein Qoli Khan, Ali Qoli Khan, and Morteza Qoli Khan, founders of three later family lines.",confirmed,active,
 C0061,person,P0004,governorship,Abdollah Khan was appointed governor of Khuzestan in 1314 AH and received the title Sardar Akram.,confirmed,active,
 C0062,person,P0005,title_grant,Mohtaj Ali Khan received the title Ejlal al-Mamalek at his father’s request in 1314 AH.,confirmed,active,
@@ -587,3 +587,4 @@ C1557,person,P0009,maternal_parentage,Dr. Alireza Amiri Gharagozloo P0009 is a s
 C1558,person,P0184,identity,Masoud Farid Gharagozloo is the compiler of Khateraat-e Farid.,confirmed,active,Named on the book's opening matter and signed introduction.
 C1559,person,P0184,parentage,Masoud Farid Gharagozloo P0184 is a son of Mirza Mohammad Ali Khan Farid al-Molk Hamadani Gharagozloo P0156.,confirmed,active,Masoud explicitly identifies the memoirist as his father.
 C1560,person,P0156,identity_and_title,"P0156 is Mirza Mohammad Ali Khan, titled Farid al-Molk Hamadani, son of Mohammad Khan Hajilou P0153.",confirmed,active,"Independent primary-family memoir confirmation of identity, title, and placement."
+C1561,person,P0031,parentage,Amanollah Khan Baha al-Molk Gharagozloo P0031 was a son of Mahmoud Khan Gharagozloo P0014.,confirmed,active,"Confirmed from the literal bracket structure of S0001 Figure 3, printed page 212."

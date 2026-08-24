@@ -187,3 +187,11 @@
 186,2026-08-22T20:00:00Z,research_question,Q0163,narrow,Narrowed Q0163 to the unresolved P0173 identity/fatherage conflict; no reparenting or identity split.
 187,2026-08-22T20:00:00Z,source,S0206,add,Cataloged Khateraat-e Farid as the primary source for the focused Farid follow-up.
 188,2026-08-22T20:09:56.576000+00:00,migration,0057,apply,Applied 0057_add_masoud_farid_and_resolve_farid_identity.sql
+189,2026-08-22T21:00:00Z,relationship,R0022,supersede,Superseded the incorrect active Nabi Khan P0013 -> Amanollah Khan P0031 relationship while preserving its history and provenance.
+190,2026-08-22T21:00:00Z,relationship,R0169,add,Added confirmed Mahmoud Khan P0014 -> Amanollah Khan Baha al-Molk P0031 from S0001 Figure 3.
+191,2026-08-22T21:00:00Z,claim,C0059,supersede,Superseded the former direct Nabi-to-Amanollah parentage claim; retained its original citation history.
+192,2026-08-22T21:00:00Z,claim,C1561,add,Added confirmed Amanollah parentage under Mahmoud Khan with X0115.
+193,2026-08-22T21:00:00Z,evidence_conflict,CF006,resolve,Resolved the Figure 3 parentage conflict in favor of Nabi -> Mahmoud -> Amanollah.
+194,2026-08-22T21:00:00Z,research_question,Q0040,resolve,Closed the Amanollah Figure 3 compression-versus-parentage question.
+195,2026-08-22T21:00:00Z,person,P0031,correct,Corrected Amanollah Khan Baha al-Molk summary to identify Mahmoud Khan P0014 as his father.
+196,2026-08-23T00:41:56.793032+00:00,migration,0058,apply,Applied 0058_correct_amanollah_parentage.sql
