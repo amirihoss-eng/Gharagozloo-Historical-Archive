@@ -219,13 +219,13 @@ document.addEventListener('click',e=>{const x=e.target.closest('[data-person-jum
 route('home');
 
 /* Living Historical Graph v2 */
-const mobileGraph=window.matchMedia('(max-width:760px)').matches;
-const graphV2={filtersOpen:false,drawerOpen:!mobileGraph,commandOpen:!mobileGraph,history:[]};
+const mobileGraph=window.matchMedia('(max-width:760px), (max-width:950px) and (max-height:560px)').matches;
+const graphV2={filtersOpen:false,drawerOpen:!mobileGraph,drawerExpanded:false,commandOpen:!mobileGraph,history:[],lastMobileGeometry:null,lastViewport:null,userNavigated:false,resizeTimer:null,resizeObserver:null};
 function route(name,arg){closeMobileMenu();document.body.classList.toggle('graph-mode',name==='graphcore');if(name==='curator')return curator();if(name==='curatorpeople')return curatorPeople();if(name==='graphcore')return graphCore(arg);if(name==='home')return home();if(name==='people')return people(arg||'');if(name==='person')return person(arg);if(name==='timeline')return timeline();if(name==='gallery')return gallery();if(name==='estates')return estates();if(name==='estate')return estate(arg);if(name==='organizations')return organizations();if(name==='organization')return organization(arg);if(name==='titles')return titles();if(name==='title')return title(arg);if(name==='research')return research();}
 async function graphCore(root){document.body.classList.add('graph-mode');app.innerHTML='<div class=loading>Building the living family graph…</div>';try{const d=graphState.data||await api('/api/graph/core');graphState.data=d;const requested=root||d.default_root||'P0094';if(!graphState.expanded.size){graphState.root=requested;graphState.lineageRoot=requested;graphState.expanded.add(requested)}else if(root){graphState.root=root}graphState.selected=graphState.selected||graphState.root;if(!graphV2.history.length)graphV2.history=[graphState.root];renderGraphCore()}catch(err){app.innerHTML=`<div class="panel"><h2>Graph could not load</h2><p>${esc(err.message)}</p><p>Open <code>/api/health</code> and confirm the server reports version 0.4.0-living-graph-v2.</p></div>`}}
 function renderGraphCore(){const d=graphState.data;const selected=d.nodes.find(n=>n.person_id===graphState.selected);app.innerHTML=`<section class="graph-v2"><section class="living-canvas"><div class="canvas-help">Drag to move · Scroll to zoom · Click a person · Use + to expand</div><svg id="livingGraph" viewBox="0 0 1600 1000"></svg><div id="hoverCard" class="hover-card"></div></section><aside class="floating-panel graph-command"><h2>Living Historical Graph</h2><p>Explore the family without losing your place.</p><label class="field-label">Find and center a person</label><input id="graphFind" list="graphPeople" placeholder="Type a name…"><datalist id="graphPeople">${d.nodes.filter(n=>!isContextNode(n.person_id)).map(n=>`<option value="${esc(n.preferred_name_en)}">${esc(n.preferred_name_fa||'')}</option>`).join('')}</datalist><div class="quick-actions"><button id="centerRoot">Make selected root</button><button id="collapseAll">Collapse all</button><button id="expandAllVisible">Expand visible</button><button id="gcHome" title="Return to the earliest canonical root of the selected lineage">Original root</button></div></aside><aside id="filterDrawer" class="floating-panel filter-drawer ${graphV2.filtersOpen?'':'collapsed'}"><div class="filter-section"><h3>Branches</h3><label class="check-row"><input type="checkbox" id="allBranches" ${graphState.branches.size?'':'checked'}> All branches</label>${d.branches.map(b=>`<label class="check-row"><input type="checkbox" class="branchCheck" value="${esc(b.branch)}" ${graphState.branches.has(b.branch)?'checked':''}> ${esc(b.branch)} <small>${b.count}</small></label>`).join('')}</div><div class="filter-section"><h3>Relationship layers</h3><label class="check-row"><input type="checkbox" checked disabled> Parent / child</label><label class="check-row"><input type="checkbox" checked disabled> Spouse</label><label class="check-row"><input type="checkbox" checked disabled> Sibling</label></div><div class="filter-section"><h3>Legend</h3><div class="legend"><span><i class="legend-line parent"></i>Parent / child</span><span><i class="legend-line spouse"></i>Spouse</span><span><i class="legend-line sibling"></i>Sibling</span></div></div></aside><button id="filterToggle" class="floating-panel filter-toggle icon-btn">${graphV2.filtersOpen?'Hide filters':'Show filters'}</button><div id="breadcrumbs" class="breadcrumbs"></div><aside id="personDrawer" class="floating-panel person-float ${graphV2.drawerOpen?'':'hidden'}"></aside><div class="zoom-cluster"><button id="gcZoomIn" title="Zoom in">＋</button><button id="gcZoomOut" title="Zoom out">－</button><button id="gcFit" title="Fit graph">Fit</button></div><div id="visibleCount" class="graph-status"></div></section>`;wireGraphControls();drawLivingGraph();renderBreadcrumbs();renderPersonDrawer(graphState.selected)}
 function renderBreadcrumbs(){const el=document.querySelector('#breadcrumbs');if(!el)return;const by=Object.fromEntries(graphState.data.nodes.map(n=>[n.person_id,n]));const ids=graphV2.history.slice(-6);el.innerHTML=ids.map((id,i)=>`${i?'<i>›</i>':''}<button data-crumb="${id}">${esc(by[id]?.preferred_name_en||id)}</button>`).join('');el.querySelectorAll('[data-crumb]').forEach(b=>b.onclick=()=>selectGraphPerson(b.dataset.crumb,false))}
-function selectGraphPerson(id,push=true){if(!graphState.data.nodes.some(n=>n.person_id===id))return;graphState.selected=id;graphState.expanded.add(id);graphV2.drawerOpen=true;if(push&&graphV2.history.at(-1)!==id)graphV2.history.push(id);drawLivingGraph();renderBreadcrumbs();renderPersonDrawer(id)}
+function selectGraphPerson(id,push=true){if(!graphState.data.nodes.some(n=>n.person_id===id))return;hideHover();graphState.selected=id;graphState.expanded.add(id);graphV2.drawerOpen=true;graphV2.drawerExpanded=false;if(push&&graphV2.history.at(-1)!==id)graphV2.history.push(id);drawLivingGraph();renderBreadcrumbs();renderPersonDrawer(id).then(()=>{if(isMobileFamilyGraph())requestAnimationFrame(()=>keepSelectedNodeAboveSheet())})}
 function wireGraphControls(){const input=document.querySelector('#graphFind');input.onchange=()=>{const p=graphState.data.nodes.find(x=>x.preferred_name_en===input.value||x.preferred_name_fa===input.value);if(p){graphState.root=p.person_id;graphState.scale=1;graphState.tx=graphState.ty=0;selectGraphPerson(p.person_id)}};document.querySelector('#centerRoot').onclick=()=>{if(graphState.selected){graphState.root=graphState.selected;graphState.expanded.add(graphState.root);graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()}};document.querySelector('#collapseAll').onclick=()=>{graphState.expanded=new Set([graphState.root]);drawLivingGraph()};document.querySelector('#expandAllVisible').onclick=()=>{visibleFamily().nodes.forEach(n=>graphState.expanded.add(n.person_id));drawLivingGraph()};document.querySelector('#allBranches').onchange=e=>{if(e.target.checked){graphState.branches.clear();document.querySelectorAll('.branchCheck').forEach(x=>x.checked=false)}drawLivingGraph()};document.querySelectorAll('.branchCheck').forEach(c=>c.onchange=()=>{graphState.branches=new Set([...document.querySelectorAll('.branchCheck:checked')].map(x=>x.value));document.querySelector('#allBranches').checked=!graphState.branches.size;drawLivingGraph()});document.querySelector('#gcZoomIn').onclick=()=>{graphState.scale=Math.min(3,graphState.scale*1.18);drawLivingGraph()};document.querySelector('#gcZoomOut').onclick=()=>{graphState.scale=Math.max(.3,graphState.scale/1.18);drawLivingGraph()};document.querySelector('#gcFit').onclick=()=>{graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()};document.querySelector('#gcHome').onclick=()=>{graphState.root=graphState.data.default_root;graphState.selected=graphState.root;graphState.expanded=new Set([graphState.root]);graphState.scale=1;graphState.tx=graphState.ty=0;graphV2.history.push(graphState.root);drawLivingGraph();renderBreadcrumbs();renderPersonDrawer(graphState.root)};document.querySelector('#filterToggle').onclick=()=>{graphV2.filtersOpen=!graphV2.filtersOpen;document.querySelector('#filterDrawer').classList.toggle('collapsed',!graphV2.filtersOpen);document.querySelector('#filterToggle').textContent=graphV2.filtersOpen?'Hide filters':'Show filters'}}
 function drawLivingGraph(){const svg=document.querySelector('#livingGraph');if(!svg)return;const family=visibleFamily(),nodes=family.nodes,edges=family.edges;document.querySelector('#visibleCount').textContent=`${nodes.length} people · ${edges.length} links`;const groups={};nodes.forEach(n=>(groups[n.level]??=[]).push(n));Object.keys(groups).forEach(k=>groups[k].sort((a,b)=>a.preferred_name_en.localeCompare(b.preferred_name_en)));const minL=Math.min(...nodes.map(n=>n.level),0),maxL=Math.max(...nodes.map(n=>n.level),0),levelGap=235;Object.entries(groups).forEach(([lv,arr])=>{const y=500+(Number(lv)-(minL+maxL)/2)*levelGap;const gap=Math.min(290,1380/Math.max(arr.length,1));arr.forEach((n,i)=>{n.x=800+(i-(arr.length-1)/2)*gap;n.y=y})});const by=Object.fromEntries(nodes.map(n=>[n.person_id,n]));const transform=`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`;svg.innerHTML=`<g transform="${transform}">${edges.map(e=>{const a=by[e.person1_id],b=by[e.person2_id];if(!a||!b)return'';const cls=e.relationship_type==='spouse_of'?'spouse':e.relationship_type==='sibling_of'?'sibling':'parent';return `<path class="family-edge ${cls}" d="M ${a.x} ${a.y} C ${a.x} ${(a.y+b.y)/2}, ${b.x} ${(a.y+b.y)/2}, ${b.x} ${b.y}"></path>`}).join('')}${nodes.map(n=>{const links=(family.children[n.person_id]||[]).length+(family.parents[n.person_id]||[]).length+(family.spouses[n.person_id]||[]).length+(family.siblings[n.person_id]||[]).length;const expanded=graphState.expanded.has(n.person_id);const life=[n.birth_date_text,n.death_date_text].filter(Boolean).join(' – ');return `<g class="family-node ${n.person_id===graphState.selected?'selected':''}" data-person="${n.person_id}" transform="translate(${n.x} ${n.y})"><rect x="-105" y="-58" width="210" height="116" rx="16"></rect><text class="node-branch" y="-37">${esc(n.branch||'Unclassified')}</text><text class="node-name" y="-13"><tspan x="0">${esc((n.preferred_name_en||'').split(' ').slice(0,3).join(' '))}</tspan><tspan x="0" dy="17">${esc((n.preferred_name_en||'').split(' ').slice(3,7).join(' '))}</tspan></text><text class="node-fa" y="27">${esc(n.preferred_name_fa||'')}</text><text class="node-life" y="46">${contextNode?'specific common ancestor unknown':esc(life||'Dates not established')}</text>${links?`<g class="expand-control" data-expand="${n.person_id}" transform="translate(91 47)"><circle r="14"></circle><text y="5">${expanded?'−':'+'}</text></g>`:''}</g>`}).join('')}</g>`;svg.querySelectorAll('[data-person]').forEach(g=>{g.onclick=e=>{if(e.target.closest('[data-expand]'))return;selectGraphPerson(g.dataset.person)};g.onmouseenter=e=>showHover(g.dataset.person,e);g.onmousemove=e=>moveHover(e);g.onmouseleave=hideHover});svg.querySelectorAll('[data-expand]').forEach(g=>g.onclick=e=>{e.stopPropagation();const id=g.dataset.expand;graphState.expanded.has(id)?graphState.expanded.delete(id):graphState.expanded.add(id);drawLivingGraph()});let drag=false,lx=0,ly=0;svg.onpointerdown=e=>{if(e.target.closest('[data-person]'))return;drag=true;lx=e.clientX;ly=e.clientY;svg.setPointerCapture(e.pointerId)};svg.onpointermove=e=>{if(!drag)return;graphState.tx+=e.clientX-lx;graphState.ty+=e.clientY-ly;lx=e.clientX;ly=e.clientY;svg.querySelector('g').setAttribute('transform',`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`)};svg.onpointerup=()=>drag=false;svg.onwheel=e=>{e.preventDefault();graphState.scale=Math.max(.3,Math.min(3,graphState.scale*(e.deltaY<0?1.08:.92)));svg.querySelector('g').setAttribute('transform',`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`)}}
 function showHover(id,e){const p=graphState.data.nodes.find(n=>n.person_id===id),h=document.querySelector('#hoverCard');if(!p||!h)return;h.innerHTML=`<strong>${esc(p.preferred_name_en)}</strong><small>${esc(p.preferred_name_fa||p.branch||'')}</small><div>${esc(([p.birth_date_text,p.death_date_text].filter(Boolean).join(' – ')||'Dates not established'))}</div>`;h.style.display='block';moveHover(e)}function moveHover(e){const h=document.querySelector('#hoverCard');if(h){h.style.left=(e.clientX+16)+'px';h.style.top=(e.clientY+16)+'px'}}function hideHover(){const h=document.querySelector('#hoverCard');if(h)h.style.display='none'}
@@ -235,7 +235,7 @@ function initPersonPortrait(img,personId,primaryPortrait=null){if(!img)return;co
 async function renderPersonDrawer(id){const drawer=document.querySelector('#personDrawer');if(!drawer)return;
 if(isContextNode(id)){
   drawer.classList.toggle('hidden',!graphV2.drawerOpen);
-  drawer.innerHTML=`<button class="close-float" id="closeDrawer">×</button>
+  drawer.innerHTML=`<button class="close-float" id="closeDrawer" aria-label="Close person details">×</button>
     <div class="drawer-head">
       <div class="eyebrow">HISTORICAL CONTEXT · NOT A PERSON RECORD</div>
       <h2>Gharagozloo — common tribal ancestry</h2>
@@ -248,10 +248,11 @@ if(isContextNode(id)){
       <p><b>Dashed line</b> = probable / inferred parent-child.</p>
       <p><b>Dotted line</b> = historical ancestry hypothesis, not a direct-parent assertion.</p>
     </section>`;
-  document.querySelector('#closeDrawer').onclick=()=>{graphV2.drawerOpen=false;drawer.classList.add('hidden')};
+  installMobileSheetControls(drawer);
+  document.querySelector('#closeDrawer').onclick=()=>closePersonDrawer(drawer);
   return;
 }
-drawer.classList.remove('hidden');drawer.innerHTML='<div class=loading>Opening person…</div>';try{const p=await api('/api/person/'+id);const rels=p.relationships||[];const relation=types=>rels.filter(r=>types.includes(r.relationship_type));drawer.innerHTML=`<button class="close-float" id="closeDrawer">×</button><div class="drawer-head">${portraitMarkup(p)}<div class="eyebrow">${esc(p.person_id)} · ${esc(p.branch||'Branch unclassified')}</div><h2>${esc(p.preferred_name_en)}</h2><div class="fa">${esc(p.preferred_name_fa||'')}</div><p>${esc(p.summary||'No biographical summary yet.')}</p><div class="chips"><span class="chip">${esc(p.verification_status)}</span>${p.reconciliation?`<span class="chip silver">${esc(p.reconciliation.dossier_level)}</span>`:''}</div></div><div class="drawer-actions"><button class="btn primary" data-route="person" data-arg="${p.person_id}">Open full record</button><button class="btn" id="drawerCenter">Make graph root</button></div><div class="drawer-rel-grid">${drawerRel('Parents',relation(['parent_of','father_of','grandchild_of']).filter(r=>r.direction==='incoming'||r.relationship_type==='grandchild_of'))}${drawerRel('Children',relation(['parent_of','father_of']).filter(r=>r.direction==='outgoing'))}${drawerRel('Siblings',relation(['sibling_of']))}${drawerRel('Spouses',relation(['spouse_of']))}</div><section class="drawer-section"><h3>Titles and roles</h3>${p.titles.slice(0,5).map(x=>`<div class="drawer-item"><strong>${esc(x.title_en)}</strong><small>${esc(x.date_text||'')}</small></div>`).join('')}${p.roles.slice(0,5).map(x=>`<div class="drawer-item"><strong>${esc(x.role_en)}</strong><small>${esc(x.date_text||x.start_date_text||'')}</small></div>`).join('')||'<p class="muted">No structured titles or roles.</p>'}</section><section class="drawer-section"><h3>Evidence snapshot</h3><div class="drawer-metrics"><span><b>${p.claims.length}</b> claims</span><span><b>${p.events.length}</b> events</span><span><b>${p.relationships.length}</b> relationships</span></div><button class="text-link" data-route="person" data-arg="${p.person_id}">Inspect claims and citations →</button></section>`;initPersonPortrait(drawer.querySelector('[data-person-portrait]'),p.person_id,p.primary_portrait);document.querySelector('#closeDrawer').onclick=()=>{graphV2.drawerOpen=false;drawer.classList.add('hidden')};document.querySelector('#drawerCenter').onclick=()=>{graphState.root=p.person_id;graphState.expanded.add(p.person_id);graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()}}catch(err){drawer.innerHTML=`<button class="close-float" id="closeDrawer">×</button><p>Could not open person: ${esc(err.message)}</p>`}}
+drawer.classList.remove('hidden');drawer.classList.toggle('sheet-expanded',graphV2.drawerExpanded);drawer.innerHTML='<div class=loading>Opening person…</div>';try{const p=await api('/api/person/'+id);const rels=p.relationships||[];const relation=types=>rels.filter(r=>types.includes(r.relationship_type));drawer.innerHTML=`<button class="close-float" id="closeDrawer" aria-label="Close person details">×</button><div class="drawer-head">${portraitMarkup(p)}<div class="eyebrow">${esc(p.person_id)} · ${esc(p.branch||'Branch unclassified')}</div><h2>${esc(p.preferred_name_en)}</h2><div class="fa">${esc(p.preferred_name_fa||'')}</div><p>${esc(p.summary||'No biographical summary yet.')}</p><div class="chips"><span class="chip">${esc(p.verification_status)}</span>${p.reconciliation?`<span class="chip silver">${esc(p.reconciliation.dossier_level)}</span>`:''}</div></div><div class="drawer-actions"><button class="btn primary" data-route="person" data-arg="${p.person_id}">Open full record</button><button class="btn" id="drawerCenter">Make graph root</button></div><div class="drawer-rel-grid">${drawerRel('Parents',relation(['parent_of','father_of','grandchild_of']).filter(r=>r.direction==='incoming'||r.relationship_type==='grandchild_of'))}${drawerRel('Children',relation(['parent_of','father_of']).filter(r=>r.direction==='outgoing'))}${drawerRel('Siblings',relation(['sibling_of']))}${drawerRel('Spouses',relation(['spouse_of']))}</div><section class="drawer-section"><h3>Titles and roles</h3>${p.titles.slice(0,5).map(x=>`<div class="drawer-item"><strong>${esc(x.title_en)}</strong><small>${esc(x.date_text||'')}</small></div>`).join('')}${p.roles.slice(0,5).map(x=>`<div class="drawer-item"><strong>${esc(x.role_en)}</strong><small>${esc(x.date_text||x.start_date_text||'')}</small></div>`).join('')||'<p class="muted">No structured titles or roles.</p>'}</section><section class="drawer-section"><h3>Evidence snapshot</h3><div class="drawer-metrics"><span><b>${p.claims.length}</b> claims</span><span><b>${p.events.length}</b> events</span><span><b>${p.relationships.length}</b> relationships</span></div><button class="text-link" data-route="person" data-arg="${p.person_id}">Inspect claims and citations →</button></section>`;installMobileSheetControls(drawer);initPersonPortrait(drawer.querySelector('[data-person-portrait]'),p.person_id,p.primary_portrait);document.querySelector('#closeDrawer').onclick=()=>closePersonDrawer(drawer);document.querySelector('#drawerCenter').onclick=()=>{graphState.root=p.person_id;graphState.expanded.add(p.person_id);graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph()}}catch(err){drawer.innerHTML=`<button class="close-float" id="closeDrawer" aria-label="Close person details">×</button><p>Could not open person: ${esc(err.message)}</p>`;installMobileSheetControls(drawer);document.querySelector('#closeDrawer').onclick=()=>closePersonDrawer(drawer)}}
 
 
 // ===== Explorer v0.5 — generation filters and traceable parent lines =====
@@ -547,13 +548,13 @@ function wireGraphControls(){
     };
   });
   document.querySelector('#gcZoomIn').onclick=()=>{
-    graphState.scale=Math.min(3,graphState.scale*1.18); drawLivingGraph();
+    graphV2.userNavigated=true;graphState.scale=Math.min(3,graphState.scale*1.18); drawLivingGraph();
   };
   document.querySelector('#gcZoomOut').onclick=()=>{
-    graphState.scale=Math.max(.3,graphState.scale/1.18); drawLivingGraph();
+    graphV2.userNavigated=true;graphState.scale=Math.max(.3,graphState.scale/1.18); drawLivingGraph();
   };
   document.querySelector('#gcFit').onclick=()=>{
-    graphState.scale=1;graphState.tx=graphState.ty=0;drawLivingGraph();
+    graphV2.userNavigated=false;fitVisibleFamilyNodes();
   };
   document.querySelector('#gcHome').onclick=()=>{
     graphState.root=graphState.lineageRoot||graphState.data.default_root;
@@ -664,6 +665,7 @@ function layoutGenerationRow(arr,spouses,y){
 function drawLivingGraph(){
   const svg=document.querySelector('#livingGraph');
   if(!svg) return;
+  syncMobileGraphViewBox(svg);
   const family=visibleFamily(), nodes=family.nodes, edges=family.edges;
   const count=document.querySelector('#visibleCount');
   if(count){
@@ -778,7 +780,7 @@ function drawLivingGraph(){
   let drag=false,lx=0,ly=0;
   svg.onpointerdown=e=>{
     if(e.target.closest('[data-person]'))return;
-    drag=true;lx=e.clientX;ly=e.clientY;svg.setPointerCapture(e.pointerId);
+    graphV2.userNavigated=true;drag=true;lx=e.clientX;ly=e.clientY;svg.setPointerCapture(e.pointerId);
   };
   svg.onpointermove=e=>{
     if(!drag)return;
@@ -788,6 +790,7 @@ function drawLivingGraph(){
   svg.onpointerup=()=>drag=false;
   svg.onwheel=e=>{
     e.preventDefault();
+    graphV2.userNavigated=true;
     graphState.scale=Math.max(.3,Math.min(3,graphState.scale*(e.deltaY<0?1.08:.92)));
     svg.querySelector('g')?.setAttribute('transform',`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`);
   };
@@ -1218,6 +1221,165 @@ function svgGenerationBandsV064(){
 }
 
 svgGenerationBands = svgGenerationBandsV064;
+
+// ===== Family Graph mobile UX pass 1 =====
+function isMobileFamilyGraph(){
+  return window.matchMedia('(max-width:760px), (max-width:950px) and (max-height:560px)').matches;
+}
+
+function syncMobileGraphViewBox(svg=document.querySelector('#livingGraph')){
+  if(!svg) return;
+  if(isMobileFamilyGraph()){
+    const width=Math.max(1,Math.round(svg.clientWidth));
+    const height=Math.max(1,Math.round(svg.clientHeight));
+    svg.setAttribute('viewBox',`0 0 ${width} ${height}`);
+  }else{
+    svg.setAttribute('viewBox','0 0 1600 1000');
+  }
+}
+
+function visibleFamilyNodeBounds(){
+  const svg=document.querySelector('#livingGraph');
+  if(!svg) return null;
+  const nodes=[...svg.querySelectorAll('.family-node[data-person]')];
+  if(!nodes.length) return null;
+  const points=nodes.map(node=>{
+    const match=(node.getAttribute('transform')||'').match(/translate\(([-\d.]+)[ ,]+([-\d.]+)\)/);
+    return match?{x:Number(match[1]),y:Number(match[2])}:null;
+  }).filter(Boolean);
+  if(!points.length) return null;
+  // Person cards are authored at 210×116. A small allowance includes their
+  // selection stroke and expand control without admitting generation cards.
+  const halfWidth=112,halfHeight=64;
+  const left=Math.min(...points.map(p=>p.x-halfWidth));
+  const right=Math.max(...points.map(p=>p.x+halfWidth));
+  const top=Math.min(...points.map(p=>p.y-halfHeight));
+  const bottom=Math.max(...points.map(p=>p.y+halfHeight));
+  return {left,right,top,bottom,width:right-left,height:bottom-top};
+}
+
+function mobileGraphUsableRect(svg){
+  const width=svg.clientWidth,height=svg.clientHeight;
+  let bottom=height-76;
+  const drawer=document.querySelector('#personDrawer:not(.hidden)');
+  if(drawer&&!drawer.classList.contains('sheet-expanded')){
+    const svgRect=svg.getBoundingClientRect(),drawerRect=drawer.getBoundingClientRect();
+    bottom=Math.min(bottom,drawerRect.top-svgRect.top-14);
+  }
+  return {left:18,right:width-18,top:62,bottom:Math.max(150,bottom)};
+}
+
+function applyGraphTransform(){
+  const group=document.querySelector('#livingGraph > g');
+  if(group) group.setAttribute('transform',`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`);
+}
+
+function fitVisibleFamilyNodes(){
+  const svg=document.querySelector('#livingGraph');
+  if(!svg) return;
+  syncMobileGraphViewBox(svg);
+  const bounds=visibleFamilyNodeBounds();
+  if(!bounds) return;
+  const mobile=isMobileFamilyGraph();
+  const usable=mobile?mobileGraphUsableRect(svg):{left:55,right:svg.clientWidth-55,top:55,bottom:svg.clientHeight-55};
+  const width=Math.max(1,usable.right-usable.left),height=Math.max(1,usable.bottom-usable.top);
+  const minScale=0.3,maxScale=mobile?1.6:3;
+  graphState.scale=Math.max(minScale,Math.min(maxScale,Math.min(width/bounds.width,height/bounds.height)));
+  graphState.tx=(usable.left+usable.right)/2-(bounds.left+bounds.right)/2*graphState.scale;
+  graphState.ty=(usable.top+usable.bottom)/2-(bounds.top+bounds.bottom)/2*graphState.scale;
+  graphV2.userNavigated=false;
+  graphV2.lastViewport={width:svg.clientWidth,height:svg.clientHeight,portrait:svg.clientHeight>=svg.clientWidth};
+  applyGraphTransform();
+}
+
+function mobileGeometrySignature(){
+  if(!isMobileFamilyGraph()) return null;
+  return [...document.querySelectorAll('#livingGraph .family-node[data-person]')]
+    .map(node=>`${node.dataset.person}:${node.getAttribute('transform')||''}`).sort().join('|');
+}
+
+function keepSelectedNodeAboveSheet(){
+  if(!isMobileFamilyGraph()||!graphV2.drawerOpen||graphV2.drawerExpanded) return;
+  const svg=document.querySelector('#livingGraph'),drawer=document.querySelector('#personDrawer:not(.hidden)');
+  const node=document.querySelector(`.family-node[data-person="${graphState.selected}"]`);
+  if(!svg||!drawer||!node) return;
+  syncMobileGraphViewBox(svg);
+  const match=(node.getAttribute('transform')||'').match(/translate\(([-\d.]+)[ ,]+([-\d.]+)\)/);
+  if(!match) return;
+  const x=Number(match[1]),y=Number(match[2]),svgRect=svg.getBoundingClientRect(),drawerRect=drawer.getBoundingClientRect();
+  const left=24,right=svg.clientWidth-24,top=72,bottom=Math.max(top+90,drawerRect.top-svgRect.top-18);
+  const screenX=graphState.tx+x*graphState.scale,screenY=graphState.ty+y*graphState.scale;
+  const cardHalfWidth=112*graphState.scale,cardHalfHeight=64*graphState.scale;
+  if(screenX-cardHalfWidth<left) graphState.tx+=left-(screenX-cardHalfWidth);
+  else if(screenX+cardHalfWidth>right) graphState.tx-=screenX+cardHalfWidth-right;
+  if(screenY-cardHalfHeight<top) graphState.ty+=top-(screenY-cardHalfHeight);
+  else if(screenY+cardHalfHeight>bottom) graphState.ty-=screenY+cardHalfHeight-bottom;
+  applyGraphTransform();
+}
+
+function closePersonDrawer(drawer=document.querySelector('#personDrawer')){
+  graphV2.drawerOpen=false;
+  graphV2.drawerExpanded=false;
+  drawer?.classList.remove('sheet-expanded');
+  drawer?.classList.add('hidden');
+}
+
+function installMobileSheetControls(drawer){
+  if(!isMobileFamilyGraph()||!drawer||drawer.querySelector('.sheet-toggle')) return;
+  drawer.classList.toggle('sheet-expanded',graphV2.drawerExpanded);
+  drawer.insertAdjacentHTML('afterbegin',`<button type="button" class="sheet-toggle" aria-expanded="${graphV2.drawerExpanded}" aria-label="${graphV2.drawerExpanded?'Show summary':'Expand person details'}"><i></i><span>${graphV2.drawerExpanded?'Show summary':'More details'}</span></button>`);
+  const toggle=drawer.querySelector('.sheet-toggle');
+  toggle.onclick=()=>{
+    graphV2.drawerExpanded=!graphV2.drawerExpanded;
+    drawer.classList.toggle('sheet-expanded',graphV2.drawerExpanded);
+    toggle.setAttribute('aria-expanded',String(graphV2.drawerExpanded));
+    toggle.setAttribute('aria-label',graphV2.drawerExpanded?'Show summary':'Expand person details');
+    toggle.querySelector('span').textContent=graphV2.drawerExpanded?'Show summary':'More details';
+    if(!graphV2.drawerExpanded){requestAnimationFrame(()=>keepSelectedNodeAboveSheet());setTimeout(()=>keepSelectedNodeAboveSheet(),260)}
+  };
+}
+
+function scheduleMobileViewportFit(){
+  if(!isMobileFamilyGraph()) return;
+  clearTimeout(graphV2.resizeTimer);
+  graphV2.resizeTimer=setTimeout(()=>{
+    const svg=document.querySelector('#livingGraph');
+    if(!svg) return;
+    const next={width:svg.clientWidth,height:svg.clientHeight,portrait:svg.clientHeight>=svg.clientWidth};
+    const prev=graphV2.lastViewport;
+    const orientationChanged=Boolean(prev&&prev.portrait!==next.portrait);
+    const widthChanged=!prev||Math.abs(prev.width-next.width)>24;
+    const meaningfulHeight=!prev||Math.abs(prev.height-next.height)>120;
+    syncMobileGraphViewBox(svg);
+    if(orientationChanged||widthChanged||(meaningfulHeight&&!graphV2.userNavigated)) fitVisibleFamilyNodes();
+    else graphV2.lastViewport=next;
+  },180);
+}
+
+function ensureMobileResizeHandling(){
+  if(!isMobileFamilyGraph()) return;
+  const canvas=document.querySelector('.graph-v2 .living-canvas');
+  if(!canvas) return;
+  graphV2.resizeObserver?.disconnect();
+  graphV2.resizeObserver=new ResizeObserver(()=>scheduleMobileViewportFit());
+  graphV2.resizeObserver.observe(canvas);
+  if(!graphV2.visualViewportBound&&window.visualViewport){
+    window.visualViewport.addEventListener('resize',scheduleMobileViewportFit,{passive:true});
+    graphV2.visualViewportBound=true;
+  }
+}
+
+const drawLivingGraphBeforeMobileUX=drawLivingGraph;
+drawLivingGraph=function(){
+  drawLivingGraphBeforeMobileUX();
+  if(!isMobileFamilyGraph()) return;
+  ensureMobileResizeHandling();
+  const signature=mobileGeometrySignature();
+  if(signature&&signature!==graphV2.lastMobileGeometry){
+    graphV2.lastMobileGeometry=signature;
+    requestAnimationFrame(()=>fitVisibleFamilyNodes());
+  }
+};
 
 api('/api/capabilities').then(c=>{
   const nav=document.querySelector('#curatorNav');
