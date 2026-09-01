@@ -58,3 +58,4 @@
 0057,0057_add_masoud_farid_and_resolve_farid_identity.sql,d52e3e5a1f0ffbd5ced7d44d69e0e0389d2d26757ba3d6dc54145d696c8d23c8,2026-08-22T20:09:56.576000+00:00,Applied by tools/apply_migration.py
 0058,0058_correct_amanollah_parentage.sql,14f7c311f79e785ce710047b906a14ccb1d40b37db1caae2b95cdac9c6fb6eac,2026-08-23T00:41:56.793032+00:00,Applied by tools/apply_migration.py
 0059,0059_complete_amanollah_sons_evidence.sql,dce6476f5a3a06bda83ac6266a88d40335f9397abb4f3de80c538503b9f767f9,2026-09-01T00:56:41.012394+00:00,Applied by tools/apply_migration.py
+0060,0060_complete_ali_qoli_parentage_evidence.sql,b0a33216b50d7ba6726be936e4ea56fec6db2fef5620a94a965cec96c06fed79,2026-09-01T01:09:41.645347+00:00,Applied by tools/apply_migration.py

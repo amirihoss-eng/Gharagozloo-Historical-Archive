@@ -268,3 +268,6 @@ EC1537,relationship,R0025,X0115,supports,Figure 3 confirms Amanollah Khan P0031 
 EC1538,relationship,R0025,X0029,supports,Alvandi prose independently names Morteza Qoli Khan among Amanollah Khan's sons.
 EC1539,person,P0032,X0115,supports,Figure 3 supports Hossein Qoli Khan's placement beneath Amanollah Khan.
 EC1540,person,P0034,X0115,supports,Figure 3 supports Morteza Qoli Khan's placement beneath Amanollah Khan.
+EC1541,relationship,R0024,X0115,supports,Figure 3 confirms Amanollah Khan P0031 -> Ali Qoli Khan P0033.
+EC1542,relationship,R0024,X0029,supports,Alvandi prose independently names Ali Qoli Khan among Amanollah Khan's sons.
+EC1543,person,P0033,X0115,supports,Figure 3 supports Ali Qoli Khan's placement beneath Amanollah Khan.
