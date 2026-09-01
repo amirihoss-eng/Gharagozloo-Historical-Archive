@@ -47,7 +47,8 @@ historical_enrichment_phase,Majmooe Asaar opening genealogy evidence checkpoint
 historical_enrichment_checkpoint,Aqeli Gharagozloo Late Qajar and Pahlavi Biographical Enrichment
 amiri_piran_maternal_line,Confirmed P0022 -> P0182 Amirzadeh Khanom -> P0183 Akhtar Piran -> P0009 Dr. Alireza -> P0010 Hossein Gholi.
 farid_followup_0057,Added P0184 Masoud Farid under P0156; independently confirmed P0153 -> P0156; resolved Q0035; narrowed Q0163 without changing P0173 genealogy.
-archive_version,2.10.2
 ashiqloo_amanollah_parentage_0058,Confirmed S0001 Figure 3 chain P0013 Nabi Khan -> P0014 Mahmoud Khan -> P0031 Amanollah Khan Baha al-Molk. R0022 and C0059 preserved as superseded history; R0169 and C1561 are active canonical records.
-last_migration,0058
-updated_at,2026-08-23T00:41:56.793032+00:00
+archive_version,2.10.3
+ashiqloo_amanollah_sons_evidence_0059,"Added atomic confirmed parentage claims C1562 and C1563 for established relationships R0023 and R0025, reusing S0001 citations X0115 and X0029; topology unchanged."
+last_migration,0059
+updated_at,2026-09-01T00:56:41.012394+00:00

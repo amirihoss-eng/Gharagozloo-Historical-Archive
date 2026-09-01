@@ -262,3 +262,9 @@ EC1531,relationship,R0169,X0115,supports,Figure 3 confirms Mahmoud Khan P0014 ->
 EC1532,person,P0031,X0115,supports,Figure 3 supports Amanollah's corrected canonical placement.
 EC1533,research_question,Q0040,X0115,supports,Confirmed figure reading resolves the earlier compression-versus-parentage question.
 EC1534,evidence_conflict,CF006,X0115,supports,Confirmed figure reading resolves the preserved parentage conflict.
+EC1535,relationship,R0023,X0115,supports,Figure 3 confirms Amanollah Khan P0031 -> Hossein Qoli Khan P0032.
+EC1536,relationship,R0023,X0029,supports,Alvandi prose independently names Hossein Qoli Khan among Amanollah Khan's sons.
+EC1537,relationship,R0025,X0115,supports,Figure 3 confirms Amanollah Khan P0031 -> Morteza Qoli Khan P0034.
+EC1538,relationship,R0025,X0029,supports,Alvandi prose independently names Morteza Qoli Khan among Amanollah Khan's sons.
+EC1539,person,P0032,X0115,supports,Figure 3 supports Hossein Qoli Khan's placement beneath Amanollah Khan.
+EC1540,person,P0034,X0115,supports,Figure 3 supports Morteza Qoli Khan's placement beneath Amanollah Khan.
