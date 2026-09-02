@@ -762,7 +762,7 @@ function drawLivingGraph(){
   drawParentLegend(family);
 
   svg.querySelectorAll('[data-person]').forEach(g=>{
-    g.onclick=e=>{if(e.target.closest('[data-expand]'))return;selectGraphPerson(g.dataset.person)};
+    g.onclick=e=>{if(e.target.closest('[data-expand]')||suppressGraphClick())return;selectGraphPerson(g.dataset.person)};
     g.onmouseenter=e=>{
       showHover(g.dataset.person,e);
       highlightParentLines(g.dataset.person);
@@ -772,22 +772,13 @@ function drawLivingGraph(){
   });
   svg.querySelectorAll('[data-expand]').forEach(g=>g.onclick=e=>{
     e.stopPropagation();
+    if(suppressGraphClick())return;
     const id=g.dataset.expand;
     graphState.expanded.has(id)?graphState.expanded.delete(id):graphState.expanded.add(id);
     renderGraphCore();
   });
 
-  let drag=false,lx=0,ly=0;
-  svg.onpointerdown=e=>{
-    if(e.target.closest('[data-person]'))return;
-    graphV2.userNavigated=true;drag=true;lx=e.clientX;ly=e.clientY;svg.setPointerCapture(e.pointerId);
-  };
-  svg.onpointermove=e=>{
-    if(!drag)return;
-    graphState.tx+=e.clientX-lx;graphState.ty+=e.clientY-ly;lx=e.clientX;ly=e.clientY;
-    svg.querySelector('g')?.setAttribute('transform',`translate(${graphState.tx} ${graphState.ty}) scale(${graphState.scale})`);
-  };
-  svg.onpointerup=()=>drag=false;
+  wireGraphPointerGestures(svg);
   svg.onwheel=e=>{
     e.preventDefault();
     graphV2.userNavigated=true;
@@ -1267,6 +1258,132 @@ function mobileGraphUsableRect(svg){
     bottom=Math.min(bottom,drawerRect.top-svgRect.top-14);
   }
   return {left:18,right:width-18,top:62,bottom:Math.max(150,bottom)};
+}
+
+function suppressGraphClick(){
+  return performance.now()<(graphV2.suppressGraphClickUntil||0);
+}
+
+function clientPointToSvg(svg,clientX,clientY){
+  const matrix=svg.getScreenCTM?.();
+  if(matrix){
+    const point=svg.createSVGPoint();
+    point.x=clientX;point.y=clientY;
+    const converted=point.matrixTransform(matrix.inverse());
+    if(Number.isFinite(converted.x)&&Number.isFinite(converted.y))return {x:converted.x,y:converted.y};
+  }
+  const rect=svg.getBoundingClientRect(),viewBox=svg.viewBox.baseVal;
+  const scale=Math.min(rect.width/viewBox.width,rect.height/viewBox.height)||1;
+  const offsetX=(rect.width-viewBox.width*scale)/2,offsetY=(rect.height-viewBox.height*scale)/2;
+  return {
+    x:viewBox.x+(clientX-rect.left-offsetX)/scale,
+    y:viewBox.y+(clientY-rect.top-offsetY)/scale
+  };
+}
+
+function pinchTransformFromPoints(initialA,initialB,currentA,currentB,start,minScale=.3,maxScale=3){
+  const initialDistance=Math.hypot(initialB.x-initialA.x,initialB.y-initialA.y);
+  const currentDistance=Math.hypot(currentB.x-currentA.x,currentB.y-currentA.y);
+  if(!Number.isFinite(initialDistance)||!Number.isFinite(currentDistance)||initialDistance<2||!Number.isFinite(start.scale)||start.scale<=0)return null;
+  const initialMidpoint={x:(initialA.x+initialB.x)/2,y:(initialA.y+initialB.y)/2};
+  const currentMidpoint={x:(currentA.x+currentB.x)/2,y:(currentA.y+currentB.y)/2};
+  const scale=Math.max(minScale,Math.min(maxScale,start.scale*currentDistance/initialDistance));
+  if(!Number.isFinite(scale)||scale<=0)return null;
+  const anchor={x:(initialMidpoint.x-start.tx)/start.scale,y:(initialMidpoint.y-start.ty)/start.scale};
+  return {
+    scale,
+    tx:currentMidpoint.x-anchor.x*scale,
+    ty:currentMidpoint.y-anchor.y*scale,
+    anchor,
+    midpoint:currentMidpoint
+  };
+}
+
+function wireGraphPointerGestures(svg){
+  const pointers=new Map();
+  let mode='idle',panPointerId=null,panLastClient=null,panLastSvg=null,pinch=null,frame=0,pendingTransform=null;
+
+  const queueTransform=next=>{
+    if(!next||![next.scale,next.tx,next.ty].every(Number.isFinite))return;
+    graphState.scale=next.scale;graphState.tx=next.tx;graphState.ty=next.ty;
+    pendingTransform=next;
+    if(frame)return;
+    frame=requestAnimationFrame(()=>{
+      frame=0;
+      if(!pendingTransform)return;
+      applyGraphTransform();
+      pendingTransform=null;
+    });
+  };
+  const pointerSvgPoint=pointer=>clientPointToSvg(svg,pointer.clientX,pointer.clientY);
+  const beginPinch=()=>{
+    const ids=[...pointers.keys()].slice(0,2),a=pointers.get(ids[0]),b=pointers.get(ids[1]);
+    if(!a||!b)return false;
+    const initialA=pointerSvgPoint(a),initialB=pointerSvgPoint(b);
+    if(Math.hypot(initialB.x-initialA.x,initialB.y-initialA.y)<2)return false;
+    pinch={ids,initialA,initialB,start:{scale:graphState.scale,tx:graphState.tx,ty:graphState.ty}};
+    mode='pinch';panPointerId=null;panLastClient=panLastSvg=null;
+    graphV2.userNavigated=true;graphV2.suppressGraphClickUntil=Infinity;
+    return true;
+  };
+  const startPanFrom=pointer=>{
+    if(!pointer){mode='idle';panPointerId=null;panLastClient=panLastSvg=null;return}
+    mode='pan';panPointerId=pointer.pointerId;
+    panLastClient={x:pointer.clientX,y:pointer.clientY};
+    panLastSvg=pointerSvgPoint(pointer);
+  };
+  const finishPointer=e=>{
+    const wasPinching=mode==='pinch';
+    pointers.delete(e.pointerId);
+    try{if(svg.hasPointerCapture(e.pointerId))svg.releasePointerCapture(e.pointerId)}catch{}
+    if(wasPinching){
+      graphV2.suppressGraphClickUntil=performance.now()+350;
+      if(pointers.size>=2){beginPinch();return}
+      pinch=null;
+      if(pointers.size===1){startPanFrom([...pointers.values()][0]);return}
+      mode='idle';return;
+    }
+    if(e.pointerId===panPointerId)startPanFrom(null);
+    if(!pointers.size){mode='idle';pinch=null}
+  };
+
+  svg.onpointerdown=e=>{
+    const pointer={pointerId:e.pointerId,clientX:e.clientX,clientY:e.clientY,pointerType:e.pointerType};
+    pointers.set(e.pointerId,pointer);
+    try{svg.setPointerCapture(e.pointerId)}catch{}
+    if(e.pointerType!=='mouse')e.preventDefault();
+    if(pointers.size>=2){beginPinch();return}
+    if(!e.target.closest('[data-person]')){
+      graphV2.userNavigated=true;
+      startPanFrom(pointer);
+    }
+  };
+  svg.onpointermove=e=>{
+    if(!pointers.has(e.pointerId))return;
+    const pointer={pointerId:e.pointerId,clientX:e.clientX,clientY:e.clientY,pointerType:e.pointerType};
+    pointers.set(e.pointerId,pointer);
+    if(e.pointerType!=='mouse')e.preventDefault();
+    if(mode==='pinch'&&pinch){
+      const a=pointers.get(pinch.ids[0]),b=pointers.get(pinch.ids[1]);
+      if(!a||!b)return;
+      queueTransform(pinchTransformFromPoints(pinch.initialA,pinch.initialB,pointerSvgPoint(a),pointerSvgPoint(b),pinch.start));
+      return;
+    }
+    if(mode==='pan'&&e.pointerId===panPointerId){
+      let dx,dy;
+      if(e.pointerType==='mouse'){
+        dx=e.clientX-panLastClient.x;dy=e.clientY-panLastClient.y;
+      }else{
+        const current=pointerSvgPoint(pointer);
+        dx=current.x-panLastSvg.x;dy=current.y-panLastSvg.y;panLastSvg=current;
+      }
+      panLastClient={x:e.clientX,y:e.clientY};
+      queueTransform({scale:graphState.scale,tx:graphState.tx+dx,ty:graphState.ty+dy});
+    }
+  };
+  svg.onpointerup=finishPointer;
+  svg.onpointercancel=finishPointer;
+  svg.onlostpointercapture=e=>{if(pointers.has(e.pointerId))finishPointer(e)};
 }
 
 function applyGraphTransform(){
