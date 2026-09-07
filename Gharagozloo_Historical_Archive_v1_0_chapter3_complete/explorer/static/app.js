@@ -402,6 +402,11 @@ function renderGraphCore(){
     </aside>
 
     <aside id="filterDrawer" class="floating-panel filter-drawer ${graphV2.filtersOpen?'':'collapsed'}">
+      <div class="filter-drawer-header">
+        <h2>Filters</h2>
+        <button id="filterClose" type="button" aria-label="Close filters">×</button>
+      </div>
+      <div class="filter-drawer-body">
       <div class="filter-section">
         <h3>Generation</h3>
         <p class="filter-help">The current root is generation 1; its children are generation 2.</p>
@@ -448,6 +453,7 @@ function renderGraphCore(){
           <span><i class="legend-line spouse"></i>Spouse</span>
           <span><i class="legend-line sibling"></i>Sibling</span>
         </div>
+      </div>
       </div>
     </aside>
 
@@ -565,11 +571,13 @@ function wireGraphControls(){
     graphV2.history.push(graphState.root);
     renderGraphCore();
   };
-  document.querySelector('#filterToggle').onclick=()=>{
-    graphV2.filtersOpen=!graphV2.filtersOpen;
+  const setFiltersOpen=open=>{
+    graphV2.filtersOpen=open;
     document.querySelector('#filterDrawer').classList.toggle('collapsed',!graphV2.filtersOpen);
     document.querySelector('#filterToggle').textContent=graphV2.filtersOpen?'Hide filters':'Show filters';
   };
+  document.querySelector('#filterToggle').onclick=()=>setFiltersOpen(!graphV2.filtersOpen);
+  document.querySelector('#filterClose').onclick=()=>setFiltersOpen(false);
 }
 
 function edgeParentId(e){

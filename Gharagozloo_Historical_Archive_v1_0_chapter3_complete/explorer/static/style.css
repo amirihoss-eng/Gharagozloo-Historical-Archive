@@ -27,6 +27,7 @@ body.graph-mode main{padding:64px 0 0;height:100vh;max-width:none}
 .graph-v2 .quick-actions button,.graph-v2 .icon-btn{border:1px solid var(--line);background:white;border-radius:9px;padding:9px;cursor:pointer;font-weight:700;color:var(--deep)}
 .graph-v2 .quick-actions button:hover,.graph-v2 .icon-btn:hover{border-color:var(--gold);background:#fff9eb}
 .graph-v2 .filter-drawer{left:18px;top:218px;width:300px;max-height:calc(100vh - 305px);padding:14px;overflow:auto;transition:.25s transform,.25s opacity}
+.graph-v2 .filter-drawer-header{display:none}.graph-v2 .filter-drawer-body{min-height:0}
 .graph-v2 .filter-drawer.collapsed{transform:translateX(-330px);opacity:0;pointer-events:none}
 .graph-v2 .filter-toggle{position:absolute;left:18px;bottom:18px;z-index:14;padding:10px 14px}
 .graph-v2 .filter-section{border-top:1px solid #e8e0d2;padding-top:12px;margin-top:12px}
@@ -483,7 +484,7 @@ button.danger{color:#8a2525;border-color:#d7a7a7}
 }
 @media(max-width:760px),(max-width:950px) and (max-height:560px){
   body.graph-mode .mobile-menu-toggle{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.08)}body.graph-mode .mobile-menu-toggle span{background:white}body.graph-mode .header-panel{background:rgba(20,50,52,.98);border-color:rgba(255,255,255,.15)}body.graph-mode .topbar nav button{color:white;background:rgba(255,255,255,.08)}
-  .graph-v2 .graph-command-toggle{display:block;position:absolute;left:8px;top:8px;z-index:25;padding:10px 13px}.graph-v2 .graph-command.mobile-collapsed{display:none}.graph-v2 .graph-command{left:8px;right:8px;top:56px;width:auto;max-height:calc(100vh - 135px);overflow:auto;z-index:24}.graph-v2 .filter-drawer{left:8px;right:8px;top:56px;width:auto;max-height:calc(100vh - 135px);z-index:26}.graph-v2 .filter-drawer.collapsed{display:none}.graph-v2 .filter-toggle{left:8px;bottom:8px}.graph-v2 .person-float{position:absolute;left:0;right:0;bottom:0;top:auto;width:100%;max-height:70vh;border-radius:20px 20px 0 0;z-index:30;padding:20px;box-shadow:0 -18px 55px rgba(25,38,39,.25)}.graph-v2 .person-float.hidden{display:none}.graph-v2 .canvas-help{display:none}.graph-v2 .zoom-cluster{right:8px;bottom:8px}.graph-v2 .zoom-cluster button{width:44px;height:44px}.graph-v2 .living-canvas{height:calc(100vh - 64px);min-height:560px;border:0;border-radius:0}.graph-v2 .quick-actions button{min-height:44px}.graph-v2 .filter-drawer input[type=checkbox]{width:20px;height:20px}.graph-v2 .check-row{min-height:40px}
+  .graph-v2 .graph-command-toggle{display:block;position:absolute;left:8px;top:8px;z-index:25;padding:10px 13px}.graph-v2 .graph-command.mobile-collapsed{display:none}.graph-v2 .graph-command{left:8px;right:8px;top:56px;width:auto;max-height:calc(100vh - 135px);overflow:auto;z-index:24}.graph-v2 .filter-drawer{left:8px;right:8px;top:56px;width:auto;max-height:calc(100vh - 135px);z-index:26;padding:0;overflow:hidden;display:flex;flex-direction:column}.graph-v2 .filter-drawer.collapsed{display:none}.graph-v2 .filter-drawer-header{display:flex;align-items:center;justify-content:space-between;flex:0 0 auto;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--card)}.graph-v2 .filter-drawer-header h2{margin:0;font:700 20px Georgia}.graph-v2 .filter-drawer-header button{width:44px;height:44px;border:0;border-radius:10px;background:#f2eee5;font-size:26px;line-height:1;cursor:pointer}.graph-v2 .filter-drawer-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 14px 14px}.graph-v2 .filter-toggle{left:8px;bottom:8px}.graph-v2 .person-float{position:absolute;left:0;right:0;bottom:0;top:auto;width:100%;max-height:70vh;border-radius:20px 20px 0 0;z-index:30;padding:20px;box-shadow:0 -18px 55px rgba(25,38,39,.25)}.graph-v2 .person-float.hidden{display:none}.graph-v2 .canvas-help{display:none}.graph-v2 .zoom-cluster{right:8px;bottom:8px}.graph-v2 .zoom-cluster button{width:44px;height:44px}.graph-v2 .living-canvas{height:calc(100vh - 64px);min-height:560px;border:0;border-radius:0}.graph-v2 .quick-actions button{min-height:44px}.graph-v2 .filter-drawer input[type=checkbox]{width:20px;height:20px}.graph-v2 .check-row{min-height:40px}
 }
 
 /* Family Graph mobile UX pass 1 */
@@ -491,7 +492,7 @@ button.danger{color:#8a2525;border-color:#d7a7a7}
   body.graph-mode main{height:100vh;height:100dvh}
   .graph-v2{height:calc(100vh - 64px);height:calc(100dvh - 64px)}
   .graph-v2 .living-canvas{height:calc(100vh - 64px);height:calc(100dvh - 64px);min-height:0}
-  .graph-v2 .graph-command,.graph-v2 .filter-drawer{max-height:calc(100vh - 135px);max-height:calc(100dvh - 135px)}
+  .graph-v2 .graph-command,.graph-v2 .filter-drawer{max-height:calc(100vh - 135px);max-height:calc(100dvh - 135px - env(safe-area-inset-bottom))}
   .graph-v2 .zoom-cluster{bottom:calc(8px + env(safe-area-inset-bottom))}
   .graph-v2 .filter-toggle{bottom:calc(8px + env(safe-area-inset-bottom))}
   .graph-v2 .hover-card{display:none!important}
