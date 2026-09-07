@@ -1301,6 +1301,7 @@ function pinchTransformFromPoints(initialA,initialB,currentA,currentB,start,minS
 
 function wireGraphPointerGestures(svg){
   const pointers=new Map();
+  const dragThreshold=6;
   let mode='idle',panPointerId=null,panLastClient=null,panLastSvg=null,pinch=null,frame=0,pendingTransform=null;
 
   const queueTransform=next=>{
@@ -1316,51 +1317,59 @@ function wireGraphPointerGestures(svg){
     });
   };
   const pointerSvgPoint=pointer=>clientPointToSvg(svg,pointer.clientX,pointer.clientY);
+  const capturePointer=pointerId=>{
+    try{if(!svg.hasPointerCapture(pointerId))svg.setPointerCapture(pointerId)}catch{}
+  };
   const beginPinch=()=>{
     const ids=[...pointers.keys()].slice(0,2),a=pointers.get(ids[0]),b=pointers.get(ids[1]);
     if(!a||!b)return false;
     const initialA=pointerSvgPoint(a),initialB=pointerSvgPoint(b);
     if(Math.hypot(initialB.x-initialA.x,initialB.y-initialA.y)<2)return false;
+    ids.forEach(capturePointer);
     pinch={ids,initialA,initialB,start:{scale:graphState.scale,tx:graphState.tx,ty:graphState.ty}};
     mode='pinch';panPointerId=null;panLastClient=panLastSvg=null;
     graphV2.userNavigated=true;graphV2.suppressGraphClickUntil=Infinity;
     return true;
   };
-  const startPanFrom=pointer=>{
+  const startPanFrom=(pointer,fromStart=false)=>{
     if(!pointer){mode='idle';panPointerId=null;panLastClient=panLastSvg=null;return}
+    capturePointer(pointer.pointerId);
     mode='pan';panPointerId=pointer.pointerId;
-    panLastClient={x:pointer.clientX,y:pointer.clientY};
-    panLastSvg=pointerSvgPoint(pointer);
+    panLastClient=fromStart?pointer.startClient:{x:pointer.clientX,y:pointer.clientY};
+    panLastSvg=fromStart?pointer.startSvg:pointerSvgPoint(pointer);
+    graphV2.userNavigated=true;graphV2.suppressGraphClickUntil=Infinity;
   };
   const finishPointer=e=>{
     const wasPinching=mode==='pinch';
+    const wasPanning=mode==='pan'&&e.pointerId===panPointerId;
     pointers.delete(e.pointerId);
     try{if(svg.hasPointerCapture(e.pointerId))svg.releasePointerCapture(e.pointerId)}catch{}
     if(wasPinching){
-      graphV2.suppressGraphClickUntil=performance.now()+350;
       if(pointers.size>=2){beginPinch();return}
       pinch=null;
       if(pointers.size===1){startPanFrom([...pointers.values()][0]);return}
+      graphV2.suppressGraphClickUntil=performance.now()+350;
       mode='idle';return;
     }
-    if(e.pointerId===panPointerId)startPanFrom(null);
+    if(wasPanning){
+      graphV2.suppressGraphClickUntil=performance.now()+350;
+      startPanFrom(null);
+    }
     if(!pointers.size){mode='idle';pinch=null}
   };
 
   svg.onpointerdown=e=>{
-    const pointer={pointerId:e.pointerId,clientX:e.clientX,clientY:e.clientY,pointerType:e.pointerType};
+    const startSvg=clientPointToSvg(svg,e.clientX,e.clientY);
+    const pointer={pointerId:e.pointerId,clientX:e.clientX,clientY:e.clientY,pointerType:e.pointerType,
+      startClient:{x:e.clientX,y:e.clientY},startSvg};
     pointers.set(e.pointerId,pointer);
-    try{svg.setPointerCapture(e.pointerId)}catch{}
     if(e.pointerType!=='mouse')e.preventDefault();
-    if(pointers.size>=2){beginPinch();return}
-    if(!e.target.closest('[data-person]')){
-      graphV2.userNavigated=true;
-      startPanFrom(pointer);
-    }
+    if(pointers.size>=2)beginPinch();
   };
   svg.onpointermove=e=>{
-    if(!pointers.has(e.pointerId))return;
-    const pointer={pointerId:e.pointerId,clientX:e.clientX,clientY:e.clientY,pointerType:e.pointerType};
+    const previous=pointers.get(e.pointerId);
+    if(!previous)return;
+    const pointer={...previous,clientX:e.clientX,clientY:e.clientY,pointerType:e.pointerType};
     pointers.set(e.pointerId,pointer);
     if(e.pointerType!=='mouse')e.preventDefault();
     if(mode==='pinch'&&pinch){
@@ -1368,6 +1377,9 @@ function wireGraphPointerGestures(svg){
       if(!a||!b)return;
       queueTransform(pinchTransformFromPoints(pinch.initialA,pinch.initialB,pointerSvgPoint(a),pointerSvgPoint(b),pinch.start));
       return;
+    }
+    if(mode==='idle'&&pointers.size===1&&Math.hypot(e.clientX-pointer.startClient.x,e.clientY-pointer.startClient.y)>=dragThreshold){
+      startPanFrom(pointer,true);
     }
     if(mode==='pan'&&e.pointerId===panPointerId){
       let dx,dy;
